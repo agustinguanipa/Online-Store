@@ -1,0 +1,10 @@
+Git Commands Used:
+
+git init
+git add -A
+git status
+git commit -m "Initial Commit"
+git remote add origin %repo link from bitbucket.org%
+git push -u origin master
+
+git pull or git pull origin master
