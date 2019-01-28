@@ -8,3 +8,5 @@ git remote add origin %repo link from bitbucket.org%
 git push -u origin master
 
 git pull or git pull origin master
+
+test
