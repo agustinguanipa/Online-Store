@@ -216,7 +216,7 @@
         <div class="col-sm-6 form-group">
         <p class="titulo">Servicio Integral General y Mantenimiento de Equipos Médicos Compañía Anónima</p>
           <p class="contenido">
-            SIGMAEMCA es un empresa fundara el 10 de noviembre de 2002, se posiciona como una entidad de responsabilidad social líder en la comercialización de equipos, suministros e insumos médicos para clínicas y hospitales en general. Además presta servicios especializados en las áreas médicas que sean requeridas.
+            SIGMAEMCA es un empresa fundada el 10 de noviembre de 2002, se posiciona como una entidad de responsabilidad social líder en la comercialización de equipos, suministros e insumos médicos para clínicas y hospitales en general. Además presta servicios especializados en las áreas médicas que sean requeridas.
           </p>
           <div>
             <a href="paginas/sobre_mi.php" class="btn btn-primary">Ver Más</a>
