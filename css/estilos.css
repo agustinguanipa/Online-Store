@@ -1,42 +1,11 @@
 /* Index */
 
-#fondo_top{
-	background-image: url("../imagen/fondo-paisaje.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
-	margin-bottom: 0px;
-}
-
-#fondo_sobre_mi{
-	background-image: url("../imagen/fondo-desk.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
-	margin-bottom: 0px;
-}
-
-#fondo_portafolio{
-	background-image: url("../imagen/fondo-computer.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
-	margin-bottom: 0px;
-}
-
-#fondo_contacto{
-	background-image: url("../imagen/fondo-agustin.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
-	margin-bottom: 0px;
-}
-
-#portada{
-	background-color: #949BA8; 
-	background-size: 100px;
-}
-
 .titulo{
+	
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 20px;
 	font-weight: bold;
+	text-align: center;
 }
 
 .contenido{
@@ -71,6 +40,10 @@
 .form-label{
 	font-weight: bold;
 	text-align: left;
+}
+
+.formulario-inicio-registro{
+	
 }
 
 

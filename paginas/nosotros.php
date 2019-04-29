@@ -1,4 +1,4 @@
-<?php require_once('header.php'); ?>
+<?php require_once('user_header.php'); ?>
 
 <head>
 	<title>Nosotros | Online Store SIGMAEMCA</title>
@@ -7,7 +7,7 @@
 <body>
 	<div class="jumbotron text-center" style="margin-bottom:0; background-color: #FFFFFF;">
     <div class="container">
-      <h1>SIGMAEMCA Online Store</h1>
+      <h1>Nosotros</h1>
       <hr class="my-4">
       <div class="row">
         <div class="col-sm-6 form-group">
@@ -26,5 +26,5 @@
   </div>
 </body>
 
-<?php require_once('footer.php');  ?>
+<?php require_once('user_footer.php');  ?>
 

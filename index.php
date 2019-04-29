@@ -48,12 +48,15 @@
         <ul class="navbar-nav">
           <li class="nav-item active">
             <a class="nav-link" href="index.php"><i class="fa fa-home"></i> Inicio </a>
-            </li>
-            <li class="nav-item">
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="paginas/nosotros.php"><i class="fa fa-info"></i> Nosotros </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="paginas/contacto.php"><i class="fa fa-phone"></i> Contacto </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="paginas/contacto.php"><i class="fa fa-phone"></i> Contacto </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="paginas/admin_panel.php"><i class="fa fa-lock"></i></a>
           </li>
         </ul>
       </div>
@@ -94,7 +97,7 @@
             <div class="widget-header">
               <small class="title text-muted">Bienvenido</small>
               <div> <a href="#">Iniciar Sesión</a> <span class="dark-transp"> | </span>
-              <a href="#">Registrarse</a></div>
+              <a href="paginas/user_registro.php">Registrarse</a></div>
             </div>
             <a href="#" class="widget-header border-left pl-3 ml-3">
               <div class="icontext">
@@ -202,7 +205,7 @@
 
 <!-- Contenido -->
 
-<div class="jumbotron text-center" id="fondo_sobre_mi" style="margin-bottom:0; background-color: #FFFFFF">
+<div class="jumbotron text-center" id="fondo_sobre_mi" style="margin-bottom:0; background-color: #FFFFFF;">
     <div class="container">
       <h3>SIGMAEMCA Online Store</h3>
       <hr class="my-4">

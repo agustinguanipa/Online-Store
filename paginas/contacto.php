@@ -1,4 +1,4 @@
-<?php require_once('header.php'); ?>
+<?php require_once('user_header.php'); ?>
 
 <head>
 	<title>Contacto | SIGMAEMCA Online Store</title>
@@ -63,6 +63,6 @@
 	</div>
 </body>
 
-<?php require_once('footer.php');  ?>
+<?php require_once('user_footer.php');  ?>
 
 
