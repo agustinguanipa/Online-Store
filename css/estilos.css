@@ -42,8 +42,15 @@
 	text-align: left;
 }
 
-.formulario-inicio-registro{
-	
+.formulario-registro-inicio {
+	 margin: auto;
+  position: auto;
+  top: 0; left: 0; bottom: 0; right: 0;
+  width: 50%; 
+  height: 50%;
+  min-width: 500px;
+  max-width: 500px;
+  padding: 40px;
 }
 
 

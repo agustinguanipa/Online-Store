@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <title>Registrarse | SIGMAEMCA Online Store</title>
   <meta name="description" content="Online Store SIGMAEMCA Servicio Integral General y Mantenimiento de Equipos Médicos Compañía Anónima">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,11 +33,8 @@
 <!-- Header --->
 
 <header class="section-header">
-  
-
-  <!-- Barra 2 --->
   <section class="header-main">
-    <div class="container">
+    <div class="container" align="center">
       <div class="row align-items-center">
         <div class="col-sm-12">
           <div class="brand-wrap">
@@ -49,56 +47,54 @@
   </section>
 </header>
 
-
-
 <body>
-  <div class="jumbotron text-center" style="margin-bottom:0; background-color: #FBFCFF;">
     <div class="container">
-      
-        <div class="form-group">
-          <h1>Registrarse</h1>
-          <hr class="my-4">
-          <div class="row">
-            
-              <form role="form" id="contact-form" class="contact-form justify-content-center" align="center" action="mail_contacto.php" method="post">
-                <div class="form-row">
-                  <div class="col form-group">
-                    <label class="form-label">Primer Nombre: </label>
-                    <input type="text" class="form-control" name="nombres" autocomplete="off" id="nombres" placeholder="Carlos">
-                  </div>
-                  <div class="col form-group">
-                    <label class="form-label">Segundo Nombre: </label>
-                    <input type="text" class="form-control" name="nombres" autocomplete="off" id="nombres" placeholder="Agustin">
-                  </div>
-                </div>
-                <div class="form-row">
-                  <div class="col form-group">
-                    <label class="form-label">Primer Apellido</label>
-                    <input type="text" class="form-control" name="apellidos" autocomplete="off" id="apellidos" placeholder="Guanipa">
-                  </div>
-                  <div class="col form-group">
-                    <label class="form-label">Segundo Apellido</label>
-                    <input type="text" class="form-control" name="apellidos" autocomplete="off" id="apellidos" placeholder="Alvarez">
-                  </div>
-                </div>
-                <div class="form-row">
-                  <div class="col form-group">
-                    <label class="form-label">E-Mail: </label>
-                    <input type="email" class="form-control" name="email" autocomplete="off" id="email" placeholder="correo@mail.com">
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-12">
-                    <button type="submit" class="btn btn-primary">Registrarse</button>
-                  </div>
-                </div>
-              </form>
-            </div> 
-         
-      
+      <div class="form-group text-center">
+        <h3>Registrarse</h3>
+        <hr class="my-4">
+        <div class="formulario-registro-inicio">
+          <form role="form" id="contact-form" class=" justify-content-center" align="center" action="mail_contacto.php" method="post">
+            <div class="form-row">
+              <div class="col form-group">
+                <label class="form-label">Primer Nombre: </label>
+                <input type="text" class="form-control" name="nombres" autocomplete="off" id="nombres" placeholder="Carlos">
+              </div>
+              <div class="col form-group">
+                <label class="form-label">Segundo Nombre: </label>
+                <input type="text" class="form-control" name="nombres" autocomplete="off" id="nombres" placeholder="Agustin">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col form-group">
+                <label class="form-label">Primer Apellido</label>
+                <input type="text" class="form-control" name="apellidos" autocomplete="off" id="apellidos" placeholder="Guanipa">
+              </div>
+              <div class="col form-group">
+                <label class="form-label">Segundo Apellido</label>
+                <input type="text" class="form-control" name="apellidos" autocomplete="off" id="apellidos" placeholder="Alvarez">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col form-group">
+                <label class="form-label">E-Mail: </label>
+                <input type="email" class="form-control" name="email" autocomplete="off" id="email" placeholder="correo@mail.com">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col form-group">
+                <label class="form-label">Direccion: </label>
+                <input type="text" class="form-control" name="direccion" autocomplete="off" id="direccion" placeholder="correo@mail.com">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <button type="submit" class="btn btn-primary">Registrarse</button>
+              </div>
+            </div>
+          </form>
+        </div> 
       </div>
     </div>
-  </div>
 </body>
 
 <footer>

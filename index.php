@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <title>Inicio | SIGMAEMCA Online Store</title>
-  <meta name="description" content="Online Store SIGMAEMCA Servicio Integral General y Mantenimiento de Equipos Médicos Compañía Anónima">
+  <meta name="description" content="SIGMAEMCA Online Store Servicio Integral General y Mantenimiento de Equipos Médicos Compañía Anónima">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!--- Favicon --->

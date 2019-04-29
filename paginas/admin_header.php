@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<meta name="description" content="Online Store SIGMAEMCA Servicio Integral General y Mantenimiento de Equipos Médicos Compañía Anónima">
+	<meta name="description" content="SIGMAEMCA Online Store Servicio Integral General y Mantenimiento de Equipos Médicos Compañía Anónima">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!--- Favicon --->
@@ -33,7 +33,6 @@
 <!-- Header --->
 
 <header class="section-header">
-
   <nav class="navbar navbar-top navbar-expand-lg navbar-dark bg-primary">
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>

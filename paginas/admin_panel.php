@@ -1,7 +1,7 @@
 <?php require_once('admin_header.php'); ?>
 
 <head>
-  <title>Panel de Administrador| Online Store SIGMAEMCA</title>
+  <title>Panel de Administrador| SIGMAEMCA Online Store</title>
 </head>
 
 <script>

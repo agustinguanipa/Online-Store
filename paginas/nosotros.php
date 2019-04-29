@@ -1,7 +1,7 @@
 <?php require_once('user_header.php'); ?>
 
 <head>
-	<title>Nosotros | Online Store SIGMAEMCA</title>
+	<title>Nosotros | SIGMAEMCA Online Store</title>
 </head>
 
 <body>
