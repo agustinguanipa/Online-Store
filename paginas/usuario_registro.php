@@ -54,6 +54,8 @@
         <hr class="my-4">
         <div class="formulario-registro-inicio">
           <form role="form" id="contact-form" class=" justify-content-center" align="center" action="mail_contacto.php" method="post">
+            <h5>Datos Personales</h5>
+            <hr class="my-4">
             <div class="form-row">
               <div class="col form-group">
                 <label class="form-label">Primer Nombre: </label>
@@ -82,7 +84,45 @@
             </div>
             <div class="form-row">
               <div class="col form-group">
-                <label class="form-label">Direccion: </label>
+                <label class="form-label">Usuario: </label>
+                <input type="email" class="form-control" name="email" autocomplete="off" id="email" placeholder="correo@mail.com">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col form-group">
+                <label class="form-label">Contraseña: </label>
+                <input type="email" class="form-control" name="email" autocomplete="off" id="email" placeholder="correo@mail.com">
+              </div>
+              <div class="col form-group">
+                <label class="form-label">Confirmar Contraseña: </label>
+                <input type="email" class="form-control" name="email" autocomplete="off" id="email" placeholder="correo@mail.com">
+              </div>
+            </div>
+            <h5>Dirección</h5>
+            <hr class="my-4">
+            <div class="form-row">
+              <div class="col form-group">
+                <label class="form-label">Direccion 1: </label>
+                <input type="text" class="form-control" name="direccion" autocomplete="off" id="direccion" placeholder="correo@mail.com">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col form-group">
+                <label class="form-label">Direccion 2: </label>
+                <input type="text" class="form-control" name="direccion" autocomplete="off" id="direccion" placeholder="correo@mail.com">
+              </div>
+              <div class="col form-group">
+                <label class="form-label">Ciudad: </label>
+                <input type="text" class="form-control" name="direccion" autocomplete="off" id="direccion" placeholder="correo@mail.com">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col form-group">
+                <label class="form-label">Estado: </label>
+                <input type="text" class="form-control" name="direccion" autocomplete="off" id="direccion" placeholder="correo@mail.com">
+              </div>
+              <div class="col form-group">
+                <label class="form-label">País: </label>
                 <input type="text" class="form-control" name="direccion" autocomplete="off" id="direccion" placeholder="correo@mail.com">
               </div>
             </div>
