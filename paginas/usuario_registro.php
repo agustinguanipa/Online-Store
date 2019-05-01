@@ -50,11 +50,9 @@
 <body>
     <div class="container">
       <div class="form-group text-center">
-        <h3>Registrarse</h3>
-        <hr class="my-4">
         <div class="formulario-registro-inicio">
           <form role="form" id="contact-form" class=" justify-content-center" align="center" action="mail_contacto.php" method="post">
-            <h5>Datos Personales</h5>
+            <h3>Registrarse</h3>
             <hr class="my-4">
             <div class="form-row">
               <div class="col form-group">
@@ -85,50 +83,23 @@
             <div class="form-row">
               <div class="col form-group">
                 <label class="form-label">Usuario: </label>
-                <input type="email" class="form-control" name="email" autocomplete="off" id="email" placeholder="correo@mail.com">
+                <input type="email" class="form-control" name="email" autocomplete="off" id="email" placeholder="miusuario">
               </div>
             </div>
             <div class="form-row">
               <div class="col form-group">
                 <label class="form-label">Contraseña: </label>
-                <input type="email" class="form-control" name="email" autocomplete="off" id="email" placeholder="correo@mail.com">
+                <input type="email" class="form-control" name="email" autocomplete="off" id="email" placeholder="********">
               </div>
               <div class="col form-group">
                 <label class="form-label">Confirmar Contraseña: </label>
-                <input type="email" class="form-control" name="email" autocomplete="off" id="email" placeholder="correo@mail.com">
-              </div>
-            </div>
-            <h5>Dirección</h5>
-            <hr class="my-4">
-            <div class="form-row">
-              <div class="col form-group">
-                <label class="form-label">Direccion 1: </label>
-                <input type="text" class="form-control" name="direccion" autocomplete="off" id="direccion" placeholder="correo@mail.com">
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="col form-group">
-                <label class="form-label">Direccion 2: </label>
-                <input type="text" class="form-control" name="direccion" autocomplete="off" id="direccion" placeholder="correo@mail.com">
-              </div>
-              <div class="col form-group">
-                <label class="form-label">Ciudad: </label>
-                <input type="text" class="form-control" name="direccion" autocomplete="off" id="direccion" placeholder="correo@mail.com">
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="col form-group">
-                <label class="form-label">Estado: </label>
-                <input type="text" class="form-control" name="direccion" autocomplete="off" id="direccion" placeholder="correo@mail.com">
-              </div>
-              <div class="col form-group">
-                <label class="form-label">País: </label>
-                <input type="text" class="form-control" name="direccion" autocomplete="off" id="direccion" placeholder="correo@mail.com">
+                <input type="email" class="form-control" name="email" autocomplete="off" id="email" placeholder="********">
               </div>
             </div>
             <div class="row">
               <div class="col-md-12">
                 <button type="submit" class="btn btn-primary">Registrarse</button>
+                <button type="reset" class="btn btn-secondary">Limpiar</button>
               </div>
             </div>
           </form>
