@@ -76,6 +76,18 @@
           </div>
           <div class="form-row">
             <div class="col form-group">
+              <label class="form-label">Genero: </label>
+              <input type="email" class="form-control" name="email" autocomplete="off" id="email" placeholder="correo@mail.com">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col form-group">
+              <label class="form-label">Telefono: </label>
+              <input type="email" class="form-control" name="email" autocomplete="off" id="email" placeholder="correo@mail.com">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col form-group">
               <label class="form-label">E-Mail: </label>
               <input type="email" class="form-control" name="email" autocomplete="off" id="email" placeholder="correo@mail.com">
             </div>
