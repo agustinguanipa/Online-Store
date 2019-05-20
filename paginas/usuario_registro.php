@@ -38,8 +38,10 @@
       <div class="row align-items-center">
         <div class="col-sm-12">
           <div class="brand-wrap">
-            <img class="logo" src="../imagen/logo-sigmaemca.png">
-            <h2 class="logo-text">SIGMAEMCA</h2>
+            <a href="../index.php">
+              <img class="logo" src="../imagen/logo-sigmaemca.png">
+            </a>
+              <h2 class="logo-text">SIGMAEMCA</h2>
           </div>
         </div>
       </div>
@@ -77,13 +79,16 @@
           <div class="form-row">
             <div class="col form-group">
               <label class="form-label">Genero: </label>
-              <input type="email" class="form-control" name="email" autocomplete="off" id="email" placeholder="correo@mail.com">
+              <select class="form-control" id="sel1">
+                <option value="MASCULINO">Masculino</option>
+                <option value="FEMENINO">Femenino</option>
+              </select>
             </div>
           </div>
           <div class="form-row">
             <div class="col form-group">
               <label class="form-label">Telefono: </label>
-              <input type="email" class="form-control" name="email" autocomplete="off" id="email" placeholder="correo@mail.com">
+              <input type="email" class="form-control" name="email" autocomplete="off" id="email" placeholder="0000-000-0000">
             </div>
           </div>
           <div class="form-row">
@@ -108,12 +113,13 @@
               <input type="email" class="form-control" name="email" autocomplete="off" id="email" placeholder="********">
             </div>
           </div>
-          <div class="row">
-            <div class="col-md-12">
-              <button type="submit" class="btn btn-primary">Registrarse</button>
-              <button type="reset" class="btn btn-secondary">Limpiar</button>
+          <div class="form-row">
+            <div class="col form-group">
+              <button type="submit" class="btn btn-primary btn-block">Registrarse</button>
+              <button type="reset" class="btn btn-secondary btn-block">Limpiar</button>
             </div>
           </div>
+          <p class="text-center">Tienes una Cuenta? <a href="usuario_inicio.php">Iniciar Sesión</a> </p>
         </form>
       </div> 
     </div>
