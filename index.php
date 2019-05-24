@@ -96,7 +96,7 @@
           <div class="d-flex justify-content-end">
             <div class="widget-header">
               <small class="title text-muted">Bienvenido</small>
-              <div> <a href="#">Iniciar Sesión</a> <span class="dark-transp"> | </span>
+              <div> <a href="paginas/usuario_inicio">Iniciar Sesión</a> <span class="dark-transp"> | </span>
               <a href="paginas/usuario_registro.php">Registrarse</a></div>
             </div>
             <a href="#" class="widget-header border-left pl-3 ml-3">

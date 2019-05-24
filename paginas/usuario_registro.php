@@ -10,10 +10,9 @@
   <!--- CSS --->
   <link rel="stylesheet" type="text/css" href="../css/estilos.css">
   <!--- JS --->
-  
+  <script src="../js/validacion.js" type="text/javascript"></script>
   <!--- Bootstrap 4 --->
   <link rel="stylesheet" href="../libs/bootstrap-4.1.3-dist/css/bootstrap.min.css"/>
-  <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
   <script src="../libs/bootstrap-4.1.3-dist/js/bootstrap.min.js"></script>
   <!--- Bootstrap 4 UI E-Commerce --->
   <script src="../libs/bootstrap-ecommerce-uikit/ui-ecommerce/js/bootstrap.bundle.min.js" type="text/javascript"></script>
@@ -24,8 +23,13 @@
   <link href="../libs/bootstrap-ecommerce-uikit/ui-ecommerce/plugins/owlcarousel/assets/owl.theme.default.css" rel="stylesheet">
   <script src="../libs/bootstrap-ecommerce-uikit/ui-ecommerce/plugins/owlcarousel/owl.carousel.min.js"></script>
   <link href="../libs/bootstrap-ecommerce-uikit/ui-ecommerce/css/ui.css" rel="stylesheet" type="text/css"/>
-  <link href="../libs/bootstrap-ecommerce-uikit/ui-ecommerce/css/responsive.css" rel="stylesheet" media="only screen and (max-width: 1200px)" />
+  <link href="../libs/bootstrap-ecommerce-uikit/ui-ecommerce/css/responsive.css" rel="stylesheet" media="only screen and (max-width: 1200px)"/>
   <script src="../libs/bootstrap-ecommerce-uikit/ui-ecommerce/js/script.js" type="text/javascript"></script>
+  <!--- jQuery --->
+  <script src="../libs/jquery/jquery-3.4.1.min.js" type="text/javascript"></script>
+  <!--- jQuery Validation --->
+  <script type="text/javascript" src="../libs/jquery-validation-1.19.0/lib/jquery-1.11.1.js"></script>
+  <script type="text/javascript" src="../libs/jquery-validation-1.19.0/dist/jquery.validate.js"></script>
 </head>
 
 <body>
@@ -41,7 +45,7 @@
             <a href="../index.php">
               <img class="logo" src="../imagen/logo-sigmaemca.png">
             </a>
-              <h2 class="logo-text">SIGMAEMCA</h2>
+              <h2 class="logo-text">SIGMAEMCA Online Store</h2>
           </div>
         </div>
       </div>
@@ -53,33 +57,33 @@
   <div class="container">
     <div class="form-group text-center">
       <div class="formulario-registro-inicio">
-        <form role="form" id="contact-form" class=" justify-content-center" align="center" action="mail_contacto.php" method="post">
+        <form role="form" id="usuario_registro" class=" justify-content-center" align="center" action="" method="post">
           <h3>Registrarse</h3>
           <hr class="my-4">
           <div class="form-row">
             <div class="col form-group">
-              <label class="form-label">Primer Nombre: </label>
-              <input type="text" class="form-control" name="nombres" autocomplete="off" id="nombres" placeholder="Carlos">
+              <label class="form-label" for="nomb1_clie">Primer Nombre: </label>
+              <input type="text" class="form-control" name="nomb1_clie" autocomplete="off" id="nomb1_clie" placeholder="Carlos" maxlength="20">
             </div>
             <div class="col form-group">
-              <label class="form-label">Segundo Nombre: </label>
-              <input type="text" class="form-control" name="nombres" autocomplete="off" id="nombres" placeholder="Agustin">
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="col form-group">
-              <label class="form-label">Primer Apellido</label>
-              <input type="text" class="form-control" name="apellidos" autocomplete="off" id="apellidos" placeholder="Guanipa">
-            </div>
-            <div class="col form-group">
-              <label class="form-label">Segundo Apellido</label>
-              <input type="text" class="form-control" name="apellidos" autocomplete="off" id="apellidos" placeholder="Alvarez">
+              <label class="form-label" for="nomb2_clie">Segundo Nombre: </label>
+              <input type="text" class="form-control" name="nomb2_clie" autocomplete="off" id="nomb2_clie" placeholder="Agustin" maxlength="20">
             </div>
           </div>
           <div class="form-row">
             <div class="col form-group">
-              <label class="form-label">Genero: </label>
-              <select class="form-control" id="sel1">
+              <label class="form-label" for="apel1_clie">Primer Apellido</label>
+              <input type="text" class="form-control" name="apel1_clie" autocomplete="off" id="apel1_clie" placeholder="Guanipa" maxlength="20">
+            </div>
+            <div class="col form-group">
+              <label class="form-label" for="apel2_clie">Segundo Apellido</label>
+              <input type="text" class="form-control" name="apel2_clie" autocomplete="off" id="apel2_clie" placeholder="Alvarez" maxlength="20">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col form-group">
+              <label class="form-label" for="gener_clie">Genero: </label>
+              <select class="form-control" id="gener_clie">
                 <option value="MASCULINO">Masculino</option>
                 <option value="FEMENINO">Femenino</option>
               </select>
@@ -87,30 +91,30 @@
           </div>
           <div class="form-row">
             <div class="col form-group">
-              <label class="form-label">Telefono: </label>
-              <input type="email" class="form-control" name="email" autocomplete="off" id="email" placeholder="0000-000-0000">
+              <label class="form-label" for="telef_clie">Telefono: </label>
+              <input type="text" class="form-control" name="telef_clie" autocomplete="off" id="telef_clie" placeholder="0000-000-0000" maxlength="11">
             </div>
           </div>
           <div class="form-row">
             <div class="col form-group">
-              <label class="form-label">E-Mail: </label>
-              <input type="email" class="form-control" name="email" autocomplete="off" id="email" placeholder="correo@mail.com">
+              <label class="form-label" for="email_clie">E-Mail: </label>
+              <input type="email" class="form-control" name="email_clie" autocomplete="off" id="email_clie" placeholder="correo@mail.com">
             </div>
           </div>
           <div class="form-row">
             <div class="col form-group">
-              <label class="form-label">Usuario: </label>
-              <input type="email" class="form-control" name="email" autocomplete="off" id="email" placeholder="miusuario">
+              <label class="form-label" for="usuar_clie">Usuario: </label>
+              <input type="text" class="form-control" name="usuar_clie" autocomplete="off" id="usuar_clie" placeholder="miusuario" maxlength="20">
             </div>
           </div>
           <div class="form-row">
             <div class="col form-group">
-              <label class="form-label">Contraseña: </label>
-              <input type="email" class="form-control" name="email" autocomplete="off" id="email" placeholder="********">
+              <label class="form-label" for="contra_clie">Contraseña: </label>
+              <input type="text" class="form-control" name="contra_clie" autocomplete="off" id="contra_clie" placeholder="********" maxlength="20">
             </div>
             <div class="col form-group">
-              <label class="form-label">Confirmar Contraseña: </label>
-              <input type="email" class="form-control" name="email" autocomplete="off" id="email" placeholder="********">
+              <label class="form-label" for="confirm_password">Confirmar Contraseña: </label>
+              <input type="text" class="form-control" name="confirm_password" autocomplete="off" id="confirm_password" placeholder="********" maxlength="20">
             </div>
           </div>
           <div class="form-row">
@@ -138,7 +142,96 @@
   </div>
 </footer>
 
-</body>
+<script type="text/javascript">
+  $.validator.setDefaults( {
+      submitHandler: function () {
+        alert( "submitted!" );
+      }
+    } );
+
+    $( document ).ready( function () {
+      $( "#usuario_registro" ).validate( {
+        rules: {
+          nomb1_clie: {
+            required: true,
+            minlength: 2
+          },
+          apel1_clie: {
+            required: true,
+            minlength: 2
+          },
+          usuar_clie: {
+            required: true,
+            minlength: 2
+          },
+          contra_clie: {
+            required: true,
+            minlength: 5
+          },
+          confirm_password: {
+            required: true,
+            minlength: 5,
+            equalTo: "#contra_clie"
+          },
+          telef_clie: {
+            required: true,
+            minlength: 11
+          },
+          email_clie: {
+            required: true,
+            email: true
+          },
+      
+        },
+        messages: {
+          nomb1_clie: {
+            required: "Ingrese su Primer Nombre",
+            minlength: "Tu Nombre debe contener al menos 2 caracteres" 
+          },
+          apel1_clie: {
+            required: "Ingrese su Primer Apellido",
+            minlength: "Tu Apellido debe contener al menos 2 caracteres"
+          },
+          usuar_clie: {
+            required: "Ingrese un Nombre de Usuario",
+            minlength: "Tu Nombre de Usuario debe contener al menos 2 caracteres"
+          },
+          contra_clie: {
+            required: "Ingrese una Contraseña",
+            minlength: "Tu Contraseña debe contener al menos 5 caracteres"
+          },
+          confirm_password: {
+            required: "Ingrese una Contraseña",
+            minlength: "Tu Contraseña debe contener al menos 5 caracteres",
+            equalTo: "Ingrese la Misma Contraseña"
+          },
+          telef_clie: {
+            required: "Ingrese un Número de Teléfono Valido",
+            minlength: "Ingrese un Número de Teléfono Valido"
+          },
+          email_clie: "Ingrese una Dirección de Correo Electrónico Válida"
+        },
+        errorElement: "em",
+        errorPlacement: function ( error, element ) {
+          // Add the `invalid-feedback` class to the error element
+          error.addClass( "invalid-feedback" );
+
+          if ( element.prop( "type" ) === "checkbox" ) {
+            error.insertAfter( element.next( "label" ) );
+          } else {
+            error.insertAfter( element );
+          }
+        },
+        highlight: function ( element, errorClass, validClass ) {
+          $( element ).addClass( "is-invalid" ).removeClass( "is-valid" );
+        },
+        unhighlight: function (element, errorClass, validClass) {
+          $( element ).addClass( "is-valid" ).removeClass( "is-invalid" );
+        }
+      } );
+
+    } );
+</script>
 </html>
 
 
