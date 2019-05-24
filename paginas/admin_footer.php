@@ -1,3 +1,7 @@
+  </div>    
+</div>
+</body>
+
 <!-- Footer --->
 
 <footer class="section-footer bg2">

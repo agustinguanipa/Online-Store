@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<meta name="description" content="Online Store SIGMAEMCA Servicio Integral General y Mantenimiento de Equipos Médicos Compañía Anónima">
+  <title>Panel de Administración | SIGMAEMCA Online Store</title>
+	<meta name="description" content="SIGMAEMCA Online Store | Servicio Integral General y Mantenimiento de Equipos Médicos Compañía Anónima">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!--- Favicon --->
@@ -9,6 +10,13 @@
   <!--- CSS --->
   <link rel="stylesheet" type="text/css" href="../css/estilos.css">
   <link rel="stylesheet" type="text/css" href="../css/estilos_admin.css">
+  <!--- jQuery --->
+  <script src="../libs/jquery/jquery-3.4.1.min.js" type="text/javascript"></script>
+  <!--- jQuery Validation --->
+  <script type="text/javascript" src="../libs/jquery-validation-1.19.0/lib/jquery-1.11.1.js"></script>
+  <script type="text/javascript" src="../libs/jquery-validation-1.19.0/dist/jquery.validate.js"></script>
+  <!--- jQuery Mask Plugin --->
+  <script type="text/javascript" src="../libs/jQuery-Mask-Plugin/dist/jquery.mask.js"></script>
   <!--- JS --->
   <script src="../js/validacion.js" type="text/javascript"></script>
   <script src="../js/admin_sidebar.js" type="text/javascript"></script>
@@ -26,11 +34,6 @@
   <link href="../libs/bootstrap-ecommerce-uikit/ui-ecommerce/css/ui.css" rel="stylesheet" type="text/css"/>
   <link href="../libs/bootstrap-ecommerce-uikit/ui-ecommerce/css/responsive.css" rel="stylesheet" media="only screen and (max-width: 1200px)"/>
   <script src="../libs/bootstrap-ecommerce-uikit/ui-ecommerce/js/script.js" type="text/javascript"></script>
-  <!--- jQuery --->
-  <script src="../libs/jquery/jquery-3.4.1.min.js" type="text/javascript"></script>
-  <!--- jQuery Validation --->
-  <script type="text/javascript" src="../libs/jquery-validation-1.19.0/lib/jquery-1.11.1.js"></script>
-  <script type="text/javascript" src="../libs/jquery-validation-1.19.0/dist/jquery.validate.js"></script>
 </head>
 
 <body>
@@ -61,14 +64,81 @@
           </a>
 
           <div class="dropdown-menu" aria-labelledby="smallerscreenmenu">
-              <a class="dropdown-item" href="#">Ventas</a>
-              <a class="dropdown-item" href="#">Productos</a>
-              <a class="dropdown-item" href="#">Clientes</a>
+            <a href="" title="">
+              <div class="dropdown-menu" aria-labelledby="smallerscreenmenu">
+                <a class="dropdown-item" href="#">Ventas</a>
+                <a class="dropdown-item" href="#">Productos</a>
+                <a class="dropdown-item" href="admin_clientes.php">Clientes</a>
+                <a class="dropdown-item" href="admin_clientes.php">Administración</a>
+              </div>
+            </a>
+            <a class="dropdown-item" href="#">Ventas</a>
+            <a class="dropdown-item" href="#">Productos</a>
+            <a class="dropdown-item" href="admin_clientes.php">Clientes</a>
+            <a class="dropdown-item" href="admin_clientes.php">Administración</a>
           </div>
         </li><!-- Smaller devices menu END -->
       </ul>
     </div>
 </nav><!-- NavBar END -->
 
-
 </header>
+
+<!-- Sidebar-->
+
+<div class="row" id="body-row">
+  <div id="sidebar-container" class="sidebar-expanded d-none d-md-block">
+    <!-- Sidebar Smaller Devices -->
+    <ul class="list-group">
+      <li class="list-group-item sidebar-separator-title text-muted d-flex align-items-center menu-collapsed justify-content-center">
+          <small>Menu Principal</small>
+      </li>
+      <!-- Menu -->
+      <a href="admin_panel.php" data-toggle="collapse" aria-expanded="false" class="bg-light text-dark list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-start align-items-center">
+            <span class="fa fa-home fa-fw mr-3"></span> 
+            <span class="menu-collapsed">Inicio</span>
+        </div>
+      </a>
+      <a href="#submenu1" data-toggle="collapse" aria-expanded="false" class="bg-light text-dark list-group-item list-group-item-action flex-column align-items-start">
+          <div class="d-flex w-100 justify-content-start align-items-center">
+            <span class="fa fa-money-bill-alt fa-fw mr-3"></span> 
+            <span class="menu-collapsed">Ventas</span>
+            <span class="fa fa-caret-down ml-auto"></span>
+          </div>
+      </a>
+      <!-- Submenu -->
+      <div id='submenu1' class="collapse sidebar-submenu">
+        <a href="#" class="list-group-item list-group-item-action bg-light text-dark">
+          <span class="menu-collapsed">Ordenes</span>
+        </a>
+        <a href="#" class="list-group-item list-group-item-action bg-light text-dark">
+          <span class="menu-collapsed">Envios</span>
+        </a>
+        <a href="#" class="list-group-item list-group-item-action bg-light text-dark">
+          <span class="menu-collapsed">Facturas</span>
+        </a>
+      </div>
+      <a href="#submenu2" data-toggle="collapse" aria-expanded="false" class="bg-light text-dark list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-start align-items-center">
+          <span class="fa fa-boxes fa-fw mr-3"></span>
+          <span class="menu-collapsed">Productos</span>
+        </div>
+      </a>    
+      <a href="admin_clientes.php" class="bg-light text-dark list-group-item list-group-item-action">
+        <div class="d-flex w-100 justify-content-start align-items-center">
+          <span class="fa fa-users fa-fw mr-3"></span>
+          <span class="menu-collapsed">Clientes</span>    
+        </div>
+      </a>
+      <a href="#" class="bg-light text-dark list-group-item list-group-item-action">
+        <div class="d-flex w-100 justify-content-start align-items-center">
+          <span class="fa fa-lock fa-fw mr-3"></span>
+          <span class="menu-collapsed">Administración</span>    
+        </div>
+      </a>
+    </ul>
+  </div>
+
+  <!-- Main -->
+  <div class="col">

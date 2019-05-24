@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<meta name="description" content="Online Store SIGMAEMCA Servicio Integral General y Mantenimiento de Equipos Médicos Compañía Anónima">
+	<meta name="description" content="SIGMAEMCA Online Store | Servicio Integral General y Mantenimiento de Equipos Médicos Compañía Anónima">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!--- Favicon --->
   <link rel="shortcut icon" href="../imagen/favicon.ico" type="image/x-icon">
   <!--- CSS --->
   <link rel="stylesheet" type="text/css" href="../css/estilos.css">
+  <!--- jQuery --->
+  <script src="../libs/jquery/jquery-3.4.1.min.js" type="text/javascript"></script>
+  <!--- jQuery Validation --->
+  <script type="text/javascript" src="../libs/jquery-validation-1.19.0/lib/jquery-1.11.1.js"></script>
+  <script type="text/javascript" src="../libs/jquery-validation-1.19.0/dist/jquery.validate.js"></script>
   <!--- JS --->
   <script src="../js/validacion.js" type="text/javascript"></script>
   <!--- Bootstrap 4 --->
@@ -24,11 +29,6 @@
   <link href="../libs/bootstrap-ecommerce-uikit/ui-ecommerce/css/ui.css" rel="stylesheet" type="text/css"/>
   <link href="../libs/bootstrap-ecommerce-uikit/ui-ecommerce/css/responsive.css" rel="stylesheet" media="only screen and (max-width: 1200px)"/>
   <script src="../libs/bootstrap-ecommerce-uikit/ui-ecommerce/js/script.js" type="text/javascript"></script>
-  <!--- jQuery --->
-  <script src="../libs/jquery/jquery-3.4.1.min.js" type="text/javascript"></script>
-  <!--- jQuery Validation --->
-  <script type="text/javascript" src="../libs/jquery-validation-1.19.0/lib/jquery-1.11.1.js"></script>
-  <script type="text/javascript" src="../libs/jquery-validation-1.19.0/dist/jquery.validate.js"></script>
 </head>
 
 <body>
@@ -96,7 +96,7 @@
           <div class="d-flex justify-content-end">
             <div class="widget-header">
               <small class="title text-muted">Bienvenido</small>
-              <div> <a href="usuario_inicio">Iniciar Sesión</a> <span class="dark-transp"> | </span>
+              <div> <a href="usuario_inicio.php">Iniciar Sesión</a> <span class="dark-transp"> | </span>
               <a href="usuario_registro.php">Registrarse</a></div>
             </div>
             <a href="#" class="widget-header border-left pl-3 ml-3">

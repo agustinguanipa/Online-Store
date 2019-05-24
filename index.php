@@ -2,18 +2,26 @@
 <html lang="es">
 <head>
   <title>Inicio | SIGMAEMCA Online Store</title>
-  <meta name="description" content="SIGMAEMCA Online Store Servicio Integral General y Mantenimiento de Equipos Médicos Compañía Anónima">
+  <meta name="description" content="SIGMAEMCA Online Store | Servicio Integral General y Mantenimiento de Equipos Médicos Compañía Anónima">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!--- Favicon --->
   <link rel="shortcut icon" href="imagen/favicon.ico" type="image/x-icon">
   <!--- CSS --->
   <link rel="stylesheet" type="text/css" href="css/estilos.css">
+  <link rel="stylesheet" type="text/css" href="css/estilos_admin.css">
+  <!--- jQuery --->
+  <script src="libs/jquery/jquery-3.4.1.min.js" type="text/javascript"></script>
+  <!--- jQuery Validation --->
+  <script type="text/javascript" src="libs/jquery-validation-1.19.0/lib/jquery-1.11.1.js"></script>
+  <script type="text/javascript" src="libs/jquery-validation-1.19.0/dist/jquery.validate.js"></script>
+  <!--- jQuery Mask Plugin --->
+  <script type="text/javascript" src="libs/jQuery-Mask-Plugin/dist/jquery.mask.js"></script>
   <!--- JS --->
-  
+  <script src="js/validacion.js" type="text/javascript"></script>
+  <script src="js/admin_sidebar.js" type="text/javascript"></script>
   <!--- Bootstrap 4 --->
   <link rel="stylesheet" href="libs/bootstrap-4.1.3-dist/css/bootstrap.min.css"/>
-  <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
   <script src="libs/bootstrap-4.1.3-dist/js/bootstrap.min.js"></script>
   <!--- Bootstrap 4 UI E-Commerce --->
   <script src="libs/bootstrap-ecommerce-uikit/ui-ecommerce/js/bootstrap.bundle.min.js" type="text/javascript"></script>
@@ -24,7 +32,7 @@
   <link href="libs/bootstrap-ecommerce-uikit/ui-ecommerce/plugins/owlcarousel/assets/owl.theme.default.css" rel="stylesheet">
   <script src="libs/bootstrap-ecommerce-uikit/ui-ecommerce/plugins/owlcarousel/owl.carousel.min.js"></script>
   <link href="libs/bootstrap-ecommerce-uikit/ui-ecommerce/css/ui.css" rel="stylesheet" type="text/css"/>
-  <link href="libs/bootstrap-ecommerce-uikit/ui-ecommerce/css/responsive.css" rel="stylesheet" media="only screen and (max-width: 1200px)" />
+  <link href="libs/bootstrap-ecommerce-uikit/ui-ecommerce/css/responsive.css" rel="stylesheet" media="only screen and (max-width: 1200px)"/>
   <script src="libs/bootstrap-ecommerce-uikit/ui-ecommerce/js/script.js" type="text/javascript"></script>
 </head>
 
@@ -96,7 +104,7 @@
           <div class="d-flex justify-content-end">
             <div class="widget-header">
               <small class="title text-muted">Bienvenido</small>
-              <div> <a href="paginas/usuario_inicio">Iniciar Sesión</a> <span class="dark-transp"> | </span>
+              <div> <a href="paginas/usuario_inicio.php">Iniciar Sesión</a> <span class="dark-transp"> | </span>
               <a href="paginas/usuario_registro.php">Registrarse</a></div>
             </div>
             <a href="#" class="widget-header border-left pl-3 ml-3">
