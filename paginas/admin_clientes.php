@@ -24,10 +24,10 @@ require_once('admin_header.php');
     <div class="row">
       <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-          <h2>Sistema de Control de Estudiantes</h2>
+          <h2>Clientes</h2>
         </div>
         <div class="pull-right">
-          <a href="#addnew" class="btn btn-success" data-toggle="modal"><span class="glyphicon glyphicon-plus"></span> New</a>
+          <a href="#addnew" class="btn btn-success" data-toggle="modal"><span class="fa fa-plus"></span> New</a>
         </div>
       </div>
     </div>
@@ -66,7 +66,7 @@ require_once('admin_header.php');
                 </td>
                 <?php include('edit_delete_modal.php'); ?>
               </tr>
-              <?php 
+              <?php
             }
         }
         catch(PDOException $e){

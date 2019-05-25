@@ -50,7 +50,7 @@
               <button type="reset" class="btn btn-secondary btn-block">Limpiar</button>
             </div>
           </div>
-          <p class="text-center">No Tienes una Cuenta? <a href="usuario_registro.php">Registrate</a> </p>
+          <p class="text-center">No Tienes una Cuenta? <a href="usuario_registro.php">Registrarse</a> </p>
         </form>
       </div> 
     </div>

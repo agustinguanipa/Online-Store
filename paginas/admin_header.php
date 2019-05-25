@@ -59,23 +59,15 @@
              The sidebar isn't proper for smaller screens imo, so this dropdown menu can keep all the useful sidebar itens exclusively for smaller screens  -->
 
         <li class="nav-item dropdown d-sm-block d-md-none">
-          <a class="nav-link dropdown-toggle" href="#" id="smallerscreenmenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="admin_panel.php" id="smallerscreenmenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Menu Principal
           </a>
 
           <div class="dropdown-menu" aria-labelledby="smallerscreenmenu">
-            <a href="" title="">
-              <div class="dropdown-menu" aria-labelledby="smallerscreenmenu">
-                <a class="dropdown-item" href="#">Ventas</a>
-                <a class="dropdown-item" href="#">Productos</a>
-                <a class="dropdown-item" href="admin_clientes.php">Clientes</a>
-                <a class="dropdown-item" href="admin_clientes.php">Administración</a>
-              </div>
-            </a>
             <a class="dropdown-item" href="#">Ventas</a>
             <a class="dropdown-item" href="#">Productos</a>
             <a class="dropdown-item" href="admin_clientes.php">Clientes</a>
-            <a class="dropdown-item" href="admin_clientes.php">Administración</a>
+            <a class="dropdown-item" href="#">Administración</a>
           </div>
         </li><!-- Smaller devices menu END -->
       </ul>
@@ -94,7 +86,7 @@
           <small>Menu Principal</small>
       </li>
       <!-- Menu -->
-      <a href="admin_panel.php" data-toggle="collapse" aria-expanded="false" class="bg-light text-dark list-group-item list-group-item-action flex-column align-items-start">
+      <a href="admin_panel.php" aria-expanded="false" class="bg-light text-dark list-group-item list-group-item-action flex-column align-items-start">
         <div class="d-flex w-100 justify-content-start align-items-center">
             <span class="fa fa-home fa-fw mr-3"></span> 
             <span class="menu-collapsed">Inicio</span>
@@ -107,19 +99,19 @@
             <span class="fa fa-caret-down ml-auto"></span>
           </div>
       </a>
-      <!-- Submenu -->
-      <div id='submenu1' class="collapse sidebar-submenu">
-        <a href="#" class="list-group-item list-group-item-action bg-light text-dark">
-          <span class="menu-collapsed">Ordenes</span>
-        </a>
-        <a href="#" class="list-group-item list-group-item-action bg-light text-dark">
-          <span class="menu-collapsed">Envios</span>
-        </a>
-        <a href="#" class="list-group-item list-group-item-action bg-light text-dark">
-          <span class="menu-collapsed">Facturas</span>
-        </a>
-      </div>
-      <a href="#submenu2" data-toggle="collapse" aria-expanded="false" class="bg-light text-dark list-group-item list-group-item-action flex-column align-items-start">
+        <!-- Submenu -->
+        <div id='submenu1' class="collapse sidebar-submenu">
+          <a href="#" class="list-group-item list-group-item-action bg-light text-dark">
+            <span class="menu-collapsed">Ordenes</span>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action bg-light text-dark">
+            <span class="menu-collapsed">Envios</span>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action bg-light text-dark">
+            <span class="menu-collapsed">Facturas</span>
+          </a>
+        </div>
+      <a href="#" aria-expanded="false" class="bg-light text-dark list-group-item list-group-item-action flex-column align-items-start">
         <div class="d-flex w-100 justify-content-start align-items-center">
           <span class="fa fa-boxes fa-fw mr-3"></span>
           <span class="menu-collapsed">Productos</span>
