@@ -2,7 +2,7 @@
 	session_start();
 	include_once('conexion_bd.php');
 
-	if(isset($_GET['delete'])){
+	if(isset($_GET['ident_clie'])){
 		$database = new Connection();
 		$db = $database->open();
 		try{

@@ -29,54 +29,54 @@
   <div class="container">
     <div class="form-group text-center">
       <div class="formulario-registro-inicio">
-        <form role="form" id="usuario_registro" class=" justify-content-center" align="center" action="" method="post">
+        <form role="form" id="usuario_registro" class=" justify-content-center" align="center" action="add.php" method="post">
           <h3>Registrarse</h3>
           <hr class="my-4">
           <div class="form-row">
             <div class="col form-group">
               <label class="form-label" for="nomb1_clie">Primer Nombre: </label>
-              <input type="text" class="form-control" name="nomb1_clie" autocomplete="off" id="nomb1_clie" placeholder="Carlos" maxlength="20">
+              <input type="text" class="form-control" name="nomb1_clie" autocomplete="off" id="nomb1_clie" placeholder="Carlos" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
             </div>
             <div class="col form-group">
               <label class="form-label" for="nomb2_clie">Segundo Nombre: </label>
-              <input type="text" class="form-control" name="nomb2_clie" autocomplete="off" id="nomb2_clie" placeholder="Agustin" maxlength="20">
+              <input type="text" class="form-control" name="nomb2_clie" autocomplete="off" id="nomb2_clie" placeholder="Agustin" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
             </div>
           </div>
           <div class="form-row">
             <div class="col form-group">
               <label class="form-label" for="apel1_clie">Primer Apellido</label>
-              <input type="text" class="form-control" name="apel1_clie" autocomplete="off" id="apel1_clie" placeholder="Guanipa" maxlength="20">
+              <input type="text" class="form-control" name="apel1_clie" autocomplete="off" id="apel1_clie" placeholder="Guanipa" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
             </div>
             <div class="col form-group">
               <label class="form-label" for="apel2_clie">Segundo Apellido</label>
-              <input type="text" class="form-control" name="apel2_clie" autocomplete="off" id="apel2_clie" placeholder="Alvarez" maxlength="20">
+              <input type="text" class="form-control" name="apel2_clie" autocomplete="off" id="apel2_clie" placeholder="Alvarez" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
             </div>
           </div>
           <div class="form-row">
             <div class="col form-group">
               <label class="form-label" for="gener_clie">Genero: </label>
-              <select class="form-control" id="gener_clie">
-                <option value="MASCULINO">Masculino</option>
-                <option value="FEMENINO">Femenino</option>
+              <select class="form-control" id="gener_clie" name="gener_clie">
+                <option value="MASCULINO">MASCULINO</option>
+                <option value="FEMENINO">FEMENINO</option>
               </select>
             </div>
           </div>
           <div class="form-row">
             <div class="col form-group">
               <label class="form-label" for="telef_clie">Telefono: </label>
-              <input type="text" class="form-control telef-mask" name="telef_clie" autocomplete="off" id="telef_clie" placeholder="(0000) 000 0000" maxlength="11">
+              <input type="text" class="form-control telef-mask" name="telef_clie" autocomplete="off" id="telef_clie" placeholder="(0000) 000 0000" maxlength="15">
             </div>
           </div>
           <div class="form-row">
             <div class="col form-group">
               <label class="form-label" for="email_clie">E-Mail: </label>
-              <input type="email" class="form-control" name="email_clie" autocomplete="off" id="email_clie" placeholder="correo@mail.com">
+              <input type="email" class="form-control" name="email_clie" autocomplete="off" id="email_clie" placeholder="correo@mail.com" onkeyup="this.value = this.value.toUpperCase();">
             </div>
           </div>
           <div class="form-row">
             <div class="col form-group">
               <label class="form-label" for="usuar_clie">Usuario: </label>
-              <input type="text" class="form-control" name="usuar_clie" autocomplete="off" id="usuar_clie" placeholder="miusuario" maxlength="20">
+              <input type="text" class="form-control" name="usuar_clie" autocomplete="off" id="usuar_clie" placeholder="miusuario" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
             </div>
           </div>
           <div class="form-row">
@@ -91,8 +91,8 @@
           </div>
           <div class="form-row">
             <div class="col form-group">
-              <button type="submit" class="btn btn-primary btn-block">Registrarse</button>
-              <button type="reset" class="btn btn-secondary btn-block">Limpiar</button>
+              <button type="submit" class="btn btn-primary btn-block" name="add">Registrarse</button>
+              <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">Cancelar</button>
             </div>
           </div>
           <p class="text-center">Tienes una Cuenta? <a href="usuario_inicio.php">Iniciar Sesión</a> </p>
