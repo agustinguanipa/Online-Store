@@ -29,7 +29,7 @@
   <div class="container">
     <div class="form-group text-center">
       <div class="formulario-registro-inicio">
-        <form role="form" id="usuario_registro" class=" justify-content-center" align="center" action="add.php" method="post">
+        <form role="form" id="usuario_registro" class=" justify-content-center" align="center" action="guardar_cliente.php" method="post">
           <h3>Registrarse</h3>
           <hr class="my-4">
           <div class="form-row">
@@ -70,7 +70,7 @@
           <div class="form-row">
             <div class="col form-group">
               <label class="form-label" for="email_clie">E-Mail: </label>
-              <input type="email" class="form-control" name="email_clie" autocomplete="off" id="email_clie" placeholder="correo@mail.com" onkeyup="this.value = this.value.toUpperCase();">
+              <input type="email" class="form-control" name="email_clie" autocomplete="off" id="email_clie" placeholder="correo@mail.com" maxlength="100" onkeyup="this.value = this.value.toUpperCase();">
             </div>
           </div>
           <div class="form-row">

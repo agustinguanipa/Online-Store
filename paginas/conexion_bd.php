@@ -1,15 +1,10 @@
 <?php
-	/*-------------------------
-	Autor: Obed Alvarado
-	Web: obedalvarado.pw
-	Mail: info@obedalvarado.pw
-	---------------------------*/
-    // DB credentials.
+  // Base de Datos
 	define('DB_HOST','localhost');
 	define('DB_USER','root');
 	define('DB_PASS','root');
 	define('DB_NAME','sigmaos_bd');
-	# conectare la base de datos
+	// Conexion
     $con=@mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
     if(!$con){
         die("imposible conectarse: ".mysqli_error($con));
