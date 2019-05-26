@@ -3,7 +3,7 @@
 	include_once('conexion_bd.php');
 
 	if(isset($_POST['add'])){
-		$database = new Connection();
+		
 		$db = $database->open();
 		try{
 			//make use of prepared statement to prevent sql injection

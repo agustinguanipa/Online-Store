@@ -1,28 +1,20 @@
 <?php
-
-Class Connection{
- 
-	private $server = "mysql:host=localhost;dbname=sigmaos_bd";
-	private $username = "root";
-	private $password = "root";
-	private $options  = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,);
-	protected $conn;
- 	
-	public function open(){
- 		try{
- 			$this->conn = new PDO($this->server, $this->username, $this->password, $this->options);
- 			return $this->conn;
- 		}
- 		catch (PDOException $e){
- 			echo "Ocurrio un Problema en la Conexión: " . $e->getMessage();
- 		}
- 
+	/*-------------------------
+	Autor: Obed Alvarado
+	Web: obedalvarado.pw
+	Mail: info@obedalvarado.pw
+	---------------------------*/
+    // DB credentials.
+	define('DB_HOST','localhost');
+	define('DB_USER','root');
+	define('DB_PASS','root');
+	define('DB_NAME','sigmaos_bd');
+	# conectare la base de datos
+    $con=@mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+    if(!$con){
+        die("imposible conectarse: ".mysqli_error($con));
     }
- 
-	public function close(){
-   		$this->conn = null;
- 	}
- 
-}
- 
+    if (@mysqli_connect_errno()) {
+        die("Conexión falló: ".mysqli_connect_errno()." : ". mysqli_connect_error());
+    }
 ?>

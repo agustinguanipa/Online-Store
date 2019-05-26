@@ -10,6 +10,7 @@
   <!--- CSS --->
   <link rel="stylesheet" type="text/css" href="../css/estilos.css">
   <link rel="stylesheet" type="text/css" href="../css/estilos_admin.css">
+  <link rel="stylesheet" href="../css/custom.css">
   <!--- jQuery --->
   <script src="../libs/jquery/jquery-3.4.1.min.js" type="text/javascript"></script>
   <!--- jQuery Validation --->
