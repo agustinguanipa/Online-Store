@@ -1,6 +1,6 @@
 <?php
 	if (empty($_POST['nomb1_clie'])){
-		$errors[] = "Ingresa el nombre del producto.";
+		$errors[] = "Ingresa el nombre del cliente.";
 	} elseif (!empty($_POST['nomb1_clie'])){
 		
 	require_once ("../paginas/conexion_bd.php");//Contiene Funcion que Conecta a la Base de Datos

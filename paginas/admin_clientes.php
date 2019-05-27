@@ -10,7 +10,7 @@
 							<h2>Administrar <b>Clientes</b></h2>
 						</div>
 						<div class="col-sm-6">
-							<a href="#addProductModal" class="btn btn-success" data-toggle="modal"><i class="fa fa-plus"></i><span>Registrar Cliente</span></a>
+							<a href="#addClienteModal" class="btn btn-success" data-toggle="modal"><i class="fa fa-plus"></i><span>Registrar Cliente</span></a>
 						</div>
 	        </div>
 	    </div>

@@ -71,10 +71,10 @@ if($action == 'ajax'){
 						<td class='text-center'><?php echo $email_clie;?></td>
 						<td class='text-center'><?php echo $usuar_clie;?></td>
 						<td class='text-center'>
-							<a href="#"  data-target="#editProductModal" class="edit" data-toggle="modal" data-nomb1_clie="<?php echo $nomb1_clie?>" data-nomb2_clie="<?php echo $nomb2_clie?>" data-apel1_clie="<?php echo $apel1_clie?>" data-apel2_clie="<?php echo $apel2_clie?>" data-gener_clie="<?php echo $gener_clie?>" data-telef_clie="<?php echo $telef_clie?>" data-email_clie="<?php echo $email_clie?>" data-usuar_clie="<?php echo $usuar_clie?>" data-ident_clie="<?php echo $ident_cliente; ?>"><i class="fa fa-edit" data-toggle="tooltip" title="Editar" ></i></a>
+							<a href="#"  data-target="#editClienteModal" class="edit" data-toggle="modal" data-nomb1_clie="<?php echo $nomb1_clie?>" data-nomb2_clie="<?php echo $nomb2_clie?>" data-apel1_clie="<?php echo $apel1_clie?>" data-apel2_clie="<?php echo $apel2_clie?>" data-gener_clie="<?php echo $gener_clie?>" data-telef_clie="<?php echo $telef_clie?>" data-email_clie="<?php echo $email_clie?>" data-usuar_clie="<?php echo $usuar_clie?>" data-ident_clie="<?php echo $ident_cliente; ?>"><i class="fa fa-edit" data-toggle="tooltip" title="Editar" ></i></a>
 	           </td>
 	           <td class='text-center'>
-							<a href="#deleteProductModal" class="delete" data-toggle="modal" data-ident_clie="<?php echo $ident_cliente;?>"><i class="fa fa-trash" data-toggle="tooltip" title="Eliminar"></i></a>
+							<a href="#deleteClienteModal" class="delete" data-toggle="modal" data-ident_clie="<?php echo $ident_cliente;?>"><i class="fa fa-trash" data-toggle="tooltip" title="Eliminar"></i></a>
 	           </td>
 					</tr>
 					<?php }?>

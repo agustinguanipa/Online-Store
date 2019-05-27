@@ -23,10 +23,10 @@
 <script src="../js/validacion.js" type="text/javascript"></script>
 <script src="../js/admin_sidebar.js" type="text/javascript"></script>
   
-<div id="addProductModal" class="modal fade">
+<div id="addClienteModal" class="modal fade">
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<form name="add_product" id="add_product">
+			<form name="add_cliente" id="add_cliente">
 				<div class="modal-header">						
 					<h4 class="modal-title">Registrar Cliente</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>

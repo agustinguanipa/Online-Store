@@ -23,10 +23,10 @@
 <script src="../js/validacion.js" type="text/javascript"></script>
 <script src="../js/admin_sidebar.js" type="text/javascript"></script>
 
-<div id="editProductModal" class="modal fade">
+<div id="editClienteModal" class="modal fade">
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<form name="edit_product" id="edit_product">
+			<form name="edit_cliente" id="edit_cliente">
 				<div class="modal-header">						
 					<h4 class="modal-title">Editar Cliente</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>

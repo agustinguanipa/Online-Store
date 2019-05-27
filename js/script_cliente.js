@@ -19,7 +19,7 @@ function load(page){
 	})
 }
 
-$('#editProductModal').on('show.bs.modal', function (event) {
+$('#editClienteModal').on('show.bs.modal', function (event) {
   var button = $(event.relatedTarget) // Button that triggered the modal
   var nomb1_clie = button.data('nomb1_clie') 
   $('#edit_nomb1_clie').val(nomb1_clie)
@@ -41,14 +41,14 @@ $('#editProductModal').on('show.bs.modal', function (event) {
   $('#edit_id').val(ident_clie)
 })
 
-$('#deleteProductModal').on('show.bs.modal', function (event) {
+$('#deleteClienteModal').on('show.bs.modal', function (event) {
   var button = $(event.relatedTarget) // Button that triggered the modal
   var ident_clie = button.data('ident_clie') 
   $('#delete_id').val(ident_clie)
 })
 
 
-$( "#edit_product" ).submit(function( event ) {
+$( "#edit_cliente" ).submit(function( event ) {
   var parametros = $(this).serialize();
 	$.ajax({
 			type: "POST",
@@ -60,14 +60,14 @@ $( "#edit_product" ).submit(function( event ) {
 			success: function(datos){
 			$("#resultados").html(datos);
 			load(1);
-			$('#editProductModal').modal('hide');
+			$('#editClienteModal').modal('hide');
 		  }
 	});
   event.preventDefault();
 });
 
 
-$( "#add_product" ).submit(function( event ) {
+$( "#add_cliente" ).submit(function( event ) {
   var parametros = $(this).serialize();
 	$.ajax({
 			type: "POST",
@@ -79,13 +79,13 @@ $( "#add_product" ).submit(function( event ) {
 			success: function(datos){
 			$("#resultados").html(datos);
 			load(1);
-			$('#addProductModal').modal('hide');
+			$('#addClienteModal').modal('hide');
 		  }
 	});
   event.preventDefault();
 });
 
-$( "#delete_product" ).submit(function( event ) {
+$( "#delete_cliente" ).submit(function( event ) {
   var parametros = $(this).serialize();
 	$.ajax({
 			type: "POST",
@@ -97,7 +97,7 @@ $( "#delete_product" ).submit(function( event ) {
 			success: function(datos){
 			$("#resultados").html(datos);
 			load(1);
-			$('#deleteProductModal').modal('hide');
+			$('#deleteClienteModal').modal('hide');
 		  }
 	});
   event.preventDefault();

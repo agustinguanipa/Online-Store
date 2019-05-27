@@ -10,7 +10,7 @@
 	// Borrado Logico de la Base de Datos FROM
     $sql = "UPDATE tabla_clie SET statu_clie = 0 WHERE ident_clie='$id_cliente'";
     $query = mysqli_query($con,$sql);
-    // if product has been added successfully
+    // Si el Borrado ha sido Exitoso
     if ($query) {
         $messages[] = "El cliente ha sido eliminado con éxito.";
     } else {
