@@ -68,6 +68,7 @@ $( "#edit_cliente" ).submit(function( event ) {
 
 $( "#add_cliente" ).submit(function( event ) {
   var parametros = $(this).serialize();
+  $('form :input').val('');
 	$.ajax({
 			type: "POST",
 			url: "../ajax/guardar_cliente.php",
@@ -81,7 +82,9 @@ $( "#add_cliente" ).submit(function( event ) {
 			$('#addClienteModal').modal('hide');
 		  }
 	});
+  
   event.preventDefault();
+  
 });
 
 $( document ).ready( function () {

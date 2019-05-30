@@ -19,20 +19,13 @@
 	font-weight: bold;
 }
 
-/* Portafolio */
+/* Nosotros */
 
-.btn:focus, .btn:active, button:focus, button:active {
-  outline: none !important;
-  box-shadow: none !important;
-}
-
-#image-gallery .modal-footer{
-  display: block;
-}
-
-.thumb{
-  margin-top: 15px;
-  margin-bottom: 15px;
+#background1{
+	background-image: url("../imagen/background1.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin-bottom: 0px;
 }
 
 /* Formulario de Contacto */
@@ -41,6 +34,8 @@
 	font-weight: bold;
 	text-align: left;
 }
+
+/* Formularios de Inicio y Registro */
 
 .formulario-registro-inicio {
 	margin: auto;

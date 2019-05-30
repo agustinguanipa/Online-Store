@@ -53,7 +53,7 @@
 			  		</div> 
 			  		<div class="col-sm-4 form-group">
 							<div>
-				      	<img src="../imagen/Logo-SIGMAEMCA.png" alt="Foto Personal" height="325px">
+				      	<img src="../imagen/contacto1.png" alt="Imagen Contacto" height="325px">
 				    	</div>
 			  		</div>
 			  	</div>

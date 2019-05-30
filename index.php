@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!--- Favicon --->
   <link rel="shortcut icon" href="imagen/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="imagen/favicon.ico" type="image/x-icon">
   <!--- CSS --->
   <link rel="stylesheet" type="text/css" href="css/estilos.css">
   <link rel="stylesheet" type="text/css" href="css/estilos_admin.css">
@@ -50,7 +51,7 @@
       <div class="collapse navbar-collapse" id="navbarTop">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="index.php"><i class="fa fa-phone"></i> Llámanos: +58 276 3532978 </a>
+            <a class="nav-link" href="index.php"><i class="fa fa-phone"></i> Llámanos: +58 0276 3532978 </a>
           </li>
         </ul>
         <ul class="navbar-nav">
@@ -175,15 +176,15 @@
         <div class="row no-gutters">
           <div class="col-lg-9 col-md-8">
             <!--  Slide  -->
-            <div class="owl-init slider-main owl-carousel" data-items="1" data-margin="1" data-nav="true" data-dots="false">
-              <div class="item-slide">
-                <img src="../imagen/logo-sigmaemca.png">
+            <div id="slider" class="owl-init slider-main owl-carousel" data-items="1" data-margin="1" data-nav="true" data-dots="false">
+              <div class="item">
+                <img src="imagen/slider1.jpg">
               </div>
-              <div class="item-slide">
-                <img src="../imagen/logo-sigmaemca.png">
+              <div class="item">
+                <img src="imagen/slider2.jpg">
               </div>
-              <div class="item-slide">
-                <img src="../imagen/logo-sigmaemca.png">
+              <div class="item">
+                <img src="imagen/slider3.jpg">
               </div>
             </div>
             <!-- Slide End -->
@@ -256,3 +257,26 @@
 
 </body>
 </html>
+
+<script type="text/javascript">
+  $('#slider').owlCarousel({
+    loop: true,
+    items: 1,
+    autoplay: true,
+    autoplayTimeout: 3000,
+    nav:true,
+    navText: ['<i class="fa fa-angle-left fa-1x"></i>','<i class="fa fa-angle-right fa-1x"></i>'],
+    responsive: {
+      0: {
+        items: 1
+      },
+      768: {
+        items: 1
+      },
+      1170: {
+        items: 1
+      }
+    }
+  });
+</script>
+

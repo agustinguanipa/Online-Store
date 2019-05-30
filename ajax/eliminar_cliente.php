@@ -12,9 +12,9 @@
     $query = mysqli_query($con,$sql);
     // Si el Borrado ha sido Exitoso
     if ($query) {
-        $messages[] = "El cliente ha sido eliminado con éxito.";
+        $messages[] = "El cliente ha sido desactivado con éxito.";
     } else {
-        $errors[] = "Lo sentimos, la eliminación falló. Por favor, regrese y vuelva a intentarlo.";
+        $errors[] = "Lo sentimos, la desactivación falló. Por favor, regrese y vuelva a intentarlo.";
     }
 		
 	} else 

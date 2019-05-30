@@ -9,7 +9,7 @@ if($action == 'ajax'){
 
 	$tables="tabma_clie";
 	$campos="*";
-	$sWhere=" tabma_clie.nomb1_clie LIKE '%".$query."%' AND tabma_clie.statu_clie = 0";
+	$sWhere=" (tabma_clie.nomb1_clie LIKE '%".$query."%' OR tabma_clie.nomb2_clie LIKE '%".$query."%' OR tabma_clie.apel1_clie LIKE '%".$query."%' OR tabma_clie.apel2_clie LIKE '%".$query."%') AND tabma_clie.statu_clie = 0";
 	$sWhere.=" order by tabma_clie.ident_clie";
 	
 	/* Pagination */

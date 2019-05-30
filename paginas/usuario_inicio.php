@@ -1,7 +1,7 @@
 <?php require_once('header_logreg.php'); ?>
 
 <head>
-  <title>Registrarse | SIGMAEMCA Online Store</title>
+  <title>Iniciar Sesión | SIGMAEMCA Online Store</title>
 </head>
 
 <body>
@@ -14,10 +14,10 @@
       <div class="row align-items-center">
         <div class="col-sm-12">
           <div class="brand-wrap">
-            <a href="../index.php">
+            <a href="../index.php" style="color: #000000; text-decoration: none;">
               <img class="logo" src="../imagen/logo-sigmaemca.png">
-            </a>
               <h2 class="logo-text">SIGMAEMCA Online Store</h2>
+            </a>
           </div>
         </div>
       </div>

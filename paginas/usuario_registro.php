@@ -14,10 +14,10 @@
       <div class="row align-items-center">
         <div class="col-sm-12">
           <div class="brand-wrap">
-            <a href="../index.php">
+            <a href="../index.php" style="color: #000000; text-decoration: none;">
               <img class="logo" src="../imagen/logo-sigmaemca.png">
-            </a>
               <h2 class="logo-text">SIGMAEMCA Online Store</h2>
+            </a>
           </div>
         </div>
       </div>
@@ -29,7 +29,7 @@
   <div class="container">
     <div class="form-group text-center">
       <div class="formulario-registro-inicio">
-        <form role="form" id="usuario_registro" class=" justify-content-center" align="center" action="guardar_cliente.php" method="post">
+        <form role="form" id="usuario_registro" class="justify-content-center" align="center" action="guardar_cliente.php" method="post">
           <h3>Registrarse</h3>
           <hr class="my-4">
           <div class="form-row">
@@ -92,7 +92,7 @@
           <div class="form-row">
             <div class="col form-group">
               <button type="submit" class="btn btn-primary btn-block" name="add">Registrarse</button>
-              <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">Cancelar</button>
+              <button type="reset" class="btn btn-secondary btn-block" data-dismiss="modal">Limpiar</button>
             </div>
           </div>
           <p class="text-center">Tienes una Cuenta? <a href="usuario_inicio.php">Iniciar Sesión</a> </p>

@@ -14,7 +14,7 @@
 						</div>
 	        </div>
 	    </div>
-		<div class='col-sm-4 pull-right'>
+		<div class='col-sm-4 float-right'>
 			<div id="custom-search-input">
 	      <div class="input-group col-md-12">
 	          <input type="text" class="form-control" placeholder="Buscar"  id="q" onkeyup="load(1);" />

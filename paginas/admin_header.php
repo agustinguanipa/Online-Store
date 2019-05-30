@@ -7,10 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!--- Favicon --->
   <link rel="shortcut icon" href="../imagen/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="../imagen/favicon.ico" type="image/x-icon">
   <!--- CSS --->
   <link rel="stylesheet" type="text/css" href="../css/estilos.css">
   <link rel="stylesheet" type="text/css" href="../css/estilos_admin.css">
-  <link rel="stylesheet" href="../css/custom.css">
+  <link rel="stylesheet" type="text/css" href="../css/estilos_crud.css">
   <!--- jQuery --->
   <script src="../libs/jquery/jquery-3.4.1.min.js" type="text/javascript"></script>
   <!--- jQuery Validation --->
@@ -130,7 +131,7 @@
           <a href="admin_clientes.php" class="list-group-item list-group-item-action bg-light text-dark">
             <span class="menu-collapsed">Clientes Activos</span>
           </a>
-          <a href="admin_clientes_inactivos" class="list-group-item list-group-item-action bg-light text-dark">
+          <a href="admin_clientes_inactivos.php" class="list-group-item list-group-item-action bg-light text-dark">
             <span class="menu-collapsed">Clientes Inactivos</span>
           </a>
         </div>

@@ -14,10 +14,10 @@
       <div class="row align-items-center">
         <div class="col-sm-12">
           <div class="brand-wrap">
-            <a href="../index.php">
+            <a href="../index.php" style="color: #000000; text-decoration: none;">
               <img class="logo" src="../imagen/logo-sigmaemca.png">
-            </a>
               <h2 class="logo-text">Panel de Administración</h2>
+            </a>
           </div>
         </div>
       </div>
@@ -29,7 +29,7 @@
   <div class="container">
     <div class="form-group text-center">
       <div class="formulario-registro-inicio">
-        <form role="form" id="admin_inicio" class=" justify-content-center" align="center" action="" method="post">
+        <form role="form" id="admin_inicio" class="justify-content-center" align="center" action="" method="post">
           <h3>Iniciar Sesión</h3>
           <hr class="my-4">
           <div class="form-row">

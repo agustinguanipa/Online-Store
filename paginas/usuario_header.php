@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!--- Favicon --->
   <link rel="shortcut icon" href="../imagen/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="../imagen/favicon.ico" type="image/x-icon">
   <!--- CSS --->
   <link rel="stylesheet" type="text/css" href="../css/estilos.css">
   <!--- jQuery --->
@@ -45,7 +46,7 @@
       <div class="collapse navbar-collapse" id="navbarTop">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="../index.php"><i class="fa fa-phone"></i> Llámanos: +58 276 3532978 </a>
+            <a class="nav-link" href="../index.php"><i class="fa fa-phone"></i> Llámanos: +58 0276 3532978 </a>
           </li>
         </ul>
         <ul class="navbar-nav">
