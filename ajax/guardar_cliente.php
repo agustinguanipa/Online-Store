@@ -19,7 +19,7 @@
 	$statu_clie = 1;
 
 	// Registrar en la Base de Datos
-    $sql = "INSERT INTO tabla_clie(nomb1_clie, nomb2_clie, apel1_clie, apel2_clie, gener_clie, telef_clie, email_clie, usuar_clie, contr_clie, fecre_clie, statu_clie) VALUES ('$nomb1_clie','$nomb2_clie','$apel1_clie','$apel2_clie','$gener_clie','$telef_clie','$email_clie','$usuar_clie','$contr_clie','$fecre_clie','$statu_clie')";
+    $sql = "INSERT INTO tabma_clie(nomb1_clie, nomb2_clie, apel1_clie, apel2_clie, gener_clie, telef_clie, email_clie, usuar_clie, contr_clie, fecre_clie, statu_clie) VALUES ('$nomb1_clie','$nomb2_clie','$apel1_clie','$apel2_clie','$gener_clie','$telef_clie','$email_clie','$usuar_clie','$contr_clie','$fecre_clie','$statu_clie')";
     
     $query = mysqli_query($con,$sql);
     // Si ha sido Agregado Exitosamentee

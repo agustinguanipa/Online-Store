@@ -118,12 +118,22 @@
           <span class="menu-collapsed">Productos</span>
         </div>
       </a>    
-      <a href="admin_clientes.php" class="bg-light text-dark list-group-item list-group-item-action">
-        <div class="d-flex w-100 justify-content-start align-items-center">
-          <span class="fa fa-users fa-fw mr-3"></span>
-          <span class="menu-collapsed">Clientes</span>    
-        </div>
+      <a href="#submenu2" data-toggle="collapse" aria-expanded="false" class="bg-light text-dark list-group-item list-group-item-action flex-column align-items-start">
+          <div class="d-flex w-100 justify-content-start align-items-center">
+            <span class="fa fa-users fa-fw mr-3"></span> 
+            <span class="menu-collapsed">Clientes</span>
+            <span class="fa fa-caret-down ml-auto"></span>
+          </div>
       </a>
+        <!-- Submenu -->
+        <div id='submenu2' class="collapse sidebar-submenu">
+          <a href="admin_clientes.php" class="list-group-item list-group-item-action bg-light text-dark">
+            <span class="menu-collapsed">Clientes Activos</span>
+          </a>
+          <a href="admin_clientes_inactivos" class="list-group-item list-group-item-action bg-light text-dark">
+            <span class="menu-collapsed">Clientes Inactivos</span>
+          </a>
+        </div>
       <a href="#" class="bg-light text-dark list-group-item list-group-item-action">
         <div class="d-flex w-100 justify-content-start align-items-center">
           <span class="fa fa-lock fa-fw mr-3"></span>

@@ -7,10 +7,7 @@
 	    <div class="table-title">
 	        <div class="row">
             <div class="col-sm-6">
-							<h2>Administrar <b>Clientes</b></h2>
-						</div>
-						<div class="col-sm-6">
-							<a href="#addClienteModal" class="btn btn-success" data-toggle="modal"><i class="fa fa-plus"></i><span>Registrar Cliente</span></a>
+							<h2>Administrar <b>Clientes Inactivos</b></h2>
 						</div>
 	        </div>
 	    </div>
@@ -33,13 +30,9 @@
 		<div class='outer_div'></div><!-- Carga de datos ajax aqui -->    
 	</div>
 </div>
-<!-- Add Modal HTML -->
-<?php include("modal_add_cliente.php");?>
-<!-- Edit Modal HTML -->
-<?php include("modal_edit_cliente.php");?>
-<!-- Delete Modal HTML -->
-<?php include("modal_delete_cliente.php");?>
-<script src="../js/script_cliente.js"></script>
+<!-- Restaurar Modal HTML -->
+<?php include("modal_restaurar_cliente.php");?>
+<script src="../js/script_cliente_inactivo.js"></script>
 </body>
   
 <?php require_once('admin_footer.php');  ?>

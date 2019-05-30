@@ -17,7 +17,7 @@
 	$ident_clie=intval($_POST['edit_id']);
 
 	// Actualizar en la Base de Datos
-    $sql = "UPDATE tabla_clie SET nomb1_clie='".$nomb1_clie."', nomb2_clie='".$nomb2_clie."', apel1_clie='".$apel1_clie."', apel2_clie='".$apel2_clie."', gener_clie='".$gener_clie."', telef_clie='".$telef_clie."', email_clie='".$email_clie."', usuar_clie='".$usuar_clie."' WHERE ident_clie='".$ident_clie."' ";
+    $sql = "UPDATE tabma_clie SET nomb1_clie='".$nomb1_clie."', nomb2_clie='".$nomb2_clie."', apel1_clie='".$apel1_clie."', apel2_clie='".$apel2_clie."', gener_clie='".$gener_clie."', telef_clie='".$telef_clie."', email_clie='".$email_clie."', usuar_clie='".$usuar_clie."' WHERE ident_clie='".$ident_clie."' ";
     $query = mysqli_query($con,$sql);
     // Si ha sido Actualizado Exitosamente
     if ($query) {

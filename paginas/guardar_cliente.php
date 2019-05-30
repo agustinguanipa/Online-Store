@@ -1,10 +1,11 @@
 <?php
 	if (empty($_POST['nomb1_clie'])){
-		$errors[] = "Ingresa el nombre del producto.";
+		$errors[] = "Ingresa el nombre del cliente.";
 	} elseif (!empty($_POST['nomb1_clie'])){
-	require_once ("conexion_bd.php");//Contiene funcion que conecta a la base de datos
-	// escaping, additionally removing everything that could be (html/javascript-) code
+		
+	require_once ("conexion_bd.php");//Contiene Funcion que Conecta a la Base de Datos
 
+	// escaping, additionally removing everything that could be (html/javascript-) code
   $nomb1_clie = mysqli_real_escape_string($con,(strip_tags($_POST["nomb1_clie"],ENT_QUOTES)));
   $nomb2_clie = mysqli_real_escape_string($con,(strip_tags($_POST["nomb2_clie"],ENT_QUOTES)));
   $apel1_clie = mysqli_real_escape_string($con,(strip_tags($_POST["apel1_clie"],ENT_QUOTES)));
@@ -16,11 +17,12 @@
   $contr_clie = mysqli_real_escape_string($con,(strip_tags($_POST["contr_clie"],ENT_QUOTES)));
   $fecre_clie = date('Y-m-d', $timestamp = time());
 	$statu_clie = 1;
-	// REGISTER data into database
-    $sql = "INSERT INTO tabla_clie(nomb1_clie, nomb2_clie, apel1_clie, apel2_clie, gener_clie, telef_clie, email_clie, usuar_clie, contr_clie, fecre_clie, statu_clie) VALUES ('$nomb1_clie','$nomb2_clie','$apel1_clie','$apel2_clie','$gener_clie','$telef_clie','$email_clie','$usuar_clie','$contr_clie','$fecre_clie','$statu_clie')";
+
+	// Registrar en la Base de Datos
+    $sql = "INSERT INTO tabma_clie(nomb1_clie, nomb2_clie, apel1_clie, apel2_clie, gener_clie, telef_clie, email_clie, usuar_clie, contr_clie, fecre_clie, statu_clie) VALUES ('$nomb1_clie','$nomb2_clie','$apel1_clie','$apel2_clie','$gener_clie','$telef_clie','$email_clie','$usuar_clie','$contr_clie','$fecre_clie','$statu_clie')";
     
     $query = mysqli_query($con,$sql);
-    // if product has been added successfully
+    // Si ha sido Agregado Exitosamentee
     if ($query) {
         $messages[] = "El cliente ha sido registrado con éxito.";
     } else {
@@ -31,34 +33,31 @@
 	{
 		$errors[] = "desconocido.";
 	}
-if (isset($errors)){
-			
-			?>
-			<div class="alert alert-danger" role="alert">
-				<button type="button" class="close" data-dismiss="alert">&times;</button>
-					<strong>Error!</strong> 
-					<?php
-						foreach ($errors as $error) {
-								echo $error;
-							}
-						?>
-			</div>
+if (isset($errors)){		
+	?>
+	<div class="alert alert-danger" role="alert">
+		<button type="button" class="close" data-dismiss="alert">&times;</button>
+			<strong>Error!</strong> 
 			<?php
-			}
-			if (isset($messages)){
-				
+				foreach ($errors as $error) {
+						echo $error;
+					}
 				?>
-				<div class="alert alert-success" role="alert">
-						<button type="button" class="close" data-dismiss="alert">&times;</button>
-						<strong>¡Bien hecho!</strong>
-						<?php
-							foreach ($messages as $message) {
-									echo $message;
-								}
-							?>
-				</div>
+	</div>
+	<?php
+	}
+	if (isset($messages)){
+		?>
+		<div class="alert alert-success" role="alert">
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+				<strong>¡Bien hecho!</strong>
 				<?php
-			}
-
-			header('location: usuario_inicio.php');
+					foreach ($messages as $message) {
+							echo $message;
+						}
+					?>
+		</div>
+		<?php
+	}
+	header('location: usuario_inicio.php');
 ?>			

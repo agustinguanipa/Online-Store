@@ -44,11 +44,11 @@
         </div>
         <div class="form-row">
           <div class="col form-group">
-            <label class="form-label" for="apel1_clie">Primer Apellido</label>
+            <label class="form-label" for="apel1_clie">Primer Apellido: </label>
             <input type="text" class="form-control" name="apel1_clie" autocomplete="off" id="apel1_clie" placeholder="Guanipa" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
           </div>
           <div class="col form-group">
-            <label class="form-label" for="apel2_clie">Segundo Apellido</label>
+            <label class="form-label" for="apel2_clie">Segundo Apellido: </label>
             <input type="text" class="form-control" name="apel2_clie" autocomplete="off" id="apel2_clie" placeholder="Alvarez" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
           </div>
         </div>
@@ -92,7 +92,7 @@
 				</div>
 				<div class="modal-footer">
 					<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
-					<input type="submit" class="btn btn-primary" value="Registrar">
+					<input type="submit" class="btn btn-primary" name="add" value="Registrar">
 				</div>
 			</form>
 		</div>

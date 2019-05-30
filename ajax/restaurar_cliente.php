@@ -1,20 +1,20 @@
 <?php
-	if (empty($_POST['delete_id'])){
+	if (empty($_POST['restaurar_id'])){
 		$errors[] = "ID Vacio.";
-	} elseif (!empty($_POST['delete_id'])){
+	} elseif (!empty($_POST['restaurar_id'])){
 
 	require_once ("../paginas/conexion_bd.php");//Contiene Funcion que Conecta a la Base de Datos
 	// escaping, additionally removing everything that could be (html/javascript-) code
-  $id_cliente=intval($_POST['delete_id']);
+  $id_cliente=intval($_POST['restaurar_id']);
 	
 	// Borrado Logico de la Base de Datos FROM
-    $sql = "UPDATE tabma_clie SET statu_clie = 0 WHERE ident_clie='$id_cliente'";
+    $sql = "UPDATE tabma_clie SET statu_clie = 1 WHERE ident_clie='$id_cliente'";
     $query = mysqli_query($con,$sql);
     // Si el Borrado ha sido Exitoso
     if ($query) {
-        $messages[] = "El cliente ha sido eliminado con éxito.";
+        $messages[] = "El cliente ha sido restaurado con éxito.";
     } else {
-        $errors[] = "Lo sentimos, la eliminación falló. Por favor, regrese y vuelva a intentarlo.";
+        $errors[] = "Lo sentimos, la restauración falló. Por favor, regrese y vuelva a intentarlo.";
     }
 		
 	} else 
