@@ -72,6 +72,7 @@
   </nav>
 
   <!-- Barra 2 --->
+
   <section class="header-main">
     <div class="container">
       <div class="row align-items-center">
@@ -176,13 +177,13 @@
             <!--  Slide  -->
             <div class="owl-init slider-main owl-carousel" data-items="1" data-margin="1" data-nav="true" data-dots="false">
               <div class="item-slide">
-                <img src="images/banners/slide1.jpg">
+                <img src="../imagen/logo-sigmaemca.png">
               </div>
               <div class="item-slide">
-                <img src="images/banners/slide2.jpg">
+                <img src="../imagen/logo-sigmaemca.png">
               </div>
               <div class="item-slide">
-                <img src="images/banners/slide3.jpg">
+                <img src="../imagen/logo-sigmaemca.png">
               </div>
             </div>
             <!-- Slide End -->

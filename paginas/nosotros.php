@@ -24,6 +24,26 @@
       </div>
     </div>
   </div>
+  <div class="jumbotron text-center" style="margin-bottom:0; background-color: #FFFFFF;">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <h2>Misión</h2>
+          <hr class="my-4">
+          <p class="contenido">
+            Ser una empresa que suministre material médico quirúrgicos y servicio técnico especializado para clínicas y hospitales en general, en la satisfacción de sus necesidades de equipos y suministros médicos, con altos niveles de compromiso y responsabilidad. Nuestros estándares éticos y de conducta nos obligan a enfocar nuestros esfuerzos a alcanzar los mejores resultados posibles para que nuestros clientes puedan suministrar un servicio eficiente y rápido con la más avanzada tecnología disponible en el ramo médico, al menor precio posible.
+          </p>
+        </div>
+        <div class="col-sm-6 form-group">
+          <h2>Visión</h2>
+          <hr class="my-4">
+          <p class="contenido">
+            Ser una empresa de responsabilidad social líder en la comercialización de equipos y suministros médicos en el área de la reproducción asistida y embriología, así como insumos y equipos en general requeridos en hospitales y clínicas.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 
 <?php require_once('usuario_footer.php');  ?>

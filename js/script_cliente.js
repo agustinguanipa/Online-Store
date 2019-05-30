@@ -66,7 +66,6 @@ $( "#edit_cliente" ).submit(function( event ) {
   event.preventDefault();
 });
 
-
 $( "#add_cliente" ).submit(function( event ) {
   var parametros = $(this).serialize();
 	$.ajax({
