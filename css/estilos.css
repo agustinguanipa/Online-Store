@@ -19,6 +19,10 @@
 	font-weight: bold;
 }
 
+.logreg{
+	font-size: 10px;
+}
+
 /* Nosotros */
 
 #background1{
@@ -47,5 +51,68 @@
   max-width: 500px;
   padding: 40px;
 }
+
+/* Iconos */
+
+.icono {
+  padding: 10px;
+  font-size: 15px;
+  width: 35px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 5px;
+  border-radius: 50%;
+}
+
+.icono-10x {
+  padding: 30px;
+  font-size: 30px;
+  width: 200px;
+  text-align: center;
+  text-decoration: none;
+  margin: 30px 30px;
+  border-radius: 50%;
+}
+
+.icono :hover {
+  opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-instagram {
+  background: #BE369E;
+  color: white;
+}
+
+.fa-pinterest {
+  background: #cb2027;
+  color: white;
+}
+
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-whatsapp {
+  background: #2DBB1F;
+  color: white;
+}
+
+
 
 

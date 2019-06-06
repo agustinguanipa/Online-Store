@@ -70,8 +70,10 @@
       <div class="row align-items-center">
         <div class="col-lg-5-24 col-sm-5 col-4">
           <div class="brand-wrap">
-            <img class="logo" src="../imagen/logo-sigmaemca.png">
-            <h2 class="logo-text">SIGMAEMCA</h2>
+            <a href="../index.php" style="color: #000000; text-decoration: none;">
+              <img class="logo" src="../imagen/logo-sigmaemca.png">
+              <h2 class="logo-text">SIGMAEMCA</h2>
+            </a>
           </div>
         </div>
         <div class="col-lg-13-24 col-sm-12 order-3 order-lg-2">
