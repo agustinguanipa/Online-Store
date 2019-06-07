@@ -217,15 +217,24 @@
           <div class="col-lg-3 col-md-4">
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">
-                <h6>Categoría de Producto 1</h6>
+                <h6>Equipos Médicos</h6>
+                  <small>
+                    Signos Vitales, Diagnósticos, Dermatólogicos, Equipos Prácticos, Almacenamiento
+                  </small></br>
                 <a href="#" class="btn btn-primary btn-sm btn-round"> Ver Más </a>
                 </li>
                 <li class="list-group-item">
-                <h6>Categoría de Producto 2</h6>
+                <h6>Consumibles Médicos</h6>
+                  <small>
+                    Inyectadoras, Intravenosas, Consumibles de Diagnóstico, Tratamiento de Heridas, Vendajes
+                  </small></br>
                 <a href="#" class="btn btn-primary btn-sm btn-round"> Ver Más </a>
                 </li>
                 <li class="list-group-item">
-                <h6>Categoría de Producto 3</h6>
+                <h6>Material Quirúrgico</h6>
+                  <small>
+                    Emergencia, Primeros Auxilios, Pre-Cirugía, Cirugía Ambulatoria, Instrumental, Consumibles Quirúrgicos
+                  </small></br>
                 <a href="#" class="btn btn-primary btn-sm btn-round"> Ver Más </a>
                 </li>
               </ul>
@@ -272,11 +281,11 @@
         <p>Diseñado por: <br><a href="https://agustinguanipa.000webhostapp.com/" title="Carlos Agustin Guanipa Alvarez">Carlos Agustin Guanipa Alvarez</a></p>
       </div>
       <div class="col-sm-4 form-group" align="center">
-          <p class="pie">Contáctanos!</p>
+          <p class="pie">Redes Sociales</p>
           <a href="https://facebook.com/agustin.guanipa" class="icono fab fa-facebook"></a>
           <a href="https://twitter.com/AgustinGuanipa" class="icono fab fa-twitter"></a>
-          <a href="https://wa.me/584266908396" class="icono fab fa-whatsapp"></a>
           <a href="https://instagram.com/agustinguanipa/" class="icono fab fa-instagram"></a>
+          <a href="https://wa.me/584266908396" class="icono fab fa-whatsapp"></a>
         </div>
       <div class="col-sm-4" align="right">
         <p class="text-sm-right">SIGMAEMCA Servicio Integral de Mantenimiento Equipos Medicos Compañía Anonima</p>

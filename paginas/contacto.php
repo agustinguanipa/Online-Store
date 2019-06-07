@@ -68,8 +68,8 @@
       <div class="row justify-content-center">
         <a href="https://facebook.com/agustin.guanipa" class="icono-10x fab fa-facebook fa-10x"></a>
         <a href="https://twitter.com/AgustinGuanipa" class="icono-10x fab fa-twitter fa-10x"></a>
-        <a href="https://wa.me/584266908396" class="icono-10x fab fa-whatsapp fa-10x"></a>
         <a href="https://instagram.com/agustinguanipa/" class="icono-10x fab fa-instagram fa-10x"></a>
+        <a href="https://wa.me/584266908396" class="icono-10x fab fa-whatsapp fa-10x"></a>
       </div>
     </div>
   </div>
