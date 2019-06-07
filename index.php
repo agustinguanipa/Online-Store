@@ -1,3 +1,7 @@
+<?php
+  session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -106,11 +110,30 @@
         </div>
         <div class="col-lg-6-24 col-sm-7 col-8  order-2  order-lg-3">
           <div class="d-flex justify-content-end">
-            <div class="widget-header">
-              <small class="title text-muted">Bienvenido</small>
-              <div> <a href="paginas/usuario_inicio.php">Iniciar Sesión</a> <span class="dark-transp"> | </span>
-              <a href="paginas/usuario_registro.php">Registrarse</a></div>
-            </div>
+            <?php  if (isset($_SESSION['loggedin'])) : ?>
+              <div class="widget-header">
+                <small class="title text-muted">Bienvenido <?=$_SESSION['name']?></small>
+                <div>
+                  <?php
+                    //session is set
+                    echo "<a href='paginas/usuario_cerrar.php'>Cerrar Sesión</a> <span class='dark-transp'> | </span>";
+                    echo "<a href='paginas/usuario_cuenta.php'>Mi Cuenta</a>";
+                  ?>
+                </div>
+              </div>
+            <?php endif ?>
+            <?php  if (!isset($_SESSION['loggedin'])) : ?>
+              <div class="widget-header">
+                <small class="title text-muted">Bienvenido Visitante</small>
+                <div>
+                  <?php
+                    //session is not set
+                    echo "<a href='paginas/usuario_inicio.php'>Iniciar Sesión</a> <span class='dark-transp'> | </span>";
+                    echo "<a href='paginas/usuario_registro.php'>Registrarse</a>"; 
+                  ?>
+                </div>
+              </div>
+            <?php endif ?>
             <a href="#" class="widget-header border-left pl-3 ml-3">
               <div class="icontext">
                 <div class="icon-wrap icon-sm round border"><i class="fa fa-shopping-cart"></i></div>

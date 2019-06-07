@@ -1,3 +1,12 @@
+<?php
+  session_start();
+
+  if (!isset($_SESSION['loggedin'])) {
+    header('Location: usuario_inicio.php');
+    exit();
+  }
+?>
+
 <?php require_once('usuario_header.php'); ?>
 
 <head>
@@ -5,7 +14,7 @@
 </head>
 
 <body>
-  <div class="jumbotron text-center" style="background-color: #FBFCFF;>
+  <div class="jumbotron text-center" style="background-color: #FBFCFF;">
     <div class="container">
       <h1>Mi Cuenta</h1>
       <hr class="my-4">

@@ -1,4 +1,13 @@
-<?php require_once('header_logreg.php'); ?>
+<?php
+  session_start();
+
+  if (isset($_SESSION['loggedin'])) {
+    header('Location: ../index.php');
+    exit();
+  }
+?>
+
+<?php require_once('logreg_header.php'); ?>
 
 <head>
   <title>Iniciar Sesión | SIGMAEMCA Online Store</title>
@@ -29,13 +38,13 @@
   <div class="container">
     <div class="form-group text-center">
       <div class="formulario-registro-inicio">
-        <form role="form" id="usuario_inicio" class=" justify-content-center" align="center" action="" method="post">
+        <form role="form" id="usuario_inicio" class=" justify-content-center" align="center" action="usuario_autenticacion.php" method="post">
           <h3>Iniciar Sesión</h3>
           <hr class="my-4">
           <div class="form-row">
             <div class="col form-group">
               <label class="form-label" for="usuar_clie">Usuario: </label>
-              <input type="text" class="form-control" name="usuar_clie" autocomplete="off" id="usuar_clie" placeholder="miusuario" maxlength="20">
+              <input type="text" class="form-control" name="usuar_clie" autocomplete="off" id="usuar_clie" placeholder="miusuario" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
             </div>
           </div>
           <div class="form-row">
@@ -57,6 +66,6 @@
   </div>
 </body>
 
-<?php require_once('footer_logreg.php'); ?>
+<?php require_once('logreg_footer.php'); ?>
 
 

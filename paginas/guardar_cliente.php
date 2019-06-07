@@ -3,7 +3,7 @@
 		$errors[] = "Ingresa el nombre del cliente.";
 	} elseif (!empty($_POST['nomb1_clie'])){
 		
-	require_once ("conexion_bd.php");//Contiene Funcion que Conecta a la Base de Datos
+	require_once ("conexion_bd.php"); //Contiene Funcion que Conecta a la Base de Datos
 
 	// escaping, additionally removing everything that could be (html/javascript-) code
   $nomb1_clie = mysqli_real_escape_string($con,(strip_tags($_POST["nomb1_clie"],ENT_QUOTES)));
