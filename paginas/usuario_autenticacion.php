@@ -1,7 +1,7 @@
 <?php
 
-	echo " <script src='../bootbox.min.js'></script>
-    <script src='../bootbox.locales.min.js'></script>";
+	echo " <script src='../libs/bootbox/bootbox.min.js'></script>
+    <script src='../libs/bootbox/bootbox.locales.min.js'></script>";
 	
 	session_start();
 
@@ -43,11 +43,11 @@
 			$_SESSION['ident_clie'] = $ident_clie;
 			header('Location: ../index.php');
 		} else {
-			echo '<script type="text/javascript">bootbox.alert("Contraseña Incorrecta");</script>';
+			echo '<script type="text/javascript">alert("Contraseña Incorrecta");</script>';
 			echo '<script type="text/javascript">window.location = "usuario_inicio.php";</script>';
 		}
 	} else {
-		echo '<script type="text/javascript">bootbox.alert("Usuario Incorrecto");</script>';
+		echo '<script type="text/javascript">alert("Usuario Incorrecto");</script>';
 		echo '<script type="text/javascript">window.location = "usuario_inicio.php";</script>';
 	}
 	$stmt->close();

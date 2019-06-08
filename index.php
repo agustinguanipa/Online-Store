@@ -115,7 +115,7 @@
                 <small class="title text-muted">Bienvenido <?=$_SESSION['name']?></small>
                 <div>
                   <?php
-                    //session is set
+                    // Session is Set
                     echo "<a href='paginas/usuario_cerrar.php'>Cerrar Sesión</a> <span class='dark-transp'> | </span>";
                     echo "<a href='paginas/usuario_cuenta.php'>Mi Cuenta</a>";
                   ?>
@@ -127,7 +127,7 @@
                 <small class="title text-muted">Bienvenido Visitante</small>
                 <div>
                   <?php
-                    //session is not set
+                    // Session is Not Set
                     echo "<a href='paginas/usuario_inicio.php'>Iniciar Sesión</a> <span class='dark-transp'> | </span>";
                     echo "<a href='paginas/usuario_registro.php'>Registrarse</a>"; 
                   ?>
@@ -219,7 +219,7 @@
                 <li class="list-group-item">
                 <h6>Equipos Médicos</h6>
                   <small>
-                    Signos Vitales, Diagnósticos, Dermatólogicos, Equipos Prácticos, Almacenamiento
+                    Signos Vitales, Diagnósticos, Equipos Prácticos, Almacenamiento
                   </small></br>
                 <a href="#" class="btn btn-primary btn-sm btn-round"> Ver Más </a>
                 </li>
