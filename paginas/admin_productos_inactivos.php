@@ -7,17 +7,17 @@
 	    <div class="table-title">
 	        <div class="row">
             <div class="col-sm-6">
-							<h2>Administrar <b>Clientes</b></h2>
+							<h2>Administrar <b>Productos Inactivos</b></h2>
 						</div>
 						<div class="col-sm-6">
-							<a href="admin_clientes.php" class="btn btn-light text-dark"><i class="fa fa-users"></i> Clientes Activos</a>
-							<a href="admin_clientes_inactivos.php" class="btn btn-light text-dark"><i class="fa fa-trash"></i> Clientes Inactivos</a>
+							<a href="admin_productos.php" class="btn btn-light text-dark"><i class="fa fa-boxes"></i> Productos Activos</a>
+							<a href="admin_productos_inactivos.php" class="btn btn-light text-dark"><i class="fa fa-trash"></i> Productos Inactivos</a>
 						</div>
 	        </div>
 	    </div>
 	    <div class="row">
 	    	<div class="col-sm-8">
-					<a href="#addClienteModal" class="btn btn-success float-left" data-toggle="modal"><i class="fa fa-plus"></i> Registrar Cliente</a>
+					<a href="#addClienteModal" class="btn btn-success float-left" data-toggle="modal"><i class="fa fa-plus"></i> Registrar Producto</a>
 				</div>
 	    	<div class="col-sm-4">
 					<div id="custom-search-input">
@@ -31,21 +31,9 @@
 			      </div>
 			    </div>
 				</div>
-	    </div>
-		<div class='clearfix'></div>
-		<hr>
-		<div id="loader"></div><!-- Carga de datos ajax aqui -->
-		<div id="resultados"></div><!-- Carga de datos ajax aqui -->
-		<div class='outer_div'></div><!-- Carga de datos ajax aqui -->    
+	    </div>  
 	</div>
 </div>
-<!-- Add Modal HTML -->
-<?php include("modal_add_cliente.php");?>
-<!-- Edit Modal HTML -->
-<?php include("modal_edit_cliente.php");?>
-<!-- Delete Modal HTML -->
-<?php include("modal_delete_cliente.php");?>
-<script src="../js/script_cliente.js"></script>
 </body>
   
 <?php require_once('admin_footer.php');  ?>

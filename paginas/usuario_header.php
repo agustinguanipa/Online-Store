@@ -15,6 +15,8 @@
   <link rel="icon" href="../imagen/favicon.ico" type="image/x-icon">
   <!--- CSS --->
   <link rel="stylesheet" type="text/css" href="../css/estilos.css">
+  <link rel="stylesheet" type="text/css" href="../css/estilos_admin.css">
+  <link rel="stylesheet" type="text/css" href="../css/estilos_crud.css">
   <!--- jQuery --->
   <script src="../libs/jquery/jquery-3.4.1.min.js" type="text/javascript"></script>
   <!--- jQuery Validation --->
@@ -127,7 +129,7 @@
                 </div>
               </div>
             <?php endif ?>
-            <a href="#" class="widget-header border-left pl-3 ml-3">
+            <a href="usuario_cart.php" class="widget-header border-left pl-3 ml-3">
               <div class="icontext">
                 <div class="icon-wrap icon-sm round border"><i class="fa fa-shopping-cart"></i></div>
               </div>

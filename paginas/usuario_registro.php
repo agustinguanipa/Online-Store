@@ -100,8 +100,8 @@
           </div>
           <div class="form-row">
             <div class="col form-group">
-              <button type="submit" class="btn btn-primary btn-block" name="add">Registrarse</button>
-              <button type="reset" class="btn btn-secondary btn-block" data-dismiss="modal">Limpiar</button>
+              <button type="submit" class="btn btn-primary btn-block" name="add"><i class="fa fa-user"></i> Registrarse</button>
+              <button type="reset" class="btn btn-secondary btn-block" data-dismiss="modal"><i class="fa fa-undo"></i> Limpiar</button>
             </div>
           </div>
           <p class="text-center">Tienes una Cuenta? <a href="usuario_inicio.php">Iniciar Sesión</a> </p>

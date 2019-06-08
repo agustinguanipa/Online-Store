@@ -47,7 +47,7 @@
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="../index.php" style="padding-left: 15px;">
+    <a class="navbar-brand" href="admin_panel.php" style="padding-left: 15px;">
       <img src="../imagen/logo-SIGMAEMCA.png" width="25" height="25" class="d-inline-block align-top" alt="">
       <span class="menu-collapsed">Panel de Administración</span>
     </a>
@@ -64,7 +64,6 @@
           <a class="nav-link dropdown-toggle" href="admin_panel.php" id="smallerscreenmenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Menu Principal
           </a>
-
           <div class="dropdown-menu" aria-labelledby="smallerscreenmenu">
             <a class="dropdown-item" href="#">Ventas</a>
             <a class="dropdown-item" href="#">Productos</a>
@@ -103,46 +102,56 @@
       </a>
         <!-- Submenu -->
         <div id='submenu1' class="collapse sidebar-submenu">
-          <a href="#" class="list-group-item list-group-item-action bg-light text-dark">
+          <a href="admin_ordenes.php" class="list-group-item list-group-item-action bg-light text-dark">
             <span class="menu-collapsed">Ordenes</span>
           </a>
-          <a href="#" class="list-group-item list-group-item-action bg-light text-dark">
+          <a href="admin_envios.php" class="list-group-item list-group-item-action bg-light text-dark">
             <span class="menu-collapsed">Envios</span>
           </a>
-          <a href="#" class="list-group-item list-group-item-action bg-light text-dark">
+          <a href="admin_facturas.php" class="list-group-item list-group-item-action bg-light text-dark">
             <span class="menu-collapsed">Facturas</span>
           </a>
         </div>
-      <a href="#" aria-expanded="false" class="bg-light text-dark list-group-item list-group-item-action flex-column align-items-start">
-        <div class="d-flex w-100 justify-content-start align-items-center">
-          <span class="fa fa-boxes fa-fw mr-3"></span>
-          <span class="menu-collapsed">Productos</span>
-        </div>
-      </a>    
       <a href="#submenu2" data-toggle="collapse" aria-expanded="false" class="bg-light text-dark list-group-item list-group-item-action flex-column align-items-start">
           <div class="d-flex w-100 justify-content-start align-items-center">
-            <span class="fa fa-users fa-fw mr-3"></span> 
-            <span class="menu-collapsed">Clientes</span>
+            <span class="fa fa-boxes fa-fw mr-3"></span> 
+            <span class="menu-collapsed">Productos</span>
             <span class="fa fa-caret-down ml-auto"></span>
           </div>
       </a>
         <!-- Submenu -->
         <div id='submenu2' class="collapse sidebar-submenu">
-          <a href="admin_clientes.php" class="list-group-item list-group-item-action bg-light text-dark">
-            <span class="menu-collapsed">Clientes Activos</span>
+          <a href="admin_productos.php" class="list-group-item list-group-item-action bg-light text-dark">
+            <span class="menu-collapsed">Productos</span>
           </a>
-          <a href="admin_clientes_inactivos.php" class="list-group-item list-group-item-action bg-light text-dark">
-            <span class="menu-collapsed">Clientes Inactivos</span>
+          <a href="admin_categorias.php" class="list-group-item list-group-item-action bg-light text-dark">
+            <span class="menu-collapsed">Categorías</span>
           </a>
-        </div>
-      <a href="#" class="bg-light text-dark list-group-item list-group-item-action">
+        </div>  
+      <a href="admin_clientes.php" class="bg-light text-dark list-group-item list-group-item-action">
         <div class="d-flex w-100 justify-content-start align-items-center">
-          <span class="fa fa-lock fa-fw mr-3"></span>
-          <span class="menu-collapsed">Administración</span>    
+          <span class="fa fa-users fa-fw mr-3"></span>
+          <span class="menu-collapsed">Clientes</span>    
         </div>
       </a>
+      <a href="#submenu4" data-toggle="collapse" aria-expanded="false" class="bg-light text-dark list-group-item list-group-item-action flex-column align-items-start">
+          <div class="d-flex w-100 justify-content-start align-items-center">
+            <span class="fa fa-lock fa-fw mr-3"></span> 
+            <span class="menu-collapsed">Administración</span>
+            <span class="fa fa-caret-down ml-auto"></span>
+          </div>
+      </a>
+        <!-- Submenu -->
+        <div id='submenu4' class="collapse sidebar-submenu">
+          <a href="admin_administradores.php" class="list-group-item list-group-item-action bg-light text-dark">
+            <span class="menu-collapsed">Administradores</span>
+          </a>
+          <a href="admin_configuracion.php" class="list-group-item list-group-item-action bg-light text-dark">
+            <span class="menu-collapsed">Configuración</span>
+          </a>
+        </div>
     </ul>
   </div>
 
   <!-- Main -->
-  <div class="col">
+  <div class="container panel">

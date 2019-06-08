@@ -134,7 +134,7 @@
                 </div>
               </div>
             <?php endif ?>
-            <a href="#" class="widget-header border-left pl-3 ml-3">
+            <a href="paginas/usuario_cart.php" class="widget-header border-left pl-3 ml-3">
               <div class="icontext">
                 <div class="icon-wrap icon-sm round border"><i class="fa fa-shopping-cart"></i></div>
               </div>
@@ -159,13 +159,13 @@
           <div class="collapse navbar-collapse" id="main_nav" style="padding-left: 150px;">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" href="#">Equipos Médicos</a>
+                <a class="nav-link" href="paginas/usuario_producto.php">Equipos Médicos</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Consumibles Médicos</a>
+                <a class="nav-link" href="paginas/usuario_producto.php">Consumibles Médicos</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Material Quirúrgico</a>
+                <a class="nav-link" href="paginas/usuario_producto.php">Material Quirúrgico</a>
               </li>
             </ul>
           </div>
@@ -184,14 +184,14 @@
             <span>Categorías</span>
           </div>
           <ul class="menu-category">
-            <li> <a href="#">Equipos Médicos</a></li>
-            <li> <a href="#">Consumibles Médicos</a></li>
-            <li> <a href="#">Material Quirúrgico</a></li>
-            <li> <a href="#">Mobiliario e Infraestructura</a></li>
-            <li> <a href="#">Cirugía</a></li>
-            <li> <a href="#">Laboratorio</a></li>
-            <li> <a href="#">Imagénes Médicas</a></li>
-            <li> <a href="#">Ortopedia y Rehabilitación</a></li>
+            <li> <a href="paginas/usuario_producto.php">Equipos Médicos</a></li>
+            <li> <a href="paginas/usuario_producto.php">Consumibles Médicos</a></li>
+            <li> <a href="paginas/usuario_producto.php">Material Quirúrgico</a></li>
+            <li> <a href="paginas/usuario_producto.php">Mobiliario e Infraestructura</a></li>
+            <li> <a href="paginas/usuario_producto.php">Cirugía</a></li>
+            <li> <a href="paginas/usuario_producto.php">Laboratorio</a></li>
+            <li> <a href="paginas/usuario_producto.php">Imagénes Médicas</a></li>
+            <li> <a href="paginas/usuario_producto.php">Ortopedia y Rehabilitación</a></li>
           </ul>
         </nav>
       </aside>
@@ -221,21 +221,21 @@
                   <small>
                     Signos Vitales, Diagnósticos, Equipos Prácticos, Almacenamiento
                   </small></br>
-                <a href="#" class="btn btn-primary btn-sm btn-round"> Ver Más </a>
+                <a href="paginas/usuario_producto.php" class="btn btn-primary btn-sm btn-round"> Ver Más </a>
                 </li>
                 <li class="list-group-item">
                 <h6>Consumibles Médicos</h6>
                   <small>
                     Inyectadoras, Intravenosas, Consumibles de Diagnóstico, Tratamiento de Heridas, Vendajes
                   </small></br>
-                <a href="#" class="btn btn-primary btn-sm btn-round"> Ver Más </a>
+                <a href="paginas/usuario_producto.php" class="btn btn-primary btn-sm btn-round"> Ver Más </a>
                 </li>
                 <li class="list-group-item">
                 <h6>Material Quirúrgico</h6>
                   <small>
                     Emergencia, Primeros Auxilios, Pre-Cirugía, Cirugía Ambulatoria, Instrumental, Consumibles Quirúrgicos
                   </small></br>
-                <a href="#" class="btn btn-primary btn-sm btn-round"> Ver Más </a>
+                <a href="paginas/usuario_producto.php" class="btn btn-primary btn-sm btn-round"> Ver Más </a>
                 </li>
               </ul>
           </div>

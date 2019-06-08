@@ -10,6 +10,14 @@
     padding: 0;
 }
 
+.panel{
+  padding: 30px;
+}
+
+.boton-tarjeta{
+  padding: 50px;
+}
+
 /* Sidebar sizes when expanded and expanded */
 .sidebar-expanded {
     width: 230px;
