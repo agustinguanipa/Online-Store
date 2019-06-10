@@ -2,7 +2,7 @@
 
 <!-- Contenido -->
 
-<div class="container">
+<div class="container-fluid">
 	<div class="card-deck">
 		<div class="card text-center">
 	  <div class="card-header">

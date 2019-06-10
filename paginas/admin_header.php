@@ -12,6 +12,8 @@
   <link rel="stylesheet" type="text/css" href="../css/estilos.css">
   <link rel="stylesheet" type="text/css" href="../css/estilos_admin.css">
   <link rel="stylesheet" type="text/css" href="../css/estilos_crud.css">
+  <link href="../libs/startbootstrap-simple-sidebar-gh-pages/css/simple-sidebar.css" rel="stylesheet">
+  <link href="../libs/startbootstrap-simple-sidebar-gh-pages/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!--- jQuery --->
   <script src="../libs/jquery/jquery-3.4.1.min.js" type="text/javascript"></script>
   <!--- jQuery Validation --->
@@ -36,66 +38,36 @@
   <link href="../libs/bootstrap-ecommerce-uikit/ui-ecommerce/css/ui.css" rel="stylesheet" type="text/css"/>
   <link href="../libs/bootstrap-ecommerce-uikit/ui-ecommerce/css/responsive.css" rel="stylesheet" media="only screen and (max-width: 1200px)"/>
   <script src="../libs/bootstrap-ecommerce-uikit/ui-ecommerce/js/script.js" type="text/javascript"></script>
+  
 </head>
 
 <body>
 
 <!-- Header --->
 
-<div id="wrapper">
+<div class="d-flex" id="wrapper">
 
-<header class="section-header">
-  <nav class="navbar navbar-top navbar-expand-lg navbar-dark bg-primary">
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <a class="navbar-brand" href="admin_panel.php" style="padding-left: 15px;">
-      <img src="../imagen/logo-SIGMAEMCA.png" width="25" height="25" class="d-inline-block align-top" alt="">
-      <span class="menu-collapsed">Panel de Administración</span>
-    </a>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown" style="padding-right: 15px;">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="admin_panel.php"><i class="fa fa-home"></i> Bienvenido </a>
-        </li>
-        
-        <!-- This menu is hidden in bigger devices with d-sm-none. 
-             The sidebar isn't proper for smaller screens imo, so this dropdown menu can keep all the useful sidebar itens exclusively for smaller screens  -->
-
-        <li class="nav-item dropdown d-sm-block d-md-none">
-          <a class="nav-link dropdown-toggle" href="admin_panel.php" id="smallerscreenmenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Menu Principal
-          </a>
-          <div class="dropdown-menu" aria-labelledby="smallerscreenmenu">
-            <a class="dropdown-item" href="#">Ventas</a>
-            <a class="dropdown-item" href="#">Productos</a>
-            <a class="dropdown-item" href="admin_clientes.php">Clientes</a>
-            <a class="dropdown-item" href="#">Administración</a>
-          </div>
-        </li><!-- Smaller devices menu END -->
-      </ul>
-    </div>
-</nav><!-- NavBar END -->
-
-</header>
-
-<!-- Sidebar-->
-
-<div class="row" id="body-row">
-  <div id="sidebar-container" class="sidebar-expanded d-none d-md-block">
-    <!-- Sidebar Smaller Devices -->
-    <ul class="list-group">
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading" align="center">
+        <a href="admin_panel.php" style="text-decoration: none;">
+          <img src="../imagen/logo-SIGMAEMCA.png" width="25" height="25" class="d-inline-block align-top" alt="">
+          <span class="menu-collapsed" style="color: #000000; font-size: 14px;">Panel de Administración</span>
+        </a>
+      </div>
+      <div class="list-group list-group-flush">
+        <ul class="list-group">
       <li class="list-group-item sidebar-separator-title text-muted d-flex align-items-center menu-collapsed justify-content-center">
           <small>Menu Principal</small>
       </li>
       <!-- Menu -->
-      <a href="admin_panel.php" aria-expanded="false" class="bg-light text-dark list-group-item list-group-item-action flex-column align-items-start">
+      <a href="admin_panel.php" aria-expanded="false" class="bg-light text-dark list-group-item list-group-item-action flex-column align-items-start tamano-elemento-sidebar">
         <div class="d-flex w-100 justify-content-start align-items-center">
             <span class="fa fa-home fa-fw mr-3"></span> 
             <span class="menu-collapsed">Inicio</span>
         </div>
       </a>
-      <a href="#submenu1" data-toggle="collapse" aria-expanded="false" class="bg-light text-dark list-group-item list-group-item-action flex-column align-items-start">
+      <a href="#submenu1" data-toggle="collapse" aria-expanded="false" class="bg-light text-dark list-group-item list-group-item-action flex-column align-items-start tamano-elemento-sidebar">
           <div class="d-flex w-100 justify-content-start align-items-center">
             <span class="fa fa-money-bill-alt fa-fw mr-3"></span> 
             <span class="menu-collapsed">Ventas</span>
@@ -114,7 +86,7 @@
             <span class="menu-collapsed">Facturas</span>
           </a>
         </div>
-      <a href="#submenu2" data-toggle="collapse" aria-expanded="false" class="bg-light text-dark list-group-item list-group-item-action flex-column align-items-start">
+      <a href="#submenu2" data-toggle="collapse" aria-expanded="false" class="bg-light text-dark list-group-item list-group-item-action flex-column align-items-start tamano-elemento-sidebar">
           <div class="d-flex w-100 justify-content-start align-items-center">
             <span class="fa fa-boxes fa-fw mr-3"></span> 
             <span class="menu-collapsed">Productos</span>
@@ -130,13 +102,13 @@
             <span class="menu-collapsed">Categorías</span>
           </a>
         </div>  
-      <a href="admin_clientes.php" class="bg-light text-dark list-group-item list-group-item-action">
+      <a href="admin_clientes.php" class="bg-light text-dark list-group-item list-group-item-action tamano-elemento-sidebar">
         <div class="d-flex w-100 justify-content-start align-items-center">
           <span class="fa fa-users fa-fw mr-3"></span>
           <span class="menu-collapsed">Clientes</span>    
         </div>
       </a>
-      <a href="#submenu4" data-toggle="collapse" aria-expanded="false" class="bg-light text-dark list-group-item list-group-item-action flex-column align-items-start">
+      <a href="#submenu4" data-toggle="collapse" aria-expanded="false" class="bg-light text-dark list-group-item list-group-item-action flex-column align-items-start tamano-elemento-sidebar">
           <div class="d-flex w-100 justify-content-start align-items-center">
             <span class="fa fa-lock fa-fw mr-3"></span> 
             <span class="menu-collapsed">Administración</span>
@@ -153,7 +125,27 @@
           </a>
         </div>
     </ul>
-  </div>
+      </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
 
-  <!-- Main -->
-  <div class="container panel">
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-primary border-bottom">
+        <button class="btn btn-light" id="menu-toggle"><i class="fa fa-bars"></i></button>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="admin_panel.php" style="color: #FFFFFF;"><i class="fa fa-home"></i> Bienvenido </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="container-fluid panel">

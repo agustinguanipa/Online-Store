@@ -2,7 +2,7 @@
 
 <!-- Contenido -->
 
-<div class="container">
+<div class="container-fluid">
 	<div class="card-deck">
 		<div class="card text-center">
 	  <div class="card-header">
@@ -16,7 +16,7 @@
 	</div>
 </div>
 </br>
-<div class="container">
+<div class="container-fluid">
 	<div class="card-deck">
 	  <div class="card">
 	    <img class="card-img-top" src="../imagen/adminpanel1.jpg" alt="Admin Panel Ventas">
