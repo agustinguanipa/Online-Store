@@ -42,6 +42,8 @@
 
 <!-- Header --->
 
+<div id="wrapper">
+
 <header class="section-header">
   <nav class="navbar navbar-top navbar-expand-lg navbar-dark bg-primary">
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
