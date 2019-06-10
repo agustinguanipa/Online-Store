@@ -48,7 +48,7 @@
             <div class="card-body">
               <div class="form-group text-center">
                 <div class="formulario-pago">
-                  <form role="form" id="usuario_pago" class="justify-content-center" align="center" action="usuario_envio.php" method="post">
+                  <form role="form" id="usuario_pago" class="justify-content-center" align="center" action="#" method="post">
                     <div class="form-row">
                       <div class="col form-group">
                         <label class="form-label" for="fecha_pago">Fecha: </label>
@@ -98,6 +98,10 @@
                   </form>
                 </div> 
               </div>
+            </div>
+            <div class="card-footer">
+              <a href="usuario_direccion.php" class="btn btn-success float-right"><i class="fa fa-arrow-circle-right"></i> Siguiente</a>
+              <a href="usuario_cart.php" class="btn btn-primary float-left"><i class="fa fa-arrow-circle-left"></i> Volver</a>
             </div>
           </div>
         </div>

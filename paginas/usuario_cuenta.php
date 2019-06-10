@@ -36,7 +36,7 @@
             <p class="card-text">Todas tus Direcciones de Envíos. Agrega, Edita y Elimina</p>
           </div>
           <div class="card-footer">
-            <a href="usuario_direccion.php" class="btn btn-primary stretched-link">Ver Direcciones</a>
+            <a href="usuario_listar_direccion.php" class="btn btn-primary stretched-link">Ver Direcciones</a>
           </div>
         </div>
         <div class="card" style="width: 18rem;">

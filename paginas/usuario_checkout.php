@@ -60,6 +60,7 @@
             </div>
             <div class="card-footer">
               <a href="usuario_listar_orden.php" class="btn btn-success"><i class="fa fa-check"></i> Realizar Orden</a>
+              <a href="usuario_direccion.php" class="btn btn-primary float-left"><i class="fa fa-arrow-circle-left"></i> Volver</a>
             </div>
           </div>
         </div>

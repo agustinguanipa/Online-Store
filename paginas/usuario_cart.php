@@ -49,7 +49,8 @@
               <h4>Bs. </h4>
             </div>
             <div class="card-footer">
-              <a href="usuario_pago.php" class="btn btn-success"><i class="fa fa-arrow-circle-right"></i> Proceder al Checkout</a>
+              <a href="usuario_pago.php" class="btn btn-success float-right"><i class="fa fa-arrow-circle-right"></i> Proceder al Checkout</a>
+              <a href="../index.php" class="btn btn-primary float-left"><i class="fa fa-arrow-circle-left"></i> Seguir Comprando</a>
             </div>
           </div>
         </div>
