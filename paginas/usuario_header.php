@@ -94,7 +94,7 @@
                   <option value="content">Consumibles Médicos</option>
                   <option value="content">Material Quirurgico</option>
               </select>
-              <input type="text" class="form-control" style="width:60%;" placeholder="Buscar">
+              <input type="text" class="form-control" style="width:60%;" placeholder="Buscar Productos">
               <div class="input-group-append">
                   <button class="btn btn-primary" type="submit">
                     <i class="fa fa-search"></i>

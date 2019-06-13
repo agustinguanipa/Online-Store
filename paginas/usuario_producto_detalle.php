@@ -65,15 +65,13 @@
               </div> <!-- col.// -->
             </div> <!-- row.// -->
             <hr>
-            <a href="usuario_cart.php" class="btn btn-primary float-center"><i class="fa fa-shopping-cart"></i> Agregar al Carrito</a> 
+            <a href="usuario_cart.php" class="btn btn-primary float-right"><i class="fa fa-shopping-cart"></i> Agregar al Carrito</a>
+            <a href="usuario_producto.php" class="btn btn-success float-left"><i class="fa fa-arrow-left"></i> Seguir Viendo</a> 
           </article> <!-- card-body.// -->
               </aside> <!-- col.// -->
             </div> <!-- row.// -->
           </div> <!-- card.// -->
-
-
         </div>
-        
       </div>
     </div>
   </div>

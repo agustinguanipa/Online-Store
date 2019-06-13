@@ -19,12 +19,15 @@
                     <a href="usuario_producto_detalle.php" title=""><h5 class="title">DINAMAP CARESCAPE VITAL SIGNS MONITOR V100</h5></a>
                     <p class="desc">Diseñado para Pacientes Adultos, Pediatricos y Neonatales. Es extremadamente preciso y confiable, no solo para la presión arterial, si no, para otro rango de parametros tambien.</p>
                   </figcaption>
-                <div class="bottom-wrap">
-                  <a href="usuario_cart.php" class="btn btn-sm btn-primary float-right"><i class="fa fa-shopping-cart"></i> Agregar al Carrito</a> 
-                  <div class="price-wrap h5">
-                    <span class="price-new">Bs. 10.000.000,00</span>
-                  </div> <!-- price-wrap.// -->
-                </div> <!-- bottom-wrap.// -->
+                  <div class="bottom-wrap">
+                    <div class="price-wrap h5">
+                      <span class="price-new">Bs. 10.000.000,00</span>
+                    </div> <!-- price-wrap.// -->
+                  </div> <!-- bottom-wrap.// -->
+                  <div class="bottom-wrap">
+                    <a href="usuario_cart.php" class="btn btn-sm btn-primary float-right"><i class="fa fa-shopping-cart"></i> Agregar al Carrito</a>
+                    <a href="usuario_producto_detalle.php" class="btn btn-sm btn-success float-left"><i class="fa fa-eye"></i> Ver Producto</a>
+                  </div> <!-- bottom-wrap.// -->
               </figure>
             </div> <!-- col // -->
           </div> <!-- row.// -->
