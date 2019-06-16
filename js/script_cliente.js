@@ -19,69 +19,24 @@ function load(page){
 	})
 }
 
-$('#editClienteModal').on('show.bs.modal', function (event) {
-  var button = $(event.relatedTarget) // Button that triggered the modal
-  var nomb1_clie = button.data('nomb1_clie') 
-  $('#edit_nomb1_clie').val(nomb1_clie)
-  var nomb2_clie = button.data('nomb2_clie') 
-  $('#edit_nomb2_clie').val(nomb2_clie)
-  var apel1_clie = button.data('apel1_clie') 
-  $('#edit_apel1_clie').val(apel1_clie)
-  var apel2_clie = button.data('apel2_clie') 
-  $('#edit_apel2_clie').val(apel2_clie)
-  var gener_clie = button.data('gener_clie') 
-  $('#edit_gener_clie').val(gener_clie)
-  var telef_clie = button.data('telef_clie') 
-  $('#edit_telef_clie').val(telef_clie)
-  var email_clie = button.data('email_clie') 
-  $('#edit_email_clie').val(email_clie)
-  var usuar_clie = button.data('usuar_clie') 
-  $('#edit_usuar_clie').val(usuar_clie)
-  var ident_clie = button.data('ident_clie') 
-  $('#edit_id').val(ident_clie)
-})
-
-$('#deleteClienteModal').on('show.bs.modal', function (event) {
-  var button = $(event.relatedTarget) // Button that triggered the modal
-  var ident_clie = button.data('ident_clie') 
-  $('#delete_id').val(ident_clie)
-})
-
-
-$( "#edit_cliente" ).submit(function( event ) {
-  var parametros = $(this).serialize();
-	$.ajax({
-			type: "POST",
-			url: "../ajax/editar_cliente.php",
-			data: parametros,
-			 beforeSend: function(objeto){
-				$("#resultados").html("Enviando...");
-			  },
-			success: function(datos){
-			$("#resultados").html(datos);
-			load(1);
-			$('#editClienteModal').modal('hide');
-		  }
-	});
-  event.preventDefault();
-});
+/* Add */
 
 $( "#add_cliente" ).submit(function( event ) {
   var parametros = $(this).serialize();
   $('form :input').val('');
-	$.ajax({
-			type: "POST",
-			url: "../ajax/guardar_cliente.php",
-			data: parametros,
-			 beforeSend: function(objeto){
-				$("#resultados").html("Enviando...");
-			  },
-			success: function(datos){
-			$("#resultados").html(datos);
-			load(1);
-			$('#addClienteModal').modal('hide');
-		  }
-	});
+  $.ajax({
+      type: "POST",
+      url: "../ajax/guardar_cliente.php",
+      data: parametros,
+       beforeSend: function(objeto){
+        $("#resultados").html("Enviando...");
+        },
+      success: function(datos){
+      $("#resultados").html(datos);
+      load(1);
+      $('#addClienteModal').modal('hide');
+      }
+  });
   
   event.preventDefault();
   
@@ -193,6 +148,98 @@ $( document ).ready( function () {
 
 } );
 
+/* Look */
+
+$('#lookClienteModal').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) // Button that triggered the modal
+  var nomb1_clie = button.data('nomb1_clie') 
+  $('#look_nomb1_clie').val(nomb1_clie)
+  var nomb2_clie = button.data('nomb2_clie') 
+  $('#look_nomb2_clie').val(nomb2_clie)
+  var apel1_clie = button.data('apel1_clie') 
+  $('#look_apel1_clie').val(apel1_clie)
+  var apel2_clie = button.data('apel2_clie') 
+  $('#look_apel2_clie').val(apel2_clie)
+  var gener_clie = button.data('gener_clie') 
+  $('#look_gener_clie').val(gener_clie)
+  var telef_clie = button.data('telef_clie') 
+  $('#look_telef_clie').val(telef_clie)
+  var email_clie = button.data('email_clie') 
+  $('#look_email_clie').val(email_clie)
+  var usuar_clie = button.data('usuar_clie') 
+  $('#look_usuar_clie').val(usuar_clie)
+  var ident_clie = button.data('ident_clie') 
+  $('#look_id').val(ident_clie)
+})
+
+$( "#look_cliente" ).submit(function( event ) {
+  var parametros = $(this).serialize();
+  $.ajax({
+      type: "POST",
+      url: "../ajax/ver_cliente.php",
+      data: parametros,
+       beforeSend: function(objeto){
+        $("#resultados").html("Enviando...");
+        },
+      success: function(datos){
+      $("#resultados").html(datos);
+      load(1);
+      $('#lookClienteModal').modal('hide');
+      }
+  });
+  event.preventDefault();
+});
+
+/* Edit */
+
+$('#editClienteModal').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) // Button that triggered the modal
+  var nomb1_clie = button.data('nomb1_clie') 
+  $('#edit_nomb1_clie').val(nomb1_clie)
+  var nomb2_clie = button.data('nomb2_clie') 
+  $('#edit_nomb2_clie').val(nomb2_clie)
+  var apel1_clie = button.data('apel1_clie') 
+  $('#edit_apel1_clie').val(apel1_clie)
+  var apel2_clie = button.data('apel2_clie') 
+  $('#edit_apel2_clie').val(apel2_clie)
+  var gener_clie = button.data('gener_clie') 
+  $('#edit_gener_clie').val(gener_clie)
+  var telef_clie = button.data('telef_clie') 
+  $('#edit_telef_clie').val(telef_clie)
+  var email_clie = button.data('email_clie') 
+  $('#edit_email_clie').val(email_clie)
+  var usuar_clie = button.data('usuar_clie') 
+  $('#edit_usuar_clie').val(usuar_clie)
+  var ident_clie = button.data('ident_clie') 
+  $('#edit_id').val(ident_clie)
+})
+
+$( "#edit_cliente" ).submit(function( event ) {
+  var parametros = $(this).serialize();
+  $.ajax({
+      type: "POST",
+      url: "../ajax/editar_cliente.php",
+      data: parametros,
+       beforeSend: function(objeto){
+        $("#resultados").html("Enviando...");
+        },
+      success: function(datos){
+      $("#resultados").html(datos);
+      load(1);
+      $('#editClienteModal').modal('hide');
+      }
+  });
+  event.preventDefault();
+});
+
+/* Delete */
+
+$('#deleteClienteModal').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) // Button that triggered the modal
+  var ident_clie = button.data('ident_clie') 
+  $('#delete_id').val(ident_clie)
+})
+
 $( "#delete_cliente" ).submit(function( event ) {
   var parametros = $(this).serialize();
 	$.ajax({
@@ -210,3 +257,4 @@ $( "#delete_cliente" ).submit(function( event ) {
 	});
   event.preventDefault();
 });
+

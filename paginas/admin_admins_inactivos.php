@@ -16,11 +16,11 @@
 	    <div class="table-title">
 	        <div class="row">
             <div class="col-sm-6">
-							<h2>Administrar <b>Clientes Inactivos</b></h2>
+							<h2>Administrar <b>Administradores Inactivos</b></h2>
 						</div>
 						<div class="col-sm-6">
-							<a href="admin_clientes.php" class="btn btn-light text-dark"><i class="fa fa-users"></i> Clientes Activos</a>
-							<a href="admin_clientes_inactivos.php" class="btn btn-light text-dark"><i class="fa fa-trash"></i> Clientes Inactivos</a>
+							<a href="admin_admins.php" class="btn btn-light text-dark"><i class="fa fa-users"></i> Administradores Activos</a>
+							<a href="admin_admins_inactivos.php" class="btn btn-light text-dark"><i class="fa fa-trash"></i> Administradores Inactivos</a>
 						</div>
 	        </div>
 	    </div>
@@ -44,8 +44,8 @@
 	</div>
 </div>
 <!-- Restaurar Modal HTML -->
-<?php include("modal_restaurar_cliente.php");?>
-<script src="../js/script_cliente_inactivo.js"></script>
+<?php include("modal_restaurar_admin.php");?>
+<script src="../js/script_admin_inactivo.js"></script>
 </body>
   
 <?php require_once('admin_footer.php');  ?>

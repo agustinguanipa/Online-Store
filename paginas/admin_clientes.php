@@ -1,3 +1,12 @@
+<?php
+  session_start();
+
+  if (!isset($_SESSION['loggedInAdmin'])) {
+    header('Location: admin_inicio.php');
+    exit();
+  }
+?>
+
 <?php require_once('admin_header.php'); ?>
 
 <!-- Contenido -->
@@ -36,11 +45,13 @@
 		<hr>
 		<div id="loader"></div><!-- Carga de datos ajax aqui -->
 		<div id="resultados"></div><!-- Carga de datos ajax aqui -->
-		<div class='outer_div'></div><!-- Carga de datos ajax aqui -->    
+		<div class='outer_div'></div><!-- Carga de datos ajax aqui -->
 	</div>
 </div>
 <!-- Add Modal HTML -->
 <?php include("modal_add_cliente.php");?>
+<!-- Look Modal HTML -->
+<?php include("modal_look_cliente.php");?>
 <!-- Edit Modal HTML -->
 <?php include("modal_edit_cliente.php");?>
 <!-- Delete Modal HTML -->

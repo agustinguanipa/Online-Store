@@ -1,6 +1,5 @@
 <?php
 	
-		
 	require_once ("../paginas/conexion_bd.php");//Contiene Funcion que Conecta a la Base de Datos
 
 	// escaping, additionally removing everything that could be (html/javascript-) code

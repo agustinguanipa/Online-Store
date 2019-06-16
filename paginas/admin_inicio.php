@@ -1,4 +1,13 @@
-<?php require_once('header_logreg.php'); ?>
+<?php
+  session_start();
+
+  if (isset($_SESSION['loggedInAdmin'])) {
+    header('Location: admin_inicio.php');
+    exit();
+  }
+?>
+
+<?php require_once('logreg_header.php'); ?>
 
 <head>
   <title>Iniciar Sesión | Panel de Administración SIGMAEMCA Online Store</title>
@@ -29,25 +38,25 @@
   <div class="container">
     <div class="form-group text-center">
       <div class="formulario-registro-inicio">
-        <form role="form" id="admin_inicio" class="justify-content-center" align="center" action="" method="post">
+        <form role="form" id="admin_inicio" class=" justify-content-center" align="center" action="admin_autenticacion.php" method="post">
           <h3>Iniciar Sesión</h3>
           <hr class="my-4">
           <div class="form-row">
             <div class="col form-group">
               <label class="form-label" for="usuar_admi">Usuario: </label>
-              <input type="text" class="form-control" name="usuar_admi" autocomplete="off" id="usuar_admi" placeholder="miusuario" maxlength="20">
+              <input type="text" class="form-control" name="usuar_admi" autocomplete="off" id="usuar_admi" placeholder="miusuario" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
             </div>
           </div>
           <div class="form-row">
             <div class="col form-group">
               <label class="form-label" for="contr_admi">Contraseña: </label>
-              <input type="text" class="form-control" name="contr_admi" autocomplete="off" id="contr_admi" placeholder="********" maxlength="20">
+              <input type="password" class="form-control" name="contr_admi" autocomplete="off" id="contr_admi" placeholder="********" maxlength="20">
             </div>
           </div>
           <div class="form-row">
             <div class="col form-group">
-              <button type="submit" class="btn btn-primary btn-block">Iniciar Sesión</button>
-              <button type="reset" class="btn btn-secondary btn-block">Limpiar</button>
+              <button type="submit" class="btn btn-primary btn-block"><i class="fa fa-user"></i> Iniciar Sesión</button>
+              <button type="reset" class="btn btn-secondary btn-block"><i class="fa fa-undo"></i> Limpiar</button>
             </div>
           </div>
         </form>
@@ -56,6 +65,6 @@
   </div>
 </body>
 
-<?php require_once('footer_logreg.php'); ?>
+<?php require_once('logreg_footer.php'); ?>
 
 

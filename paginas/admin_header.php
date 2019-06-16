@@ -1,3 +1,9 @@
+<?php
+  if (session_status() == PHP_SESSION_NONE) {
+      session_start();
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -117,7 +123,7 @@
       </a>
         <!-- Submenu -->
         <div id='submenu4' class="collapse sidebar-submenu">
-          <a href="admin_administradores.php" class="list-group-item list-group-item-action bg-light text-dark">
+          <a href="admin_admins.php" class="list-group-item list-group-item-action bg-light text-dark">
             <span class="menu-collapsed">Administradores</span>
           </a>
           <a href="admin_configuracion.php" class="list-group-item list-group-item-action bg-light text-dark">
@@ -141,9 +147,14 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <?php  if (isset($_SESSION['loggedInAdmin'])) : ?>
             <li class="nav-item active">
-              <a class="nav-link" href="admin_panel.php" style="color: #FFFFFF;"><i class="fa fa-home"></i> Bienvenido </a>
+              <a class="nav-link" href="admin_panel.php" style="color: #FFFFFF;"><i class="fa fa-home"></i> Bienvenido <?=$_SESSION['name']?></a>
             </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="admin_cerrar.php" style="color: #FFFFFF;"><i class="fa fa-check"></i> Cerrar Sesión</a>
+            </li>
+            <?php endif ?>
           </ul>
         </div>
       </nav>

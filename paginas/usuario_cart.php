@@ -1,7 +1,7 @@
 <?php
   session_start();
 
-  if (!isset($_SESSION['loggedin'])) {
+  if (!isset($_SESSION['loggedInCliente'])) {
     header('Location: usuario_inicio.php');
     exit();
   }

@@ -43,6 +43,7 @@ if($action == 'ajax'){
 					<th class='text-center'>Telefono</th>
 					<th class='text-center'>E-Mail</th>
 					<th class='text-center'>Usuario</th>
+					<th class='text-center'>Ver</th>
 					<th class='text-center'>Editar</th>
 					<th class='text-center'>Borrar</th>
 				</tr>
@@ -70,6 +71,9 @@ if($action == 'ajax'){
 						<td class='text-center'><?php echo $telef_clie;?></td>
 						<td class='text-center'><?php echo $email_clie;?></td>
 						<td class='text-center'><?php echo $usuar_clie;?></td>
+						<td class='text-center'>
+							<a href="#"  data-target="#lookClienteModal" class="look" data-toggle="modal" data-nomb1_clie="<?php echo $nomb1_clie?>" data-nomb2_clie="<?php echo $nomb2_clie?>" data-apel1_clie="<?php echo $apel1_clie?>" data-apel2_clie="<?php echo $apel2_clie?>" data-gener_clie="<?php echo $gener_clie?>" data-telef_clie="<?php echo $telef_clie?>" data-email_clie="<?php echo $email_clie?>" data-usuar_clie="<?php echo $usuar_clie?>" data-ident_clie="<?php echo $ident_cliente; ?>"><i class="fa fa-eye" data-toggle="tooltip" title="Ver" ></i></a>
+	           </td>
 						<td class='text-center'>
 							<a href="#"  data-target="#editClienteModal" class="edit" data-toggle="modal" data-nomb1_clie="<?php echo $nomb1_clie?>" data-nomb2_clie="<?php echo $nomb2_clie?>" data-apel1_clie="<?php echo $apel1_clie?>" data-apel2_clie="<?php echo $apel2_clie?>" data-gener_clie="<?php echo $gener_clie?>" data-telef_clie="<?php echo $telef_clie?>" data-email_clie="<?php echo $email_clie?>" data-usuar_clie="<?php echo $usuar_clie?>" data-ident_clie="<?php echo $ident_cliente; ?>"><i class="fa fa-edit" data-toggle="tooltip" title="Editar" ></i></a>
 	           </td>
