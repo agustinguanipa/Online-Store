@@ -39,7 +39,7 @@
           </div>
           <div class="col form-group">
             <label class="form-label" for="nomb2_clie">Segundo Nombre: </label>
-            <input type="text" class="form-control" name="nomb2_clie" autocomplete="off" id="nomb2_clie" placeholder="Agustin" maxlength="20" onkeyup="this.value = this.value.toUpperCase();" required>
+            <input type="text" class="form-control" name="nomb2_clie" autocomplete="off" id="nomb2_clie" placeholder="Agustin" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
           </div>
         </div>
         <div class="form-row">
@@ -92,7 +92,7 @@
 				</div>
 				<div class="modal-footer">
 					<input type="button" class="btn btn-light" data-dismiss="modal" value="Cancelar">
-					<input type="submit" class="btn btn-primary" name="add" value="Registrar">
+					<input type="submit" class="btn btn-primary" name="add" id="submitcliente" value="Registrar">
 				</div>
 			</form>
 		</div>

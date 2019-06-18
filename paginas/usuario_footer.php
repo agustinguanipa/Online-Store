@@ -14,7 +14,7 @@
           <a href="https://wa.me/584266908396" class="icono fab fa-whatsapp"></a>
         </div>
       <div class="col-sm-4" align="right">
-        <p class="text-sm-right">SIGMAEMCA Servicio Integral de Mantenimiento Equipos Medicos Compañía Anonima</p>
+        <p class="text-sm-right">SIGMAEMCA Servicio Integral General y Mantenimiento Equipos Medicos Compañía Anonima</p>
         <p class="text-sm-right">Copyright &copy 2019<br>
         </p>
       </div>

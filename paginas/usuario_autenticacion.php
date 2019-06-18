@@ -39,7 +39,6 @@
 			// Create sessions so we know the user is logged in, they basically act like cookies but remember the data on the server.
 			session_regenerate_id();
 			$_SESSION['loggedInCliente'] = TRUE;
-			$_SESSION['session_type'] = 1;
 			$_SESSION['name'] = $_POST['usuar_clie'];
 			$_SESSION['ident_clie'] = $ident_clie;
 			header('Location: ../index.php');

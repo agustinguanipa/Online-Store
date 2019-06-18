@@ -110,7 +110,7 @@
         </div>
         <div class="col-lg-6-24 col-sm-7 col-8  order-2  order-lg-3">
           <div class="d-flex justify-content-end">
-            <?php  if (isset($_SESSION['loggedInCliente'])) : ?>
+            <?php  if (isset($_SESSION['loggedInCliente'])) :  ?>
               <div class="widget-header">
                 <small class="title text-muted">Bienvenido <?=$_SESSION['name']?></small>
                 <div>

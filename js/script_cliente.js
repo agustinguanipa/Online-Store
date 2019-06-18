@@ -21,7 +21,8 @@ function load(page){
 
 /* Add */
 
-$( "#add_cliente" ).submit(function( event ) {
+$( "" ).submit(function( event ) {
+
   var parametros = $(this).serialize();
   $('form :input').val('');
   $.ajax({
@@ -30,6 +31,7 @@ $( "#add_cliente" ).submit(function( event ) {
       data: parametros,
        beforeSend: function(objeto){
         $("#resultados").html("Enviando...");
+         
         },
       success: function(datos){
       $("#resultados").html(datos);
@@ -42,8 +44,8 @@ $( "#add_cliente" ).submit(function( event ) {
   
 });
 
-$( document ).ready( function () {
-  $( "#add_cliente" ).validate( {
+$( "#add_cliente" ).validate( {
+
     rules: {
       nomb1_clie: {
         required: true,
@@ -143,10 +145,29 @@ $( document ).ready( function () {
     },
     unhighlight: function (element, errorClass, validClass) {
       $( element ).addClass( "is-valid" ).removeClass( "is-invalid" );
-    }
-  } );
+    },
 
-} );
+    submitHandler: function(add_cliente) {
+      
+      var parametros = $(this).serialize();
+      $('form :input').val('');
+      $.ajax({
+        type: "POST",
+        url: "../ajax/guardar_cliente.php",
+        data: parametros,
+         beforeSend: function(objeto){
+          $("#resultados").html("Enviando...");
+           
+          },
+        success: function(datos){
+        $("#resultados").html(datos);
+        load(1);
+        $('#addClienteModal').modal('hide');
+        form.submit();
+        }                     
+      });
+    }
+});
 
 /* Look */
 
