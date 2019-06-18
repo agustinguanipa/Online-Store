@@ -39,7 +39,7 @@
           </div>
           <div class="col form-group">
             <label class="form-label" for="nomb2_admi">Segundo Nombre: </label>
-            <input type="text" class="form-control" name="nomb2_admi" autocomplete="off" id="nomb2_admi" placeholder="Agustin" maxlength="20" onkeyup="this.value = this.value.toUpperCase();" required>
+            <input type="text" class="form-control" name="nomb2_admi" autocomplete="off" id="nomb2_admi" placeholder="Agustin" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
           </div>
         </div>
         <div class="form-row">

@@ -92,7 +92,7 @@
 				</div>
 				<div class="modal-footer">
 					<input type="button" class="btn btn-light" data-dismiss="modal" value="Cancelar">
-					<input type="submit" class="btn btn-primary" name="add" id="submitcliente" value="Registrar">
+					<input type="submit" class="btn btn-primary" name="add" value="Registrar">
 				</div>
 			</form>
 		</div>

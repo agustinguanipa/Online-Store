@@ -31,7 +31,6 @@ $( "" ).submit(function( event ) {
       data: parametros,
        beforeSend: function(objeto){
         $("#resultados").html("Enviando...");
-         
         },
       success: function(datos){
       $("#resultados").html(datos);
@@ -44,7 +43,7 @@ $( "" ).submit(function( event ) {
   
 });
 
-$( "#add_cliente" ).validate( {
+$( "add_cliente" ).validate( {
 
     rules: {
       nomb1_clie: {
@@ -147,7 +146,7 @@ $( "#add_cliente" ).validate( {
       $( element ).addClass( "is-valid" ).removeClass( "is-invalid" );
     },
 
-    submitHandler: function(add_cliente) {
+    submitHandler: function( form ) {
       
       var parametros = $(this).serialize();
       $('form :input').val('');
@@ -157,13 +156,11 @@ $( "#add_cliente" ).validate( {
         data: parametros,
          beforeSend: function(objeto){
           $("#resultados").html("Enviando...");
-           
           },
         success: function(datos){
         $("#resultados").html(datos);
         load(1);
         $('#addClienteModal').modal('hide');
-        form.submit();
         }                     
       });
     }
