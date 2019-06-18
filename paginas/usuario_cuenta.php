@@ -1,10 +1,7 @@
 <?php
   session_start();
 
-  if($_SESSION['sess_type'] == 2 ){
-
-  }else
-    exit();
+  
 
   if (!isset($_SESSION['loggedInCliente'])) {
     header('Location: usuario_inicio.php');
