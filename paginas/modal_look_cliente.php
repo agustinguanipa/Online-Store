@@ -35,12 +35,13 @@
           <div class="form-row">
             <div class="col form-group">
               <label class="form-label">Primer Nombre: </label>
-              <input type="text" name="look_nomb1_clie"  id="look_nomb1_clie" class="form-control" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
+              <p value="look_nomb1_clie"></p>
+              <input type="text" name="look_nomb1_clie"  id="look_nomb1_clie" class="form-control" maxlength="20">
               <input type="hidden" name="look_id" id="look_id">
             </div>
             <div class="col form-group">
               <label class="form-label">Segundo Nombre: </label>
-              <input type="text" name="look_nomb2_clie"  id="look_nomb2_clie" class="form-control" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
+              <input type="text" name="look_nomb2_clie"  id="look_nomb2_clie" class="form-control" maxlength="20" onkeyup="this.value = this.value.toUpperCase();" disabled>
             </div>
           </div>
           <div class="form-row">
@@ -56,9 +57,11 @@
           <div class="form-row">
             <div class="col form-group">
               <label class="form-label">Genero: </label>
+              <input type="text" name="look_gener_clie"  id="look_gener_clie" class="form-control" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
               <select class="form-control" id="look_gener_clie" name="look_gener_clie">
                 <option value="MASCULINO">MASCULINO</option>
                 <option value="FEMENINO">FEMENINO</option>
+
               </select>
             </div>
           </div>
@@ -82,8 +85,8 @@
           </div>
         </div>
         <div class="modal-footer">
-          <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
-          <input type="submit" class="btn btn-primary" value="Actualizar">
+          <input type="button" class="btn btn-light float-left" data-dismiss="modal" value="Cancelar">
+          <a href="#" class="btn btn-success float-right"><i class="fa fa-bars"></i> Ver Órdenes</a>
         </div>
       </form>
     </div>

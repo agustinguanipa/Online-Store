@@ -12,7 +12,7 @@
 					<input type="hidden" name="delete_id" id="delete_id">
 				</div>
 				<div class="modal-footer">
-					<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
+					<input type="button" class="btn btn-light" data-dismiss="modal" value="Cancelar">
 					<input type="submit" class="btn btn-danger" value="Desactivar">
 				</div>
 			</form>

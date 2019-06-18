@@ -152,7 +152,7 @@
               <a class="nav-link" href="admin_panel.php" style="color: #FFFFFF;"><i class="fa fa-home"></i> Bienvenido <?=$_SESSION['name']?></a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="admin_cerrar.php" style="color: #FFFFFF;"><i class="fa fa-check"></i> Cerrar Sesión</a>
+              <a class="nav-link" href="admin_cerrar.php" style="color: #FFFFFF;"><i class="fa fa-sign-out-alt"></i> Cerrar Sesión</a>
             </li>
             <?php endif ?>
           </ul>

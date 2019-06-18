@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	session_destroy();
+	unset($_SESSION["loggedInAdmin"]);
 	// Redirect to the login page:
 	header('Location: admin_inicio.php');
 ?>
