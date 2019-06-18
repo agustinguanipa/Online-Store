@@ -39,6 +39,7 @@
 			// Create sessions so we know the user is logged in, they basically act like cookies but remember the data on the server.
 			session_regenerate_id();
 			$_SESSION['loggedInAdmin'] = TRUE;
+			$_SESSION['session_type'] = 2;
 			$_SESSION['name'] = $_POST['usuar_admi'];
 			$_SESSION['ident_admi'] = $ident_admi;
 			header('Location: admin_panel.php');
