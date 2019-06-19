@@ -26,7 +26,7 @@
 <div id="addClienteModal" class="modal fade">
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<form name="add_cliente" id="add_cliente" class="justify-content-center" align="center">
+			<form name="add_cliente" id="add_cliente" class="justify-content-center" align="center" action="">
 				<div class="modal-header">						
 					<h4 class="modal-title">Registrar Cliente</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -92,7 +92,7 @@
 				</div>
 				<div class="modal-footer">
 					<input type="button" class="btn btn-light" data-dismiss="modal" value="Cancelar">
-					<input type="submit" class="btn btn-primary" name="add" value="Registrar">
+					<input type="submit" class="btn btn-primary" value="Registrar">
 				</div>
 			</form>
 		</div>

@@ -21,7 +21,7 @@ function load(page){
 
 /* Add */
 
-$( "" ).submit(function( event ) {
+$( "#add_" ).submit(function( event ) {
 
   var parametros = $(this).serialize();
   $('form :input').val('');
@@ -43,7 +43,8 @@ $( "" ).submit(function( event ) {
   
 });
 
-$( "add_cliente" ).validate( {
+
+$( "#add_cliente" ).validate( {
 
     rules: {
       nomb1_clie: {
@@ -165,6 +166,7 @@ $( "add_cliente" ).validate( {
       });
     }
 });
+
 
 /* Look */
 
