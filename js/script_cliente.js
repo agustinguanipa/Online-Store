@@ -1,6 +1,7 @@
 $(function() {
 	load(1);
 });
+
 function load(page){
 	var query=$("#q").val();
 	var per_page=10;
@@ -20,29 +21,6 @@ function load(page){
 }
 
 /* Add */
-
-$( "#add_" ).submit(function( event ) {
-
-  var parametros = $(this).serialize();
-  $('form :input').val('');
-  $.ajax({
-      type: "POST",
-      url: "../ajax/guardar_cliente.php",
-      data: parametros,
-       beforeSend: function(objeto){
-        $("#resultados").html("Enviando...");
-        },
-      success: function(datos){
-      $("#resultados").html(datos);
-      load(1);
-      $('#addClienteModal').modal('hide');
-      }
-  });
-  
-  event.preventDefault();
-  
-});
-
 
 $( "#add_cliente" ).validate( {
 
@@ -148,25 +126,26 @@ $( "#add_cliente" ).validate( {
     },
 
     submitHandler: function( form ) {
-      
-      var parametros = $(this).serialize();
-      $('form :input').val('');
-      $.ajax({
-        type: "POST",
-        url: "../ajax/guardar_cliente.php",
-        data: parametros,
-         beforeSend: function(objeto){
-          $("#resultados").html("Enviando...");
-          },
-        success: function(datos){
-        $("#resultados").html(datos);
-        load(1);
-        $('#addClienteModal').modal('hide');
-        }                     
-      });
-    }
-});
 
+    var parametros = $( form ).serialize(); // I change 'this' to form
+    console.log(parametros); // for test purpose. See your log to confirm the result data
+    $('form :input').val('');
+
+    $.ajax({
+      type: "POST",
+      url: "../ajax/guardar_cliente.php",
+      data: parametros,
+       beforeSend: function(objeto){
+        $("#resultados").html("Enviando...");
+        },
+      success: function(datos){
+      $("#resultados").html(datos);
+      load(1);
+      $('#addClienteModal').modal('hide');
+      }                     
+    });
+  }
+});
 
 /* Look */
 
@@ -188,6 +167,8 @@ $('#lookClienteModal').on('show.bs.modal', function (event) {
   $('#look_email_clie').val(email_clie)
   var usuar_clie = button.data('usuar_clie') 
   $('#look_usuar_clie').val(usuar_clie)
+  var fecre_clie = button.data('fecre_clie') 
+  $('#look_fecre_clie').val(fecre_clie)
   var ident_clie = button.data('ident_clie') 
   $('#look_id').val(ident_clie)
 })
@@ -234,9 +215,116 @@ $('#editClienteModal').on('show.bs.modal', function (event) {
   $('#edit_id').val(ident_clie)
 })
 
-$( "#edit_cliente" ).submit(function( event ) {
-  var parametros = $(this).serialize();
-  $.ajax({
+$( "#edit_cliente" ).validate( {
+
+    rules: {
+      edit_nomb1_clie: {
+        required: true,
+        lettersonly: true,
+        minlength: 2
+      },
+      edit_nomb2_clie: {
+        lettersonly: true,
+        minlength: 2
+      },
+      edit_apel1_clie: {
+        required: true,
+        lettersonly: true,
+        minlength: 2
+      },
+      edit_apel2_clie: {
+        lettersonly: true,
+        minlength: 2
+      },
+      edit_usuar_clie: {
+        required: true,
+        minlength: 2
+      },
+      edit_contr_clie: {
+        required: true,
+        minlength: 5
+      },
+      edit_confirm_password: {
+        required: true,
+        minlength: 5,
+        equalTo: "#contr_clie"
+      },
+      edit_telef_clie: {
+        required: true,
+        number: false,
+        minlength: 15
+      },
+      edit_email_clie: {
+        required: true,
+        email: true
+      },
+    },
+
+    messages: {
+      edit_nomb1_clie: {
+        required: "Ingrese su Primer Nombre",
+        lettersonly: "Tu Nombre solo debe contener letras sin espacios",
+        minlength: "Tu Nombre debe contener al menos 2 caracteres"
+      },
+      edit_nomb2_clie: {
+        lettersonly: "Tu Nombre solo debe contener letras sin espacios",
+        minlength: "Tu Nombre debe contener al menos 2 caracteres"
+      },
+      edit_apel1_clie: {
+        required: "Ingrese su Primer Apellido",
+        lettersonly: "Tu Apellido solo debe contener letras sin espacios",
+        minlength: "Tu Apellido debe contener al menos 2 caracteres"
+      },
+      edit_apel2_clie: {
+        lettersonly: "Tu Apellido solo debe contener letras sin espacio",
+        minlength: "Tu Apellido debe contener al menos 2 caracteres"
+      },
+      edit_usuar_clie: {
+        required: "Ingrese un Nombre de Usuario",
+        minlength: "Tu Nombre de Usuario debe contener al menos 2 caracteres"
+      },
+      edit_contr_clie: {
+        required: "Ingrese una Contraseña",
+        minlength: "Tu Contraseña debe contener al menos 5 caracteres"
+      },
+      edit_confirm_password: {
+        required: "Ingrese una Contraseña",
+        minlength: "Tu Contraseña debe contener al menos 5 caracteres",
+        equalTo: "Ingrese la Misma Contraseña"
+      },
+      edit_telef_clie: {
+        required: "Ingrese un Número de Teléfono Valido",
+        number: "Ingrese un Número de Teléfono Valido",
+        minlength: "Ingrese un Número de Teléfono Valido"
+      },
+      edit_email_clie: "Ingrese una Dirección de Correo Electrónico Válida"
+    },
+
+    errorElement: "em",
+    errorPlacement: function ( error, element ) {
+      // Add the `invalid-feedback` class to the error element
+      error.addClass( "invalid-feedback" );
+
+      if ( element.prop( "type" ) === "checkbox" ) {
+        error.insertAfter( element.next( "label" ) );
+      } else {
+        error.insertAfter( element );
+      }
+    },
+    highlight: function ( element, errorClass, validClass ) {
+      $( element ).addClass( "is-invalid" ).removeClass( "is-valid" );
+    },
+    unhighlight: function (element, errorClass, validClass) {
+      $( element ).addClass( "is-valid" ).removeClass( "is-invalid" );
+    },
+
+    submitHandler: function( form ) {
+
+    var parametros = $( form ).serialize(); // I change 'this' to form
+    console.log(parametros); // for test purpose. See your log to confirm the result data
+    $('form :input').val('');
+
+    $.ajax({
       type: "POST",
       url: "../ajax/editar_cliente.php",
       data: parametros,
@@ -247,9 +335,9 @@ $( "#edit_cliente" ).submit(function( event ) {
       $("#resultados").html(datos);
       load(1);
       $('#editClienteModal').modal('hide');
-      }
-  });
-  event.preventDefault();
+      }                     
+    });
+  }
 });
 
 /* Delete */

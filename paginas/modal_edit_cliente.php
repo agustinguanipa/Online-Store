@@ -1,13 +1,11 @@
 <!--- CSS --->
 <link rel="stylesheet" type="text/css" href="../css/estilos.css">
 <link rel="stylesheet" type="text/css" href="../css/estilos_admin.css">
-<link rel="stylesheet" href="../css/custom.css">
 <!--- Bootstrap 4 --->
 <link rel="stylesheet" href="../libs/bootstrap-4.1.3-dist/css/bootstrap.min.css"/>
 <script src="../libs/bootstrap-4.1.3-dist/js/bootstrap.min.js"></script>
 <!--- Bootstrap 4 UI E-Commerce --->
 <script src="../libs/bootstrap-ecommerce-uikit/ui-ecommerce/js/bootstrap.bundle.min.js" type="text/javascript"></script>
-
 <link href="../libs/bootstrap-ecommerce-uikit/ui-ecommerce/css/bootstrap.css" rel="stylesheet" type="text/css"/>
 <link href="../libs/bootstrap-ecommerce-uikit/ui-ecommerce/fonts/fontawesome/css/fontawesome-all.min.css" type="text/css" rel="stylesheet">
 <link href="../libs/bootstrap-ecommerce-uikit/ui-ecommerce/plugins/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
@@ -21,7 +19,6 @@
 <script type="text/javascript" src="../libs/jQuery-Mask-Plugin/dist/jquery.mask.js"></script>
 <!--- JS --->
 <script src="../js/validacion.js" type="text/javascript"></script>
-<script src="../js/admin_sidebar.js" type="text/javascript"></script>
 
 <div id="editClienteModal" class="modal fade">
 	<div class="modal-dialog">
@@ -34,28 +31,28 @@
 				<div class="modal-body">
 					<div class="form-row">
 						<div class="col form-group">
-              <label class="form-label">Primer Nombre: </label>
+              <label class="form-label"><b>Primer Nombre: </b></label>
               <input type="text" name="edit_nomb1_clie"  id="edit_nomb1_clie" class="form-control" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
 							<input type="hidden" name="edit_id" id="edit_id">
             </div>
             <div class="col form-group">
-              <label class="form-label">Segundo Nombre: </label>
+              <label class="form-label"><b>Segundo Nombre: </b></label>
               <input type="text" name="edit_nomb2_clie"  id="edit_nomb2_clie" class="form-control" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
             </div>
           </div>
           <div class="form-row">
             <div class="col form-group">
-              <label class="form-label">Primer Apellido</label>
+              <label class="form-label"><b>Primer Apellido: </b></label>
               <input type="text" name="edit_apel1_clie"  id="edit_apel1_clie" class="form-control" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
             </div>
             <div class="col form-group">
-              <label class="form-label">Segundo Apellido</label>
+              <label class="form-label"><b>Segundo Apellido: </b></label>
               <input type="text" name="edit_apel2_clie"  id="edit_apel2_clie" class="form-control" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
             </div>
           </div>
           <div class="form-row">
             <div class="col form-group">
-              <label class="form-label">Genero: </label>
+              <label class="form-label"><b>Genero: </b></label>
               <select class="form-control" id="edit_gener_clie" name="edit_gener_clie">
                 <option value="MASCULINO">MASCULINO</option>
                 <option value="FEMENINO">FEMENINO</option>
@@ -64,19 +61,19 @@
           </div>
           <div class="form-row">
             <div class="col form-group">
-              <label class="form-label">Telefono: </label>
+              <label class="form-label"><b>Telefono: </b></label>
               <input type="text" name="edit_telef_clie"  id="edit_telef_clie" class="form-control telef-mask" maxlength="15">
             </div>
           </div>
           <div class="form-row">
             <div class="col form-group">
-              <label class="form-label">E-Mail: </label>
+              <label class="form-label"><b>E-Mail: </b></label>
               <input type="text" name="edit_email_clie"  id="edit_email_clie" class="form-control" maxlength="100" onkeyup="this.value = this.value.toUpperCase();">
             </div>
           </div>
           <div class="form-row">
             <div class="col form-group">
-              <label class="form-label">Usuario: </label>
+              <label class="form-label"><b>Usuario: </b></label>
               <input type="text" name="edit_usuar_clie"  id="edit_usuar_clie" class="form-control" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
             </div>
           </div>

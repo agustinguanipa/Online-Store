@@ -34,59 +34,59 @@
         <div class="modal-body">
           <div class="form-row">
             <div class="col form-group">
-              <label class="form-label">Primer Nombre: </label>
-              <p value="look_nomb1_clie"></p>
-              <input type="text" name="look_nomb1_clie"  id="look_nomb1_clie" class="form-control" maxlength="20">
+              <label class="form-label"><b>Primer Nombre: </b></label>
+              <input type="text" name="look_nomb1_clie"  id="look_nomb1_clie" class="form-control" disabled>
               <input type="hidden" name="look_id" id="look_id">
             </div>
             <div class="col form-group">
-              <label class="form-label">Segundo Nombre: </label>
-              <input type="text" name="look_nomb2_clie"  id="look_nomb2_clie" class="form-control" maxlength="20" onkeyup="this.value = this.value.toUpperCase();" disabled>
+              <label class="form-label"><b>Segundo Nombre: </b></label>
+              <input type="text" name="look_nomb2_clie" id="look_nomb2_clie" class="form-control" disabled>
             </div>
           </div>
           <div class="form-row">
             <div class="col form-group">
-              <label class="form-label">Primer Apellido</label>
-              <input type="text" name="look_apel1_clie"  id="look_apel1_clie" class="form-control" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
+              <label class="form-label"><b>Primer Apellido: </b></label>
+              <input type="text" name="look_apel1_clie" id="look_apel1_clie" class="form-control" disabled>
             </div>
             <div class="col form-group">
-              <label class="form-label">Segundo Apellido</label>
-              <input type="text" name="look_apel2_clie"  id="look_apel2_clie" class="form-control" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="col form-group">
-              <label class="form-label">Genero: </label>
-              <input type="text" name="look_gener_clie"  id="look_gener_clie" class="form-control" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
-              <select class="form-control" id="look_gener_clie" name="look_gener_clie">
-                <option value="MASCULINO">MASCULINO</option>
-                <option value="FEMENINO">FEMENINO</option>
-
-              </select>
+              <label class="form-label"><b>Segundo Apellido: </b></label>
+              <input type="text" name="look_apel2_clie" id="look_apel2_clie" class="form-control" disabled>
             </div>
           </div>
           <div class="form-row">
             <div class="col form-group">
-              <label class="form-label">Telefono: </label>
-              <input type="text" name="look_telef_clie"  id="look_telef_clie" class="form-control telef-mask" maxlength="15">
+              <label class="form-label"><b>Genero: </b></label>
+              <input type="text" name="look_gener_clie" id="look_gener_clie" class="form-control" disabled>
             </div>
           </div>
           <div class="form-row">
             <div class="col form-group">
-              <label class="form-label">E-Mail: </label>
-              <input type="text" name="look_email_clie"  id="look_email_clie" class="form-control" maxlength="100" onkeyup="this.value = this.value.toUpperCase();">
+              <label class="form-label"><b>Telefono: </b></label>
+              <input type="text" name="look_telef_clie" id="look_telef_clie" class="form-control telef-mask" disabled>
             </div>
           </div>
           <div class="form-row">
             <div class="col form-group">
-              <label class="form-label">Usuario: </label>
-              <input type="text" name="look_usuar_clie"  id="look_usuar_clie" class="form-control" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
+              <label class="form-label"><b>E-Mail: </b></label>
+              <input type="text" name="look_email_clie" id="look_email_clie" class="form-control" disabled>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col form-group">
+              <label class="form-label"><b>Usuario: </b></label>
+              <input type="text" name="look_usuar_clie" id="look_usuar_clie" class="form-control" disabled>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col form-group">
+              <label class="form-label"><b>Fecha de Registro: </b></label>
+              <input type="text" name="look_fecre_clie" id="look_fecre_clie" class="form-control" disabled>
             </div>
           </div>
         </div>
         <div class="modal-footer">
           <input type="button" class="btn btn-light float-left" data-dismiss="modal" value="Cancelar">
-          <a href="#" class="btn btn-success float-right"><i class="fa fa-bars"></i> Ver Órdenes</a>
+          <input type="button" class="btn btn-primary float-right" data-dismiss="modal" value="OK">
         </div>
       </form>
     </div>
