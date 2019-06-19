@@ -40,6 +40,7 @@ if($action == 'ajax'){
 					<th class='text-center'>Nombres</th>
 					<th class='text-center'>Apellidos</th>
 					<th class='text-center'>Usuario</th>
+					<th class='text-center'>Ver</th>
 					<th class='text-center'>Editar</th>
 					<th class='text-center'>Borrar</th>
 				</tr>
@@ -62,11 +63,14 @@ if($action == 'ajax'){
 						<td class='text-center'><?php echo $row['apel1_admi'].' '.$row['apel2_admi']; ?></td>
 						<td class='text-center'><?php echo $usuar_admi;?></td>
 						<td class='text-center'>
+							<a href="#"  data-target="#lookAdminModal" class="look" data-toggle="modal" data-nomb1_admi="<?php echo $nomb1_admi?>" data-nomb2_admi="<?php echo $nomb2_admi?>" data-apel1_admi="<?php echo $apel1_admi?>" data-apel2_admi="<?php echo $apel2_admi?>" data-usuar_admi="<?php echo $usuar_admi?>" data-ident_admi="<?php echo $ident_admin; ?>"><i class="fa fa-eye" data-toggle="tooltip" title="Ver" ></i></a>
+	          </td>
+						<td class='text-center'>
 							<a href="#"  data-target="#editAdminModal" class="edit" data-toggle="modal" data-nomb1_admi="<?php echo $nomb1_admi?>" data-nomb2_admi="<?php echo $nomb2_admi?>" data-apel1_admi="<?php echo $apel1_admi?>" data-apel2_admi="<?php echo $apel2_admi?>" data-usuar_admi="<?php echo $usuar_admi?>" data-ident_admi="<?php echo $ident_admin; ?>"><i class="fa fa-edit" data-toggle="tooltip" title="Editar" ></i></a>
-	           </td>
-	           <td class='text-center'>
+	          </td>
+	          <td class='text-center'>
 							<a href="#deleteAdminModal" class="delete" data-toggle="modal" data-ident_admi="<?php echo $ident_admin;?>"><i class="fa fa-trash" data-toggle="tooltip" title="Eliminar"></i></a>
-	           </td>
+	          </td>
 					</tr>
 					<?php }?>
 					<tr>

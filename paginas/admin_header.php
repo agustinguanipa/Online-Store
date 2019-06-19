@@ -29,7 +29,6 @@
   <script type="text/javascript" src="../libs/jQuery-Mask-Plugin/dist/jquery.mask.js"></script>
   <!--- JS --->
   <script src="../js/validacion.js" type="text/javascript"></script>
-  <script src="../js/admin_sidebar.js" type="text/javascript"></script>
   <!--- Bootstrap 4 --->
   <link rel="stylesheet" href="../libs/bootstrap-4.1.3-dist/css/bootstrap.min.css"/>
   <script src="../libs/bootstrap-4.1.3-dist/js/bootstrap.min.js"></script>

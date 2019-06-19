@@ -14,7 +14,7 @@
   $telef_clie = mysqli_real_escape_string($con,(strip_tags($_POST["look_telef_clie"],ENT_QUOTES)));
   $email_clie = mysqli_real_escape_string($con,(strip_tags($_POST["look_email_clie"],ENT_QUOTES)));
   $usuar_clie = mysqli_real_escape_string($con,(strip_tags($_POST["look_usuar_clie"],ENT_QUOTES)));
-  date($fecre_clie) = mysqli_real_escape_string($con,(strip_tags($_POST["look_fecre_clie"],ENT_QUOTES)));
+  $fecre_clie = date("Y-m-d");
 	$ident_clie=intval($_POST['look_id']);
 
 	// Ver en la Base de Datos

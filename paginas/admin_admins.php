@@ -50,6 +50,8 @@
 </div>
 <!-- Add Modal HTML -->
 <?php include("modal_add_admin.php");?>
+<!-- Look Modal HTML -->
+<?php include("modal_look_admin.php");?>
 <!-- Edit Modal HTML -->
 <?php include("modal_edit_admin.php");?>
 <!-- Delete Modal HTML -->
