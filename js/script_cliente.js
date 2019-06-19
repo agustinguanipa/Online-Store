@@ -47,16 +47,9 @@ $( "#add_cliente" ).validate( {
         required: true,
         minlength: 2,
         remote: {
-        url: "../paginas/usuario_availability.php",
-        type: "post",
-        data:
-              {
-                  user_availability: function()
-                  {
-                      return $('#add_cliente :input[name="usuar_clie"]').val();
-                  }
-              }
-        }  
+                        url: "../paginas/usuario_availability.php",
+                        type: "post"
+                     }   
       },
       contr_clie: {
         required: true,
