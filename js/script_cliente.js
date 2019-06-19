@@ -47,16 +47,16 @@ $( "#add_cliente" ).validate( {
         required: true,
         minlength: 2,
         remote: {
-          url: "usuario_availability.php",
-          type: "post",
-          data:
-            {
-              login: function()
+        url: "../paginas/usuario_availability.php",
+        type: "post",
+        data:
               {
-                return $('#add_cliente :input[name="usuar_clie"]').val();
+                  user_availability: function()
+                  {
+                      return $('#add_cliente :input[name="usuar_clie"]').val();
+                  }
               }
-            }
-        } 
+        }  
       },
       contr_clie: {
         required: true,
@@ -100,7 +100,7 @@ $( "#add_cliente" ).validate( {
       usuar_clie: {
         required: "Ingrese un Nombre de Usuario",
         minlength: "Tu Nombre de Usuario debe contener al menos 2 caracteres",
-        remote: jQuery.validator.format("{0} no esta disponible.")
+        remote: jQuery.validator.format("{0} is already taken.")
       },
       contr_clie: {
         required: "Ingrese una Contraseña",

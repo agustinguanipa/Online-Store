@@ -1,26 +1,14 @@
-<?php
-if(isset($_POST['usuar_clie']))
-{
-    // include Database connection file 
-    include("conexion_bd.php");
+<?php       
+    $existing_users=array('AGUSTINGUANIPA','CRRGABY','jason'); 
 
-    $usuar_clie = mysqli_real_escape_string($con, $_POST['usuar_clie']);
+    $usuar_clie=$_POST['usuar_clie'];
 
-    $query = "SELECT usuar_clie FROM tabma_clie WHERE usuar_clie = '$usuar_clie'";
-    if(!$result = mysqli_query($con, $query))
-    {
-        exit(mysqli_error($con));
-    }
-
-    if(mysqli_num_rows($result) > 0)
-    {
-        // usuar_clie is already exist 
-        echo '<div style="color: red;"> <b>'.$usuar_clie.'</b> is already in use! </div>';
-    }
+    if (in_array($usuar_clie, $existing_users))
+    {       
+        echo "false"; //already registered
+    } 
     else
-    {
-        // usuar_clie is avaialable to use.
-        echo '<div style="color: green;"> <b>'.$usuar_clie.'</b> is avaialable! </div>';
+    {       
+         echo "true";  //user name is available
     }
-}
 ?>
