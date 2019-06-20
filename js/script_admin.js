@@ -207,50 +207,50 @@ $('#editAdminModal').on('show.bs.modal', function (event) {
 $( "#edit_admin" ).validate( {
 
     rules: {
-      nomb1_admi: {
+      edit_nomb1_admi: {
         required: true,
         lettersonly: true,
         minlength: 2
       },
-      nomb2_admi: {
+      edit_nomb2_admi: {
         lettersonly: true,
         minlength: 2
       },
-      apel1_admi: {
+      edit_apel1_admi: {
         required: true,
         lettersonly: true,
         minlength: 2
       },
-      apel2_admi: {
+      edit_apel2_admi: {
         lettersonly: true,
         minlength: 2
       },
-      usuar_admi: {
+      edit_usuar_admi: {
         required: true,
         minlength: 2
       },
     },
 
     messages: {
-      nomb1_admi: {
+      edit_nomb1_admi: {
         required: "Ingrese su Primer Nombre",
         lettersonly: "Tu Nombre solo debe contener letras sin espacios",
         minlength: "Tu Nombre debe contener al menos 2 caracteres"
       },
-      nomb2_admi: {
+      edit_nomb2_admi: {
         lettersonly: "Tu Nombre solo debe contener letras sin espacios",
         minlength: "Tu Nombre debe contener al menos 2 caracteres"
       },
-      apel1_admi: {
+      edit_apel1_admi: {
         required: "Ingrese su Primer Apellido",
         lettersonly: "Tu Apellido solo debe contener letras sin espacios",
         minlength: "Tu Apellido debe contener al menos 2 caracteres"
       },
-      apel2_admi: {
+      edit_apel2_admi: {
         lettersonly: "Tu Apellido solo debe contener letras sin espacio",
         minlength: "Tu Apellido debe contener al menos 2 caracteres"
       },
-      usuar_admi: {
+      edit_usuar_admi: {
         required: "Ingrese un Nombre de Usuario",
         minlength: "Tu Nombre de Usuario debe contener al menos 2 caracteres"
       },

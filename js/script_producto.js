@@ -39,7 +39,7 @@ $( "#add_producto" ).validate( {
       },
       preci_prod: {
         required: true,
-        number: true,
+        number: false,
         minlength: 2
       },
       pesoo_prod: {
@@ -78,15 +78,19 @@ $( "#add_producto" ).validate( {
         minlength: "Tu Apellido debe contener al menos 2 caracteres"
       },
       preci_prod: {
+        required: "Ingrese el Precio del Producto",
         number: "Solo Numeros"
       },
       pesoo_prod: {
+        required: "Ingrese el Peso del Producto",
         number: "Solo Numeros"
       },
       taman_prod: {
+        required: "Ingrese el Tamaño del Producto",
         number: "Solo Numeros"
       },
       stock_prod: {
+        required: "Ingrese el Precio del Producto",
         number: "Solo Numeros"
       }
     },

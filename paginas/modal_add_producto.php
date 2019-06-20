@@ -65,29 +65,34 @@
           <div class="form-row">
             <div class="col form-group">
               <label class="form-label" for="desla_prod"><b>Descripcion Larga: </b></label>
-              <input type="textarea" class="form-control" name="desla_prod" autocomplete="off" id="desla_prod" placeholder="" maxlength="400" required>
+              <textarea class="form-control" name="desla_prod" autocomplete="off" id="desla_prod" placeholder="" maxlength="400" required></textarea>
             </div>
           </div>
           <div class="form-row">
             <div class="col form-group">
               <label class="form-label" for="preci_prod"><b>Precio: </b></label>
-              <input type="textarea" class="form-control" name="preci_prod" autocomplete="off" id="preci_prod" placeholder="" required>
+              <input type="textarea" class="form-control" name="preci_prod" autocomplete="off" id="preci_prod" placeholder="" maxlength="10" required>
             </div>
             <div class="col form-group">
               <label class="form-label" for="pesoo_prod"><b>Tamaño: </b></label>
-              <input type="textarea" class="form-control" name="pesoo_prod" autocomplete="off" id="pesoo_prod" placeholder="" required>
+              <input type="textarea" class="form-control" name="pesoo_prod" autocomplete="off" id="pesoo_prod" placeholder="" maxlength="10" required>
             </div>
           </div>
           <div class="form-row">
             <div class="col form-group">
               <label class="form-label" for="stock_prod"><b>Stock: </b></label>
-              <input type="textarea" class="form-control" name="stock_prod" autocomplete="off" id="stock_prod" placeholder="" required>
+              <input type="textarea" class="form-control pesoo-mask" name="stock_prod" autocomplete="off" id="stock_prod" placeholder="" maxlength="10" required>
             </div>
             <div class="col form-group">
               <label class="form-label" for="estad_prod"><b>Estado: </b></label>
-              <input type="textarea" class="form-control" name="estad_prod" autocomplete="off" id="estad_prod" placeholder="" required>
+              <select class="form-control" id="estad_prod_clie" name="estad_prod_clie">
+                <option value="MASCULINO">NUEVO</option>
+                <option value="FEMENINO">USADO</option>
+              </select>
             </div>
           </div>
+          <div class="form-row">
+        </div>
           <div class="form-row">
             <div class="col form-group">
               <label class="form-label" for="imag1_prod">Imagen 1: </label>

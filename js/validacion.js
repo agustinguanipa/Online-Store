@@ -138,6 +138,7 @@ $( document ).ready( function () {
 } );
 
 $('.telef-mask').mask('(0000) 000 0000');
+$('.pesoo-mask').mask('KG');
 
 /* usuario_inicio */
 
