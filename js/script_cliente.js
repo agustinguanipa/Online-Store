@@ -47,9 +47,16 @@ $( "#add_cliente" ).validate( {
         required: true,
         minlength: 2,
         remote: {
-                        url: "../paginas/usuario_availability.php",
-                        type: "post"
-                     }   
+          url: "../paginas/usuario_usuario_availability.php",
+          type: "post",
+          data:
+            {
+              usuar_clie: function()
+              {
+                return $('#add_cliente :input[name="usuar_clie"]').val();
+              }
+            }
+        }     
       },
       contr_clie: {
         required: true,
@@ -67,7 +74,18 @@ $( "#add_cliente" ).validate( {
       },
       email_clie: {
         required: true,
-        email: true
+        email: true,
+        remote: {
+          url: "../paginas/usuario_email_availability.php",
+          type: "post",
+          data:
+            {
+              email_clie: function()
+              {
+                return $('#add_cliente :input[name="email_clie"]').val();
+              }
+            }
+        }     
       },
     },
 
@@ -93,7 +111,7 @@ $( "#add_cliente" ).validate( {
       usuar_clie: {
         required: "Ingrese un Nombre de Usuario",
         minlength: "Tu Nombre de Usuario debe contener al menos 2 caracteres",
-        remote: jQuery.validator.format("{0} is already taken.")
+        remote: jQuery.validator.format("{0} no esta disponible")
       },
       contr_clie: {
         required: "Ingrese una Contraseña",
@@ -109,7 +127,11 @@ $( "#add_cliente" ).validate( {
         number: "Ingrese un Número de Teléfono Valido",
         minlength: "Ingrese un Número de Teléfono Valido"
       },
-      email_clie: "Ingrese una Dirección de Correo Electrónico Válida"
+      email_clie: {
+        required: "Ingrese una Dirección de Correo Electrónico Válida",
+        email: "Ingrese una Dirección de Correo Electrónico Válida",
+        remote: jQuery.validator.format("{0} no esta disponible")
+      }
     },
 
     errorElement: "em",
@@ -212,8 +234,6 @@ $('#editClienteModal').on('show.bs.modal', function (event) {
   $('#edit_gener_clie').val(gener_clie)
   var telef_clie = button.data('telef_clie') 
   $('#edit_telef_clie').val(telef_clie)
-  var email_clie = button.data('email_clie') 
-  $('#edit_email_clie').val(email_clie)
   var usuar_clie = button.data('usuar_clie') 
   $('#edit_usuar_clie').val(usuar_clie)
   var ident_clie = button.data('ident_clie') 
@@ -243,7 +263,18 @@ $( "#edit_cliente" ).validate( {
       },
       edit_usuar_clie: {
         required: true,
-        minlength: 2
+        minlength: 2,
+        remote: {
+          url: "../paginas/usuario_usuario_availability.php",
+          type: "post",
+          data:
+            {
+              usuar_clie: function()
+              {
+                return $('#edit_cliente :input[name="edit_usuar_clie"]').val();
+              }
+            }
+        }     
       },
       edit_contr_clie: {
         required: true,
@@ -258,11 +289,7 @@ $( "#edit_cliente" ).validate( {
         required: true,
         number: false,
         minlength: 15
-      },
-      edit_email_clie: {
-        required: true,
-        email: true
-      },
+      }
     },
 
     messages: {
@@ -286,7 +313,8 @@ $( "#edit_cliente" ).validate( {
       },
       edit_usuar_clie: {
         required: "Ingrese un Nombre de Usuario",
-        minlength: "Tu Nombre de Usuario debe contener al menos 2 caracteres"
+        minlength: "Tu Nombre de Usuario debe contener al menos 2 caracteres",
+        remote: jQuery.validator.format("{0} no esta disponible")
       },
       edit_contr_clie: {
         required: "Ingrese una Contraseña",
@@ -301,8 +329,7 @@ $( "#edit_cliente" ).validate( {
         required: "Ingrese un Número de Teléfono Valido",
         number: "Ingrese un Número de Teléfono Valido",
         minlength: "Ingrese un Número de Teléfono Valido"
-      },
-      edit_email_clie: "Ingrese una Dirección de Correo Electrónico Válida"
+      }
     },
 
     errorElement: "em",

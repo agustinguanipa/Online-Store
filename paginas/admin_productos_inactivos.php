@@ -26,7 +26,7 @@
 	    </div>
 	    <div class="row">
 	    	<div class="col-sm-8">
-					<a href="#addClienteModal" class="btn btn-success float-left" data-toggle="modal"><i class="fa fa-plus"></i> Registrar Producto</a>
+					<a href="#addProductoModal" class="btn btn-success float-left" data-toggle="modal"><i class="fa fa-plus"></i> Registrar Producto</a>
 				</div>
 	    	<div class="col-sm-4">
 					<div id="custom-search-input">
@@ -40,9 +40,17 @@
 			      </div>
 			    </div>
 				</div>
-	    </div>  
+	    </div>
+	    <div class='clearfix'></div>
+			<hr>
+			<div id="loader"></div><!-- Carga de datos ajax aqui -->
+			<div id="resultados"></div><!-- Carga de datos ajax aqui -->
+			<div class='outer_div'></div><!-- Carga de datos ajax aqui -->   
 	</div>
 </div>
+<!-- Restaurar Modal HTML -->
+<?php include("modal_restaurar_producto.php");?>
+<script src="../js/script_producto_inactivo.js"></script>
 </body>
   
 <?php require_once('admin_footer.php');  ?>

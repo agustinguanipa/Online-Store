@@ -1,7 +1,7 @@
 /* usuario_registro */
 
 jQuery.validator.addMethod("lettersonly", function(value, element) {
-  return this.optional(element) || /^[a-z]+$/i.test(value);
+  return this.optional(element) || /^[A-Z^\s]+$/i.test(value);
 }, "Letters only please"); 
 
 $( document ).ready( function () {
@@ -27,7 +27,18 @@ $( document ).ready( function () {
       },
       usuar_clie: {
         required: true,
-        minlength: 2
+        minlength: 2,
+        remote: {
+          url: "../paginas/usuario_usuario_availability.php",
+          type: "post",
+          data:
+            {
+              usuar_clie: function()
+              {
+                return $('#usuario_registro :input[name="usuar_clie"]').val();
+              }
+            }
+        }     
       },
       contr_clie: {
         required: true,
@@ -45,7 +56,18 @@ $( document ).ready( function () {
       },
       email_clie: {
         required: true,
-        email: true
+        email: true,
+        remote: {
+          url: "../paginas/usuario_email_availability.php",
+          type: "post",
+          data:
+            {
+              email_clie: function()
+              {
+                return $('#usuario_registro :input[name="email_clie"]').val();
+              }
+            }
+        }  
       },
     },
 
@@ -70,7 +92,8 @@ $( document ).ready( function () {
       },
       usuar_clie: {
         required: "Ingrese un Nombre de Usuario",
-        minlength: "Tu Nombre de Usuario debe contener al menos 2 caracteres"
+        minlength: "Tu Nombre de Usuario debe contener al menos 2 caracteres",
+        remote: jQuery.validator.format("{0} no esta disponible")
       },
       contr_clie: {
         required: "Ingrese una Contraseña",
@@ -86,7 +109,11 @@ $( document ).ready( function () {
         number: "Ingrese un Número de Teléfono Valido",
         minlength: "Ingrese un Número de Teléfono Valido"
       },
-      email_clie: "Ingrese una Dirección de Correo Electrónico Válida"
+      email_clie: {
+        required: "Ingrese una Dirección de Correo Electrónico Válida",
+        email: "Ingrese una Dirección de Correo Electrónico Válida",
+        remote: jQuery.validator.format("{0} no esta disponible")
+      }
     },
 
     errorElement: "em",

@@ -45,7 +45,18 @@ $( "#add_admin" ).validate( {
       },
       usuar_admi: {
         required: true,
-        minlength: 2
+        minlength: 2,
+        remote: {
+          url: "../paginas/admin_usuario_availability.php",
+          type: "post",
+          data:
+            {
+              usuar_admi: function()
+              {
+                return $('#add_admin :input[name="usuar_admi"]').val();
+              }
+            }
+        }     
       },
       contr_admi: {
         required: true,
@@ -79,7 +90,8 @@ $( "#add_admin" ).validate( {
       },
       usuar_admi: {
         required: "Ingrese un Nombre de Usuario",
-        minlength: "Tu Nombre de Usuario debe contener al menos 2 caracteres"
+        minlength: "Tu Nombre de Usuario debe contener al menos 2 caracteres",
+        remote: jQuery.validator.format("{0} no esta disponible")
       },
       contr_admi: {
         required: "Ingrese una Contraseña",

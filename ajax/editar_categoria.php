@@ -6,21 +6,15 @@
 	require_once ("../paginas/conexion_bd.php");//Contiene Funcion que Conecta a la Base de Datos
 
 	// escaping, additionally removing everything that could be (html/javascript-) code
-  $nomb1_clie = mysqli_real_escape_string($con,(strip_tags($_POST["edit_nomb1_clie"],ENT_QUOTES)));
-  $nomb2_clie = mysqli_real_escape_string($con,(strip_tags($_POST["edit_nomb2_clie"],ENT_QUOTES)));
-  $apel1_clie = mysqli_real_escape_string($con,(strip_tags($_POST["edit_apel1_clie"],ENT_QUOTES)));
-  $apel2_clie = mysqli_real_escape_string($con,(strip_tags($_POST["edit_apel2_clie"],ENT_QUOTES)));
-  $gener_clie = mysqli_real_escape_string($con,(strip_tags($_POST["edit_gener_clie"],ENT_QUOTES)));
-  $telef_clie = mysqli_real_escape_string($con,(strip_tags($_POST["edit_telef_clie"],ENT_QUOTES)));
-  $usuar_clie = mysqli_real_escape_string($con,(strip_tags($_POST["edit_usuar_clie"],ENT_QUOTES)));
-	$ident_clie=intval($_POST['edit_id']);
+  $nombr_cate = mysqli_real_escape_string($con,(strip_tags($_POST["edit_nombr_cate"],ENT_QUOTES)));
+	$ident_cate=intval($_POST['edit_id']);
 
 	// Actualizar en la Base de Datos
-    $sql = "UPDATE tabma_clie SET nomb1_clie='".$nomb1_clie."', nomb2_clie='".$nomb2_clie."', apel1_clie='".$apel1_clie."', apel2_clie='".$apel2_clie."', gener_clie='".$gener_clie."', telef_clie='".$telef_clie."', usuar_clie='".$usuar_clie."' WHERE ident_clie='".$ident_clie."' ";
+    $sql = "UPDATE tabma_cate SET nombr_cate='".$nombr_cate."' WHERE ident_cate='".$ident_cate."' ";
     $query = mysqli_query($con,$sql);
     // Si ha sido Actualizado Exitosamente
     if ($query) {
-        $messages[] = "El cliente ha sido actualizado con éxito.";
+        $messages[] = "La categoría ha sido actualizada con éxito.";
     } else {
         $errors[] = "Lo sentimos, la actualización falló. Por favor, regrese y vuelva a intentarlo.";
     }

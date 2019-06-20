@@ -67,12 +67,6 @@
           </div>
           <div class="form-row">
             <div class="col form-group">
-              <label class="form-label"><b>E-Mail: </b></label>
-              <input type="text" name="edit_email_clie"  id="edit_email_clie" class="form-control" maxlength="100" onkeyup="this.value = this.value.toUpperCase();">
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="col form-group">
               <label class="form-label"><b>Usuario: </b></label>
               <input type="text" name="edit_usuar_clie"  id="edit_usuar_clie" class="form-control" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
             </div>
