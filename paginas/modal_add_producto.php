@@ -19,37 +19,28 @@
 <script type="text/javascript" src="../libs/jQuery-Mask-Plugin/dist/jquery.mask.js"></script>
 <!--- JS --->
 <script src="../js/validacion.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-   $(document).ready(function() {
-    $('input[type="file"]').on("change", function() {
-      let filenames = [];
-      let files = document.getElementById("customFile").files;
-      if (files.length > 1) {
-        filenames.push("Total Files (" + files.length + ")");
-      } else {
-        for (let i in files) {
-          if (files.hasOwnProperty(i)) {
-            filenames.push(files[i].name);
-          }
-        }
-      }
-      $(this)
-        .next(".custom-file-label")
-        .html(filenames.join(","));
-    });
-  });
-  </script>
   
 <div id="addProductoModal" class="modal fade">
-	<div class="modal-dialog modal-xl">
+	<div class="modal-dialog">
 		<div class="modal-content">
 			<form name="add_producto" id="add_producto" class="justify-content-center" align="center" action="">
 				<div class="modal-header">						
 					<h4 class="modal-title">Registrar Producto</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 				</div>
-				<div class="modal-body">					
+				<div class="modal-body">
+          <div class="form-row">
+            <div class="col form-group">
+              <label class="form-label" for="ident_cate"><b>Categoria: </b></label>
+              <td><?php categorias($con); ?></td>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col form-group">
+              <label class="form-label" for="ident_prod"><b>Código: </b></label>
+              <input type="text" class="form-control" name="ident_prod" autocomplete="off" id="ident_prod" placeholder="" maxlength="20" onkeyup="this.value = this.value.toUpperCase();" required>
+            </div>
+          </div>					
 					<div class="form-row">
             <div class="col form-group">
               <label class="form-label" for="nombr_prod"><b>Nombre: </b></label>
@@ -59,7 +50,7 @@
           <div class="form-row">
             <div class="col form-group">
               <label class="form-label" for="desco_prod"><b>Descripcion Corta: </b></label>
-              <input type="textarea" class="form-control" name="desco_prod" autocomplete="off" id="desco_prod" placeholder="" maxlength="200" required>
+              <textarea class="form-control" name="desco_prod" autocomplete="off" id="desco_prod" placeholder="" maxlength="200" required></textarea>
             </div>
           </div>
           <div class="form-row">
@@ -71,75 +62,29 @@
           <div class="form-row">
             <div class="col form-group">
               <label class="form-label" for="preci_prod"><b>Precio: </b></label>
-              <input type="textarea" class="form-control" name="preci_prod" autocomplete="off" id="preci_prod" placeholder="" maxlength="10" required>
+              <input type="text" class="form-control preci-mask" name="preci_prod" autocomplete="off" id="preci_prod" placeholder="" maxlength="10" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col form-group">
+              <label class="form-label" for="pesoo_prod"><b>Peso: </b></label>
+              <input type="text" class="form-control pesoo-mask" name="pesoo_prod" autocomplete="off" id="pesoo_prod" placeholder="" maxlength="10" required>
             </div>
             <div class="col form-group">
-              <label class="form-label" for="pesoo_prod"><b>Tamaño: </b></label>
-              <input type="textarea" class="form-control" name="pesoo_prod" autocomplete="off" id="pesoo_prod" placeholder="" maxlength="10" required>
+              <label class="form-label" for="taman_prod"><b>Tamaño: </b></label>
+              <input type="text" class="form-control taman-mask" name="taman_prod" autocomplete="off" id="taman_prod" placeholder="" maxlength="10" required>
             </div>
           </div>
           <div class="form-row">
             <div class="col form-group">
               <label class="form-label" for="stock_prod"><b>Stock: </b></label>
-              <input type="textarea" class="form-control pesoo-mask" name="stock_prod" autocomplete="off" id="stock_prod" placeholder="" maxlength="10" required>
+              <input type="text" class="form-control" name="stock_prod" autocomplete="off" id="stock_prod" placeholder="" maxlength="10" required>
             </div>
             <div class="col form-group">
               <label class="form-label" for="estad_prod"><b>Estado: </b></label>
-              <select class="form-control" id="estad_prod_clie" name="estad_prod_clie">
-                <option value="MASCULINO">NUEVO</option>
-                <option value="FEMENINO">USADO</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-row">
-        </div>
-          <div class="form-row">
-            <div class="col form-group">
-              <label class="form-label" for="imag1_prod">Imagen 1: </label>
-              <div class="form-group">
-                <div class="custom-file">
-                  <input type="file" name="files[]" multiple class="custom-file-input" id="customFile">
-                  <label class="custom-file-label" for="customFile">Seleccionar Archivo...</label>
-                </div>
-              </div>
-              <div class="form-group">
-                <button type="submit" name="upload" value="upload" id="upload" class="btn btn-block btn-primary"><i class="fa fa-fw fa-upload"></i> Subir</button>
-              </div>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="col form-group">
-              <label class="form-label" for="imag2_prod">Imagen 2: </label>
-              <div class="form-group">
-                <div class="custom-file">
-                  <input type="file" name="files[]" multiple class="custom-file-input" id="customFile">
-                  <label class="custom-file-label" for="customFile">Seleccionar Archivo...</label>
-                </div>
-              </div>
-              <div class="form-group">
-                <button type="submit" name="upload" value="upload" id="upload" class="btn btn-block btn-primary"><i class="fa fa-fw fa-upload"></i> Subir</button>
-              </div>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="col form-group">
-              <label class="form-label" for="imag3_prod">Imagen 3: </label>
-              <div class="form-group">
-                <div class="custom-file">
-                  <input type="file" name="files[]" multiple class="custom-file-input" id="customFile">
-                  <label class="custom-file-label" for="customFile">Seleccionar Archivo...</label>
-                </div>
-              </div>
-              <div class="form-group">
-                <button type="submit" name="upload" value="upload" id="upload" class="btn btn-block btn-primary"><i class="fa fa-fw fa-upload"></i> Subir</button>
-              </div>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="col form-group">
-              <label class="form-label" for="nombr_cate"><b>Categoria: </b></label>
-              <select class="form-control" id="nombr_cate" name="nombr_cate">
-                <option value=""></option>
+              <select class="form-control" id="estad_prod" name="estad_prod">
+                <option value="NUEVO">NUEVO</option>
+                <option value="USADO">USADO</option>
               </select>
             </div>
           </div>

@@ -168,37 +168,14 @@ $( "#add_cliente" ).validate( {
       $("#resultados").html(datos);
       load(1);
       $('#addClienteModal').modal('hide');
+        } 
+      });
+    }
+});
 
-      } 
-
-    });
-    $('#add_cliente').on('hidden.bs.modal', function (e) {
-  $(this)
-    .find("input,textarea,select")
-       .val('')
-       .end()
-    .find("input[type=checkbox], input[type=radio]")
-       .prop("checked", "")
-       .end();
-
-    $('form :input').validator("destroy");
-})
-    $('[data-dismiss=modal]').on('click', function (e) {
-    var $t = $(this),
-        target = $t[0].href || $t.data("target") || $t.parents('.modal') || [];
-
-  $(target)
-    .find("input,textarea,select")
-       .val('')
-       .end()
-    .find("input[type=checkbox], input[type=radio]")
-       .prop("checked", "")
-       .end();
-       $('form :input').validator("destroy");
-
-})
-   
-  }
+$('#addClienteModal').on('hidden.bs.modal', function(e) {
+  $(this).find('#add_cliente')[0].reset();
+  $(this).find('.is-valid').removeClass('is-valid');
 });
 
 /* Look */
@@ -343,7 +320,6 @@ $( "#edit_cliente" ).validate( {
 
     var parametros = $( form ).serialize(); // I change 'this' to form
     console.log(parametros); // for test purpose. See your log to confirm the result data
-    $('form :input').val('');
 
     $.ajax({
       type: "POST",
@@ -358,9 +334,12 @@ $( "#edit_cliente" ).validate( {
       $('#editClienteModal').modal('hide');
       }                     
     });
-    $("#edit_cliente").trigger("reset");
-    $("#edit_cliente").validator("destroy");
   }
+});
+
+$('#editClienteModal').on('hidden.bs.modal', function(e) {
+  $(this).find('#edit_cliente')[0].reset();
+  $(this).find('.is-valid').removeClass('is-valid');
 });
 
 /* Delete */

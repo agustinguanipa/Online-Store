@@ -31,29 +31,23 @@
 				<div class="modal-body">
 					<div class="form-row">
 						<div class="col form-group">
-              <label class="form-label">Primer Nombre: </label>
+              <label class="form-label"><b>Primer Nombre: </b></label>
               <input type="text" name="edit_nomb1_admi"  id="edit_nomb1_admi" class="form-control" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
 							<input type="hidden" name="edit_id" id="edit_id">
             </div>
             <div class="col form-group">
-              <label class="form-label">Segundo Nombre: </label>
+              <label class="form-label"><b>Segundo Nombre: </b></label>
               <input type="text" name="edit_nomb2_admi"  id="edit_nomb2_admi" class="form-control" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
             </div>
           </div>
           <div class="form-row">
             <div class="col form-group">
-              <label class="form-label">Primer Apellido</label>
+              <label class="form-label"><b>Primer Apellido</b></label>
               <input type="text" name="edit_apel1_admi"  id="edit_apel1_admi" class="form-control" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
             </div>
             <div class="col form-group">
-              <label class="form-label">Segundo Apellido</label>
+              <label class="form-label"><b>Segundo Apellido</b></label>
               <input type="text" name="edit_apel2_admi"  id="edit_apel2_admi" class="form-control" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="col form-group">
-              <label class="form-label">Usuario: </label>
-              <input type="text" name="edit_usuar_admi"  id="edit_usuar_admi" class="form-control" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
             </div>
           </div>
 				</div>

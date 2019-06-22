@@ -31,37 +31,37 @@
 				<div class="modal-body">					
 					<div class="form-row">
             <div class="col form-group">
-              <label class="form-label" for="nomb1_admi">Primer Nombre: </label>
+              <label class="form-label" for="nomb1_admi"><b>Primer Nombre: </b></label>
               <input type="text" class="form-control" name="nomb1_admi" autocomplete="off" id="nomb1_admi" placeholder="Carlos" maxlength="20" onkeyup="this.value = this.value.toUpperCase();" required>
             </div>
             <div class="col form-group">
-              <label class="form-label" for="nomb2_admi">Segundo Nombre: </label>
+              <label class="form-label" for="nomb2_admi"><b>Segundo Nombre: </b></label>
               <input type="text" class="form-control" name="nomb2_admi" autocomplete="off" id="nomb2_admi" placeholder="Agustin" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
             </div>
           </div>
           <div class="form-row">
             <div class="col form-group">
-              <label class="form-label" for="apel1_admi">Primer Apellido: </label>
+              <label class="form-label" for="apel1_admi"><b>Primer Apellido: </b></label>
               <input type="text" class="form-control" name="apel1_admi" autocomplete="off" id="apel1_admi" placeholder="Guanipa" maxlength="20" onkeyup="this.value = this.value.toUpperCase();" required>
             </div>
             <div class="col form-group">
-              <label class="form-label" for="apel2_admi">Segundo Apellido: </label>
+              <label class="form-label" for="apel2_admi"><b>Segundo Apellido: </b></label>
               <input type="text" class="form-control" name="apel2_admi" autocomplete="off" id="apel2_admi" placeholder="Alvarez" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
             </div>
           </div>
           <div class="form-row">
             <div class="col form-group">
-              <label class="form-label" for="usuar_admi">Usuario: </label>
+              <label class="form-label" for="usuar_admi"><b>Usuario: </b></label>
               <input type="text" class="form-control" name="usuar_admi" autocomplete="off" id="usuar_admi" placeholder="miusuario" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
             </div>
           </div>
           <div class="form-row">
             <div class="col form-group">
-              <label class="form-label" for="contr_admi">Contraseña: </label>
+              <label class="form-label" for="contr_admi"><b>Contraseña: </b></label>
               <input type="password" class="form-control" name="contr_admi" autocomplete="off" id="contr_admi" placeholder="********" maxlength="20">
             </div>
             <div class="col form-group">
-              <label class="form-label" for="confirm_password">Confirmar Contraseña: </label>
+              <label class="form-label" for="confirm_password"><b>Confirmar Contraseña: </b><b></label>
               <input type="password" class="form-control" name="confirm_password" autocomplete="off" id="confirm_password" placeholder="********" maxlength="20">
             </div>
           </div>	

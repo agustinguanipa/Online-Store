@@ -1,9 +1,5 @@
 /* usuario_registro */
 
-jQuery.validator.addMethod("lettersonly", function(value, element) {
-  return this.optional(element) || /^[A-Z^\s]+$/i.test(value);
-}, "Letters only please"); 
-
 $( document ).ready( function () {
   $( "#usuario_registro" ).validate( {
     rules: {
@@ -137,14 +133,7 @@ $( document ).ready( function () {
 
 } );
 
-$('.telef-mask').mask('(0000) 000 0000');
-$('.pesoo-mask').mask('KG');
-
 /* usuario_inicio */
-
-jQuery.validator.addMethod("lettersonly", function(value, element) {
-  return this.optional(element) || /^[a-z]+$/i.test(value);
-}, "Letters only please"); 
 
 $( document ).ready( function () {
   $( "#usuario_inicio" ).validate( {
@@ -191,13 +180,7 @@ $( document ).ready( function () {
 
 } );
 
-$('.telef-mask').mask('(0000) 000 0000');
-
 /* usuario_modificar */
-
-jQuery.validator.addMethod("lettersonly", function(value, element) {
-  return this.optional(element) || /^[a-z]+$/i.test(value);
-}, "Letters only please"); 
 
 $( document ).ready( function () {
   $( "#usuario_modificar" ).validate( {
@@ -287,13 +270,7 @@ $( document ).ready( function () {
 
 } );
 
-$('.telef-mask').mask('(0000) 000 0000');
-
 /* admin_inicio */
-
-jQuery.validator.addMethod("lettersonly", function(value, element) {
-  return this.optional(element) || /^[a-z]+$/i.test(value);
-}, "Letters only please"); 
 
 $( document ).ready( function () {
   $( "#admin_inicio" ).validate( {
@@ -340,4 +317,14 @@ $( document ).ready( function () {
 
 } );
 
+/* Masks */
+
+jQuery.validator.addMethod("lettersonly", function(value, element) {
+  return this.optional(element) || /^[A-Z^\s]+$/i.test(value);
+}, "Letters only please"); 
+
 $('.telef-mask').mask('(0000) 000 0000');
+$('.pesoo-mask').mask('##,##0.00', {reverse: true});
+$('.preci-mask').mask('000,000,000,000,000.00', {reverse: true});
+$('.taman-mask').mask('###.00 x ###.00 x ###.00', {reverse: false});
+

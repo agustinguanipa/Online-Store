@@ -25,6 +25,10 @@ function load(page){
 $( "#add_producto" ).validate( {
 
     rules: {
+      ident_prod: {
+        required: true,
+        minlength: 2
+      },
       nombr_prod: {
         required: true,
         minlength: 2
@@ -56,26 +60,25 @@ $( "#add_producto" ).validate( {
         required: true,
         number: true,
         minlength: 2
-      },
-      estad_prod: {
-        required: true,
-        number: true,
-        minlength: 2
       }
     },
 
     messages: {
+      ident_prod: {
+        required: "Ingrese el Codigo del Producto",
+        minlength: "El Código debe contener al menos 2 caracteres"
+      },
       nombr_prod: {
         required: "Ingrese el Nombre del Producto",
         minlength: "Tu Nombre debe contener al menos 2 caracteres"
       },
       desco_prod: {
         required: "Ingrese la Descripcion Corta del Producto",
-        minlength: "Tu Nombre debe contener al menos 2 caracteres"
+        minlength: "La Descripcion Corta debe contener al menos 5 caracteres"
       },
       desla_prod: {
         required: "Ingrese la Descripcion Larga del Producto",
-        minlength: "Tu Apellido debe contener al menos 2 caracteres"
+        minlength: "La Descripcion Larga debe contener al menos 10 caracteres"
       },
       preci_prod: {
         required: "Ingrese el Precio del Producto",
@@ -117,7 +120,6 @@ $( "#add_producto" ).validate( {
 
     var parametros = $( form ).serialize(); // I change 'this' to form
     console.log(parametros); // for test purpose. See your log to confirm the result data
-    $('form :input').val('');
 
     $.ajax({
       type: "POST",

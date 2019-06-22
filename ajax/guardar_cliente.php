@@ -43,14 +43,19 @@ if (isset($errors)){
 	if (isset($messages)){
 		?>
 		<div class="alert alert-success" role="alert">
-				<button type="button" class="close" data-dismiss="alert">&times;</button>
-				<strong>¡Bien hecho!</strong>
-				<?php
-					foreach ($messages as $message) {
-							echo $message;
-						}
-					?>
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+			<strong>¡Bien hecho!</strong>
+			<?php
+				foreach ($messages as $message) {
+						echo $message;
+					}
+				?>
 		</div>
+		<script type="text/javascript">
+			$(".alert").delay(2000).slideUp(200, function() {
+      $(this).alert('close');
+    });
+		</script>
 		<?php
 	}
 ?>			

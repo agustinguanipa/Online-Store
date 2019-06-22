@@ -3,6 +3,7 @@
 	require_once ("../paginas/conexion_bd.php"); //Contiene Funcion que Conecta a la Base de Datos
 
 	// escaping, additionally removing everything that could be (html/javascript-) code
+	$ident_prod = mysqli_real_escape_string($con,(strip_tags($_POST["ident_prod"],ENT_QUOTES)));
   $nombr_prod = mysqli_real_escape_string($con,(strip_tags($_POST["nombr_prod"],ENT_QUOTES)));
   $desco_prod = mysqli_real_escape_string($con,(strip_tags($_POST["desco_prod"],ENT_QUOTES)));
   $desla_prod = mysqli_real_escape_string($con,(strip_tags($_POST["desla_prod"],ENT_QUOTES)));
@@ -11,18 +12,17 @@
   $taman_prod = mysqli_real_escape_string($con,(strip_tags($_POST["taman_prod"],ENT_QUOTES)));
   $stock_prod = mysqli_real_escape_string($con,(strip_tags($_POST["stock_prod"],ENT_QUOTES)));
   $estad_prod = mysqli_real_escape_string($con,(strip_tags($_POST["estad_prod"],ENT_QUOTES)));
-  $imag1_prod = mysqli_real_escape_string($con,(strip_tags($_POST["imag1_prod"],ENT_QUOTES)));
-  $imag2_prod = mysqli_real_escape_string($con,(strip_tags($_POST["imag2_prod"],ENT_QUOTES)));
-  $imag3_prod = mysqli_real_escape_string($con,(strip_tags($_POST["imag3_prod"],ENT_QUOTES)));
+  
 	$statu_prod = 1;
+	$ident_cate = mysqli_real_escape_string($con,(strip_tags($_POST["ident_cate"],ENT_QUOTES)));
 
 	// Registrar en la Base de Datos
-    $sql = "INSERT INTO tabma_prod(nombr_prod, desco_prod, desla_prod, preci_prod, pesoo_prod, taman_prod, stock_prod, estad_prod, imag1_prod, imag2_prod, imag3_prod, statu_prod) VALUES ('$nombr_prod','$desco_prod','$desla_prod','$preci_prod','$pesoo_prod','$taman_prod','$stock_prod','$estad_prod','$imag1_prod','$imag2_prod','$imag3_prod','$statu_prod')";
+    $sql = "INSERT INTO tabma_prod(ident_prod, nombr_prod, desco_prod, desla_prod, preci_prod, pesoo_prod, taman_prod, stock_prod, estad_prod, statu_prod, ident_cate) VALUES ('$ident_prod','$nombr_prod','$desco_prod','$desla_prod','$preci_prod','$pesoo_prod','$taman_prod','$stock_prod','$estad_prod','$statu_prod','$ident_cate') SELECT ident_cate FROM tabma_cate WHERE nombr_cate = '$nombr_cate' LIMIT 1";
     
     $query = mysqli_query($con,$sql);
     // Si ha sido Agregado Exitosamentee
     if ($query) {
-        $messages[] = "El prodnte ha sido registrado con éxito.";
+        $messages[] = "El producto ha sido registrado con éxito.";
     } else {
         $errors[] = "Lo sentimos, el registro falló. Por favor, regrese y vuelva a intentarlo.";
     }

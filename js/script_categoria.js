@@ -74,7 +74,6 @@ $( "#add_categoria" ).validate( {
 
     var parametros = $( form ).serialize(); // I change 'this' to form
     console.log(parametros); // for test purpose. See your log to confirm the result data
-    $('form :input').val('');
 
     $.ajax({
       type: "POST",
@@ -90,6 +89,11 @@ $( "#add_categoria" ).validate( {
       }                     
     });
   }
+});
+
+$('#addCategoriaModal').on('hidden.bs.modal', function(e) {
+  $(this).find('#add_categoria')[0].reset();
+  $(this).find('.is-valid').removeClass('is-valid');
 });
 
 /* Look */
@@ -182,7 +186,6 @@ $( "#edit_categoria" ).validate( {
 
     var parametros = $( form ).serialize(); // I change 'this' to form
     console.log(parametros); // for test purpose. See your log to confirm the result data
-    $('form :input').val('');
 
     $.ajax({
       type: "POST",
@@ -198,6 +201,11 @@ $( "#edit_categoria" ).validate( {
       }                     
     });
   }
+});
+
+$('#editCategoriaModal').on('hidden.bs.modal', function(e) {
+  $(this).find('#edit_categoria')[0].reset();
+  $(this).find('.is-valid').removeClass('is-valid');
 });
 
 /* Delete */

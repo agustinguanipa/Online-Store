@@ -10,11 +10,10 @@
   $nomb2_admi = mysqli_real_escape_string($con,(strip_tags($_POST["edit_nomb2_admi"],ENT_QUOTES)));
   $apel1_admi = mysqli_real_escape_string($con,(strip_tags($_POST["edit_apel1_admi"],ENT_QUOTES)));
   $apel2_admi = mysqli_real_escape_string($con,(strip_tags($_POST["edit_apel2_admi"],ENT_QUOTES)));
-  $usuar_admi = mysqli_real_escape_string($con,(strip_tags($_POST["edit_usuar_admi"],ENT_QUOTES)));
 	$ident_admi=intval($_POST['edit_id']);
 
 	// Actualizar en la Base de Datos
-    $sql = "UPDATE tabma_admi SET nomb1_admi='".$nomb1_admi."', nomb2_admi='".$nomb2_admi."', apel1_admi='".$apel1_admi."', apel2_admi='".$apel2_admi."', usuar_admi='".$usuar_admi."' WHERE ident_admi='".$ident_admi."' ";
+    $sql = "UPDATE tabma_admi SET nomb1_admi='".$nomb1_admi."', nomb2_admi='".$nomb2_admi."', apel1_admi='".$apel1_admi."', apel2_admi='".$apel2_admi."' WHERE ident_admi='".$ident_admi."' ";
     $query = mysqli_query($con,$sql);
     // Si ha sido Actualizado Exitosamente
     if ($query) {
@@ -51,6 +50,11 @@ if (isset($errors)){
 						}
 					?>
 		</div>
+		<script type="text/javascript">
+			$(".alert").delay(2000).slideUp(200, function() {
+      $(this).alert('close');
+    });
+		</script>
 		<?php
 	}
 ?>			

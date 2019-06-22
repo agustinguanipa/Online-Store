@@ -19,8 +19,8 @@
 							<h2>Administrar <b>Administradores</b></h2>
 						</div>
 						<div class="col-sm-6">
-							<a href="admin_admins.php" class="btn btn-light text-dark"><i class="fa fa-users"></i> Administradores Activos</a>
-							<a href="admin_admins_inactivos.php" class="btn btn-light text-dark"><i class="fa fa-trash"></i> Administradores Inactivos</a>
+							<!-- <a href="admin_admins.php" class="btn btn-light text-dark"><i class="fa fa-users"></i> Administradores Activos</a>
+							<a href="admin_admins_inactivos.php" class="btn btn-light text-dark"><i class="fa fa-trash"></i> Administradores Inactivos</a> -->
 						</div>
 	        </div>
 	    </div>

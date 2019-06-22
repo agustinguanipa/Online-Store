@@ -47,6 +47,11 @@ if (isset($errors)){
 						}
 					?>
 		</div>
+		<script type="text/javascript">
+			$(".alert").delay(2000).slideUp(200, function() {
+      $(this).alert('close');
+    });
+		</script>
 		<?php
 	}
 ?>			

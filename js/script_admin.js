@@ -126,7 +126,6 @@ $( "#add_admin" ).validate( {
 
     var parametros = $( form ).serialize(); // I change 'this' to form
     console.log(parametros); // for test purpose. See your log to confirm the result data
-    $('form :input').val('');
 
     $.ajax({
       type: "POST",
@@ -142,6 +141,11 @@ $( "#add_admin" ).validate( {
       }                     
     });
   }
+});
+
+$('#addAdminModal').on('hidden.bs.modal', function(e) {
+  $(this).find('#add_admin')[0].reset();
+  $(this).find('.is-valid').removeClass('is-valid');
 });
 
 /* Look */
@@ -278,7 +282,6 @@ $( "#edit_admin" ).validate( {
 
     var parametros = $( form ).serialize(); // I change 'this' to form
     console.log(parametros); // for test purpose. See your log to confirm the result data
-    $('form :input').val('');
 
     $.ajax({
       type: "POST",
@@ -294,6 +297,11 @@ $( "#edit_admin" ).validate( {
       }                     
     });
   }
+});
+
+$('#editAdminModal').on('hidden.bs.modal', function(e) {
+  $(this).find('#edit_admin')[0].reset();
+  $(this).find('.is-valid').removeClass('is-valid');
 });
 
 /* Delete */
