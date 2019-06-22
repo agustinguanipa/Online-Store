@@ -65,12 +65,6 @@
               <input type="text" name="edit_telef_clie"  id="edit_telef_clie" class="form-control telef-mask" maxlength="15">
             </div>
           </div>
-          <div class="form-row">
-            <div class="col form-group">
-              <label class="form-label"><b>Usuario: </b></label>
-              <input type="text" name="edit_usuar_clie"  id="edit_usuar_clie" class="form-control" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
-            </div>
-          </div>
 				</div>
 				<div class="modal-footer">
 					<input type="button" class="btn btn-light" data-dismiss="modal" value="Cancelar">

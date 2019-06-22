@@ -156,8 +156,7 @@ $( "#add_cliente" ).validate( {
 
     var parametros = $( form ).serialize(); // I change 'this' to form
     console.log(parametros); // for test purpose. See your log to confirm the result data
-    $('form :input').val('');
-
+    
     $.ajax({
       type: "POST",
       url: "../ajax/guardar_cliente.php",
@@ -169,8 +168,36 @@ $( "#add_cliente" ).validate( {
       $("#resultados").html(datos);
       load(1);
       $('#addClienteModal').modal('hide');
-      }                     
+
+      } 
+
     });
+    $('#add_cliente').on('hidden.bs.modal', function (e) {
+  $(this)
+    .find("input,textarea,select")
+       .val('')
+       .end()
+    .find("input[type=checkbox], input[type=radio]")
+       .prop("checked", "")
+       .end();
+
+    $('form :input').validator("destroy");
+})
+    $('[data-dismiss=modal]').on('click', function (e) {
+    var $t = $(this),
+        target = $t[0].href || $t.data("target") || $t.parents('.modal') || [];
+
+  $(target)
+    .find("input,textarea,select")
+       .val('')
+       .end()
+    .find("input[type=checkbox], input[type=radio]")
+       .prop("checked", "")
+       .end();
+       $('form :input').validator("destroy");
+
+})
+   
   }
 });
 
@@ -261,30 +288,6 @@ $( "#edit_cliente" ).validate( {
         lettersonly: true,
         minlength: 2
       },
-      edit_usuar_clie: {
-        required: true,
-        minlength: 2,
-        remote: {
-          url: "../paginas/usuario_usuario_availability.php",
-          type: "post",
-          data:
-            {
-              usuar_clie: function()
-              {
-                return $('#edit_cliente :input[name="edit_usuar_clie"]').val();
-              }
-            }
-        }     
-      },
-      edit_contr_clie: {
-        required: true,
-        minlength: 5
-      },
-      edit_confirm_password: {
-        required: true,
-        minlength: 5,
-        equalTo: "#contr_clie"
-      },
       edit_telef_clie: {
         required: true,
         number: false,
@@ -310,20 +313,6 @@ $( "#edit_cliente" ).validate( {
       edit_apel2_clie: {
         lettersonly: "Tu Apellido solo debe contener letras sin espacio",
         minlength: "Tu Apellido debe contener al menos 2 caracteres"
-      },
-      edit_usuar_clie: {
-        required: "Ingrese un Nombre de Usuario",
-        minlength: "Tu Nombre de Usuario debe contener al menos 2 caracteres",
-        remote: jQuery.validator.format("{0} no esta disponible")
-      },
-      edit_contr_clie: {
-        required: "Ingrese una Contraseña",
-        minlength: "Tu Contraseña debe contener al menos 5 caracteres"
-      },
-      edit_confirm_password: {
-        required: "Ingrese una Contraseña",
-        minlength: "Tu Contraseña debe contener al menos 5 caracteres",
-        equalTo: "Ingrese la Misma Contraseña"
       },
       edit_telef_clie: {
         required: "Ingrese un Número de Teléfono Valido",
@@ -369,6 +358,8 @@ $( "#edit_cliente" ).validate( {
       $('#editClienteModal').modal('hide');
       }                     
     });
+    $("#edit_cliente").trigger("reset");
+    $("#edit_cliente").validator("destroy");
   }
 });
 

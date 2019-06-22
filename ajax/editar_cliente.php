@@ -12,11 +12,10 @@
   $apel2_clie = mysqli_real_escape_string($con,(strip_tags($_POST["edit_apel2_clie"],ENT_QUOTES)));
   $gener_clie = mysqli_real_escape_string($con,(strip_tags($_POST["edit_gener_clie"],ENT_QUOTES)));
   $telef_clie = mysqli_real_escape_string($con,(strip_tags($_POST["edit_telef_clie"],ENT_QUOTES)));
-  $usuar_clie = mysqli_real_escape_string($con,(strip_tags($_POST["edit_usuar_clie"],ENT_QUOTES)));
 	$ident_clie=intval($_POST['edit_id']);
 
 	// Actualizar en la Base de Datos
-    $sql = "UPDATE tabma_clie SET nomb1_clie='".$nomb1_clie."', nomb2_clie='".$nomb2_clie."', apel1_clie='".$apel1_clie."', apel2_clie='".$apel2_clie."', gener_clie='".$gener_clie."', telef_clie='".$telef_clie."', usuar_clie='".$usuar_clie."' WHERE ident_clie='".$ident_clie."' ";
+    $sql = "UPDATE tabma_clie SET nomb1_clie='".$nomb1_clie."', nomb2_clie='".$nomb2_clie."', apel1_clie='".$apel1_clie."', apel2_clie='".$apel2_clie."', gener_clie='".$gener_clie."', telef_clie='".$telef_clie."' WHERE ident_clie='".$ident_clie."' ";
     $query = mysqli_query($con,$sql);
     // Si ha sido Actualizado Exitosamente
     if ($query) {
