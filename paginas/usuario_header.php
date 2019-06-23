@@ -2,6 +2,9 @@
   if (session_status() == PHP_SESSION_NONE) {
       session_start();
   }
+
+  require_once ("../js/funciones.php");
+  require_once ("conexion_bd.php");
 ?>
 
 <!DOCTYPE html>
