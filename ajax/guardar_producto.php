@@ -13,11 +13,23 @@
   $taman_prod = mysqli_real_escape_string($con,(strip_tags($_POST["taman_prod"],ENT_QUOTES)));
   $stock_prod = mysqli_real_escape_string($con,(strip_tags($_POST["stock_prod"],ENT_QUOTES)));
   $estad_prod = mysqli_real_escape_string($con,(strip_tags($_POST["estad_prod"],ENT_QUOTES)));
+  $imag1_prod = $_FILES['imag1_prod']['name'];
+  $root1 = $_FILES['imag1_prod']['tmp_name'];
+  $destination1 = "../imagen/productos/".$imag1_prod;
+  copy($root1,$destination1);
+  $imag2_prod = $_FILES['imag2_prod']['name'];
+  $root2 = $_FILES['imag2_prod']['tmp_name'];
+  $destination2 = "../imagen/productos/".$imag2_prod;
+  copy($root2,$destination2);
+  $imag3_prod = $_FILES['imag3_prod']['name'];
+  $root3 = $_FILES['imag3_prod']['tmp_name'];
+  $destination3 = "../imagen/productos/".$imag3_prod;
+  copy($root3,$destination3);
   
 	$statu_prod = 1;
 
 	// Registrar en la Base de Datos
-    $sql = "INSERT INTO tabma_prod(ident_prod, ident_cate, nombr_prod, desco_prod, desla_prod, preci_prod, pesoo_prod, taman_prod, stock_prod, estad_prod, statu_prod) VALUES ('$ident_prod',(SELECT ident_cate FROM tabma_cate WHERE ident_cate = '$ident_cate'),'$nombr_prod','$desco_prod','$desla_prod','$preci_prod','$pesoo_prod','$taman_prod','$stock_prod','$estad_prod','$statu_prod') ";
+    $sql = "INSERT INTO tabma_prod(ident_prod, ident_cate, nombr_prod, desco_prod, desla_prod, preci_prod, pesoo_prod, taman_prod, stock_prod, estad_prod, imag1_prod, imag2_prod, imag3_prod, statu_prod) VALUES ('$ident_prod',(SELECT ident_cate FROM tabma_cate WHERE ident_cate = '$ident_cate'),'$nombr_prod','$desco_prod','$desla_prod','$preci_prod','$pesoo_prod','$taman_prod','$stock_prod','$estad_prod','$destination1' ,'$destination2','$destination3', '$statu_prod') ";
     
     $query = mysqli_query($con,$sql);
     // Si ha sido Agregado Exitosamentee

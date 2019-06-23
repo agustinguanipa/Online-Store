@@ -21,9 +21,8 @@
 <script src="../js/validacion.js" type="text/javascript"></script>
 
 <?php
-    
-    $sql = "SELECT * FROM tabma_cate";
-    $result = mysqli_query($con, $sql);
+  $sql = "SELECT * FROM tabma_cate";
+  $result = mysqli_query($con, $sql);
 ?>
   
 <div id="addProductoModal" class="modal fade">
@@ -99,6 +98,24 @@
                 <option value="NUEVO">NUEVO</option>
                 <option value="USADO">USADO</option>
               </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col form-group">
+              <label class="form-label" for="imag1_prod"><b>Imagen 1: </b></label>
+              <input type="file" class="filestyle" id="imag1_prod" name="imag1_prod" alt="Imagen del Producto 1" data-btnClass="btn-primary">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col form-group">
+              <label class="form-label" for="imag2_prod"><b>Imagen 2: </b></label>
+              <input type="file" class="filestyle" id="imag2_prod" name="imag2_prod" alt="Imagen del Producto 2" data-btnClass="btn-primary">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col form-group">
+              <label class="form-label" for="imag3_prod"><b>Imagen 3: </b></label>
+              <input type="file" class="filestyle" id="imag3_prod" name="imag3_prod" alt="Imagen del Producto 3" data-btnClass="btn-primary">
             </div>
           </div>
 				</div>
