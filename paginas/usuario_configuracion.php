@@ -9,6 +9,8 @@
 
 <?php require_once('usuario_header.php'); ?>
 
+
+
 <head>
 	<title>Configuración | SIGMAEMCA Online Store</title>
 </head>
@@ -27,11 +29,11 @@
            <div class="card-body">
             <div class="form-group text-center">
               <div class="formulario-registro-inicio">
-                <form role="form" id="usuario_registro" class="justify-content-center" align="center" action="guardar_cliente.php" method="post">
+                <form role="form" id="edit_cliente" name="edit_cliente" class="justify-content-center" align="center" action="editar_cliente.php" method="post">
                   <div class="form-row">
                     <div class="col form-group">
                       <label class="form-label" for="nomb1_clie">Primer Nombre: </label>
-                      <input type="text" class="form-control" name="nomb1_clie" autocomplete="off" id="nomb1_clie" placeholder="Carlos" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
+                      <input type="text" class="form-control" name="nomb1_clie" autocomplete="off" id="nomb1_clie" placeholder="Carlos" maxlength="20" onkeyup="this.value = this.value.toUpperCase();" value="<?php echo $cliente['nomb1_clie'];?>">
                     </div>
                     <div class="col form-group">
                       <label class="form-label" for="nomb2_clie">Segundo Nombre: </label>
