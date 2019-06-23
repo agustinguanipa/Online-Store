@@ -4,6 +4,7 @@
 
 	// escaping, additionally removing everything that could be (html/javascript-) code
 	$ident_prod = mysqli_real_escape_string($con,(strip_tags($_POST["ident_prod"],ENT_QUOTES)));
+	$ident_cate = mysqli_real_escape_string($con,(strip_tags($_POST["ident_cate"],ENT_QUOTES)));
   $nombr_prod = mysqli_real_escape_string($con,(strip_tags($_POST["nombr_prod"],ENT_QUOTES)));
   $desco_prod = mysqli_real_escape_string($con,(strip_tags($_POST["desco_prod"],ENT_QUOTES)));
   $desla_prod = mysqli_real_escape_string($con,(strip_tags($_POST["desla_prod"],ENT_QUOTES)));
@@ -14,10 +15,9 @@
   $estad_prod = mysqli_real_escape_string($con,(strip_tags($_POST["estad_prod"],ENT_QUOTES)));
   
 	$statu_prod = 1;
-	$ident_cate = mysqli_real_escape_string($con,(strip_tags($_POST["ident_cate"],ENT_QUOTES)));
 
 	// Registrar en la Base de Datos
-    $sql = "INSERT INTO tabma_prod(ident_prod, nombr_prod, desco_prod, desla_prod, preci_prod, pesoo_prod, taman_prod, stock_prod, estad_prod, statu_prod, ident_cate) VALUES ('$ident_prod','$nombr_prod','$desco_prod','$desla_prod','$preci_prod','$pesoo_prod','$taman_prod','$stock_prod','$estad_prod','$statu_prod','$ident_cate') SELECT ident_cate FROM tabma_cate WHERE nombr_cate = '$nombr_cate' LIMIT 1";
+    $sql = "INSERT INTO tabma_prod(ident_prod, ident_cate, nombr_prod, desco_prod, desla_prod, preci_prod, pesoo_prod, taman_prod, stock_prod, estad_prod, statu_prod) VALUES ('$ident_prod',(SELECT ident_cate FROM tabma_cate WHERE ident_cate = '$ident_cate'),'$nombr_prod','$desco_prod','$desla_prod','$preci_prod','$pesoo_prod','$taman_prod','$stock_prod','$estad_prod','$statu_prod') ";
     
     $query = mysqli_query($con,$sql);
     // Si ha sido Agregado Exitosamentee
@@ -52,6 +52,11 @@ if (isset($errors)){
 						}
 					?>
 		</div>
+		<script type="text/javascript">
+			$(".alert").delay(2000).slideUp(200, function() {
+      $(this).alert('close');
+    });
+		</script>
 		<?php
 	}
 ?>			

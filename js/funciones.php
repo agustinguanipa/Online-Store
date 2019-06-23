@@ -8,7 +8,7 @@
 		$sql = "select * from tabma_cate order by ident_cate;";
 		$resultado = mysqli_query($con, $sql);
 
-		echo "<select name='nombr_cate' class='form-control' id='nombr_cate' required>";
+		echo "<select name='ident_cate' class='form-control' id='ident_cate' required>";
 		echo "<option value=''>Seleccione...</option>";
 
 		while ($nombr_cate = mysqli_fetch_array($resultado)) {

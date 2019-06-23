@@ -19,6 +19,12 @@
 <script type="text/javascript" src="../libs/jQuery-Mask-Plugin/dist/jquery.mask.js"></script>
 <!--- JS --->
 <script src="../js/validacion.js" type="text/javascript"></script>
+
+<?php
+    
+    $sql = "SELECT * FROM tabma_cate";
+    $result = mysqli_query($con, $sql);
+?>
   
 <div id="addProductoModal" class="modal fade">
 	<div class="modal-dialog">
@@ -31,14 +37,21 @@
 				<div class="modal-body">
           <div class="form-row">
             <div class="col form-group">
-              <label class="form-label" for="ident_cate"><b>Categoria: </b></label>
-              <td><?php categorias($con); ?></td>
+              <label class="form-label" for="ident_prod"><b>Código: </b></label>
+              <input type="text" class="form-control" name="ident_prod" autocomplete="off" id="ident_prod" placeholder="" maxlength="20" onkeyup="this.value = this.value.toUpperCase();" required>
             </div>
           </div>
           <div class="form-row">
             <div class="col form-group">
-              <label class="form-label" for="ident_prod"><b>Código: </b></label>
-              <input type="text" class="form-control" name="ident_prod" autocomplete="off" id="ident_prod" placeholder="" maxlength="20" onkeyup="this.value = this.value.toUpperCase();" required>
+              <label class="form-label" for="ident_cate"><b>Categoria: </b></label>
+              <select class="form-control" name="ident_cate" id="ident_cate">
+                <option value = "">Seleccione...</option>
+                  <?php
+                    while($row = mysqli_fetch_array($result)) {
+                      echo '<option value='.$row['ident_cate'].'>'.$row['nombr_cate'].'</option>';
+                    }
+                  ?> 
+              </select>
             </div>
           </div>					
 					<div class="form-row">

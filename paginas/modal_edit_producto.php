@@ -20,36 +20,33 @@
 <!--- JS --->
 <script src="../js/validacion.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-   $(document).ready(function() {
-    $('input[type="file"]').on("change", function() {
-      let filenames = [];
-      let files = document.getElementById("customFile").files;
-      if (files.length > 1) {
-        filenames.push("Total Files (" + files.length + ")");
-      } else {
-        for (let i in files) {
-          if (files.hasOwnProperty(i)) {
-            filenames.push(files[i].name);
-          }
-        }
-      }
-      $(this)
-        .next(".custom-file-label")
-        .html(filenames.join(","));
-    });
-  });
-  </script>
+<?php
+    $sql = "SELECT * FROM tabma_cate";
+    $result = mysqli_query($con, $sql);
+?>
   
 <div id="editProductoModal" class="modal fade">
   <div class="modal-dialog">
     <div class="modal-content">
       <form name="edit_producto" id="edit_producto" class="justify-content-center" align="center" action="">
         <div class="modal-header">            
-          <h4 class="modal-title">Registrar Producto</h4>
+          <h4 class="modal-title">Editar Producto</h4>
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         </div>
-        <div class="modal-body">          
+        <div class="modal-body"> 
+          <div class="form-row">
+            <div class="col form-group">
+              <label class="form-label" for="edit_ident_cate"><b>Categoria: </b></label>
+              <select class="form-control" name="edit_ident_cate" id="edit_ident_cate">
+                <option value = "">Seleccione...</option>
+                  <?php
+                    while($row = mysqli_fetch_array($result)) {
+                      echo '<option value='.$row['ident_cate'].'>'.$row['nombr_cate'].'</option>';
+                    }
+                  ?> 
+              </select>
+            </div>
+          </div>             
           <div class="form-row">
             <div class="col form-group">
               <label class="form-label" for="edit_nombr_prod"><b>Nombre: </b></label>
@@ -60,82 +57,41 @@
           <div class="form-row">
             <div class="col form-group">
               <label class="form-label" for="edit_desco_prod"><b>Descripcion Corta: </b></label>
-              <input type="textarea" class="form-control" name="edit_desco_prod" autocomplete="off" id="edit_desco_prod" placeholder="" maxlength="200" required>
+              <textarea class="form-control" name="edit_desco_prod" autocomplete="off" id="edit_desco_prod" placeholder="" maxlength="200" required></textarea>
             </div>
           </div>
           <div class="form-row">
             <div class="col form-group">
-              <label class="form-label" for="desla_prod"><b>Descripcion Larga: </b></label>
-              <input type="textarea" class="form-control" name="desla_prod" autocomplete="off" id="desla_prod" placeholder="" maxlength="400" required>
+              <label class="form-label" for="edit_desla_prod"><b>Descripcion Larga: </b></label>
+              <textarea class="form-control" name="edit_desla_prod" autocomplete="off" id="edit_desla_prod" placeholder="" maxlength="400" required></textarea>
             </div>
           </div>
           <div class="form-row">
             <div class="col form-group">
               <label class="form-label" for="edit_preci_prod"><b>Precio: </b></label>
-              <input type="textarea" class="form-control" name="edit_preci_prod" autocomplete="off" id="edit_preci_prod" placeholder="" required>
+              <input type="text" class="form-control preci-mask" name="edit_preci_prod" autocomplete="off" id="edit_preci_prod" placeholder="" maxlength="10" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col form-group">
+              <label class="form-label" for="edit_pesoo_prod"><b>Peso: </b></label>
+              <input type="text" class="form-control pesoo-mask" name="edit_pesoo_prod" autocomplete="off" id="edit_pesoo_prod" placeholder="" maxlength="10" required>
             </div>
             <div class="col form-group">
-              <label class="form-label" for="edit_pesoo_prod"><b>Tamaño: </b></label>
-              <input type="textarea" class="form-control" name="edit_pesoo_prod" autocomplete="off" id="edit_pesoo_prod" placeholder="" required>
+              <label class="form-label" for="edit_taman_prod"><b>Tamaño: </b></label>
+              <input type="text" class="form-control taman-mask" name="edit_taman_prod" autocomplete="off" id="edit_taman_prod" placeholder="" maxlength="10" required>
             </div>
           </div>
           <div class="form-row">
             <div class="col form-group">
               <label class="form-label" for="edit_stock_prod"><b>Stock: </b></label>
-              <input type="textarea" class="form-control" name="edit_stock_prod" autocomplete="off" id="edit_stock_prod" placeholder="" required>
+              <input type="text" class="form-control" name="edit_stock_prod" autocomplete="off" id="edit_stock_prod" placeholder="" maxlength="10" required>
             </div>
             <div class="col form-group">
               <label class="form-label" for="edit_estad_prod"><b>Estado: </b></label>
-              <input type="textarea" class="form-control" name="edit_estad_prod" autocomplete="off" id="edit_estad_prod" placeholder="" required>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="col form-group">
-              <label class="form-label" for="edit_imag1_prod">Imagen 1: </label>
-              <div class="form-group">
-                <div class="custom-file">
-                  <input type="file" name="files[]" multiple class="custom-file-input" id="customFile">
-                  <label class="custom-file-label" for="customFile">Seleccionar Archivo...</label>
-                </div>
-              </div>
-              <div class="form-group">
-                <button type="submit" name="upload" value="upload" id="upload" class="btn btn-block btn-primary"><i class="fa fa-fw fa-upload"></i> Subir</button>
-              </div>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="col form-group">
-              <label class="form-label" for="edit_imag2_prod">Imagen 2: </label>
-              <div class="form-group">
-                <div class="custom-file">
-                  <input type="file" name="files[]" multiple class="custom-file-input" id="customFile">
-                  <label class="custom-file-label" for="customFile">Seleccionar Archivo...</label>
-                </div>
-              </div>
-              <div class="form-group">
-                <button type="submit" name="upload" value="upload" id="upload" class="btn btn-block btn-primary"><i class="fa fa-fw fa-upload"></i> Subir</button>
-              </div>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="col form-group">
-              <label class="form-label" for="edit_imag3_prod">Imagen 3: </label>
-              <div class="form-group">
-                <div class="custom-file">
-                  <input type="file" name="files[]" multiple class="custom-file-input" id="customFile">
-                  <label class="custom-file-label" for="customFile">Seleccionar Archivo...</label>
-                </div>
-              </div>
-              <div class="form-group">
-                <button type="submit" name="upload" value="upload" id="upload" class="btn btn-block btn-primary"><i class="fa fa-fw fa-upload"></i> Subir</button>
-              </div>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="col form-group">
-              <label class="form-label" for="edit_nombr_cate"><b>Categoria: </b></label>
-              <select class="form-control" id="edit_nombr_cate" name="edit_nombr_cate">
-                <option value=""></option>
+              <select class="form-control" id="edit_estad_prod" name="edit_estad_prod">
+                <option value="NUEVO">NUEVO</option>
+                <option value="USADO">USADO</option>
               </select>
             </div>
           </div>

@@ -9,7 +9,7 @@ if($action == 'ajax'){
 
 	$tables="tabma_prod";
 	$campos="*";
-	$sWhere=" (tabma_prod.nombr_prod LIKE '%".$query."%') AND tabma_prod.statu_prod = 1";
+	$sWhere=" (tabma_prod.nombr_prod LIKE '%".$query."%') AND tabma_prod.statu_prod = 0";
 	$sWhere.=" order by tabma_prod.ident_prod";
 	
 	/* Pagination */
@@ -43,9 +43,7 @@ if($action == 'ajax'){
 					<th class='text-center'>Tamaño</th>
 					<th class='text-center'>Stock</th>
 					<th class='text-center'>Estado</th>
-					<th class='text-center'>Ver</th>
-					<th class='text-center'>Editar</th>
-					<th class='text-center'>Borrar</th>
+					<th class='text-center'>Restaurar</th>
 				</tr>
 			</thead>
 			<tbody>	
@@ -72,19 +70,13 @@ if($action == 'ajax'){
 						<td class='text-center'><?php echo $taman_prod;?></td>
 						<td class='text-center'><?php echo $stock_prod;?></td>
 						<td class='text-center'><?php echo $estad_prod;?></td>
-						<td class='text-center'>
-							<a href="#"  data-target="#lookProductoModal" class="look" data-toggle="modal" data-ident_cate="<?php echo $ident_cate?>" data-nombr_prod="<?php echo $nombr_prod?>" data-desco_prod="<?php echo $desco_prod?>" data-desla_prod="<?php echo $desla_prod?>" data-preci_prod="<?php echo $preci_prod?>" data-pesoo_prod="<?php echo $pesoo_prod?>" data-taman_prod="<?php echo $taman_prod?>" data-stock_prod="<?php echo $stock_prod?>" data-estad_prod="<?php echo $estad_prod?>" data-ident_prod="<?php echo $ident_producto; ?>"><i class="fa fa-eye" data-toggle="tooltip" title="Ver" ></i></a>
-	          </td>
-						<td class='text-center'>
-							<a href="#"  data-target="#editProductoModal" class="edit" data-toggle="modal" data-ident_cate="<?php echo $ident_cate?>" data-nombr_prod="<?php echo $nombr_prod?>" data-desco_prod="<?php echo $desco_prod?>" data-desla_prod="<?php echo $desla_prod?>" data-preci_prod="<?php echo $preci_prod?>" data-pesoo_prod="<?php echo $pesoo_prod?>" data-taman_prod="<?php echo $taman_prod?>" data-stock_prod="<?php echo $stock_prod?>" data-estad_prod="<?php echo $estad_prod?>" data-ident_prod="<?php echo $ident_producto; ?>"><i class="fa fa-edit" data-toggle="tooltip" title="Editar" ></i></a>
-	          </td>
-	          <td class='text-center'>
-							<a href="#deleteProductoModal" class="delete" data-toggle="modal" data-ident_prod="<?php echo $ident_producto;?>"><i class="fa fa-trash" data-toggle="tooltip" title="Eliminar"></i></a>
-	          </td>
+	           <td class='text-center'>
+							<a href="#restaurarProductoModal" class="restaurar" data-toggle="modal" data-ident_prod="<?php echo $ident_producto;?>"><i class="fa fa-check" data-toggle="tooltip" title="Restaurar"></i></a>
+	           </td>
 					</tr>
 					<?php }?>
 					<tr>
-						<td colspan='10'> 
+						<td colspan='9'> 
 							<?php 
 								$inicios=$offset+1;
 								$finales+=$inicios -1;
