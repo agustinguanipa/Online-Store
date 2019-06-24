@@ -62,6 +62,9 @@ if($action == 'ajax'){
 						$taman_prod=$row['taman_prod'];
 						$stock_prod=$row['stock_prod'];
 						$estad_prod=$row['estad_prod'];	
+						$imag1_prod=$row['imag1_prod'];
+						$imag2_prod=$row['imag2_prod'];	
+						$imag3_prod=$row['imag3_prod'];		
 						$finales++;
 					?>	
 					<tr class="">

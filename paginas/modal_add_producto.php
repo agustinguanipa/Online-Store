@@ -21,7 +21,7 @@
 <script src="../js/validacion.js" type="text/javascript"></script>
 
 <?php
-  $sql = "SELECT * FROM tabma_cate";
+  $sql = "SELECT * FROM tabma_cate WHERE statu_cate = 1";
   $result = mysqli_query($con, $sql);
 ?>
   
@@ -37,7 +37,7 @@
           <div class="form-row">
             <div class="col form-group">
               <label class="form-label" for="ident_prod"><b>Código: </b></label>
-              <input type="text" class="form-control" name="ident_prod" autocomplete="off" id="ident_prod" placeholder="" maxlength="20" onkeyup="this.value = this.value.toUpperCase();" required>
+              <input type="text" class="form-control" name="ident_prod" autocomplete="off" id="ident_prod" placeholder="" maxlength="10" onkeyup="this.value = this.value.toUpperCase();" required>
             </div>
           </div>
           <div class="form-row">
@@ -103,21 +103,11 @@
           <div class="form-row">
             <div class="col form-group">
               <label class="form-label" for="imag1_prod"><b>Imagen 1: </b></label>
-              <input type="file" class="filestyle" id="imag1_prod" name="" alt="Imagen del Producto 1" data-btnClass="btn-primary">
+              <input type="file" class="filestyle" id="imag1_prod" name="imag1_prod" alt="Imagen del Producto 1" data-btnClass="btn-primary">
             </div>
           </div>
-          <div class="form-row">
-            <div class="col form-group">
-              <label class="form-label" for="imag2_prod"><b>Imagen 2: </b></label>
-              <input type="file" class="filestyle" id="imag2_prod" name="" alt="Imagen del Producto 2" data-btnClass="btn-primary">
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="col form-group">
-              <label class="form-label" for="imag3_prod"><b>Imagen 3: </b></label>
-              <input type="file" class="filestyle" id="imag3_prod" name="" alt="Imagen del Producto 3" data-btnClass="btn-primary">
-            </div>
-          </div>
+          
+          
 				</div>
 				<div class="modal-footer">
 					<input type="button" class="btn btn-light" data-dismiss="modal" value="Cancelar">
