@@ -2,7 +2,7 @@
 
 <?php 
 
- $perpage = 12;
+ $perpage = 4;
   if(isset($_GET['page']) & !empty($_GET['page'])){
     $curpage = $_GET['page'];
   }else{

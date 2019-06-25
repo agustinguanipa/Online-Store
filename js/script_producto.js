@@ -27,7 +27,21 @@ $( "#add_producto" ).validate( {
     rules: {
       ident_prod: {
         required: true,
-        minlength: 2
+        minlength: 2,
+        remote: {
+          url: "../paginas/producto_ident_availability.php",
+          type: "post",
+          data:
+            {
+              ident_prod: function()
+              {
+                return $('#add_producto :input[name="ident_prod"]').val();
+              }
+            }
+        }     
+      },
+      ident_cate: {
+        required: true
       },
       nombr_prod: {
         required: true,
@@ -59,14 +73,18 @@ $( "#add_producto" ).validate( {
       stock_prod: {
         required: true,
         number: true,
-        minlength: 2
+        minlength: 1
       }
     },
 
     messages: {
       ident_prod: {
         required: "Ingrese el Codigo del Producto",
-        minlength: "El Código debe contener al menos 2 caracteres"
+        minlength: "El Código debe contener al menos 2 caracteres",
+        remote: jQuery.validator.format("{0} no esta disponible")
+      },
+      ident_cate: {
+        required: "Ingrese una Categoría para el Producto"
       },
       nombr_prod: {
         required: "Ingrese el Nombre del Producto",
@@ -93,7 +111,7 @@ $( "#add_producto" ).validate( {
         number: "Solo Numeros"
       },
       stock_prod: {
-        required: "Ingrese el Precio del Producto",
+        required: "Ingrese el Stock del Producto",
         number: "Solo Numeros"
       }
     },
@@ -118,13 +136,16 @@ $( "#add_producto" ).validate( {
 
     submitHandler: function( form ) {
 
-    var parametros = $( form ).serialize(); // I change 'this' to form
-    console.log(parametros); // for test purpose. See your log to confirm the result data
+    var form = $('form')[0]; // You need to use standard javascript object here
+    var formData = new FormData(form); // I change 'this' to form
+    console.log(FormData); // for test purpose. See your log to confirm the result data
 
     $.ajax({
       type: "POST",
       url: "../ajax/guardar_producto.php",
-      data: parametros,
+      data: formData,
+      contentType: false,
+      processData: false,
        beforeSend: function(objeto){
         $("#resultados").html("Enviando...");
         },
@@ -132,7 +153,7 @@ $( "#add_producto" ).validate( {
       $("#resultados").html(datos);
       load(1);
       $('#addProductoModal').modal('hide');
-      }                     
+      }           
     });
   }
 });

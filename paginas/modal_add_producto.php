@@ -28,7 +28,7 @@
 <div id="addProductoModal" class="modal fade">
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<form name="add_producto" id="add_producto" class="justify-content-center" align="center" action="">
+			<form name="add_producto" id="add_producto" class="justify-content-center" align="center" enctype="multipart/form-data" action="javascript:;" method="POST">
 				<div class="modal-header">						
 					<h4 class="modal-title">Registrar Producto</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -103,11 +103,21 @@
           <div class="form-row">
             <div class="col form-group">
               <label class="form-label" for="imag1_prod"><b>Imagen 1: </b></label>
-              <input type="file" class="filestyle" id="imag1_prod" name="imag1_prod" alt="Imagen del Producto 1" data-btnClass="btn-primary">
+              <input type="file" class="filestyle" id="imag1_prod" name="imag1_prod" alt="Imagen del Producto 1" data-btnClass="btn-primary" accept="image/*">
             </div>
           </div>
-          
-          
+          <div class="form-row">
+            <div class="col form-group">
+              <label class="form-label" for="imag2_prod"><b>Imagen 2: </b></label>
+              <input type="file" class="filestyle" id="imag2_prod" name="imag2_prod" alt="Imagen del Producto 2" data-btnClass="btn-primary" accept="image/*">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col form-group">
+              <label class="form-label" for="imag3_prod"><b>Imagen 3: </b></label>
+              <input type="file" class="filestyle" id="imag3_prod" name="imag3_prod" alt="Imagen del Producto 3" data-btnClass="btn-primary" accept="image/*">
+            </div>
+          </div>
 				</div>
 				<div class="modal-footer">
 					<input type="button" class="btn btn-light" data-dismiss="modal" value="Cancelar">

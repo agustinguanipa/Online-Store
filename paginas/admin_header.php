@@ -25,9 +25,6 @@
   <link href="../libs/startbootstrap-simple-sidebar-gh-pages/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!--- jQuery --->
   <script src="../libs/jquery/jquery-3.4.1.min.js" type="text/javascript"></script>
-  <!--- jQuery Validation --->
-  <script type="text/javascript" src="../libs/jquery-validation-1.19.0/lib/jquery-1.11.1.js"></script>
-  <script type="text/javascript" src="../libs/jquery-validation-1.19.0/dist/jquery.validate.js"></script>
   <!--- jQuery Mask Plugin --->
   <script type="text/javascript" src="../libs/jQuery-Mask-Plugin/dist/jquery.mask.js"></script>
   <!--- JS --->
