@@ -138,7 +138,7 @@ $( "#add_producto" ).validate( {
 
     var form = $('form')[0]; // You need to use standard javascript object here
     var formData = new FormData(form); // I change 'this' to form
-    console.log(FormData); // for test purpose. See your log to confirm the result data
+    console.log(formData); // for test purpose. See your log to confirm the result data
 
     $.ajax({
       type: "POST",

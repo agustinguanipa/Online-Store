@@ -28,7 +28,7 @@
 <div id="addProductoModal" class="modal fade">
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<form name="add_producto" id="add_producto" class="justify-content-center" align="center" enctype="multipart/form-data" action="javascript:;" method="POST">
+			<form name="add_producto" id="add_producto" class="justify-content-center" align="center" enctype="multipart/form-data" action="" method="POST">
 				<div class="modal-header">						
 					<h4 class="modal-title">Registrar Producto</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
