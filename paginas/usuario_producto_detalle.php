@@ -23,7 +23,7 @@
               <aside class="col-sm-5 border-right">
           <article class="gallery-wrap"> 
           <div class="img-big-wrap">
-            <div> <a href="../imagen/productos/dinamapv100.jpg" data-fancybox=""><?php echo '<img src="'.$row['imag1_prod'].'" width="100">' ?></a></div>
+            <div> <a href="#" data-fancybox=""><?php echo '<img src="'.$row['imag1_prod'].'" width="100">' ?></a></div>
           </div> <!-- slider-product.// -->
           <div class="img-small-wrap">
             <div class="item-gallery"><?php echo '<img src="'.$row['imag1_prod'].'" width="100">' ?></div>

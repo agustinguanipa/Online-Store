@@ -17,15 +17,15 @@
 	$imag1_prod = $_FILES['imag1_prod']['name'];
 	$ruta1 = $_FILES['imag1_prod']['tmp_name'];
 	$destino1 = "../imagen/productos/".$imag1_prod;
-	copy($ruta1,$destino1);
+	move_uploaded_file($ruta1,$destino1);
 	$imag2_prod = $_FILES['imag2_prod']['name'];
 	$ruta2 = $_FILES['imag2_prod']['tmp_name'];
 	$destino2 = "../imagen/productos/".$imag2_prod;
-	copy($ruta2,$destino2);
+	move_uploaded_file($ruta2,$destino2);
 	$imag3_prod = $_FILES['imag3_prod']['name'];
 	$ruta3 = $_FILES['imag3_prod']['tmp_name'];
 	$destino3 = "../imagen/productos/".$imag3_prod;
-	copy($ruta3,$destino3);
+	move_uploaded_file($ruta3,$destino3);
 
 	$statu_prod = 1;
 
