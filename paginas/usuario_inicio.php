@@ -1,6 +1,5 @@
 <?php
   session_start();
-
   if (isset($_SESSION['loggedInCliente'])) {
     header('Location: ../index.php');
     exit();
@@ -67,5 +66,3 @@
 </body>
 
 <?php require_once('logreg_footer.php'); ?>
-
-

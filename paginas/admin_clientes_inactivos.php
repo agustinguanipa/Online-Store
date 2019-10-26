@@ -44,7 +44,7 @@
 	</div>
 </div>
 <!-- Restaurar Modal HTML -->
-<?php include("modal_restaurar_cliente.php");?>
+<?php include("modal_cliente.php");?>
 <script src="../js/script_cliente_inactivo.js"></script>
 </body>
   

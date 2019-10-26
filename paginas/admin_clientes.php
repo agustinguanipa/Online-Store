@@ -49,13 +49,7 @@
 	</div>
 </div>
 <!-- Add Modal HTML -->
-<?php include("modal_add_cliente.php");?>
-<!-- Look Modal HTML -->
-<?php include("modal_look_cliente.php");?>
-<!-- Edit Modal HTML -->
-<?php include("modal_edit_cliente.php");?>
-<!-- Delete Modal HTML -->
-<?php include("modal_delete_cliente.php");?>
+<?php include("modal_cliente.php");?>
 <script src="../js/script_cliente.js"></script>
 </body>
   
