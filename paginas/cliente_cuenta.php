@@ -1,15 +1,13 @@
 <?php
   session_start();
 
-  
-
-  if (!isset($_SESSION['loggedInCliente'])) {
+  if ($_SESSION['ident_tipo'] != 4) {
     header('Location: usuario_inicio.php');
     exit();
   }
 ?>
 
-<?php require_once('usuario_header.php'); ?>
+<?php require_once('includes/principal_header.php'); ?>
 
 <head>
 	<title>Mi Cuenta | SIGMAEMCA Online Store</title>
@@ -28,7 +26,7 @@
             <p class="card-text">Mira Tus Órdenes, Envíos y Facturas, Revisa los Status</p>
           </div>
           <div class="card-footer">
-            <a href="usuario_listar_orden.php" class="btn btn-primary stretched-link">Ver Órdenes</a>
+            <a href="cliente_listar_orden.php" class="btn btn-primary stretched-link">Ver Órdenes</a>
           </div>
         </div>
         <div class="card" style="width: 18rem;">
@@ -38,7 +36,7 @@
             <p class="card-text">Todas tus Direcciones de Envíos. Agrega, Edita y Elimina</p>
           </div>
           <div class="card-footer">
-            <a href="usuario_listar_direccion.php" class="btn btn-primary stretched-link">Ver Direcciones</a>
+            <a href="cliente_listar_direccion.php" class="btn btn-primary stretched-link">Ver Direcciones</a>
           </div>
         </div>
         <div class="card" style="width: 18rem;">
@@ -48,7 +46,7 @@
             <p class="card-text">Edita tus Datos Personales</p>
           </div>
           <div class="card-footer">
-            <a href="usuario_configuracion.php" class="btn btn-primary stretched-link">Ver Configuración</a>
+            <a href="cliente_configuracion.php" class="btn btn-primary stretched-link">Ver Configuración</a>
           </div>
         </div>
       </div>
@@ -56,6 +54,6 @@
   </div>
 </body>
 
-<?php require_once('usuario_footer.php');  ?>
+<?php require_once('includes/usuario_footer.php');  ?>
 
 

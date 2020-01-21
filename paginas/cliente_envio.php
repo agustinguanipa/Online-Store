@@ -1,13 +1,13 @@
 <?php
   session_start();
 
-  if (!isset($_SESSION['loggedInCliente'])) {
+  if ($_SESSION['ident_tipo'] != 4) {
     header('Location: usuario_inicio.php');
     exit();
   }
 ?>
 
-<?php require_once('usuario_header.php'); ?>
+<?php require_once('includes/principal_header.php'); ?>
 
 <head>
 	<title>Envío | SIGMAEMCA Online Store</title>
@@ -28,7 +28,7 @@
               
             </div>
             <div class="card-footer">
-              <a href="usuario_checkout.php" class="btn btn-success"><i class="fa fa-arrow-circle-right"></i> Siguiente</a>
+              <a href="cliente_checkout.php" class="btn btn-success"><i class="fa fa-arrow-circle-right"></i> Siguiente</a>
             </div>
           </div>
         </div>
@@ -37,5 +37,5 @@
   </div>
 </body>
 
-<?php require_once('usuario_footer.php');  ?>
+<?php require_once('includes/usuario_footer.php');  ?>
 

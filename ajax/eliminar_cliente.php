@@ -8,11 +8,11 @@
   $id_cliente=intval($_POST['delete_id']);
 	
 	// Borrado Logico de la Base de Datos FROM
-    $sql = "UPDATE tabma_clie SET statu_clie = 0 WHERE ident_clie='$id_cliente'";
+    $sql = "UPDATE tabma_usua SET statu_usua = 0 WHERE ident_usua='$id_cliente'";
     $query = mysqli_query($con,$sql);
     // Si el Borrado ha sido Exitoso
     if ($query) {
-        $messages[] = "El cliente ha sido desactivado con éxito.";
+        $messages[] = "El Cliente ha sido desactivado con éxito.";
     } else {
         $errors[] = "Lo sentimos, la desactivación falló. Por favor, regrese y vuelva a intentarlo.";
     }

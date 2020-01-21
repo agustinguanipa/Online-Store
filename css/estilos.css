@@ -165,6 +165,11 @@
   padding-top: 6px
 }
 
+.index-background{
+  background: rgb(56,176,222);
+background: linear-gradient(90deg, rgba(56,176,222,1) 0%, rgba(66,136,255,1) 50%, rgba(0,74,255,1) 100%);
+}
+
 
 
 

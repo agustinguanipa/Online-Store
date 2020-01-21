@@ -21,8 +21,8 @@ function load(page){
 
 $('#restaurarClienteModal').on('show.bs.modal', function (event) {
   var button = $(event.relatedTarget) // Button that triggered the modal
-  var ident_clie = button.data('ident_clie') 
-  $('#restaurar_id').val(ident_clie)
+  var ident_usua = button.data('ident_usua') 
+  $('#restaurar_id').val(ident_usua)
 })
 
 

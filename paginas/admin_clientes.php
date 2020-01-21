@@ -1,13 +1,4 @@
-<?php
-  session_start();
-
-  if (!isset($_SESSION['loggedInAdmin'])) {
-    header('Location: admin_inicio.php');
-    exit();
-  }
-?>
-
-<?php require_once('admin_header.php'); ?>
+<?php require_once('includes/admin_header.php'); ?>
 
 <!-- Contenido -->
 
@@ -48,10 +39,10 @@
 		<div class='outer_div'></div><!-- Carga de datos ajax aqui -->
 	</div>
 </div>
-<!-- Add Modal HTML -->
+<!-- Modal HTML -->
 <?php include("modal_cliente.php");?>
 <script src="../js/script_cliente.js"></script>
 </body>
   
-<?php require_once('admin_footer.php');  ?>
+<?php require_once('includes/admin_footer.php');  ?>
                                		                            

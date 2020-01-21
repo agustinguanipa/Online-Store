@@ -1,7 +1,5 @@
 <?php
-  if (session_status() == PHP_SESSION_NONE) {
-      session_start();
-  }
+  session_start();
 
   require_once ("../js/funciones.php");
   require_once ("conexion_bd.php");
@@ -64,10 +62,10 @@
             <a class="nav-link" href="../index.php"><i class="fa fa-home"></i> Inicio </a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="../paginas/nosotros.php"><i class="fa fa-info"></i> Nosotros </a>
+            <a class="nav-link" href="../paginas/principal_nosotros.php"><i class="fa fa-info"></i> Nosotros </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../paginas/contacto.php"><i class="fa fa-phone"></i> Contacto </a>
+              <a class="nav-link" href="../paginas/principal_contacto.php"><i class="fa fa-phone"></i> Contacto </a>
           </li>
         </ul>
       </div>
@@ -107,31 +105,37 @@
         </div>
         <div class="col-lg-6-24 col-sm-7 col-8  order-2  order-lg-3">
           <div class="d-flex justify-content-end">
-            <?php  if (isset($_SESSION['loggedInCliente'])) : ?>
+            <?php  if (isset($_SESSION['loggedInUsuario'])) : ?>
               <div class="widget-header">
-                <small class="title text-muted">Bienvenido <?=$_SESSION['name']?></small>
+                <small class="title text-muted">Bienvenido <?=$_SESSION['nombre']?> <?=$_SESSION['apellido']?></small>
                 <div>
                   <?php
-                    // Session is Set
-                    echo "<a href='usuario_cerrar.php'>Cerrar Sesión</a> <span class='dark-transp'> | </span>";
-                    echo "<a href='usuario_cuenta.php'>Mi Cuenta</a>";
+                    // Session is Set  
+                      if ($_SESSION['ident_tipu'] == 4) 
+                    {
+                      echo "<a href='cliente_cuenta.php'>Mi Cuenta</a> <span class='dark-transp'>   | </span>";
+                    }else{
+                      echo "<a href='admin_panel.php'>Ir al Panel</a> <span class='dark-transp'>   | </span>";
+                      }
+                    
+                    echo "<a href='usuario_cerrar.php'>Cerrar Sesión</a>";
                   ?>
                 </div>
               </div>
             <?php endif ?>
-            <?php  if (!isset($_SESSION['loggedInCliente'])) : ?>
+            <?php  if (!isset($_SESSION['loggedInUsuario'])) : ?>
               <div class="widget-header">
                 <small class="title text-muted">Bienvenido Visitante</small>
                 <div>
                   <?php
                     // Session is Not Set
                     echo "<a href='usuario_inicio.php'>Iniciar Sesión</a> <span class='dark-transp'> | </span>";
-                    echo "<a href='usuario_registro.php'>Registrarse</a>"; 
+                    echo "<a href='cliente_registro.php'>Registrarse</a>"; 
                   ?>
                 </div>
               </div>
             <?php endif ?>
-            <a href="usuario_cart.php" class="widget-header border-left pl-3 ml-3">
+            <a href="cliente_cart.php" class="widget-header border-left pl-3 ml-3">
               <div class="icontext">
                 <div class="icon-wrap icon-sm round border"><i class="fa fa-shopping-cart"></i></div>
               </div>

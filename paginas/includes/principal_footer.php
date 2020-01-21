@@ -4,7 +4,7 @@
   <div class="container">
     <section class="footer-bottom row">
       <div class="col-sm-4" align="left"> 
-        <p>Diseñado por: <br><a href="https://agustinguanipa.000webhostapp.com/" title="Carlos Agustin Guanipa Alvarez">Carlos Agustin Guanipa Alvarez</a></p>
+        <p>Diseñado y Desarrollado por: <br><a href="https://agustinguanipa.000webhostapp.com/" title="Carlos Agustin Guanipa Alvarez">Carlos Agustin Guanipa Alvarez</a></p>
       </div>
       <div class="col-sm-4 form-group" align="center">
           <p class="pie">Redes Sociales</p>
@@ -15,7 +15,7 @@
         </div>
       <div class="col-sm-4" align="right">
         <p class="text-sm-right">SIGMAEMCA Servicio Integral General y Mantenimiento Equipos Medicos Compañía Anonima</p>
-        <p class="text-sm-right">Copyright &copy 2019<br>
+        <p class="text-sm-right">Copyright &copy 2020<br>
         </p>
       </div>
     </section>

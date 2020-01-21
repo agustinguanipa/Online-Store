@@ -1,12 +1,12 @@
 <?php
   session_start();
-  if (isset($_SESSION['loggedInCliente'])) {
+  if (isset($_SESSION['loggedInUsuario'])) {
     header('Location: ../index.php');
     exit();
   }
 ?>
 
-<?php require_once('logreg_header.php'); ?>
+<?php require_once('includes/logreg_header.php'); ?>
 
 <head>
   <title>Iniciar Sesión | SIGMAEMCA Online Store</title>
@@ -42,14 +42,14 @@
           <hr class="my-4">
           <div class="form-row">
             <div class="col form-group">
-              <label class="form-label" for="usuar_clie">Usuario: </label>
-              <input type="text" class="form-control" name="usuar_clie" autocomplete="off" id="usuar_clie" placeholder="miusuario" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
+              <label class="form-label" for="usuar_usua">Usuario: </label>
+              <input type="text" class="form-control" name="usuar_usua" autocomplete="off" id="usuar_usua" placeholder="miusuario" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
             </div>
           </div>
           <div class="form-row">
             <div class="col form-group">
-              <label class="form-label" for="contr_clie">Contraseña: </label>
-              <input type="password" class="form-control" name="contr_clie" autocomplete="off" id="contr_clie" placeholder="********" maxlength="20">
+              <label class="form-label" for="contr_usua">Contraseña: </label>
+              <input type="password" class="form-control" name="contr_usua" autocomplete="off" id="contr_usua" placeholder="********" maxlength="20">
             </div>
           </div>
           <div class="form-row">
@@ -65,4 +65,4 @@
   </div>
 </body>
 
-<?php require_once('logreg_footer.php'); ?>
+<?php require_once('includes/logreg_footer.php'); ?>

@@ -1,16 +1,18 @@
 <?php
 
-/* Base de Datos*/
+/* Base de Datos */
 require_once ("../paginas/conexion_bd.php");
 
 $action = (isset($_REQUEST['action'])&& $_REQUEST['action'] !=NULL)?$_REQUEST['action']:'';
 if($action == 'ajax'){
 	$query = mysqli_real_escape_string($con,(strip_tags($_REQUEST['query'], ENT_QUOTES)));
 
-	$tables="tabma_admi";
+	$tables="tabma_usua";
+	$tables2="tabma_tipo";
 	$campos="*";
-	$sWhere=" (tabma_admi.nomb1_admi LIKE '%".$query."%' OR tabma_admi.nomb2_admi LIKE '%".$query."%' OR tabma_admi.apel1_admi LIKE '%".$query."%' OR tabma_admi.apel2_admi LIKE '%".$query."%') AND tabma_admi.statu_admi = 1";
-	$sWhere.=" order by tabma_admi.ident_admi";
+	$on="tabma_usua.ident_tipo = tabma_tipo.ident_tipo";
+	$sWhere=" (tabma_usua.nomb1_usua LIKE '%".$query."%' OR tabma_usua.nomb2_usua LIKE '%".$query."%' OR tabma_usua.apel1_usua LIKE '%".$query."%' OR tabma_usua.apel2_usua LIKE '%".$query."%') AND tabma_usua.statu_usua = 1 AND tabma_usua.ident_tipo != 4";
+	$sWhere.=" order by tabma_usua.ident_usua";
 	
 	/* Pagination */
 	include 'pagination.php';
@@ -27,7 +29,7 @@ if($action == 'ajax'){
 	else {echo mysqli_error($con);}
 	$total_pages = ceil($numrows/$per_page);
 	//Query de los Datos
-	$query = mysqli_query($con,"SELECT $campos FROM  $tables where $sWhere LIMIT $offset,$per_page");
+	$query = mysqli_query($con,"SELECT $campos FROM $tables INNER JOIN $tables2 ON $on where $sWhere LIMIT $offset,$per_page");
 	//Loop del Query de los Datos
 	
 	if ($numrows>0){		
@@ -39,37 +41,52 @@ if($action == 'ajax'){
 					<th class='text-center'>ID</th>
 					<th class='text-center'>Nombres</th>
 					<th class='text-center'>Apellidos</th>
+					<th class='text-center'>Tipo</th>
 					<th class='text-center'>Usuario</th>
 					<th class='text-center'>Ver</th>
 					<th class='text-center'>Editar</th>
-					<!-- <th class='text-center'>Borrar</th> -->
+					<th class='text-center'>Borrar</th>
 				</tr>
 			</thead>
 			<tbody>	
 					<?php 
 					$finales=0;
 					while($row = mysqli_fetch_array($query)){	
-						$ident_admin=$row['ident_admi'];
-						$nomb1_admi=$row['nomb1_admi'];
-						$nomb2_admi=$row['nomb2_admi'];
-						$apel1_admi=$row['apel1_admi'];
-						$apel2_admi=$row['apel2_admi'];
-						$usuar_admi=$row['usuar_admi'];		
+						$ident_admin=$row['ident_usua'];
+						$nomb1_usua=$row['nomb1_usua'];
+						$nomb2_usua=$row['nomb2_usua'];
+						$apel1_usua=$row['apel1_usua'];
+						$apel2_usua=$row['apel2_usua'];
+						$nombr_tipo=$row['nombr_tipo'];
+						$usuar_usua=$row['usuar_usua'];		
 						$finales++;
 					?>	
 					<tr class="">
 						<td class='text-center'><?php echo $ident_admin;?></td>
-						<td class='text-center'><?php echo $row['nomb1_admi'].' '.$row['nomb2_admi']; ?></td>
-						<td class='text-center'><?php echo $row['apel1_admi'].' '.$row['apel2_admi']; ?></td>
-						<td class='text-center'><?php echo $usuar_admi;?></td>
+						<td class='text-center'><?php echo $row['nomb1_usua'].' '.$row['nomb2_usua']; ?></td>
+						<td class='text-center'><?php echo $row['apel1_usua'].' '.$row['apel2_usua']; ?></td>
+						<td class='text-center'><?php echo $nombr_tipo;?></td>
+						<td class='text-center'><?php echo $usuar_usua;?></td>
 						<td class='text-center'>
-							<a href="#"  data-target="#lookAdminModal" class="look" data-toggle="modal" data-nomb1_admi="<?php echo $nomb1_admi?>" data-nomb2_admi="<?php echo $nomb2_admi?>" data-apel1_admi="<?php echo $apel1_admi?>" data-apel2_admi="<?php echo $apel2_admi?>" data-usuar_admi="<?php echo $usuar_admi?>" data-ident_admi="<?php echo $ident_admin; ?>"><i class="fa fa-eye" data-toggle="tooltip" title="Ver" ></i></a>
+							<a href="#"  data-target="#lookAdminModal" class="look" data-toggle="modal" data-nomb1_usua="<?php echo $nomb1_usua?>" data-nomb2_usua="<?php echo $nomb2_usua?>" data-apel1_usua="<?php echo $apel1_usua?>" data-apel2_usua="<?php echo $apel2_usua?>" data-usuar_usua="<?php echo $usuar_usua?>" data-ident_usua="<?php echo $ident_admin; ?>"><i class="fa fa-eye" data-toggle="tooltip" title="Ver" ></i></a>
 	          </td>
 						<td class='text-center'>
-							<a href="#"  data-target="#editAdminModal" class="edit" data-toggle="modal" data-nomb1_admi="<?php echo $nomb1_admi?>" data-nomb2_admi="<?php echo $nomb2_admi?>" data-apel1_admi="<?php echo $apel1_admi?>" data-apel2_admi="<?php echo $apel2_admi?>" data-usuar_admi="<?php echo $usuar_admi?>" data-ident_admi="<?php echo $ident_admin; ?>"><i class="fa fa-edit" data-toggle="tooltip" title="Editar" ></i></a>
+							<?php  
+								if ($ident_admin != 1) {
+							?>
+								<a href="#"  data-target="#editAdminModal" class="edit" data-toggle="modal" data-nomb1_usua="<?php echo $nomb1_usua?>" data-nomb2_usua="<?php echo $nomb2_usua?>" data-apel1_usua="<?php echo $apel1_usua?>" data-apel2_usua="<?php echo $apel2_usua?>" data-usuar_usua="<?php echo $usuar_usua?>" data-ident_usua="<?php echo $ident_admin; ?>"><i class="fa fa-edit" data-toggle="tooltip" title="Editar" ></i></a>
+							<?php	
+								}
+							?>
 	          </td>
-	          <!-- <td class='text-center'>
-							<a href="#deleteAdminModal" class="delete" data-toggle="modal" data-ident_admi="<?php echo $ident_admin;?>"><i class="fa fa-trash" data-toggle="tooltip" title="Eliminar"></i></a> -->
+	          <td class='text-center'>
+	          	<?php  
+								if ($ident_admin != 1) {
+							?>
+								<a href="#deleteAdminModal" class="delete" data-toggle="modal" data-ident_usua="<?php echo $ident_admin;?>"><i class="fa fa-trash" data-toggle="tooltip" title="Eliminar"></i></a>
+							<?php	
+								}
+							?>
 	          </td>
 					</tr>
 					<?php }?>

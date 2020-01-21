@@ -1,11 +1,11 @@
-<?php require_once('usuario_header.php'); ?>
+<?php require_once('includes/principal_header.php'); ?>
 
 <head>
-	<title>Productos | SIGMAEMCA Online Store</title>
+  <title>Productos | SIGMAEMCA Online Store</title>
 </head>
 
 <body>
-	<div class="jumbotron text-center" style="background-color: #FBFCFF;">
+  <div class="jumbotron text-center" style="background-color: #FBFCFF;">
     <div class="container">
       <h1>Productos</h1>
       <hr class="my-4">
@@ -87,5 +87,4 @@
   </div>
 </body>
 
-<?php require_once('usuario_footer.php');  ?>
-
+<?php require_once('includes/usuario_footer.php');  ?>

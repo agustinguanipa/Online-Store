@@ -7,10 +7,10 @@ $action = (isset($_REQUEST['action'])&& $_REQUEST['action'] !=NULL)?$_REQUEST['a
 if($action == 'ajax'){
 	$query = mysqli_real_escape_string($con,(strip_tags($_REQUEST['query'], ENT_QUOTES)));
 
-	$tables="tabma_clie";
+	$tables="tabma_usua";
 	$campos="*";
-	$sWhere=" (tabma_clie.nomb1_clie LIKE '%".$query."%' OR tabma_clie.nomb2_clie LIKE '%".$query."%' OR tabma_clie.apel1_clie LIKE '%".$query."%' OR tabma_clie.apel2_clie LIKE '%".$query."%') AND tabma_clie.statu_clie = 1";
-	$sWhere.=" order by tabma_clie.ident_clie";
+	$sWhere=" (tabma_usua.nomb1_usua LIKE '%".$query."%' OR tabma_usua.nomb2_usua LIKE '%".$query."%' OR tabma_usua.apel1_usua LIKE '%".$query."%' OR tabma_usua.apel2_usua LIKE '%".$query."%') AND tabma_usua.statu_usua = 1 AND tabma_usua.ident_tipo = 4";
+	$sWhere.=" order by tabma_usua.ident_usua";
 	
 	/* Pagination */
 	include 'pagination.php';
@@ -52,34 +52,34 @@ if($action == 'ajax'){
 					<?php 
 					$finales=0;
 					while($row = mysqli_fetch_array($query)){	
-						$ident_cliente=$row['ident_clie'];
-						$nomb1_clie=$row['nomb1_clie'];
-						$nomb2_clie=$row['nomb2_clie'];
-						$apel1_clie=$row['apel1_clie'];
-						$apel2_clie=$row['apel2_clie'];
-						$gener_clie=$row['gener_clie'];
-						$telef_clie=$row['telef_clie'];
-						$email_clie=$row['email_clie'];
-						$usuar_clie=$row['usuar_clie'];
-						$fecre_clie=$row['fecre_clie'];			
+						$ident_cliente=$row['ident_usua'];
+						$nomb1_usua=$row['nomb1_usua'];
+						$nomb2_usua=$row['nomb2_usua'];
+						$apel1_usua=$row['apel1_usua'];
+						$apel2_usua=$row['apel2_usua'];
+						$gener_usua=$row['gener_usua'];
+						$telef_usua=$row['telef_usua'];
+						$email_usua=$row['email_usua'];
+						$usuar_usua=$row['usuar_usua'];
+						$fecre_usua=$row['fecre_usua'];			
 						$finales++;
 					?>	
 					<tr class="">
 						<td class='text-center'><?php echo $ident_cliente;?></td>
-						<td class='text-center'><?php echo $row['nomb1_clie'].' '.$row['nomb2_clie']; ?></td>
-						<td class='text-center'><?php echo $row['apel1_clie'].' '.$row['apel2_clie']; ?></td>
-						<td class='text-center'><?php echo $gener_clie;?></td>
-						<td class='text-center'><?php echo $telef_clie;?></td>
-						<td class='text-center'><?php echo $email_clie;?></td>
-						<td class='text-center'><?php echo $usuar_clie;?></td>
+						<td class='text-center'><?php echo $row['nomb1_usua'].' '.$row['nomb2_usua']; ?></td>
+						<td class='text-center'><?php echo $row['apel1_usua'].' '.$row['apel2_usua']; ?></td>
+						<td class='text-center'><?php echo $gener_usua;?></td>
+						<td class='text-center'><?php echo $telef_usua;?></td>
+						<td class='text-center'><?php echo $email_usua;?></td>
+						<td class='text-center'><?php echo $usuar_usua;?></td>
 						<td class='text-center'>
-							<a href="#"  data-target="#lookClienteModal" class="look" data-toggle="modal" data-nomb1_clie="<?php echo $nomb1_clie?>" data-nomb2_clie="<?php echo $nomb2_clie?>" data-apel1_clie="<?php echo $apel1_clie?>" data-apel2_clie="<?php echo $apel2_clie?>" data-gener_clie="<?php echo $gener_clie?>" data-telef_clie="<?php echo $telef_clie?>" data-email_clie="<?php echo $email_clie?>" data-usuar_clie="<?php echo $usuar_clie?>" data-fecre_clie="<?php echo $fecre_clie?>" data-ident_clie="<?php echo $ident_cliente; ?>"><i class="fa fa-eye" data-toggle="tooltip" title="Ver" ></i></a>
+							<a href="#"  data-target="#lookClienteModal" class="look" data-toggle="modal" data-nomb1_usua="<?php echo $nomb1_usua?>" data-nomb2_usua="<?php echo $nomb2_usua?>" data-apel1_usua="<?php echo $apel1_usua?>" data-apel2_usua="<?php echo $apel2_usua?>" data-gener_usua="<?php echo $gener_usua?>" data-telef_usua="<?php echo $telef_usua?>" data-email_usua="<?php echo $email_usua?>" data-usuar_usua="<?php echo $usuar_usua?>" data-fecre_usua="<?php echo $fecre_usua?>" data-ident_usua="<?php echo $ident_cliente; ?>"><i class="fa fa-eye" data-toggle="tooltip" title="Ver" ></i></a>
 	          </td>
 						<td class='text-center'>
-							<a href="#"  data-target="#editClienteModal" class="edit" data-toggle="modal" data-nomb1_clie="<?php echo $nomb1_clie?>" data-nomb2_clie="<?php echo $nomb2_clie?>" data-apel1_clie="<?php echo $apel1_clie?>" data-apel2_clie="<?php echo $apel2_clie?>" data-gener_clie="<?php echo $gener_clie?>" data-telef_clie="<?php echo $telef_clie?>" data-email_clie="<?php echo $email_clie?>" data-usuar_clie="<?php echo $usuar_clie?>" data-ident_clie="<?php echo $ident_cliente; ?>"><i class="fa fa-edit" data-toggle="tooltip" title="Editar" ></i></a>
+							<a href="#"  data-target="#editClienteModal" class="edit" data-toggle="modal" data-nomb1_usua="<?php echo $nomb1_usua?>" data-nomb2_usua="<?php echo $nomb2_usua?>" data-apel1_usua="<?php echo $apel1_usua?>" data-apel2_usua="<?php echo $apel2_usua?>" data-gener_usua="<?php echo $gener_usua?>" data-telef_usua="<?php echo $telef_usua?>" data-email_usua="<?php echo $email_usua?>" data-usuar_usua="<?php echo $usuar_usua?>" data-ident_usua="<?php echo $ident_cliente; ?>"><i class="fa fa-edit" data-toggle="tooltip" title="Editar" ></i></a>
 	          </td>
 	          <td class='text-center'>
-							<a href="#deleteClienteModal" class="delete" data-toggle="modal" data-ident_clie="<?php echo $ident_cliente;?>"><i class="fa fa-trash" data-toggle="tooltip" title="Eliminar"></i></a>
+							<a href="#deleteClienteModal" class="delete" data-toggle="modal" data-ident_usua="<?php echo $ident_cliente;?>"><i class="fa fa-trash" data-toggle="tooltip" title="Eliminar"></i></a>
 	          </td>
 					</tr>
 					<?php }?>

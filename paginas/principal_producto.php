@@ -1,8 +1,8 @@
-<?php require_once('usuario_header.php'); ?>
+<?php require_once('includes/principal_header.php'); ?>
 
 <?php 
 
- $perpage = 4;
+ $perpage = 8;
   if(isset($_GET['page']) & !empty($_GET['page'])){
     $curpage = $_GET['page'];
   }else{
@@ -90,5 +90,5 @@
   </div>
 </body>
 
-<?php require_once('usuario_footer.php');  ?>
+<?php require_once('includes/usuario_footer.php');  ?>
 

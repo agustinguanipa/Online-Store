@@ -1,6 +1,6 @@
 <!--- CSS --->
 <link rel="stylesheet" type="text/css" href="../css/estilos.css">
-<link rel="stylesheet" type="text/css" href="../css/estilos_admin.css">
+<link rel="stylesheet" type="text/css" href="../css/estilos_Admin.css">
 <!--- Bootstrap 4 --->
 <link rel="stylesheet" href="../libs/bootstrap-4.1.3-dist/css/bootstrap.min.css"/>
 <script src="../libs/bootstrap-4.1.3-dist/js/bootstrap.min.js"></script>
@@ -21,22 +21,22 @@
 <script src="../js/validacion.js" type="text/javascript"></script>
 
 <?php
-    $sql = "SELECT * FROM tabma_cate";
-    $result = mysqli_query($con, $sql);
+  $sql = "SELECT * FROM tabma_tipo WHERE ident_tipo != 1 AND ident_tipo != 4";
+  $result = mysqli_query($con, $sql);
 ?>
 
-<!-- Modal Add Cliente -->
+<!-- Modal Add Admin -->
   
-<div id="addClienteModal" class="modal fade">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<form name="add_cliente" id="add_cliente" class="justify-content-center" align="center" action="">
-				<div class="modal-header">						
-					<h4 class="modal-title">Registrar Cliente</h4>
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-				</div>
-				<div class="modal-body">					
-					<div class="form-row">
+<div id="addAdminModal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form name="add_admin" id="add_admin" class="justify-content-center" align="center" action="">
+        <div class="modal-header">            
+          <h4 class="modal-title">Registrar Usuario</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        </div>
+        <div class="modal-body">          
+          <div class="form-row">
           <div class="col form-group">
             <label class="form-label" for="nomb1_usua"><b>Primer Nombre: </b></label>
             <input type="text" class="form-control" name="nomb1_usua" autocomplete="off" id="nomb1_usua" placeholder="Carlos" maxlength="20" onkeyup="this.value = this.value.toUpperCase();" required>
@@ -80,6 +80,19 @@
         </div>
         <div class="form-row">
           <div class="col form-group">
+            <label class="form-label" for="ident_tipo"><b>Tipo de Usuario: </b></label>
+            <select class="form-control" name="ident_tipo" id="ident_tipo">
+              <option disabled selected value>Seleccionar una Opción...</option>
+                <?php
+                  while($row = mysqli_fetch_array($result)) {
+                    echo '<option value='.$row['ident_tipo'].'>'.$row['nombr_tipo'].'</option>';
+                  }
+                ?> 
+            </select>
+          </div>
+        </div>  
+        <div class="form-row">
+          <div class="col form-group">
             <label class="form-label" for="usuar_usua"><b>Usuario: </b></label>
             <input type="text" class="form-control" name="usuar_usua" autocomplete="off" id="usuar_usua" placeholder="miusuario" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
           </div>
@@ -93,25 +106,25 @@
             <label class="form-label" for="confirm_password"><b>Confirmar Contraseña: </b></label>
             <input type="password" class="form-control" name="confirm_password" autocomplete="off" id="confirm_password" placeholder="********" maxlength="20">
           </div>
-        </div>	
-				</div>
-				<div class="modal-footer">
-					<input type="button" class="btn btn-light" data-dismiss="modal" value="Cancelar">
-					<input type="submit" class="btn btn-primary" value="Registrar">
-				</div>
-			</form>
-		</div>
-	</div>
+        </div>  
+        </div>
+        <div class="modal-footer">
+          <input type="button" class="btn btn-light" data-dismiss="modal" value="Cancelar">
+          <input type="submit" class="btn btn-primary" value="Registrar">
+        </div>
+      </form>
+    </div>
+  </div>
 </div>
 
-<!-- Modal Edit Cliente-->
+<!-- Modal Edit Admin -->
 
-<div id="editClienteModal" class="modal fade">
+<div id="editAdminModal" class="modal fade">
   <div class="modal-dialog">
     <div class="modal-content">
-      <form name="edit_cliente" id="edit_cliente" class="justify-content-center" align="center">
+      <form name="edit_admin" id="edit_admin" class="justify-content-center" align="center">
         <div class="modal-header">            
-          <h4 class="modal-title">Editar Cliente</h4>
+          <h4 class="modal-title">Editar Usuario</h4>
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         </div>
         <div class="modal-body">
@@ -128,27 +141,12 @@
           </div>
           <div class="form-row">
             <div class="col form-group">
-              <label class="form-label"><b>Primer Apellido: </b></label>
+              <label class="form-label"><b>Primer Apellido</b></label>
               <input type="text" name="edit_apel1_usua"  id="edit_apel1_usua" class="form-control" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
             </div>
             <div class="col form-group">
-              <label class="form-label"><b>Segundo Apellido: </b></label>
+              <label class="form-label"><b>Segundo Apellido</b></label>
               <input type="text" name="edit_apel2_usua"  id="edit_apel2_usua" class="form-control" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="col form-group">
-              <label class="form-label"><b>Genero: </b></label>
-              <select class="form-control" id="edit_gener_usua" name="edit_gener_usua">
-                <option value="MASCULINO">MASCULINO</option>
-                <option value="FEMENINO">FEMENINO</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="col form-group">
-              <label class="form-label"><b>Telefono: </b></label>
-              <input type="text" name="edit_telef_usua"  id="edit_telef_usua" class="form-control telef-mask" maxlength="15">
             </div>
           </div>
         </div>
@@ -161,21 +159,21 @@
   </div>
 </div>
 
-<!-- Modal Look Cliente-->
+<!-- Modal Look Admin -->
 
-<div id="lookClienteModal" class="modal fade">
+<div id="lookAdminModal" class="modal fade">
   <div class="modal-dialog">
     <div class="modal-content">
-      <form name="look_cliente" id="look_cliente" class="justify-content-center" align="center">
+      <form name="look_admin" id="look_admin" class="justify-content-center" align="center">
         <div class="modal-header">            
-          <h4 class="modal-title">Ver Cliente</h4>
+          <h4 class="modal-title">Ver Usuario</h4>
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         </div>
         <div class="modal-body">
           <div class="form-row">
             <div class="col form-group">
               <label class="form-label"><b>Primer Nombre: </b></label>
-              <input type="text" name="look_nomb1_usua"  id="look_nomb1_usua" class="form-control" disabled>
+              <input type="text" name="look_nomb1_usua" id="look_nomb1_usua" class="form-control" disabled>
               <input type="hidden" name="look_id" id="look_id">
             </div>
             <div class="col form-group">
@@ -195,36 +193,13 @@
           </div>
           <div class="form-row">
             <div class="col form-group">
-              <label class="form-label"><b>Genero: </b></label>
-              <input type="text" name="look_gener_usua" id="look_gener_usua" class="form-control" disabled>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="col form-group">
-              <label class="form-label"><b>Telefono: </b></label>
-              <input type="text" name="look_telef_usua" id="look_telef_usua" class="form-control telef-mask" disabled>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="col form-group">
-              <label class="form-label"><b>E-Mail: </b></label>
-              <input type="text" name="look_email_usua" id="look_email_usua" class="form-control" disabled>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="col form-group">
               <label class="form-label"><b>Usuario: </b></label>
               <input type="text" name="look_usuar_usua" id="look_usuar_usua" class="form-control" disabled>
             </div>
           </div>
-          <div class="form-row">
-            <div class="col form-group">
-              <label class="form-label"><b>Fecha de Registro: </b></label>
-              <input type="text" name="look_fecre_usua" id="look_fecre_usua" class="form-control" disabled>
-            </div>
-          </div>
         </div>
         <div class="modal-footer">
+          <input type="button" class="btn btn-light float-left" data-dismiss="modal" value="Cancelar">
           <input type="button" class="btn btn-primary float-right" data-dismiss="modal" value="OK">
         </div>
       </form>
@@ -232,19 +207,19 @@
   </div>
 </div>
 
-<!-- Modal Delete Cliente-->
+<!-- Modal Delete Admin -->
 
-<div id="deleteClienteModal" class="modal fade">
+<div id="deleteAdminModal" class="modal fade">
   <div class="modal-dialog">
     <div class="modal-content">
-      <form name="delete_cliente" id="delete_cliente">
+      <form name="delete_admin" id="delete_admin">
         <div class="modal-header">            
-          <h4 class="modal-title">Desactivar Cliente</h4>
+          <h4 class="modal-title">Desactivar Usuario</h4>
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         </div>
         <div class="modal-body">          
           <p>¿Seguro que quieres desactivar este registro?</p>
-          <p class="text-danger"><small>Se desactivará el cliente.</small></p>
+          <p class="text-danger"><small>Se desactivará el Usuario.</small></p>
           <input type="hidden" name="delete_id" id="delete_id">
         </div>
         <div class="modal-footer">
@@ -256,19 +231,19 @@
   </div>
 </div>
 
-<!-- Modal Restaurar Cliente-->
+<!-- Modal Restaurar Admin -->
 
-<div id="restaurarClienteModal" class="modal fade">
+<div id="restaurarAdminModal" class="modal fade">
   <div class="modal-dialog">
     <div class="modal-content">
-      <form name="restaurar_cliente" id="restaurar_cliente">
+      <form name="restaurar_admin" id="restaurar_admin">
         <div class="modal-header">            
-          <h4 class="modal-title">Restaurar Cliente</h4>
+          <h4 class="modal-title">Restaurar Usuario</h4>
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         </div>
         <div class="modal-body">          
           <p>¿Seguro que quieres restaurar este registro?</p>
-          <p class="text-success"><small>Se restaurará el cliente.</small></p>
+          <p class="text-success"><small>Se restaurará el Usuario.</small></p>
           <input type="hidden" name="restaurar_id" id="restaurar_id">
         </div>
         <div class="modal-footer">
@@ -279,4 +254,3 @@
     </div>
   </div>
 </div>
-

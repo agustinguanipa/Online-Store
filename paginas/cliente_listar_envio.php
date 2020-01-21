@@ -1,28 +1,28 @@
 <?php
   session_start();
 
-  if (!isset($_SESSION['loggedInCliente'])) {
+  if ($_SESSION['ident_tipo'] != 4) {
     header('Location: usuario_inicio.php');
     exit();
   }
 ?>
 
-<?php require_once('usuario_header.php'); ?>
+<?php require_once('includes/principal_header.php'); ?>
 
 <head>
-	<title>Órdenes | SIGMAEMCA Online Store</title>
+	<title>Envíos | SIGMAEMCA Online Store</title>
 </head>
 
 <body>
 	<div class="jumbotron text-center" style="background-color: #FBFCFF;">
     <div class="container">
-      <h1>Listado de Órdenes</h1>
+      <h1>Listado de Envío</h1>
       <hr class="my-4">
         <div class="table-wrapper">
           <div class="table-title">
               <div class="row">
                 <div class="col-sm-12" align="left">
-                  <h2><b>Órdenes</b></h2>
+                  <h2><b>Envíos</b></h2>
                 </div>
               </div>
           </div>
@@ -45,8 +45,10 @@
               <thead>
                 <tr>
                   <th class='text-center'>ID</th>
+                  <th class='text-center'>Orden</th>
+                  <th class='text-center'>Dirección</th>
                   <th class='text-center'>Fecha</th>
-                  <th class='text-center'>Monto</th>
+                  <th class='text-center'>Tracking</th>
                   <th class='text-center'>Status</th>
                 </tr>
               </thead>
@@ -57,5 +59,5 @@
   </div>
 </body>
 
-<?php require_once('usuario_footer.php');  ?>
+<?php require_once('includes/usuario_footer.php');  ?>
 

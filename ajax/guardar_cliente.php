@@ -3,25 +3,25 @@
 	require_once ("../paginas/conexion_bd.php"); //Contiene Funcion que Conecta a la Base de Datos
 
 	// escaping, additionally removing everything that could be (html/javascript-) code
-  $nomb1_clie = mysqli_real_escape_string($con,(strip_tags($_POST["nomb1_clie"],ENT_QUOTES)));
-  $nomb2_clie = mysqli_real_escape_string($con,(strip_tags($_POST["nomb2_clie"],ENT_QUOTES)));
-  $apel1_clie = mysqli_real_escape_string($con,(strip_tags($_POST["apel1_clie"],ENT_QUOTES)));
-  $apel2_clie = mysqli_real_escape_string($con,(strip_tags($_POST["apel2_clie"],ENT_QUOTES)));
-  $gener_clie = mysqli_real_escape_string($con,(strip_tags($_POST["gener_clie"],ENT_QUOTES)));
-  $telef_clie = mysqli_real_escape_string($con,(strip_tags($_POST["telef_clie"],ENT_QUOTES)));
-  $email_clie = mysqli_real_escape_string($con,(strip_tags($_POST["email_clie"],ENT_QUOTES)));
-  $usuar_clie = mysqli_real_escape_string($con,(strip_tags($_POST["usuar_clie"],ENT_QUOTES)));
-  $contr_clie = mysqli_real_escape_string($con,(strip_tags($_POST["contr_clie"],ENT_QUOTES)));
-  $fecre_clie = date('Y-m-d', $timestamp = time());
-	$statu_clie = 1;
+  $nomb1_usua = mysqli_real_escape_string($con,(strip_tags($_POST["nomb1_usua"],ENT_QUOTES)));
+  $nomb2_usua = mysqli_real_escape_string($con,(strip_tags($_POST["nomb2_usua"],ENT_QUOTES)));
+  $apel1_usua = mysqli_real_escape_string($con,(strip_tags($_POST["apel1_usua"],ENT_QUOTES)));
+  $apel2_usua = mysqli_real_escape_string($con,(strip_tags($_POST["apel2_usua"],ENT_QUOTES)));
+  $gener_usua = mysqli_real_escape_string($con,(strip_tags($_POST["gener_usua"],ENT_QUOTES)));
+  $telef_usua = mysqli_real_escape_string($con,(strip_tags($_POST["telef_usua"],ENT_QUOTES)));
+  $email_usua = mysqli_real_escape_string($con,(strip_tags($_POST["email_usua"],ENT_QUOTES)));
+  $usuar_usua = mysqli_real_escape_string($con,(strip_tags($_POST["usuar_usua"],ENT_QUOTES)));
+  $contr_usua = md5(mysqli_real_escape_string($con,(strip_tags($_POST["contr_usua"],ENT_QUOTES))));
+	$statu_usua = 1;
+	$ident_tipo = 4;
 
 	// Registrar en la Base de Datos
-    $sql = "INSERT INTO tabma_clie(nomb1_clie, nomb2_clie, apel1_clie, apel2_clie, gener_clie, telef_clie, email_clie, usuar_clie, contr_clie, fecre_clie, statu_clie) VALUES ('$nomb1_clie','$nomb2_clie','$apel1_clie','$apel2_clie','$gener_clie','$telef_clie','$email_clie','$usuar_clie','$contr_clie','$fecre_clie','$statu_clie')";
+    $sql = "INSERT INTO tabma_usua(nomb1_usua, nomb2_usua, apel1_usua, apel2_usua, gener_usua, telef_usua, email_usua, usuar_usua, contr_usua, statu_usua, ident_tipo) VALUES ('$nomb1_usua','$nomb2_usua','$apel1_usua','$apel2_usua','$gener_usua','$telef_usua','$email_usua','$usuar_usua','$contr_usua','$statu_usua','$ident_tipo')";
     
     $query = mysqli_query($con,$sql);
     // Si ha sido Agregado Exitosamentee
     if ($query) {
-        $messages[] = "El cliente ha sido registrado con éxito.";
+        $messages[] = "El Cliente ha sido registrado con éxito.";
     } else {
         $errors[] = "Lo sentimos, el registro falló. Por favor, regrese y vuelva a intentarlo.";
     }

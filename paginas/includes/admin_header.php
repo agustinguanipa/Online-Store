@@ -1,9 +1,13 @@
 <?php
-  if (session_status() == PHP_SESSION_NONE) {
-      session_start();
+  session_start();
+
+  if (!isset($_SESSION['loggedInUsuario']) || $_SESSION['ident_tipo'] == 4) {
+    header('Location: ../index.php');
+    exit();
   }
 
   require_once ("../js/funciones.php");
+  require_once ("includes/funcion_fecha.php");
   require_once ("conexion_bd.php");
 ?>
 
@@ -117,7 +121,7 @@
       </a>
       <a href="#submenu4" data-toggle="collapse" aria-expanded="false" class="bg-light text-dark list-group-item list-group-item-action flex-column align-items-start tamano-elemento-sidebar">
           <div class="d-flex w-100 justify-content-start align-items-center">
-            <span class="fa fa-lock fa-fw mr-3"></span> 
+            <span class="fa fa-cogs fa-fw mr-3"></span> 
             <span class="menu-collapsed">Administración</span>
             <span class="fa fa-caret-down ml-auto"></span>
           </div>
@@ -125,7 +129,7 @@
         <!-- Submenu -->
         <div id='submenu4' class="collapse sidebar-submenu">
           <a href="admin_admins.php" class="list-group-item list-group-item-action bg-light text-dark">
-            <span class="menu-collapsed">Administradores</span>
+            <span class="menu-collapsed">Usuarios</span>
           </a>
           <a href="admin_configuracion.php" class="list-group-item list-group-item-action bg-light text-dark">
             <span class="menu-collapsed">Configuración</span>
@@ -148,13 +152,16 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-            <?php  if (isset($_SESSION['loggedInAdmin'])) : ?>
-            <li class="nav-item active">
-              <a class="nav-link" href="admin_panel.php" style="color: #FFFFFF;"><i class="fa fa-home"></i> Bienvenido <?=$_SESSION['name']?></a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="admin_cerrar.php" style="color: #FFFFFF;"><i class="fa fa-sign-out-alt"></i> Cerrar Sesión</a>
-            </li>
+            <?php  if (isset($_SESSION['loggedInUsuario'])) : ?>
+              <li class="nav-item active">
+                <a class="nav-link" style="color: #FFFFFF;">San Cristóbal, <?php echo fechaToday(); ?></a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="admin_panel.php" style="color: #FFFFFF;"><i class="fa fa-home"></i> Bienvenido <?=$_SESSION['nombre']?> <?=$_SESSION['apellido']?></a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="usuario_cerrar.php" style="color: #FFFFFF;"><i class="fa fa-sign-out-alt"></i> Cerrar Sesión</a>
+              </li>
             <?php endif ?>
           </ul>
         </div>

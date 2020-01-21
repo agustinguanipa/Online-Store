@@ -63,13 +63,10 @@
             <a class="nav-link" href="index.php"><i class="fa fa-home"></i> Inicio </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="paginas/nosotros.php"><i class="fa fa-info"></i> Nosotros </a>
+            <a class="nav-link" href="paginas/principal_nosotros.php"><i class="fa fa-info"></i> Nosotros </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="paginas/contacto.php"><i class="fa fa-phone"></i> Contacto </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="paginas/admin_panel.php"><i class="fa fa-lock"></i></a>
+            <a class="nav-link" href="paginas/principal_contacto.php"><i class="fa fa-phone"></i> Contacto </a>
           </li>
         </ul>
       </div>
@@ -110,31 +107,37 @@
         </div>
         <div class="col-lg-6-24 col-sm-7 col-8  order-2  order-lg-3">
           <div class="d-flex justify-content-end">
-            <?php  if (isset($_SESSION['loggedInCliente'])) :  ?>
+            <?php  if (isset($_SESSION['loggedInUsuario'])) :  ?>
               <div class="widget-header">
-                <small class="title text-muted">Bienvenido <?=$_SESSION['name']?></small>
+                <small class="title text-muted">Bienvenido <?=$_SESSION['nombre']?> <?=$_SESSION['apellido']?></small>
                 <div>
                   <?php
-                    // Session is Set
-                    echo "<a href='paginas/usuario_cerrar.php'>Cerrar Sesión</a> <span class='dark-transp'> | </span>";
-                    echo "<a href='paginas/usuario_cuenta.php'>Mi Cuenta</a>";
+                    // Session is Set  
+                      if ($_SESSION['ident_tipo'] == 4) 
+                    {
+                      echo "<a href='paginas/cliente_cuenta.php'>Mi Cuenta</a> <span class='dark-transp'>   | </span>";
+                    }else{
+                      echo "<a href='paginas/admin_panel.php'>Ir al Panel</a> <span class='dark-transp'>   | </span>";
+                      }
+                    
+                    echo "<a href='paginas/usuario_cerrar.php'>Cerrar Sesión</a>";
                   ?>
                 </div>
               </div>
             <?php endif ?>
-            <?php  if (!isset($_SESSION['loggedInCliente'])) : ?>
+            <?php  if (!isset($_SESSION['loggedInUsuario'])) : ?>
               <div class="widget-header">
                 <small class="title text-muted">Bienvenido Visitante</small>
                 <div>
                   <?php
                     // Session is Not Set
                     echo "<a href='paginas/usuario_inicio.php'>Iniciar Sesión</a> <span class='dark-transp'> | </span>";
-                    echo "<a href='paginas/usuario_registro.php'>Registrarse</a>"; 
+                    echo "<a href='paginas/cliente_registro.php'>Registrarse</a>"; 
                   ?>
                 </div>
               </div>
             <?php endif ?>
-            <a href="paginas/usuario_cart.php" class="widget-header border-left pl-3 ml-3">
+            <a href="paginas/cliente_cart.php" class="widget-header border-left pl-3 ml-3">
               <div class="icontext">
                 <div class="icon-wrap icon-sm round border"><i class="fa fa-shopping-cart"></i></div>
               </div>
@@ -159,13 +162,13 @@
           <div class="collapse navbar-collapse" id="main_nav" style="padding-left: 150px;">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" href="paginas/usuario_producto.php">Equipos Médicos</a>
+                <a class="nav-link" href="paginas/principal_producto.php">Equipos Médicos</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="paginas/usuario_producto.php">Consumibles Médicos</a>
+                <a class="nav-link" href="paginas/principal_producto.php">Consumibles Médicos</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="paginas/usuario_producto.php">Material Quirúrgico</a>
+                <a class="nav-link" href="paginas/principal_producto.php">Material Quirúrgico</a>
               </li>
             </ul>
           </div>
@@ -184,14 +187,14 @@
             <span>Categorías</span>
           </div>
           <ul class="menu-category">
-            <li> <a href="paginas/usuario_producto.php">Equipos Médicos</a></li>
-            <li> <a href="paginas/usuario_producto.php">Consumibles Médicos</a></li>
-            <li> <a href="paginas/usuario_producto.php">Material Quirúrgico</a></li>
-            <li> <a href="paginas/usuario_producto.php">Mobiliario e Infraestructura</a></li>
-            <li> <a href="paginas/usuario_producto.php">Cirugía</a></li>
-            <li> <a href="paginas/usuario_producto.php">Laboratorio</a></li>
-            <li> <a href="paginas/usuario_producto.php">Imagénes Médicas</a></li>
-            <li> <a href="paginas/usuario_producto.php">Ortopedia y Rehabilitación</a></li>
+            <li> <a href="paginas/principal_producto.php">Equipos Médicos</a></li>
+            <li> <a href="paginas/principal_producto.php">Consumibles Médicos</a></li>
+            <li> <a href="paginas/principal_producto.php">Material Quirúrgico</a></li>
+            <li> <a href="paginas/principal_producto.php">Mobiliario e Infraestructura</a></li>
+            <li> <a href="paginas/principal_producto.php">Cirugía</a></li>
+            <li> <a href="paginas/principal_producto.php">Laboratorio</a></li>
+            <li> <a href="paginas/principal_producto.php">Imagénes Médicas</a></li>
+            <li> <a href="paginas/principal_producto.php">Ortopedia y Rehabilitación</a></li>
           </ul>
         </nav>
       </aside>
@@ -221,21 +224,21 @@
                   <small>
                     Signos Vitales, Diagnósticos, Equipos Prácticos, Almacenamiento
                   </small></br>
-                <a href="paginas/usuario_producto.php" class="btn btn-primary btn-sm btn-round"> Ver Más </a>
+                <a href="paginas/principal_producto.php" class="btn btn-primary btn-sm btn-round"> Ver Más </a>
                 </li>
                 <li class="list-group-item">
                 <h6>Consumibles Médicos</h6>
                   <small>
                     Inyectadoras, Intravenosas, Consumibles de Diagnóstico, Tratamiento de Heridas, Vendajes
                   </small></br>
-                <a href="paginas/usuario_producto.php" class="btn btn-primary btn-sm btn-round"> Ver Más </a>
+                <a href="paginas/principal_producto.php" class="btn btn-primary btn-sm btn-round"> Ver Más </a>
                 </li>
                 <li class="list-group-item">
                 <h6>Material Quirúrgico</h6>
                   <small>
                     Emergencia, Primeros Auxilios, Pre-Cirugía, Cirugía Ambulatoria, Instrumental, Consumibles Quirúrgicos
                   </small></br>
-                <a href="paginas/usuario_producto.php" class="btn btn-primary btn-sm btn-round"> Ver Más </a>
+                <a href="paginas/principal_producto.php" class="btn btn-primary btn-sm btn-round"> Ver Más </a>
                 </li>
               </ul>
           </div>
@@ -265,7 +268,7 @@
             SIGMAEMCA es un empresa fundada el 10 de noviembre de 2002, se posiciona como una entidad de responsabilidad social líder en la comercialización de equipos, suministros e insumos médicos para clínicas y hospitales en general. Además presta servicios especializados en las áreas médicas que sean requeridas.
           </p>
           <div>
-            <a href="paginas/nosotros.php" class="btn btn-primary">Ver Más</a>
+            <a href="paginas/principal_nosotros.php" class="btn btn-primary">Ver Más</a>
           </div>
         </div>
       </div>

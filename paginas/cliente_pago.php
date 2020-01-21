@@ -1,13 +1,13 @@
 <?php
   session_start();
 
-  if (!isset($_SESSION['loggedInCliente'])) {
+  if ($_SESSION['ident_tipo'] != 4) {
     header('Location: usuario_inicio.php');
     exit();
   }
 ?>
 
-<?php require_once('usuario_header.php'); ?>
+<?php require_once('includes/principal_header.php'); ?>
 
 <head>
 	<title>Pago | SIGMAEMCA Online Store</title>
@@ -100,8 +100,8 @@
               </div>
             </div>
             <div class="card-footer">
-              <a href="usuario_direccion.php" class="btn btn-success float-right"><i class="fa fa-arrow-circle-right"></i> Siguiente</a>
-              <a href="usuario_cart.php" class="btn btn-primary float-left"><i class="fa fa-arrow-circle-left"></i> Volver</a>
+              <a href="cliente_direccion.php" class="btn btn-success float-right"><i class="fa fa-arrow-circle-right"></i> Siguiente</a>
+              <a href="cliente_cart.php" class="btn btn-primary float-left"><i class="fa fa-arrow-circle-left"></i> Volver</a>
             </div>
           </div>
         </div>
@@ -139,5 +139,5 @@
   </div>
 </body>
 
-<?php require_once('usuario_footer.php');  ?>
+<?php require_once('includes/usuario_footer.php');  ?>
 

@@ -1,13 +1,13 @@
 <?php
   session_start();
 
-  if (!isset($_SESSION['loggedInCliente'])) {
+  if ($_SESSION['ident_tipo'] != 4) {
     header('Location: usuario_inicio.php');
     exit();
   }
 ?>
 
-<?php require_once('usuario_header.php'); ?>
+<?php require_once('includes/principal_header.php'); ?>
 
 <head>
   <title>Direcciones | SIGMAEMCA Online Store</title>
@@ -66,5 +66,5 @@
   </div>
 </body>
 
-<?php require_once('usuario_footer.php');  ?>
+<?php require_once('includes/usuario_footer.php');  ?>
 

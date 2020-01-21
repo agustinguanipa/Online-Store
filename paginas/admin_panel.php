@@ -1,27 +1,16 @@
-<?php
-  session_start();
-
-  if (!isset($_SESSION['loggedInAdmin'])) {
-    header('Location: admin_inicio.php');
-    exit();
-  }
-?>
-
-<?php require_once('admin_header.php'); ?>
+<?php require_once('includes/admin_header.php'); ?>
 
 <!-- Contenido -->
 
 <div class="container-fluid">
 	<div class="card-deck">
-		<div class="card text-center">
-	  <div class="card-header">
-	    <b>Bienvenido al Panel de Administración</b>
-	  </div>
-	  <div class="card-body">
-	    <h5 class="card-title">Administrador</h5>
-	    <a href="../index.php" class="btn btn-primary">Ir a la Web</a>
-	  </div>
-	</div>
+		<div class="card" align="center">
+    <div class="card-body index-background">
+      <h2 class="card-title text-white"><b>SIGMAEMCA Online Store</b></h2>
+      <p class="card-text text-white"><b>Bienvenido al Panel de Administración</b></p>
+      <a href="../index.php" class="btn btn-light btn-lg"> <b>Ir a la Web</b><i class="fa fa-home ml-2"></i></a>
+    </div>
+  </div>
 	</div>
 </div>
 </br>
@@ -63,5 +52,5 @@
 	</div>
 </div>
 
-<?php require_once('admin_footer.php');  ?>
+<?php require_once('includes/admin_footer.php');  ?>
 

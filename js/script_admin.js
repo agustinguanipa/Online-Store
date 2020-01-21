@@ -25,75 +25,118 @@ function load(page){
 $( "#add_admin" ).validate( {
 
     rules: {
-      nomb1_admi: {
+      nomb1_usua: {
         required: true,
         lettersonly: true,
         minlength: 2
       },
-      nomb2_admi: {
+      nomb2_usua: {
         lettersonly: true,
         minlength: 2
       },
-      apel1_admi: {
+      apel1_usua: {
         required: true,
         lettersonly: true,
         minlength: 2
       },
-      apel2_admi: {
+      apel2_usua: {
         lettersonly: true,
         minlength: 2
       },
-      usuar_admi: {
+      gener_usua: {
+        required: true
+      },
+      telef_usua: {
         required: true,
-        minlength: 2,
+        number: false,
+        minlength: 15
+      },
+      email_usua: {
+        required: true,
+        email: true,
         remote: {
-          url: "../paginas/admin_usuario_availability.php",
+          url: "../paginas/usuario_email_availability.php",
           type: "post",
           data:
             {
-              usuar_admi: function()
+              email_usua: function()
               {
-                return $('#add_admin :input[name="usuar_admi"]').val();
+                return $('#add_admin :input[name="email_usua"]').val();
               }
             }
         }     
       },
-      contr_admi: {
+      ident_tipo: {
+        required: true
+      },
+      usuar_usua: {
+        required: true,
+        minlength: 2,
+        remote: {
+          url: "../paginas/usuario_usuario_availability.php",
+          type: "post",
+          data:
+            {
+              usuar_usua: function()
+              {
+                return $('#add_admin :input[name="usuar_usua"]').val();
+              }
+            }
+        }     
+      },
+      contr_usua: {
         required: true,
         minlength: 5
       },
       confirm_password: {
         required: true,
         minlength: 5,
-        equalTo: "#contr_admi"
+        equalTo: "#contr_usua"
       },
+      
     },
 
     messages: {
-      nomb1_admi: {
+      nomb1_usua: {
         required: "Ingrese su Primer Nombre",
         lettersonly: "Tu Nombre solo debe contener letras sin espacios",
         minlength: "Tu Nombre debe contener al menos 2 caracteres"
       },
-      nomb2_admi: {
+      nomb2_usua: {
         lettersonly: "Tu Nombre solo debe contener letras sin espacios",
         minlength: "Tu Nombre debe contener al menos 2 caracteres"
       },
-      apel1_admi: {
+      apel1_usua: {
         required: "Ingrese su Primer Apellido",
         lettersonly: "Tu Apellido solo debe contener letras sin espacios",
         minlength: "Tu Apellido debe contener al menos 2 caracteres"
       },
-      apel2_admi: {
+      apel2_usua: {
         lettersonly: "Tu Apellido solo debe contener letras sin espacio",
         minlength: "Tu Apellido debe contener al menos 2 caracteres"
       },
-      usuar_admi: {
+      gener_usua: {
+        required: "Seleccione una Opción"
+      },
+      telef_usua: {
+        required: "Ingrese un Número de Teléfono Valido",
+        number: "Ingrese un Número de Teléfono Valido",
+        minlength: "Ingrese un Número de Teléfono Valido"
+      },
+      email_usua: {
+        required: "Ingrese una Dirección de Correo Electrónico Válida",
+        email: "Ingrese una Dirección de Correo Electrónico Válida",
+        remote: jQuery.validator.format("{0} no esta disponible")
+      },
+      ident_tipo: {
+        required: "Seleccione una Opción"
+      },
+      usuar_usua: {
         required: "Ingrese un Nombre de Usuario",
         minlength: "Tu Nombre de Usuario debe contener al menos 2 caracteres",
         remote: jQuery.validator.format("{0} no esta disponible")
       },
-      contr_admi: {
+      contr_usua: {
         required: "Ingrese una Contraseña",
         minlength: "Tu Contraseña debe contener al menos 5 caracteres"
       },
@@ -102,6 +145,7 @@ $( "#add_admin" ).validate( {
         minlength: "Tu Contraseña debe contener al menos 5 caracteres",
         equalTo: "Ingrese la Misma Contraseña"
       },
+      
     },
 
     errorElement: "em",
@@ -152,18 +196,26 @@ $('#addAdminModal').on('hidden.bs.modal', function(e) {
 
 $('#lookAdminModal').on('show.bs.modal', function (event) {
   var button = $(event.relatedTarget) // Button that triggered the modal
-  var nomb1_admi = button.data('nomb1_admi') 
-  $('#look_nomb1_admi').val(nomb1_admi)
-  var nomb2_admi = button.data('nomb2_admi') 
-  $('#look_nomb2_admi').val(nomb2_admi)
-  var apel1_admi = button.data('apel1_admi') 
-  $('#look_apel1_admi').val(apel1_admi)
-  var apel2_admi = button.data('apel2_admi') 
-  $('#look_apel2_admi').val(apel2_admi)
-  var usuar_admi = button.data('usuar_admi') 
-  $('#look_usuar_admi').val(usuar_admi)
-  var ident_admi = button.data('ident_admi') 
-  $('#look_id').val(ident_admi)
+  var nomb1_usua = button.data('nomb1_usua') 
+  $('#look_nomb1_usua').val(nomb1_usua)
+  var nomb2_usua = button.data('nomb2_usua') 
+  $('#look_nomb2_usua').val(nomb2_usua)
+  var apel1_usua = button.data('apel1_usua') 
+  $('#look_apel1_usua').val(apel1_usua)
+  var apel2_usua = button.data('apel2_usua') 
+  $('#look_apel2_usua').val(apel2_usua)
+  var gener_usua = button.data('gener_usua') 
+  $('#look_gener_usua').val(gener_usua)
+  var telef_usua = button.data('telef_usua') 
+  $('#look_telef_usua').val(telef_usua)
+  var email_usua = button.data('email_usua') 
+  $('#look_email_usua').val(email_usua)
+  var usuar_usua = button.data('usuar_usua') 
+  $('#look_usuar_usua').val(usuar_usua)
+  var fecre_usua = button.data('fecre_usua') 
+  $('#look_fecre_usua').val(fecre_usua)
+  var ident_usua = button.data('ident_usua') 
+  $('#look_id').val(ident_usua)
 })
 
 $( "#look_admin" ).submit(function( event ) {
@@ -188,76 +240,76 @@ $( "#look_admin" ).submit(function( event ) {
 
 $('#editAdminModal').on('show.bs.modal', function (event) {
   var button = $(event.relatedTarget) // Button that triggered the modal
-  var nomb1_admi = button.data('nomb1_admi') 
-  $('#edit_nomb1_admi').val(nomb1_admi)
-  var nomb2_admi = button.data('nomb2_admi') 
-  $('#edit_nomb2_admi').val(nomb2_admi)
-  var apel1_admi = button.data('apel1_admi') 
-  $('#edit_apel1_admi').val(apel1_admi)
-  var apel2_admi = button.data('apel2_admi') 
-  $('#edit_apel2_admi').val(apel2_admi)
-  var gener_admi = button.data('gener_admi') 
-  $('#edit_gener_admi').val(gener_admi)
-  var telef_admi = button.data('telef_admi') 
-  $('#edit_telef_admi').val(telef_admi)
-  var email_admi = button.data('email_admi') 
-  $('#edit_email_admi').val(email_admi)
-  var usuar_admi = button.data('usuar_admi') 
-  $('#edit_usuar_admi').val(usuar_admi)
-  var ident_admi = button.data('ident_admi') 
-  $('#edit_id').val(ident_admi)
+  var nomb1_usua = button.data('nomb1_usua') 
+  $('#edit_nomb1_usua').val(nomb1_usua)
+  var nomb2_usua = button.data('nomb2_usua') 
+  $('#edit_nomb2_usua').val(nomb2_usua)
+  var apel1_usua = button.data('apel1_usua') 
+  $('#edit_apel1_usua').val(apel1_usua)
+  var apel2_usua = button.data('apel2_usua') 
+  $('#edit_apel2_usua').val(apel2_usua)
+  var gener_usua = button.data('gener_usua') 
+  $('#edit_gener_usua').val(gener_usua)
+  var telef_usua = button.data('telef_usua') 
+  $('#edit_telef_usua').val(telef_usua)
+  var usuar_usua = button.data('usuar_usua') 
+  $('#edit_usuar_usua').val(usuar_usua)
+  var ident_usua = button.data('ident_usua') 
+  $('#edit_id').val(ident_usua)
 })
 
 $( "#edit_admin" ).validate( {
 
     rules: {
-      edit_nomb1_admi: {
+      edit_nomb1_usua: {
         required: true,
         lettersonly: true,
         minlength: 2
       },
-      edit_nomb2_admi: {
+      edit_nomb2_usua: {
         lettersonly: true,
         minlength: 2
       },
-      edit_apel1_admi: {
+      edit_apel1_usua: {
         required: true,
         lettersonly: true,
         minlength: 2
       },
-      edit_apel2_admi: {
+      edit_apel2_usua: {
         lettersonly: true,
         minlength: 2
       },
-      edit_usuar_admi: {
+      edit_telef_usua: {
         required: true,
-        minlength: 2
-      },
+        number: false,
+        minlength: 15
+      }
     },
 
     messages: {
-      edit_nomb1_admi: {
+      edit_nomb1_usua: {
         required: "Ingrese su Primer Nombre",
         lettersonly: "Tu Nombre solo debe contener letras sin espacios",
         minlength: "Tu Nombre debe contener al menos 2 caracteres"
       },
-      edit_nomb2_admi: {
+      edit_nomb2_usua: {
         lettersonly: "Tu Nombre solo debe contener letras sin espacios",
         minlength: "Tu Nombre debe contener al menos 2 caracteres"
       },
-      edit_apel1_admi: {
+      edit_apel1_usua: {
         required: "Ingrese su Primer Apellido",
         lettersonly: "Tu Apellido solo debe contener letras sin espacios",
         minlength: "Tu Apellido debe contener al menos 2 caracteres"
       },
-      edit_apel2_admi: {
+      edit_apel2_usua: {
         lettersonly: "Tu Apellido solo debe contener letras sin espacio",
         minlength: "Tu Apellido debe contener al menos 2 caracteres"
       },
-      edit_usuar_admi: {
-        required: "Ingrese un Nombre de Usuario",
-        minlength: "Tu Nombre de Usuario debe contener al menos 2 caracteres"
-      },
+      edit_telef_usua: {
+        required: "Ingrese un Número de Teléfono Valido",
+        number: "Ingrese un Número de Teléfono Valido",
+        minlength: "Ingrese un Número de Teléfono Valido"
+      }
     },
 
     errorElement: "em",
@@ -300,7 +352,7 @@ $( "#edit_admin" ).validate( {
 });
 
 $('#editAdminModal').on('hidden.bs.modal', function(e) {
-  $(this).find('#edit_admin')[0].reset();
+  $(this).find('#edit_Admin')[0].reset();
   $(this).find('.is-valid').removeClass('is-valid');
 });
 
@@ -308,8 +360,8 @@ $('#editAdminModal').on('hidden.bs.modal', function(e) {
 
 $('#deleteAdminModal').on('show.bs.modal', function (event) {
   var button = $(event.relatedTarget) // Button that triggered the modal
-  var ident_admi = button.data('ident_admi') 
-  $('#delete_id').val(ident_admi)
+  var ident_usua = button.data('ident_usua') 
+  $('#delete_id').val(ident_usua)
 })
 
 $( "#delete_admin" ).submit(function( event ) {
@@ -330,6 +382,9 @@ $( "#delete_admin" ).submit(function( event ) {
   event.preventDefault();
 });
 
+/* Masks */
+
+$('.telef-mask').mask('(0000) 000 0000');
 
 
 

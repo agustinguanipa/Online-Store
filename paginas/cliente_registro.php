@@ -1,13 +1,4 @@
-<?php
-  session_start();
-
-  if (isset($_SESSION['loggedInCliente'])) {
-    header('Location: ../index.php');
-    exit();
-  }
-?>
-
-<?php require_once('logreg_header.php'); ?>
+<?php require_once('includes/logreg_header.php'); ?>
 
 <head>
   <title>Registrarse | SIGMAEMCA Online Store</title>
@@ -111,6 +102,6 @@
   </div>
 </body>
 
-<?php require_once('logreg_footer.php'); ?>
+<?php require_once('includes/logreg_footer.php'); ?>
 
 

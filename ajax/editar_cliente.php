@@ -6,20 +6,20 @@
 	require_once ("../paginas/conexion_bd.php");//Contiene Funcion que Conecta a la Base de Datos
 
 	// escaping, additionally removing everything that could be (html/javascript-) code
-  $nomb1_clie = mysqli_real_escape_string($con,(strip_tags($_POST["edit_nomb1_clie"],ENT_QUOTES)));
-  $nomb2_clie = mysqli_real_escape_string($con,(strip_tags($_POST["edit_nomb2_clie"],ENT_QUOTES)));
-  $apel1_clie = mysqli_real_escape_string($con,(strip_tags($_POST["edit_apel1_clie"],ENT_QUOTES)));
-  $apel2_clie = mysqli_real_escape_string($con,(strip_tags($_POST["edit_apel2_clie"],ENT_QUOTES)));
-  $gener_clie = mysqli_real_escape_string($con,(strip_tags($_POST["edit_gener_clie"],ENT_QUOTES)));
-  $telef_clie = mysqli_real_escape_string($con,(strip_tags($_POST["edit_telef_clie"],ENT_QUOTES)));
-	$ident_clie=intval($_POST['edit_id']);
+  $nomb1_usua = mysqli_real_escape_string($con,(strip_tags($_POST["edit_nomb1_usua"],ENT_QUOTES)));
+  $nomb2_usua = mysqli_real_escape_string($con,(strip_tags($_POST["edit_nomb2_usua"],ENT_QUOTES)));
+  $apel1_usua = mysqli_real_escape_string($con,(strip_tags($_POST["edit_apel1_usua"],ENT_QUOTES)));
+  $apel2_usua = mysqli_real_escape_string($con,(strip_tags($_POST["edit_apel2_usua"],ENT_QUOTES)));
+  $gener_usua = mysqli_real_escape_string($con,(strip_tags($_POST["edit_gener_usua"],ENT_QUOTES)));
+  $telef_usua = mysqli_real_escape_string($con,(strip_tags($_POST["edit_telef_usua"],ENT_QUOTES)));
+	$ident_usua=intval($_POST['edit_id']);
 
 	// Actualizar en la Base de Datos
-    $sql = "UPDATE tabma_clie SET nomb1_clie='".$nomb1_clie."', nomb2_clie='".$nomb2_clie."', apel1_clie='".$apel1_clie."', apel2_clie='".$apel2_clie."', gener_clie='".$gener_clie."', telef_clie='".$telef_clie."' WHERE ident_clie='".$ident_clie."' ";
+    $sql = "UPDATE tabma_usua SET nomb1_usua='".$nomb1_usua."', nomb2_usua='".$nomb2_usua."', apel1_usua='".$apel1_usua."', apel2_usua='".$apel2_usua."', gener_usua='".$gener_usua."', telef_usua='".$telef_usua."' WHERE ident_usua='".$ident_usua."' ";
     $query = mysqli_query($con,$sql);
     // Si ha sido Actualizado Exitosamente
     if ($query) {
-        $messages[] = "El cliente ha sido actualizado con éxito.";
+        $messages[] = "El Cliente ha sido actualizado con éxito.";
     } else {
         $errors[] = "Lo sentimos, la actualización falló. Por favor, regrese y vuelva a intentarlo.";
     }

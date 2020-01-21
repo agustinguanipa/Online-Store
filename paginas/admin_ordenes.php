@@ -1,13 +1,4 @@
-<?php
-  session_start();
-
-  if (!isset($_SESSION['loggedInAdmin'])) {
-    header('Location: admin_inicio.php');
-    exit();
-  }
-?>
-
-<?php require_once('admin_header.php'); ?>
+<?php require_once('includes/admin_header.php'); ?>
 
 <!-- Contenido -->
 
@@ -41,5 +32,5 @@
 </div>
 </body>
   
-<?php require_once('admin_footer.php');  ?>
+<?php require_once('includes/admin_footer.php');  ?>
                                		                            

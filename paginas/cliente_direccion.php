@@ -1,13 +1,13 @@
 <?php
   session_start();
 
-  if (!isset($_SESSION['loggedInCliente'])) {
+  if ($_SESSION['ident_tipo'] != 4) {
     header('Location: usuario_inicio.php');
     exit();
   }
 ?>
 
-<?php require_once('usuario_header.php'); ?>
+<?php require_once('includes/principal_header.php'); ?>
 
 <head>
 	<title>Direcciones | SIGMAEMCA Online Store</title>
@@ -27,7 +27,7 @@
             <div class="card-body">
               <div class="form-group text-center">
                 <div class="formulario-pago">
-                  <form role="form" id="usuario_registro" class="justify-content-center" align="center" action="guardar_cliente.php" method="post">
+                  <form role="form" id="usuario_registro" class="justify-content-center" align="center" action="cliente_registro_guardar.php" method="post">
                     <div class="form-row">
                       <div class="col form-group">
                         <label class="form-label" for="nomb_pais">País: </label>
@@ -84,8 +84,8 @@
               </div>
             </div>
             <div class="card-footer">
-              <a href="usuario_checkout.php" class="btn btn-success float-right"><i class="fa fa-arrow-circle-right"></i> Siguiente</a>
-              <a href="usuario_pago.php" class="btn btn-primary float-left"><i class="fa fa-arrow-circle-left"></i> Volver</a>
+              <a href="cliente_checkout.php" class="btn btn-success float-right"><i class="fa fa-arrow-circle-right"></i> Siguiente</a>
+              <a href="cliente_pago.php" class="btn btn-primary float-left"><i class="fa fa-arrow-circle-left"></i> Volver</a>
             </div>
           </div>
         </div>
@@ -109,5 +109,5 @@
   </div>
 </body>
 
-<?php require_once('usuario_footer.php');  ?>
+<?php require_once('includes/usuario_footer.php');  ?>
 
