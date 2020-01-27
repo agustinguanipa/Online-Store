@@ -3,25 +3,28 @@
 $( document ).ready( function () {
   $( "#usuario_registro" ).validate( {
     rules: {
-      nomb1_clie: {
+      nomb1_usua: {
         required: true,
         lettersonly: true,
         minlength: 2
       },
-      nomb2_clie: {
+      nomb2_usua: {
         lettersonly: true,
         minlength: 2
       },
-      apel1_clie: {
+      apel1_usua: {
         required: true,
         lettersonly: true,
         minlength: 2
       },
-      apel2_clie: {
+      apel2_usua: {
         lettersonly: true,
         minlength: 2
       },
-      usuar_clie: {
+      gener_usua: {
+        required: true
+      },
+      usuar_usua: {
         required: true,
         minlength: 2,
         remote: {
@@ -29,28 +32,28 @@ $( document ).ready( function () {
           type: "post",
           data:
             {
-              usuar_clie: function()
+              usuar_usua: function()
               {
-                return $('#usuario_registro :input[name="usuar_clie"]').val();
+                return $('#usuario_registro :input[name="usuar_usua"]').val();
               }
             }
         }     
       },
-      contr_clie: {
+      contr_usua: {
         required: true,
         minlength: 5
       },
       confirm_password: {
         required: true,
         minlength: 5,
-        equalTo: "#contr_clie"
+        equalTo: "#contr_usua"
       },
-      telef_clie: {
+      telef_usua: {
         required: true,
         number: false,
         minlength: 15
       },
-      email_clie: {
+      email_usua: {
         required: true,
         email: true,
         remote: {
@@ -58,9 +61,9 @@ $( document ).ready( function () {
           type: "post",
           data:
             {
-              email_clie: function()
+              email_usua: function()
               {
-                return $('#usuario_registro :input[name="email_clie"]').val();
+                return $('#usuario_registro :input[name="email_usua"]').val();
               }
             }
         }  
@@ -68,30 +71,33 @@ $( document ).ready( function () {
     },
 
     messages: {
-      nomb1_clie: {
+      nomb1_usua: {
         required: "Ingrese su Primer Nombre",
         lettersonly: "Tu Nombre solo debe contener letras sin espacios",
         minlength: "Tu Nombre debe contener al menos 2 caracteres"
       },
-      nomb2_clie: {
+      nomb2_usua: {
         lettersonly: "Tu Nombre solo debe contener letras sin espacios",
         minlength: "Tu Nombre debe contener al menos 2 caracteres"
       },
-      apel1_clie: {
+      apel1_usua: {
         required: "Ingrese su Primer Apellido",
         lettersonly: "Tu Apellido solo debe contener letras sin espacios",
         minlength: "Tu Apellido debe contener al menos 2 caracteres"
       },
-      apel2_clie: {
+      apel2_usua: {
         lettersonly: "Tu Apellido solo debe contener letras sin espacio",
         minlength: "Tu Apellido debe contener al menos 2 caracteres"
       },
-      usuar_clie: {
+      gener_usua: {
+        required: "Seleccione una Opción"
+      },
+      usuar_usua: {
         required: "Ingrese un Nombre de Usuario",
         minlength: "Tu Nombre de Usuario debe contener al menos 2 caracteres",
         remote: jQuery.validator.format("{0} no esta disponible")
       },
-      contr_clie: {
+      contr_usua: {
         required: "Ingrese una Contraseña",
         minlength: "Tu Contraseña debe contener al menos 5 caracteres"
       },
@@ -100,12 +106,12 @@ $( document ).ready( function () {
         minlength: "Tu Contraseña debe contener al menos 5 caracteres",
         equalTo: "Ingrese la Misma Contraseña"
       },
-      telef_clie: {
+      telef_usua: {
         required: "Ingrese un Número de Teléfono Valido",
         number: "Ingrese un Número de Teléfono Valido",
         minlength: "Ingrese un Número de Teléfono Valido"
       },
-      email_clie: {
+      email_usua: {
         required: "Ingrese una Dirección de Correo Electrónico Válida",
         email: "Ingrese una Dirección de Correo Electrónico Válida",
         remote: jQuery.validator.format("{0} no esta disponible")
@@ -138,22 +144,22 @@ $( document ).ready( function () {
 $( document ).ready( function () {
   $( "#usuario_inicio" ).validate( {
     rules: {
-      usuar_clie: {
+      usuar_usua: {
         required: true,
         minlength: 2
       },
-      contr_clie: {
+      contr_usua: {
         required: true,
         minlength: 5
       }
     },
 
     messages: {
-      usuar_clie: {
+      usuar_usua: {
         required: "Ingrese un Nombre de Usuario",
         minlength: "Tu Nombre de Usuario debe contener al menos 2 caracteres"
       },
-      contr_clie: {
+      contr_usua: {
         required: "Ingrese una Contraseña",
         minlength: "Tu Contraseña debe contener al menos 5 caracteres"
       }
@@ -185,68 +191,68 @@ $( document ).ready( function () {
 $( document ).ready( function () {
   $( "#usuario_modificar" ).validate( {
     rules: {
-      nomb1_clie: {
+      nomb1_usua: {
         required: true,
         lettersonly: true,
         minlength: 2
       },
-      nomb2_clie: {
+      nomb2_usua: {
         lettersonly: true,
         minlength: 2
       },
-      apel1_clie: {
+      apel1_usua: {
         required: true,
         lettersonly: true,
         minlength: 2
       },
-      apel2_clie: {
+      apel2_usua: {
         lettersonly: true,
         minlength: 2
       },
-      usuar_clie: {
+      usuar_usua: {
         required: true,
         minlength: 2
       },
-      telef_clie: {
+      telef_usua: {
         required: true,
         number: false,
         minlength: 15
       },
-      email_clie: {
+      email_usua: {
         required: true,
         email: true
       },
     },
 
     messages: {
-      nomb1_clie: {
+      nomb1_usua: {
         required: "Ingrese su Primer Nombre",
         lettersonly: "Tu Nombre solo debe contener letras sin espacios",
         minlength: "Tu Nombre debe contener al menos 2 caracteres"
       },
-      nomb2_clie: {
+      nomb2_usua: {
         lettersonly: "Tu Nombre solo debe contener letras sin espacios",
         minlength: "Tu Nombre debe contener al menos 2 caracteres"
       },
-      apel1_clie: {
+      apel1_usua: {
         required: "Ingrese su Primer Apellido",
         lettersonly: "Tu Apellido solo debe contener letras sin espacios",
         minlength: "Tu Apellido debe contener al menos 2 caracteres"
       },
-      apel2_clie: {
+      apel2_usua: {
         lettersonly: "Tu Apellido solo debe contener letras sin espacio",
         minlength: "Tu Apellido debe contener al menos 2 caracteres"
       },
-      usuar_clie: {
+      usuar_usua: {
         required: "Ingrese un Nombre de Usuario",
         minlength: "Tu Nombre de Usuario debe contener al menos 2 caracteres"
       },
-      telef_clie: {
+      telef_usua: {
         required: "Ingrese un Número de Teléfono Valido",
         number: "Ingrese un Número de Teléfono Valido",
         minlength: "Ingrese un Número de Teléfono Valido"
       },
-      email_clie: "Ingrese una Dirección de Correo Electrónico Válida"
+      email_usua: "Ingrese una Dirección de Correo Electrónico Válida"
     },
 
     errorElement: "em",

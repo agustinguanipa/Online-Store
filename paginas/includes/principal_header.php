@@ -54,18 +54,18 @@
       <div class="collapse navbar-collapse" id="navbarTop">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="../index.php"><i class="fa fa-phone"></i> Llámanos: +58 0276 3532978 </a>
+            <a class="nav-link" href="../index.php"><i class="fa fa-phone"></i> <b>Llámanos: +58 0276 3532978 </b></a>
           </li>
         </ul>
         <ul class="navbar-nav">
           <li class="nav-item active">
-            <a class="nav-link" href="../index.php"><i class="fa fa-home"></i> Inicio </a>
+            <a class="nav-link" href="../index.php"><i class="fa fa-home"></i> <b>Inicio </b></a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="../paginas/principal_nosotros.php"><i class="fa fa-info"></i> Nosotros </a>
+            <a class="nav-link" href="../paginas/principal_nosotros.php"><i class="fa fa-info"></i> <b>Nosotros </b></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../paginas/principal_contacto.php"><i class="fa fa-phone"></i> Contacto </a>
+              <a class="nav-link" href="../paginas/principal_contacto.php"><i class="fa fa-phone"></i> <b>Contacto </b></a>
           </li>
         </ul>
       </div>
@@ -80,7 +80,7 @@
           <div class="brand-wrap">
             <a href="../index.php" style="color: #000000; text-decoration: none;">
               <img class="logo" src="../imagen/logo-sigmaemca.png">
-              <h2 class="logo-text">SIGMAEMCA</h2>
+              <h2 class="logo-text"><b>SIGMAEMCA</b></h2>
             </a>
           </div>
         </div>

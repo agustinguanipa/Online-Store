@@ -1,14 +1,48 @@
-<?php require_once('includes/principal_header.php'); ?>
+<?php 
+
+require_once('includes/principal_header.php'); 
+
+include "conexion_bd.php";
+
+$id = $_GET['ident_prod'];
+
+?>
 
 <head>
   <title>Productos | SIGMAEMCA Online Store</title>
 </head>
 
 <body>
-  <div class="jumbotron text-center" style="background-color: #FBFCFF;">
-    <div class="container">
-      <h1>Productos</h1>
-      <hr class="my-4">
+
+
+  <section class="section-pagetop bg" style="padding: 30px;">
+  <div class="container" align="center">
+    <div class="row">
+      <div class="col-sm-2">
+        <button type="submit" class="btn-sm btn-primary float-left" onclick="goBack()"><i class="fa fa-arrow-left"></i> Volver</button>
+      </div>
+      <div class="col-sm-8">
+        <?php
+          $query_rol = mysqli_query($con,"SELECT u.ident_cate, u.nombr_cate, r.ident_prod, r.ident_cate, r.nombr_prod, r.imag1_prod FROM tabma_cate u INNER JOIN tabma_prod r ON u.ident_cate = r.ident_cate WHERE r.ident_prod = $id");
+          $result_rol = mysqli_num_rows($query_rol);
+        ?>
+        <?php 
+            if ($result_rol > 0) {
+            $rol = mysqli_fetch_array($query_rol)?>
+            <h2 align="center" style="color: #000000;"><b>Producto | <?php echo $rol['nombr_cate'] ?></b></h2>
+            <?php
+            
+          }
+          ?>
+        </div>
+      <div class="col-sm-2">
+         <a href="principal_producto.php" class="btn-sm btn-primary float-right">Ver Todos <i class="fa fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+    <div class="container my-3" align="center">
       <div class="row">
         <div class="col-sm-12 form-group">
           <?php
@@ -24,13 +58,13 @@
           <article class="gallery-wrap"> 
           <div class="img-big-wrap">
             <div> <a href="#" data-fancybox=""><?php echo '<img src="'.$row['imag1_prod'].'" width="100">' ?></a></div>
-          </div> <!-- slider-product.// -->
+          </div>
           <div class="img-small-wrap">
             <div class="item-gallery"><?php echo '<img src="'.$row['imag1_prod'].'" width="100">' ?></div>
             <div class="item-gallery"><?php echo '<img src="'.$row['imag2_prod'].'" width="100">' ?></div>
             <div class="item-gallery"><?php echo '<img src="'.$row['imag3_prod'].'" width="100">' ?></div>
-          </div> <!-- slider-nav.// -->
-          </article> <!-- gallery-wrap .end// -->
+          </div>
+          </article>
               </aside>
               <aside class="col-sm-7">
           <article class="p-5">
@@ -40,8 +74,7 @@
             <var class="price h3 text-primary"> 
               <span class="currency">Bs. </span><span class="num"><?php echo $row['preci_prod'] ?></span>
             </var> 
-            
-          </div> <!-- price-detail-wrap .// -->
+          </div>
           <dl>
             <dt>Descripción</dt>
             <dd><p><?php echo $row['desla_prod'] ?></p></dd>
@@ -68,23 +101,29 @@
                       <option> 3 </option>
                     </select>
                   </dd>
-                </dl>  <!-- item-property .// -->
-              </div> <!-- col.// -->
-            </div> <!-- row.// -->
+                </dl>
+              </div>
+            </div>
             <hr>
             <a href="usuario_cart.php" class="btn btn-primary float-right"><i class="fa fa-shopping-cart"></i> Agregar al Carrito</a>
-            <a href="usuario_producto.php" class="btn btn-success float-left"><i class="fa fa-arrow-left"></i> Seguir Viendo</a> 
-          </article> <!-- card-body.// -->
-              </aside> <!-- col.// -->
-            </div> <!-- row.// -->
-          </div> <!-- card.// -->
+            <button type="submit" class="btn btn-success float-left" onclick="goBack()"><i class="fa fa-arrow-left"></i> Seguir Viendo</button>
+          </article>
+              </aside>
+            </div>
+          </div>
           <?php 
             }
           ?>
         </div>
       </div>
     </div>
-  </div>
+  
 </body>
 
-<?php require_once('includes/usuario_footer.php');  ?>
+<?php require_once('includes/principal_footer.php');  ?>
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>

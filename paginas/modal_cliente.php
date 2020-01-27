@@ -79,6 +79,12 @@
           </div>
         </div>
         <div class="form-row">
+            <div class="col form-group">
+              <label class="form-label" for="image_usua"><b>Imagen de Perfil: </b></label>
+              <input type="file" class="filestyle" id="image_usua" name="image_usua" alt="Imagen de Perfil" data-btnClass="btn-primary" accept="image/*">
+            </div>
+          </div>
+        <div class="form-row">
           <div class="col form-group">
             <label class="form-label" for="usuar_usua"><b>Usuario: </b></label>
             <input type="text" class="form-control" name="usuar_usua" autocomplete="off" id="usuar_usua" placeholder="miusuario" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">

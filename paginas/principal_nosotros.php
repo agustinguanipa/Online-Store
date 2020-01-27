@@ -62,5 +62,5 @@
   </div>
 </body>
 
-<?php require_once('includes/usuario_footer.php');  ?>
+<?php require_once('includes/principal_footer.php');  ?>
 

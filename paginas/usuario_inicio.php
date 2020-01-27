@@ -24,7 +24,7 @@
           <div class="brand-wrap">
             <a href="../index.php" style="color: #000000; text-decoration: none;">
               <img class="logo" src="../imagen/logo-sigmaemca.png">
-              <h2 class="logo-text">SIGMAEMCA Online Store</h2>
+              <h2 class="logo-text"><b>SIGMAEMCA Online Store</b></h2>
             </a>
           </div>
         </div>
@@ -58,7 +58,7 @@
               <button type="reset" class="btn btn-secondary btn-block"><i class="fa fa-undo"></i> Limpiar</button>
             </div>
           </div>
-          <p class="text-center">No Tienes una Cuenta? <a href="usuario_registro.php">Registrarse</a> </p>
+          <p class="text-center">No Tienes una Cuenta? <a href="cliente_registro.php">Registrarse</a> </p>
         </form>
       </div> 
     </div>

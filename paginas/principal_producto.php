@@ -28,9 +28,23 @@
 </head>
 
 <body>
-    <div class="container">
-      <h1 align="center">Productos</h1>
-      <hr class="my-4">
+  <section class="section-pagetop bg" style="padding: 30px;">
+    <div class="container" align="center">
+      <div class="row">
+        <div class="col-sm-4">
+          <button type="submit" class="btn-sm btn-primary float-left" onclick="goBack()"><i class="fa fa-arrow-left"></i> Volver</button>
+        </div>
+        <div class="col-sm-4">
+          <h2 class="" style="color: #000000;"><b>Productos</b></h2>
+        </div>
+        <div class="col-sm-4">
+           <a href="principal_categoria.php" class="btn-sm btn-primary float-right">Ver Categorías <i class="fa fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <div class="container my-3">
       <div class="row">
         <div class="col-sm-12 form-group">
           <div class="row" align="center">
@@ -47,18 +61,18 @@
                   <div class="bottom-wrap">
                     <div class="preci_prod-wrap h5">
                       <span class="preci_prod-new"><?php echo 'Bs. ' .$row['preci_prod'] ?></span>
-                    </div> <!-- preci_prod-wrap.// -->
-                  </div> <!-- bottom-wrap.// -->
+                    </div>
+                  </div>
                   <div class="bottom-wrap">
                     <a href="usuario_cart.php" class="btn btn-sm btn-primary float-right"><i class="fa fa-shopping-cart"></i> Agregar al Carrito</a>
-                    <a href="usuario_producto_detalle.php?ident_prod=<?php echo $row['ident_prod']; ?>" class="btn btn-sm btn-success float-left"><i class="fa fa-eye"></i> Ver Producto</a>
-                  </div> <!-- bottom-wrap.// -->
+                    <a href="principal_producto_detalle.php?ident_prod=<?php echo $row['ident_prod']; ?>" class="btn btn-sm btn-success float-left"><i class="fa fa-eye"></i> Ver Producto</a>
+                  </div>
               </figure> 
-            </div> <!-- col // -->
+            </div>
             <?php
               }
             ?>
-          </div> <!-- r.// -->
+          </div>
           <nav aria-label="Page navigation">
             <ul class="pagination">
             <?php if($curpage != $startpage){ ?>
@@ -90,5 +104,11 @@
   </div>
 </body>
 
-<?php require_once('includes/usuario_footer.php');  ?>
+<?php require_once('includes/principal_footer.php');  ?>
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
 

@@ -10,13 +10,17 @@
   $gener_usua = mysqli_real_escape_string($con,(strip_tags($_POST["gener_usua"],ENT_QUOTES)));
   $telef_usua = mysqli_real_escape_string($con,(strip_tags($_POST["telef_usua"],ENT_QUOTES)));
   $email_usua = mysqli_real_escape_string($con,(strip_tags($_POST["email_usua"],ENT_QUOTES)));
+  $image_usua = $_FILES['image_usua']['name'];
+	$ruta1 = $_FILES['image_usua']['tmp_name'];
+	$destino1 = "../imagen/productos/".$image_usua;
+	move_uploaded_file($ruta1,$destino1);
   $usuar_usua = mysqli_real_escape_string($con,(strip_tags($_POST["usuar_usua"],ENT_QUOTES)));
   $contr_usua = md5(mysqli_real_escape_string($con,(strip_tags($_POST["contr_usua"],ENT_QUOTES))));
 	$statu_usua = 1;
 	$ident_tipo = 4;
 
 	// Registrar en la Base de Datos
-    $sql = "INSERT INTO tabma_usua(nomb1_usua, nomb2_usua, apel1_usua, apel2_usua, gener_usua, telef_usua, email_usua, usuar_usua, contr_usua, statu_usua, ident_tipo) VALUES ('$nomb1_usua','$nomb2_usua','$apel1_usua','$apel2_usua','$gener_usua','$telef_usua','$email_usua','$usuar_usua','$contr_usua','$statu_usua','$ident_tipo')";
+    $sql = "INSERT INTO tabma_usua(nomb1_usua, nomb2_usua, apel1_usua, apel2_usua, gener_usua, telef_usua, email_usua, image_usua, usuar_usua, contr_usua, statu_usua, ident_tipo) VALUES ('$nomb1_usua','$nomb2_usua','$apel1_usua','$apel2_usua','$gener_usua','$telef_usua','$email_usua','$destino1','$usuar_usua','$contr_usua','$statu_usua','$ident_tipo')";
     
     $query = mysqli_query($con,$sql);
     // Si ha sido Agregado Exitosamentee

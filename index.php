@@ -55,18 +55,18 @@
       <div class="collapse navbar-collapse" id="navbarTop">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="index.php"><i class="fa fa-phone"></i> Llámanos: +58 0276 3532978 </a>
+            <a class="nav-link" href="index.php"><i class="fa fa-phone"></i> <b>Llámanos: +58 0276 3532978 </b></a>
           </li>
         </ul>
         <ul class="navbar-nav">
           <li class="nav-item active">
-            <a class="nav-link" href="index.php"><i class="fa fa-home"></i> Inicio </a>
+            <a class="nav-link" href="index.php"><i class="fa fa-home"></i> <b>Inicio </b></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="paginas/principal_nosotros.php"><i class="fa fa-info"></i> Nosotros </a>
+            <a class="nav-link" href="paginas/principal_nosotros.php"><i class="fa fa-info"></i> <b>Nosotros </b></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="paginas/principal_contacto.php"><i class="fa fa-phone"></i> Contacto </a>
+            <a class="nav-link" href="paginas/principal_contacto.php"><i class="fa fa-phone"></i> <b>Contacto </b></a>
           </li>
         </ul>
       </div>
@@ -75,14 +75,14 @@
 
   <!-- Barra 2 --->
 
-  <section class="header-main">
+  <section class="header-main border-bottom">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-5-24 col-sm-5 col-4">
           <div class="brand-wrap">
             <a href="index.php" style="color: #000000; text-decoration: none;">
               <img class="logo" src="imagen/logo-sigmaemca.png">
-              <h2 class="logo-text">SIGMAEMCA</h2>
+              <h2 class="logo-text"><b>SIGMAEMCA</b></h2>
             </a>
           </div>
         </div>
@@ -149,131 +149,148 @@
     </div>
   </section>
 
+  <nav class="navbar navbar-main navbar-expand-lg navbar-light border-bottom" style="color: #000000;">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav" aria-controls="main_nav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="main_nav">
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown" style="color: #000000;">
+          <a class="nav-link pl-0" data-toggle="dropdown" href="#" style="color: #000000;"><strong> <i class="fa fa-bars"></i> &nbsp  Todas las Categorías</strong></a>
+          <div class="dropdown-menu">
+            <?php
+              include("paginas/conexion_bd.php");
+              $sql = "SELECT * FROM tabma_cate WHERE statu_cate = 1";
+              $res = mysqli_query($con, $sql);
+
+              while($row = mysqli_fetch_assoc($res)){
+            ?>
+              <a class="dropdown-item" href="paginas/principal_categoria_detalle.php?id=<?php echo $row['ident_cate']; ?>"><?php echo $row['nombr_cate'] ?></a>
+            <?php
+              }
+            ?>
+          </div> 
+        </li>
+        <?php
+            include("paginas/conexion_bd.php");
+            $sql = "SELECT * FROM tabma_cate WHERE statu_cate = 1 LIMIT 8";
+            $res = mysqli_query($con, $sql);
+
+              while($row = mysqli_fetch_assoc($res)){
+            ?>
+            <li class="nav-item">
+              <a class="nav-link"href="paginas/principal_categoria_detalle.php?id=<?php echo $row['ident_cate']; ?>" style="color: #000000;"><b><?php echo $row['nombr_cate'] ?></b></a>
+            </li>
+          <?php
+            }
+        ?>
+        <li class="nav-item">
+          <a class="nav-link text-primary" href="paginas/principal_categoria.php"><b>Ver Todas</b></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</header>
+
 <!-- Main --->
 
-<section class="bg2">
-  <div class="container">
-    <div class="row no-gutters">
-      <div class="col-lg-9 offset-lg-5-24">
-        <nav class="navbar navbar-expand-lg navbar-light">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav" aria-controls="main_nav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="main_nav" style="padding-left: 150px;">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="paginas/principal_producto.php">Equipos Médicos</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="paginas/principal_producto.php">Consumibles Médicos</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="paginas/principal_producto.php">Material Quirúrgico</a>
-              </li>
-            </ul>
-          </div>
-        </nav>
+<section class="section-intro padding-y-sm">
+<div class="container">
+  <div class="intro-banner-wrap">
+    <div class="card-deck">
+      <div class="card" align="center">
+        <div class="card-body index-background" style="padding: 60px;">
+          <h2 class="card-title text-white" style="font-size: 50px;"><b>SIGMAEMCA Online Store</b></h2>
+          <p class="card-text text-white"><b>Todo en Equipos Médicos, Material Médico Quirúrgico, Consumibles y Mucho Más </b></p>
+          <a href="paginas/principal_categoria.php" class="btn btn-light btn-md"> <b>Ver Categorías</b><i class="fa fa-boxes ml-2"></i></a>
+          <a href="paginas/principal_producto.php" class="btn btn-light btn-md"> <b>Ver Todos los Productos</b><i class="fa fa-shopping-bag ml-2"></i></a>
+        </div>
       </div>
     </div>
   </div>
+</div>
 </section>
 
-<section class="section-main bg padding-bottom">
+<section class="section-content padding-y-sm">
   <div class="container">
-    <div class="row no-gutters border border-top-0 bg-white">
-      <aside class="col-lg-5-24">
-        <nav>
-          <div class="title-category bg-primary white d-none d-lg-block" style="margin-top:-53px">
-            <span>Categorías</span>
-          </div>
-          <ul class="menu-category">
-            <li> <a href="paginas/principal_producto.php">Equipos Médicos</a></li>
-            <li> <a href="paginas/principal_producto.php">Consumibles Médicos</a></li>
-            <li> <a href="paginas/principal_producto.php">Material Quirúrgico</a></li>
-            <li> <a href="paginas/principal_producto.php">Mobiliario e Infraestructura</a></li>
-            <li> <a href="paginas/principal_producto.php">Cirugía</a></li>
-            <li> <a href="paginas/principal_producto.php">Laboratorio</a></li>
-            <li> <a href="paginas/principal_producto.php">Imagénes Médicas</a></li>
-            <li> <a href="paginas/principal_producto.php">Ortopedia y Rehabilitación</a></li>
-          </ul>
-        </nav>
-      </aside>
-
-      <main class="col-lg-19-24">
-      <!-- Aside  -->
-        <div class="row no-gutters">
-          <div class="col-lg-9 col-md-8">
-            <!--  Slide  -->
-            <div id="slider" class="owl-init slider-main owl-carousel" data-items="1" data-margin="1" data-nav="true" data-dots="false">
-              <div class="item">
-                <img src="imagen/slider1.jpg">
-              </div>
-              <div class="item">
-                <img src="imagen/slider2.jpg">
-              </div>
-              <div class="item">
-                <img src="imagen/slider3.jpg">
-              </div>
-            </div>
-            <!-- Slide End -->
-          </div> 
-          <div class="col-lg-3 col-md-4">
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">
-                <h6>Equipos Médicos</h6>
-                  <small>
-                    Signos Vitales, Diagnósticos, Equipos Prácticos, Almacenamiento
-                  </small></br>
-                <a href="paginas/principal_producto.php" class="btn btn-primary btn-sm btn-round"> Ver Más </a>
-                </li>
-                <li class="list-group-item">
-                <h6>Consumibles Médicos</h6>
-                  <small>
-                    Inyectadoras, Intravenosas, Consumibles de Diagnóstico, Tratamiento de Heridas, Vendajes
-                  </small></br>
-                <a href="paginas/principal_producto.php" class="btn btn-primary btn-sm btn-round"> Ver Más </a>
-                </li>
-                <li class="list-group-item">
-                <h6>Material Quirúrgico</h6>
-                  <small>
-                    Emergencia, Primeros Auxilios, Pre-Cirugía, Cirugía Ambulatoria, Instrumental, Consumibles Quirúrgicos
-                  </small></br>
-                <a href="paginas/principal_producto.php" class="btn btn-primary btn-sm btn-round"> Ver Más </a>
-                </li>
-              </ul>
-          </div>
+    <article class="card card-body">
+      <div class="row">
+        <div class="col-md-4">  
+          <figure class="item-feature">
+            <span class="text-primary"><i class="fa fa-2x fa-truck"></i></span>
+            <figcaption class="pt-3">
+              <h5 class="title"><b>Envíos a todo el País</b></h5>
+              <p>Envíos a cualquier sitio de Venezuela y próximamente a Colombia y Pánama </p>
+            </figcaption>
+          </figure>
         </div>
-      <!--  Aside End -->
-      </main>
-    </div>
+        <div class="col-md-4">
+          <figure  class="item-feature">
+            <span class="text-primary"><i class="fa fa-2x fas fa-globe"></i></span>  
+            <figcaption class="pt-3">
+              <h5 class="title"><b>Productos Nacionales e Importados de Calidad</b></h5>
+              <p>Ofrecemos los Mejores Productos Importados y de Fabricación Nacional
+               </p>
+            </figcaption>
+          </figure>
+        </div>
+          <div class="col-md-4">
+          <figure  class="item-feature">
+            <span class="text-primary"><i class="fa fa-2x fa-credit-card"></i></span>
+            <figcaption class="pt-3">
+              <h5 class="title"><b>Distintas Opciones de Pago </b></h5>
+              <p>Recibimos todo tipo de Pago a tráves de las distintas plataformas
+               </p>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </article>
   </div>
 </section>
-<!-- Main End -->
 
 <!-- Contenido -->
 
-<div class="jumbotron text-center" id="fondo_sobre_mi" style="margin-bottom:0; background-color: #FFFFFF;">
-    <div class="container">
-      <h3>SIGMAEMCA Online Store</h3>
-      <hr class="my-4">
-      <div class="row">
-        <div class="col-sm-6 form-group">
-          <div>
-            <img src="imagen/logo-sigmaemca.png" alt="Logo SIGMAEMCA" height="225px">
-          </div>
-        </div>
-        <div class="col-sm-6 form-group">
-        	<p class="titulo">Servicio Integral General y Mantenimiento de Equipos Médicos Compañía Anónima</p>
-          <p class="contenido">
-            SIGMAEMCA es un empresa fundada el 10 de noviembre de 2002, se posiciona como una entidad de responsabilidad social líder en la comercialización de equipos, suministros e insumos médicos para clínicas y hospitales en general. Además presta servicios especializados en las áreas médicas que sean requeridas.
-          </p>
-          <div>
-            <a href="paginas/principal_nosotros.php" class="btn btn-primary">Ver Más</a>
-          </div>
-        </div>
+<section class="section-content">
+  <div class="container">
+  <header class="section-heading" ali>
+    <h3 class="section-title" align="center"><b>Productos Populares</b></h3>
+    <hr>
+  </header>
+    <div class="row" align="center">
+      <?php
+        include("paginas/conexion_bd.php");
+        $sql = "SELECT * FROM tabma_prod WHERE statu_prod = 1 LIMIT 4";
+        $res = mysqli_query($con, $sql);
+          while($row = mysqli_fetch_assoc($res)){
+      ?>
+      <div class="col-md-3">
+        <figure class="card card-product">
+          <div class="img-wrap"><?php echo '<img src="'.$row['imag1_prod'].'" width="100">' ?></div>
+            <figcaption class="info-wrap" scope="r">
+              <a href="usuario_producto_detalle.php" title=""><h5 class="title"><?php echo $row['nombr_prod'] ?></h5></a>
+              <p class="desc"><?php echo $row['desco_prod'] ?></p>
+            </figcaption>
+            <div class="bottom-wrap">
+              <div class="preci_prod-wrap h5">
+                <span class="preci_prod-new"><?php echo 'Bs. ' .$row['preci_prod'] ?></span>
+              </div>
+            </div>
+            <div class="bottom-wrap">
+              <a href="usuario_cart.php" class="btn btn-sm btn-primary float-right"><i class="fa fa-shopping-cart"></i> Agregar al Carrito</a>
+              <a href="paginas/principal_producto_detalle.php?ident_prod=<?php echo $row['ident_prod']; ?>" class="btn btn-sm btn-success float-left"><i class="fa fa-eye"></i> Ver Producto</a>
+            </div>
+        </figure> 
       </div>
+      <?php
+        }
+      ?>
     </div>
-</div>
+  </div>
+</section>
+<br>
 
 <!-- Footer --->
 
@@ -281,17 +298,17 @@
   <div class="container">
     <section class="footer-bottom row">
       <div class="col-sm-4" align="left"> 
-        <p>Diseñado por: <br><a href="https://agustinguanipa.000webhostapp.com/" title="Carlos Agustin Guanipa Alvarez">Carlos Agustin Guanipa Alvarez</a></p>
+        <p><b>Diseñado y Desarrollado por: </b><br><a href="https://agustinguanipa.000webhostapp.com/" title="Carlos Agustin Guanipa Alvarez">Carlos Agustin Guanipa Alvarez</a></p>
       </div>
       <div class="col-sm-4 form-group" align="center">
-          <p class="pie">Redes Sociales</p>
+          <p class="pie"><b>Redes Sociales</b></p>
           <a href="https://facebook.com/agustin.guanipa" class="icono fab fa-facebook"></a>
           <a href="https://twitter.com/AgustinGuanipa" class="icono fab fa-twitter"></a>
           <a href="https://instagram.com/agustinguanipa/" class="icono fab fa-instagram"></a>
           <a href="https://wa.me/584266908396" class="icono fab fa-whatsapp"></a>
         </div>
       <div class="col-sm-4" align="right">
-        <p class="text-sm-right">SIGMAEMCA Servicio Integral de Mantenimiento Equipos Medicos Compañía Anonima</p>
+        <p class="text-sm-right"><b>SIGMAEMCA Servicio Integral de Mantenimiento Equipos Medicos Compañía Anonima</b></p>
         <p class="text-sm-right">Copyright &copy 2019<br>
         </p>
       </div>
@@ -301,26 +318,4 @@
 
 </body>
 </html>
-
-<script type="text/javascript">
-  $('#slider').owlCarousel({
-    loop: true,
-    items: 1,
-    autoplay: true,
-    autoplayTimeout: 3000,
-    nav:true,
-    navText: ['<i class="fa fa-angle-left fa-1x"></i>','<i class="fa fa-angle-right fa-1x"></i>'],
-    responsive: {
-      0: {
-        items: 1
-      },
-      768: {
-        items: 1
-      },
-      1170: {
-        items: 1
-      }
-    }
-  });
-</script>
 

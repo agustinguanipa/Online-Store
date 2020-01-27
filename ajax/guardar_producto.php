@@ -30,7 +30,7 @@
 	$statu_prod = 1;
 
 	// Registrar en la Base de Datos
-	$sql = "INSERT INTO tabma_prod(ident_prod, ident_cate, nombr_prod, desco_prod, desla_prod, preci_prod, pesoo_prod, taman_prod, stock_prod, estad_prod, imag1_prod, imag2_prod, imag3_prod,statu_prod) VALUES ('$ident_prod',(SELECT ident_cate FROM tabma_cate WHERE ident_cate = '$ident_cate'),'$nombr_prod','$desco_prod','$desla_prod','$preci_prod','$pesoo_prod','$taman_prod','$stock_prod','$estad_prod','$destino1','$destino2','$destino3','$statu_prod') ";
+	$sql = "INSERT INTO tabma_prod(ident_prod, ident_cate, nombr_prod, desco_prod, desla_prod, preci_prod, pesoo_prod, taman_prod, stock_prod, estad_prod, imag1_prod, imag2_prod, imag3_prod, statu_prod) VALUES ('$ident_prod',(SELECT ident_cate FROM tabma_cate WHERE ident_cate = '$ident_cate'),'$nombr_prod','$desco_prod','$desla_prod','$preci_prod','$pesoo_prod','$taman_prod','$stock_prod','$estad_prod','$destino1','$destino2','$destino3','$statu_prod') ";
 
     $query = mysqli_query($con,$sql);
 

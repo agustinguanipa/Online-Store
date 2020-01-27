@@ -16,7 +16,7 @@
           <div class="brand-wrap">
             <a href="../index.php" style="color: #000000; text-decoration: none;">
               <img class="logo" src="../imagen/logo-sigmaemca.png">
-              <h2 class="logo-text">SIGMAEMCA Online Store</h2>
+              <h2 class="logo-text"><b>SIGMAEMCA Online Store</b></h2>
             </a>
           </div>
         </div>
@@ -29,33 +29,34 @@
   <div class="container">
     <div class="form-group text-center">
       <div class="formulario-registro-inicio">
-        <form role="form" id="usuario_registro" class="justify-content-center" align="center" action="guardar_cliente.php" method="post">
+        <form role="form" id="usuario_registro" class="justify-content-center" align="center" action="cliente_registro_guardar.php" enctype="multipart/form-data" method="post">
           <h3>Registrarse</h3>
           <hr class="my-4">
           <div class="form-row">
             <div class="col form-group">
-              <label class="form-label" for="nomb1_clie">Primer Nombre: </label>
-              <input type="text" class="form-control" name="nomb1_clie" autocomplete="off" id="nomb1_clie" placeholder="Carlos" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
+              <label class="form-label" for="nomb1_usua">Primer Nombre: </label>
+              <input type="text" class="form-control" name="nomb1_usua" autocomplete="off" id="nomb1_usua" placeholder="Carlos" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
             </div>
             <div class="col form-group">
-              <label class="form-label" for="nomb2_clie">Segundo Nombre: </label>
-              <input type="text" class="form-control" name="nomb2_clie" autocomplete="off" id="nomb2_clie" placeholder="Agustin" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="col form-group">
-              <label class="form-label" for="apel1_clie">Primer Apellido</label>
-              <input type="text" class="form-control" name="apel1_clie" autocomplete="off" id="apel1_clie" placeholder="Guanipa" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
-            </div>
-            <div class="col form-group">
-              <label class="form-label" for="apel2_clie">Segundo Apellido</label>
-              <input type="text" class="form-control" name="apel2_clie" autocomplete="off" id="apel2_clie" placeholder="Alvarez" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
+              <label class="form-label" for="nomb2_usua">Segundo Nombre: </label>
+              <input type="text" class="form-control" name="nomb2_usua" autocomplete="off" id="nomb2_usua" placeholder="Agustin" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
             </div>
           </div>
           <div class="form-row">
             <div class="col form-group">
-              <label class="form-label" for="gener_clie">Genero: </label>
-              <select class="form-control" id="gener_clie" name="gener_clie">
+              <label class="form-label" for="apel1_usua">Primer Apellido</label>
+              <input type="text" class="form-control" name="apel1_usua" autocomplete="off" id="apel1_usua" placeholder="Guanipa" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
+            </div>
+            <div class="col form-group">
+              <label class="form-label" for="apel2_usua">Segundo Apellido</label>
+              <input type="text" class="form-control" name="apel2_usua" autocomplete="off" id="apel2_usua" placeholder="Alvarez" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col form-group">
+              <label class="form-label" for="gener_usua">Genero: </label>
+              <select class="form-control" id="gener_usua" name="gener_usua">
+                <option disabled selected value>Seleccionar una Opción...</option>
                 <option value="MASCULINO">MASCULINO</option>
                 <option value="FEMENINO">FEMENINO</option>
               </select>
@@ -63,26 +64,32 @@
           </div>
           <div class="form-row">
             <div class="col form-group">
-              <label class="form-label" for="telef_clie">Telefono: </label>
-              <input type="text" class="form-control telef-mask" name="telef_clie" autocomplete="off" id="telef_clie" placeholder="(0000) 000 0000" maxlength="15">
+              <label class="form-label" for="telef_usua">Telefono: </label>
+              <input type="text" class="form-control telef-mask" name="telef_usua" autocomplete="off" id="telef_usua" placeholder="(0000) 000 0000" maxlength="15">
             </div>
           </div>
           <div class="form-row">
             <div class="col form-group">
-              <label class="form-label" for="email_clie">E-Mail: </label>
-              <input type="email" class="form-control" name="email_clie" autocomplete="off" id="email_clie" placeholder="correo@mail.com" maxlength="100" onkeyup="this.value = this.value.toUpperCase();">
+              <label class="form-label" for="email_usua">E-Mail: </label>
+              <input type="email" class="form-control" name="email_usua" autocomplete="off" id="email_usua" placeholder="correo@mail.com" maxlength="100" onkeyup="this.value = this.value.toUpperCase();">
             </div>
           </div>
           <div class="form-row">
             <div class="col form-group">
-              <label class="form-label" for="usuar_clie">Usuario: </label>
-              <input type="text" class="form-control" name="usuar_clie" autocomplete="off" id="usuar_clie" placeholder="miusuario" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
+              <label class="form-label" for="image_usua"><b>Imagen de Perfil: </b></label>
+              <input type="file" class="filestyle" id="image_usua" name="image_usua" alt="Imagen de Perfil" data-btnClass="btn-primary" accept="image/*">
             </div>
           </div>
           <div class="form-row">
             <div class="col form-group">
-              <label class="form-label" for="contr_clie">Contraseña: </label>
-              <input type="password" class="form-control" name="contr_clie" autocomplete="off" id="contr_clie" placeholder="********" maxlength="20">
+              <label class="form-label" for="usuar_usua">Usuario: </label>
+              <input type="text" class="form-control" name="usuar_usua" autocomplete="off" id="usuar_usua" placeholder="miusuario" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col form-group">
+              <label class="form-label" for="contr_usua">Contraseña: </label>
+              <input type="password" class="form-control" name="contr_usua" autocomplete="off" id="contr_usua" placeholder="********" maxlength="20">
             </div>
             <div class="col form-group">
               <label class="form-label" for="confirm_password">Confirmar Contraseña: </label>

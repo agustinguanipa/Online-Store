@@ -1,6 +1,8 @@
 <?php
   session_start();
 
+  $imagen = $_SESSION['imagen'];
+
   if (!isset($_SESSION['loggedInUsuario']) || $_SESSION['ident_tipo'] == 4) {
     header('Location: ../index.php');
     exit();
@@ -31,8 +33,6 @@
   <script src="../libs/jquery/jquery-3.4.1.min.js" type="text/javascript"></script>
   <!--- jQuery Mask Plugin --->
   <script type="text/javascript" src="../libs/jQuery-Mask-Plugin/dist/jquery.mask.js"></script>
-  <!--- JS --->
-  <script src="../js/validacion.js" type="text/javascript"></script>
   <!--- Bootstrap 4 --->
   <link rel="stylesheet" href="../libs/bootstrap-4.1.3-dist/css/bootstrap.min.css"/>
   <script src="../libs/bootstrap-4.1.3-dist/js/bootstrap.min.js"></script>
@@ -48,8 +48,6 @@
   <script src="../libs/bootstrap-ecommerce-uikit/ui-ecommerce/js/script.js" type="text/javascript"></script>
   <!--- Bootstrap 4 File Style 2 --->
   <script type="text/javascript" src="../libs/bootstrap-filestyle-2.1.0/src/bootstrap-filestyle.min.js"> </script>
-  
-  
 </head>
 
 <body>
@@ -63,7 +61,7 @@
       <div class="sidebar-heading" align="center">
         <a href="admin_panel.php" style="text-decoration: none;">
           <img src="../imagen/logo-SIGMAEMCA.png" width="25" height="25" class="d-inline-block align-top" alt="">
-          <span class="menu-collapsed" style="color: #000000; font-size: 14px;">Panel de Administración</span>
+          <span class="menu-collapsed" style="color: #000000; font-size: 0.9rem;"><b>Panel de Administración</b></span>
         </a>
       </div>
       <div class="list-group list-group-flush">
@@ -154,13 +152,16 @@
           <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
             <?php  if (isset($_SESSION['loggedInUsuario'])) : ?>
               <li class="nav-item active">
-                <a class="nav-link" style="color: #FFFFFF;">San Cristóbal, <?php echo fechaToday(); ?></a>
+                <a class="nav-link" style="color: #FFFFFF;"><b>San Cristóbal, <?php echo fechaToday(); ?></b></a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link" href="admin_panel.php" style="color: #FFFFFF;"><i class="fa fa-home"></i> Bienvenido <?=$_SESSION['nombre']?> <?=$_SESSION['apellido']?></a>
+                <a class="nav-link" href="admin_panel.php" style="color: #FFFFFF;"><i class="fa fa-home"></i><b> Bienvenido <?=$_SESSION['nombre']?> <?=$_SESSION['apellido']?></b></a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link" href="usuario_cerrar.php" style="color: #FFFFFF;"><i class="fa fa-sign-out-alt"></i> Cerrar Sesión</a>
+                <a class="nav-link"><img class="photouser" src="<?php echo $imagen;?>" alt="Imagen de Perfil"></a> 
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="usuario_cerrar.php" style="color: #FFFFFF;"><i class="fa fa-sign-out-alt"></i> <b>Cerrar Sesión</b></a>
               </li>
             <?php endif ?>
           </ul>

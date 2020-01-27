@@ -23,6 +23,21 @@
 	font-size: 10px;
 }
 
+/* Foto Usuario */
+
+.photouser {
+    width: 25px;
+    height: 25px;
+    border-radius: 25px;
+}
+
+.logoUser{
+   width: 150px;
+    height: 150px;
+    border-radius: 150px;
+    padding: 10px;
+}
+
 /* Nosotros */
 
 #background1{
@@ -152,10 +167,10 @@
   color: #666;
 } 
 .pagination li.active a, .pagination li.active a.page-link {
-  background: #03A9F4;
+  background: #007BFF;
 }
 .pagination li.active a:hover {        
-  background: #0397d6;
+  background: #0C6ADF;
 }
 .pagination li.disabled i {
   color: #ccc;
