@@ -5,14 +5,14 @@
 
 	require_once ("../paginas/conexion_bd.php");//Contiene Funcion que Conecta a la Base de Datos
 	// escaping, additionally removing everything that could be (html/javascript-) code
-  $id_categoria=intval($_POST['restaurar_id']);
+  $id_proveedor=intval($_POST['restaurar_id']);
 	
 	// Borrado Logico de la Base de Datos FROM
-    $sql = "UPDATE tabma_cate SET statu_cate = 1 WHERE ident_cate='$id_categoria'";
+    $sql = "UPDATE tabma_prov SET statu_prov = 1 WHERE ident_prov='$id_proveedor'";
     $query = mysqli_query($con,$sql);
     // Si el Borrado ha sido Exitoso
     if ($query) {
-        $messages[] = "La Categoría ha sido restaurada con éxito.";
+        $messages[] = "El Proveedor ha sido restaurado con éxito.";
     } else {
         $errors[] = "Lo sentimos, la restauración falló. Por favor, regrese y vuelva a intentarlo.";
     }

@@ -3,18 +3,19 @@
 		$errors[] = "ID está vacío.";
 	} elseif (!empty($_POST['edit_id'])){
 
-	require_once ("../paginas/conexion_bd.php");//Contiene Funcion que Conecta a la Base de Datos
+	require_once ("../paginas/conexion_bd.php");
 
-	// escaping, additionally removing everything that could be (html/javascript-) code
-  $nombr_cate = mysqli_real_escape_string($con,(strip_tags($_POST["edit_nombr_cate"],ENT_QUOTES)));
-	$ident_cate=intval($_POST['edit_id']);
+  $nombr_prov = mysqli_real_escape_string($con,(strip_tags($_POST["edit_nombr_prov"],ENT_QUOTES)));
+  $telef_prov = mysqli_real_escape_string($con,(strip_tags($_POST["edit_telef_prov"],ENT_QUOTES)));
+  $email_prov = mysqli_real_escape_string($con,(strip_tags($_POST["edit_email_prov"],ENT_QUOTES)));
+  $direc_prov = mysqli_real_escape_string($con,(strip_tags($_POST["edit_direc_prov"],ENT_QUOTES)));
+	$ident_prov = intval($_POST['edit_id']);
 
-	// Actualizar en la Base de Datos
-    $sql = "UPDATE tabma_cate SET nombr_cate='".$nombr_cate."' WHERE ident_cate='".$ident_cate."' ";
+    $sql = "UPDATE tabma_prov SET nombr_prov='".$nombr_prov."', telef_prov='".$telef_prov."', email_prov='".$email_prov."', direc_prov='".$direc_prov."' WHERE ident_prov='".$ident_prov."' ";
     $query = mysqli_query($con,$sql);
-    // Si ha sido Actualizado Exitosamente
+    
     if ($query) {
-        $messages[] = "La Categoría ha sido actualizada con éxito.";
+        $messages[] = "El Proveedor ha sido actualizado con éxito.";
     } else {
         $errors[] = "Lo sentimos, la actualización falló. Por favor, regrese y vuelva a intentarlo.";
     }

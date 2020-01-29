@@ -110,7 +110,13 @@
           <a href="admin_categorias.php" class="list-group-item list-group-item-action bg-light text-dark">
             <span class="menu-collapsed">Categorías</span>
           </a>
-        </div>  
+        </div>
+      <a href="admin_proveedores.php" aria-expanded="false" class="bg-light text-dark list-group-item list-group-item-action flex-column align-items-start tamano-elemento-sidebar">
+        <div class="d-flex w-100 justify-content-start align-items-center">
+            <span class="fa fa-warehouse fa-fw mr-3"></span> 
+            <span class="menu-collapsed">Proveedores</span>
+        </div>
+      </a> 
       <a href="admin_clientes.php" class="bg-light text-dark list-group-item list-group-item-action tamano-elemento-sidebar">
         <div class="d-flex w-100 justify-content-start align-items-center">
           <span class="fa fa-users fa-fw mr-3"></span>

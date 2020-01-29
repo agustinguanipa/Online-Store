@@ -60,6 +60,7 @@ if($action == 'ajax'){
 						$gener_usua=$row['gener_usua'];
 						$telef_usua=$row['telef_usua'];
 						$email_usua=$row['email_usua'];
+						$image_usua=$row['image_usua'];
 						$usuar_usua=$row['usuar_usua'];
 						$fecre_usua=$row['fecre_usua'];			
 						$finales++;

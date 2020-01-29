@@ -168,13 +168,16 @@ $( "#add_admin" ).validate( {
 
     submitHandler: function( form ) {
 
-    var parametros = $( form ).serialize(); // I change 'this' to form
-    console.log(parametros); // for test purpose. See your log to confirm the result data
+    var form = $('form')[0]; // You need to use standard javascript object here
+    var formData = new FormData(form); // I change 'this' to form
+    console.log(formData); // for test purpose. See your log to confirm the result data
 
     $.ajax({
       type: "POST",
       url: "../ajax/guardar_admin.php",
-      data: parametros,
+      data: formData,
+      contentType: false,
+      processData: false,
        beforeSend: function(objeto){
         $("#resultados").html("Enviando...");
         },
@@ -182,7 +185,7 @@ $( "#add_admin" ).validate( {
       $("#resultados").html(datos);
       load(1);
       $('#addAdminModal').modal('hide');
-      }                     
+      }           
     });
   }
 });

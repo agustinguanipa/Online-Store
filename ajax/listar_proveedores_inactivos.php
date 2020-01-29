@@ -7,10 +7,10 @@ $action = (isset($_REQUEST['action'])&& $_REQUEST['action'] !=NULL)?$_REQUEST['a
 if($action == 'ajax'){
 	$query = mysqli_real_escape_string($con,(strip_tags($_REQUEST['query'], ENT_QUOTES)));
 
-	$tables="tabma_usua";
+	$tables="tabma_prov";
 	$campos="*";
-	$sWhere=" (tabma_usua.nomb1_usua LIKE '%".$query."%' OR tabma_usua.nomb2_usua LIKE '%".$query."%' OR tabma_usua.apel1_usua LIKE '%".$query."%' OR tabma_usua.apel2_usua LIKE '%".$query."%') AND tabma_usua.statu_usua = 0 AND tabma_usua.ident_tipo = 4";
-	$sWhere.=" order by tabma_usua.ident_usua";
+	$sWhere=" (tabma_prov.nombr_prov LIKE '%".$query."%' OR tabma_prov.telef_prov LIKE '%".$query."%' OR tabma_prov.email_prov LIKE '%".$query."%' OR tabma_prov.direc_prov LIKE '%".$query."%') AND tabma_prov.statu_prov = 0";
+	$sWhere.=" order by tabma_prov.ident_prov";
 	
 	/* Pagination */
 	include 'pagination.php';
@@ -37,12 +37,9 @@ if($action == 'ajax'){
 			<thead>
 				<tr>
 					<th class='text-center'>ID</th>
-					<th class='text-center'>Nombres</th>
-					<th class='text-center'>Apellidos</th>
-					<th class='text-center'>Genero</th>
+					<th class='text-center'>Nombre</th>
 					<th class='text-center'>Telefono</th>
 					<th class='text-center'>E-Mail</th>
-					<th class='text-center'>Usuario</th>
 					<th class='text-center'>Restaurar</th>
 				</tr>
 			</thead>
@@ -50,32 +47,25 @@ if($action == 'ajax'){
 					<?php 
 					$finales=0;
 					while($row = mysqli_fetch_array($query)){	
-						$ident_cliente=$row['ident_usua'];
-						$nomb1_usua=$row['nomb1_usua'];
-						$nomb2_usua=$row['nomb2_usua'];
-						$apel1_usua=$row['apel1_usua'];
-						$apel2_usua=$row['apel2_usua'];
-						$gener_usua=$row['gener_usua'];
-						$telef_usua=$row['telef_usua'];
-						$email_usua=$row['email_usua'];
-						$usuar_usua=$row['usuar_usua'];		
+						$ident_proveedor=$row['ident_prov'];
+						$nombr_prov=$row['nombr_prov'];
+						$telef_prov=$row['telef_prov'];
+						$email_prov=$row['email_prov'];
+						$direc_prov=$row['direc_prov'];			
 						$finales++;
 					?>	
 					<tr class="">
-						<td class='text-center'><?php echo $ident_cliente;?></td>
-						<td class='text-center'><?php echo $row['nomb1_usua'].' '.$row['nomb2_usua']; ?></td>
-						<td class='text-center'><?php echo $row['apel1_usua'].' '.$row['apel2_usua']; ?></td>
-						<td class='text-center'><?php echo $gener_usua;?></td>
-						<td class='text-center'><?php echo $telef_usua;?></td>
-						<td class='text-center'><?php echo $email_usua;?></td>
-						<td class='text-center'><?php echo $usuar_usua;?></td>
-           	<td class='text-center'>
-							<a href="#restaurarClienteModal" class="restaurar" data-toggle="modal" data-ident_usua="<?php echo $ident_cliente;?>"><i class="fa fa-check" data-toggle="tooltip" title="Restaurar"></i></a>
+						<td class='text-center'><?php echo $ident_proveedor;?></td>
+						<td class='text-center'><?php echo $nombr_prov;?></td>
+						<td class='text-center'><?php echo $telef_prov;?></td>
+						<td class='text-center'><?php echo $email_prov;?></td>
+						<td class='text-center'>
+							<a href="#restaurarProveedorModal" class="restaurar" data-toggle="modal" data-ident_prov="<?php echo $ident_proveedor;?>"><i class="fa fa-check" data-toggle="tooltip" title="Restaurar"></i></a>
            	</td>
 					</tr>
 					<?php }?>
 					<tr>
-						<td colspan='9'> 
+						<td colspan='10'> 
 							<?php 
 								$inicios=$offset+1;
 								$finales+=$inicios -1;

@@ -162,13 +162,16 @@ $( "#add_cliente" ).validate( {
 
     submitHandler: function( form ) {
 
-    var parametros = $( form ).serialize(); // I change 'this' to form
-    console.log(parametros); // for test purpose. See your log to confirm the result data
-    
+    var form = $('form')[0]; // You need to use standard javascript object here
+    var formData = new FormData(form); // I change 'this' to form
+    console.log(formData); // for test purpose. See your log to confirm the result data
+
     $.ajax({
       type: "POST",
       url: "../ajax/guardar_cliente.php",
-      data: parametros,
+      data: formData,
+      contentType: false,
+      processData: false,
        beforeSend: function(objeto){
         $("#resultados").html("Enviando...");
         },
@@ -176,9 +179,9 @@ $( "#add_cliente" ).validate( {
       $("#resultados").html(datos);
       load(1);
       $('#addClienteModal').modal('hide');
-        } 
-      });
-    }
+      }           
+    });
+  }
 });
 
 $('#addClienteModal').on('hidden.bs.modal', function(e) {
@@ -246,6 +249,8 @@ $('#editClienteModal').on('show.bs.modal', function (event) {
   $('#edit_gener_usua').val(gener_usua)
   var telef_usua = button.data('telef_usua') 
   $('#edit_telef_usua').val(telef_usua)
+  var image_usua = button.data('image_usua') 
+  $('#edit_image_usua').val(image_usua)
   var usuar_usua = button.data('usuar_usua') 
   $('#edit_usuar_usua').val(usuar_usua)
   var ident_usua = button.data('ident_usua') 
@@ -331,7 +336,7 @@ $( "#edit_cliente" ).validate( {
 
     $.ajax({
       type: "POST",
-      url: "../ajax/editar_Cliente.php",
+      url: "../ajax/editar_cliente.php",
       data: parametros,
        beforeSend: function(objeto){
         $("#resultados").html("Enviando...");
@@ -346,7 +351,7 @@ $( "#edit_cliente" ).validate( {
 });
 
 $('#editClienteModal').on('hidden.bs.modal', function(e) {
-  $(this).find('#edit_Cliente')[0].reset();
+  $(this).find('#edit_cliente')[0].reset();
   $(this).find('.is-valid').removeClass('is-valid');
 });
 

@@ -34,8 +34,8 @@
 		<div class='outer_div'></div><!-- Carga de datos ajax aqui -->    
 	</div>
 </div>
-<!-- Restaurar Modal HTML -->
-<?php include("modal_restaurar_categoria.php");?>
+<!-- Modal HTML -->
+<?php include("modal_categoria.php");?>
 <script src="../js/script_categoria_inactivas.js"></script>
 </body>
   

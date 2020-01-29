@@ -3,8 +3,8 @@
 		$errors[] = "ID Vacio.";
 	} elseif (!empty($_POST['delete_id'])){
 
-	require_once ("../paginas/conexion_bd.php");//Contiene Funcion que Conecta a la Base de Datos
-	// escaping, additionally removing everything that could be (html/javascript-) code
+	require_once ("../paginas/conexion_bd.php");
+	
   $id_categoria=intval($_POST['delete_id']);
 	
 	// Borrado Logico de la Base de Datos FROM
@@ -12,7 +12,7 @@
     $query = mysqli_query($con,$sql);
     // Si el Borrado ha sido Exitoso
     if ($query) {
-        $messages[] = "La categoria ha sido desactivada con éxito.";
+        $messages[] = "La Categoria ha sido desactivada con éxito.";
     } else {
         $errors[] = "Lo sentimos, la desactivación falló. Por favor, regrese y vuelva a intentarlo.";
     }

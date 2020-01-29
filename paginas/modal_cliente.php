@@ -30,7 +30,7 @@
 <div id="addClienteModal" class="modal fade">
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<form name="add_cliente" id="add_cliente" class="justify-content-center" align="center" action="">
+			<form name="add_cliente" id="add_cliente" class="justify-content-center" align="center" action="" enctype="multipart/form-data" method="POST">
 				<div class="modal-header">						
 					<h4 class="modal-title">Registrar Cliente</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -79,11 +79,11 @@
           </div>
         </div>
         <div class="form-row">
-            <div class="col form-group">
-              <label class="form-label" for="image_usua"><b>Imagen de Perfil: </b></label>
-              <input type="file" class="filestyle" id="image_usua" name="image_usua" alt="Imagen de Perfil" data-btnClass="btn-primary" accept="image/*">
-            </div>
+          <div class="col form-group">
+            <label class="form-label" for="image_usua"><b>Imagen de Perfil: </b></label>
+            <input type="file" class="filestyle" id="image_usua" name="image_usua" alt="Imagen de Perfil" data-btnClass="btn-primary" accept="image/*">
           </div>
+        </div>
         <div class="form-row">
           <div class="col form-group">
             <label class="form-label" for="usuar_usua"><b>Usuario: </b></label>
@@ -115,7 +115,7 @@
 <div id="editClienteModal" class="modal fade">
   <div class="modal-dialog">
     <div class="modal-content">
-      <form name="edit_cliente" id="edit_cliente" class="justify-content-center" align="center">
+      <form name="edit_cliente" id="edit_cliente" class="justify-content-center" align="center" enctype="multipart/form-data" method="POST">
         <div class="modal-header">            
           <h4 class="modal-title">Editar Cliente</h4>
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -155,6 +155,12 @@
             <div class="col form-group">
               <label class="form-label"><b>Telefono: </b></label>
               <input type="text" name="edit_telef_usua"  id="edit_telef_usua" class="form-control telef-mask" maxlength="15">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col form-group">
+              <label class="form-label" for="edit_image_usua"><b>Imagen de Perfil: </b></label>
+              <input type="file" class="filestyle" id="edit_image_usua" name="edit_image_usua" alt="Imagen de Perfil" data-btnClass="btn-primary" accept="image/*">
             </div>
           </div>
         </div>

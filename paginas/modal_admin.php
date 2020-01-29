@@ -30,7 +30,7 @@
 <div id="addAdminModal" class="modal fade">
   <div class="modal-dialog">
     <div class="modal-content">
-      <form name="add_admin" id="add_admin" class="justify-content-center" align="center" action="">
+      <form name="add_admin" id="add_admin" class="justify-content-center" align="center" action="" enctype="multipart/form-data">
         <div class="modal-header">            
           <h4 class="modal-title">Registrar Usuario</h4>
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -80,6 +80,12 @@
         </div>
         <div class="form-row">
           <div class="col form-group">
+            <label class="form-label" for="image_usua"><b>Imagen de Perfil: </b></label>
+            <input type="file" class="filestyle" id="image_usua" name="image_usua" alt="Imagen de Perfil" data-btnClass="btn-primary" accept="image/*">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col form-group">
             <label class="form-label" for="ident_tipo"><b>Tipo de Usuario: </b></label>
             <select class="form-control" name="ident_tipo" id="ident_tipo">
               <option disabled selected value>Seleccionar una Opción...</option>
@@ -111,48 +117,6 @@
         <div class="modal-footer">
           <input type="button" class="btn btn-light" data-dismiss="modal" value="Cancelar">
           <input type="submit" class="btn btn-primary" value="Registrar">
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
-
-<!-- Modal Edit Admin -->
-
-<div id="editAdminModal" class="modal fade">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <form name="edit_admin" id="edit_admin" class="justify-content-center" align="center">
-        <div class="modal-header">            
-          <h4 class="modal-title">Editar Usuario</h4>
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        </div>
-        <div class="modal-body">
-          <div class="form-row">
-            <div class="col form-group">
-              <label class="form-label"><b>Primer Nombre: </b></label>
-              <input type="text" name="edit_nomb1_usua"  id="edit_nomb1_usua" class="form-control" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
-              <input type="hidden" name="edit_id" id="edit_id">
-            </div>
-            <div class="col form-group">
-              <label class="form-label"><b>Segundo Nombre: </b></label>
-              <input type="text" name="edit_nomb2_usua"  id="edit_nomb2_usua" class="form-control" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="col form-group">
-              <label class="form-label"><b>Primer Apellido</b></label>
-              <input type="text" name="edit_apel1_usua"  id="edit_apel1_usua" class="form-control" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
-            </div>
-            <div class="col form-group">
-              <label class="form-label"><b>Segundo Apellido</b></label>
-              <input type="text" name="edit_apel2_usua"  id="edit_apel2_usua" class="form-control" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <input type="button" class="btn btn-light" data-dismiss="modal" value="Cancelar">
-          <input type="submit" class="btn btn-primary" value="Actualizar">
         </div>
       </form>
     </div>
@@ -201,6 +165,48 @@
         <div class="modal-footer">
           <input type="button" class="btn btn-light float-left" data-dismiss="modal" value="Cancelar">
           <input type="button" class="btn btn-primary float-right" data-dismiss="modal" value="OK">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Edit Admin -->
+
+<div id="editAdminModal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form name="edit_admin" id="edit_admin" class="justify-content-center" align="center">
+        <div class="modal-header">            
+          <h4 class="modal-title">Editar Usuario</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="form-row">
+            <div class="col form-group">
+              <label class="form-label"><b>Primer Nombre: </b></label>
+              <input type="text" name="edit_nomb1_usua"  id="edit_nomb1_usua" class="form-control" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
+              <input type="hidden" name="edit_id" id="edit_id">
+            </div>
+            <div class="col form-group">
+              <label class="form-label"><b>Segundo Nombre: </b></label>
+              <input type="text" name="edit_nomb2_usua"  id="edit_nomb2_usua" class="form-control" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col form-group">
+              <label class="form-label"><b>Primer Apellido</b></label>
+              <input type="text" name="edit_apel1_usua"  id="edit_apel1_usua" class="form-control" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
+            </div>
+            <div class="col form-group">
+              <label class="form-label"><b>Segundo Apellido</b></label>
+              <input type="text" name="edit_apel2_usua"  id="edit_apel2_usua" class="form-control" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <input type="button" class="btn btn-light" data-dismiss="modal" value="Cancelar">
+          <input type="submit" class="btn btn-primary" value="Actualizar">
         </div>
       </form>
     </div>
