@@ -7,7 +7,7 @@ function load(page){
 	var parametros = {"action":"ajax","page":page,'query':query,'per_page':per_page};
 	$("#loader").fadeIn('slow');
 	$.ajax({
-		url:'../ajax/listar_admins_inactivos.php',
+		url:'../../ajax/administrador/listar_admins_inactivos.php',
 		data: parametros,
 		 beforeSend: function(objeto){
 		$("#loader").html("Cargando...");
@@ -21,8 +21,8 @@ function load(page){
 
 $('#restaurarAdminModal').on('show.bs.modal', function (event) {
   var button = $(event.relatedTarget) // Button that triggered the modal
-  var ident_admi = button.data('ident_admi') 
-  $('#restaurar_id').val(ident_admi)
+  var ident_usua = button.data('ident_usua') 
+  $('#restaurar_id').val(ident_usua)
 })
 
 
@@ -30,7 +30,7 @@ $( "#restaurar_admin" ).submit(function( event ) {
   var parametros = $(this).serialize();
 	$.ajax({
 			type: "POST",
-			url: "../ajax/restaurar_admin.php",
+			url: "../../ajax/administrador/restaurar_admin.php",
 			data: parametros,
 			 beforeSend: function(objeto){
 				$("#resultados").html("Enviando...");

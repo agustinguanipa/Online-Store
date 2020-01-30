@@ -8,7 +8,7 @@ function load(page){
 	var parametros = {"action":"ajax","page":page,'query':query,'per_page':per_page};
 	$("#loader").fadeIn('slow');
 	$.ajax({
-		url:'../ajax/listar_productos.php',
+		url:'../../ajax/producto/listar_productos.php',
 		data: parametros,
 		 beforeSend: function(objeto){
 		$("#loader").html("Cargando...");
@@ -29,7 +29,7 @@ $( "#add_producto" ).validate( {
         required: true,
         minlength: 2,
         remote: {
-          url: "../paginas/producto_ident_availability.php",
+          url: "../../paginas/administrador/producto_ident_availability.php",
           type: "post",
           data:
             {
@@ -142,7 +142,7 @@ $( "#add_producto" ).validate( {
 
     $.ajax({
       type: "POST",
-      url: "../ajax/guardar_producto.php",
+      url: "../../ajax/producto/guardar_producto.php",
       data: formData,
       contentType: false,
       processData: false,
@@ -195,7 +195,7 @@ $( "#look_producto" ).submit(function( event ) {
   var parametros = $(this).serialize();
   $.ajax({
       type: "POST",
-      url: "../ajax/ver_producto.php",
+      url: "../../ajax/producto/ver_producto.php",
       data: parametros,
        beforeSend: function(objeto){
         $("#resultados").html("Enviando...");
@@ -328,7 +328,7 @@ $( "#edit_producto" ).validate( {
 
     $.ajax({
       type: "POST",
-      url: "../ajax/editar_producto.php",
+      url: "../../ajax/producto/editar_producto.php",
       data: parametros,
        beforeSend: function(objeto){
         $("#resultados").html("Enviando...");
@@ -359,7 +359,7 @@ $( "#delete_producto" ).submit(function( event ) {
   var parametros = $(this).serialize();
 	$.ajax({
 			type: "POST",
-			url: "../ajax/eliminar_producto.php",
+			url: "../../ajax/producto/eliminar_producto.php",
 			data: parametros,
 			 beforeSend: function(objeto){
 				$("#resultados").html("Enviando...");

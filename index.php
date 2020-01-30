@@ -63,10 +63,10 @@
             <a class="nav-link" href="index.php"><i class="fa fa-home"></i> <b>Inicio </b></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="paginas/principal_nosotros.php"><i class="fa fa-info"></i> <b>Nosotros </b></a>
+            <a class="nav-link" href="paginas/principal/principal_nosotros.php"><i class="fa fa-info"></i> <b>Nosotros </b></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="paginas/principal_contacto.php"><i class="fa fa-phone"></i> <b>Contacto </b></a>
+            <a class="nav-link" href="paginas/principal/principal_contacto.php"><i class="fa fa-phone"></i> <b>Contacto </b></a>
           </li>
         </ul>
       </div>
@@ -113,14 +113,14 @@
                 <div>
                   <?php
                     // Session is Set  
-                      if ($_SESSION['ident_tipo'] == 4) 
+                      if ($_SESSION['ident_tipo'] == 4)
                     {
-                      echo "<a href='paginas/cliente_cuenta.php'>Mi Cuenta</a> <span class='dark-transp'>   | </span>";
+                      echo "<a href='paginas/cliente/cliente_cuenta.php'>Mi Cuenta</a> <span class='dark-transp'>   | </span>";
                     }else{
-                      echo "<a href='paginas/admin_panel.php'>Ir al Panel</a> <span class='dark-transp'>   | </span>";
+                      echo "<a href='paginas/administrador/admin_panel.php'>Ir al Panel</a> <span class='dark-transp'>   | </span>";
                       }
                     
-                    echo "<a href='paginas/usuario_cerrar.php'>Cerrar Sesión</a>";
+                    echo "<a href='paginas/usuario/usuario_cerrar.php'>Cerrar Sesión</a>";
                   ?>
                 </div>
               </div>
@@ -131,13 +131,13 @@
                 <div>
                   <?php
                     // Session is Not Set
-                    echo "<a href='paginas/usuario_inicio.php'>Iniciar Sesión</a> <span class='dark-transp'> | </span>";
-                    echo "<a href='paginas/cliente_registro.php'>Registrarse</a>"; 
+                    echo "<a href='paginas/usuario/usuario_inicio.php'>Iniciar Sesión</a> <span class='dark-transp'> | </span>";
+                    echo "<a href='paginas/cliente/cliente_registro.php'>Registrarse</a>"; 
                   ?>
                 </div>
               </div>
             <?php endif ?>
-            <a href="paginas/cliente_cart.php" class="widget-header border-left pl-3 ml-3">
+            <a href="paginas/cliente/cliente_cart.php" class="widget-header border-left pl-3 ml-3">
               <div class="icontext">
                 <div class="icon-wrap icon-sm round border"><i class="fa fa-shopping-cart"></i></div>
               </div>
@@ -166,7 +166,7 @@
 
               while($row = mysqli_fetch_assoc($res)){
             ?>
-              <a class="dropdown-item" href="paginas/principal_categoria_detalle.php?id=<?php echo $row['ident_cate']; ?>"><?php echo $row['nombr_cate'] ?></a>
+              <a class="dropdown-item" href="paginas/principal/principal_categoria_detalle.php?id=<?php echo $row['ident_cate']; ?>"><?php echo $row['nombr_cate'] ?></a>
             <?php
               }
             ?>
@@ -180,13 +180,13 @@
               while($row = mysqli_fetch_assoc($res)){
             ?>
             <li class="nav-item">
-              <a class="nav-link"href="paginas/principal_categoria_detalle.php?id=<?php echo $row['ident_cate']; ?>" style="color: #000000;"><b><?php echo $row['nombr_cate'] ?></b></a>
+              <a class="nav-link"href="paginas/principal/principal_categoria_detalle.php?id=<?php echo $row['ident_cate']; ?>" style="color: #000000;"><b><?php echo $row['nombr_cate'] ?></b></a>
             </li>
           <?php
             }
         ?>
         <li class="nav-item">
-          <a class="nav-link text-primary" href="paginas/principal_categoria.php"><b>Ver Todas</b></a>
+          <a class="nav-link text-primary" href="paginas/principal/principal_categoria.php"><b>Ver Todas</b></a>
         </li>
       </ul>
     </div>
@@ -204,8 +204,8 @@
         <div class="card-body index-background" style="padding: 60px;">
           <h2 class="card-title text-white" style="font-size: 50px;"><b>SIGMAEMCA Online Store</b></h2>
           <p class="card-text text-white"><b>Todo en Equipos Médicos, Material Médico Quirúrgico, Consumibles y Mucho Más </b></p>
-          <a href="paginas/principal_categoria.php" class="btn btn-light btn-md"> <b>Ver Categorías</b><i class="fa fa-boxes ml-2"></i></a>
-          <a href="paginas/principal_producto.php" class="btn btn-light btn-md"> <b>Ver Todos los Productos</b><i class="fa fa-shopping-bag ml-2"></i></a>
+          <a href="paginas/principal/principal_categoria.php" class="btn btn-light btn-md"> <b>Ver Categorías</b><i class="fa fa-boxes ml-2"></i></a>
+          <a href="paginas/principal/principal_producto.php" class="btn btn-light btn-md"> <b>Ver Todos los Productos</b><i class="fa fa-shopping-bag ml-2"></i></a>
         </div>
       </div>
     </div>
@@ -270,7 +270,7 @@
         <figure class="card card-product">
           <div class="img-wrap"><?php echo '<img src="SIGMAEMCA Online Store/'.$row['imag1_prod'].'" width="100">' ?></div>
             <figcaption class="info-wrap" scope="r">
-              <a href="usuario_producto_detalle.php" title=""><h5 class="title"><?php echo $row['nombr_prod'] ?></h5></a>
+              <a href="paginas/principal/usuario_producto_detalle.php" title=""><h5 class="title"><?php echo $row['nombr_prod'] ?></h5></a>
               <p class="desc"><?php echo $row['desco_prod'] ?></p>
             </figcaption>
             <div class="bottom-wrap">
@@ -279,8 +279,8 @@
               </div>
             </div>
             <div class="bottom-wrap">
-              <a href="usuario_cart.php" class="btn btn-sm btn-primary float-right"><i class="fa fa-shopping-cart"></i> Agregar al Carrito</a>
-              <a href="paginas/principal_producto_detalle.php?ident_prod=<?php echo $row['ident_prod']; ?>" class="btn btn-sm btn-success float-left"><i class="fa fa-eye"></i> Ver Producto</a>
+              <a href="paginas/cliente/cliente_cart.php" class="btn btn-sm btn-primary float-right"><i class="fa fa-shopping-cart"></i> Agregar al Carrito</a>
+              <a href="paginas/principal/principal_producto_detalle.php?ident_prod=<?php echo $row['ident_prod']; ?>" class="btn btn-sm btn-success float-left"><i class="fa fa-eye"></i> Ver Producto</a>
             </div>
         </figure> 
       </div>

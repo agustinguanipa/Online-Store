@@ -7,7 +7,7 @@ function load(page){
 	var parametros = {"action":"ajax","page":page,'query':query,'per_page':per_page};
 	$("#loader").fadeIn('slow');
 	$.ajax({
-		url:'../ajax/listar_proveedores_inactivos.php',
+		url:'../../ajax/proveedor/listar_proveedores_inactivos.php',
 		data: parametros,
 		 beforeSend: function(objeto){
 		$("#loader").html("Cargando...");
@@ -30,7 +30,7 @@ $( "#restaurar_proveedor" ).submit(function( event ) {
   var parametros = $(this).serialize();
 	$.ajax({
 			type: "POST",
-			url: "../ajax/restaurar_proveedor.php",
+			url: "../../ajax/proveedor/restaurar_proveedor.php",
 			data: parametros,
 			 beforeSend: function(objeto){
 				$("#resultados").html("Enviando...");

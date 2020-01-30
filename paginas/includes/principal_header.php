@@ -1,8 +1,8 @@
 <?php
   session_start();
 
-  require_once ("../js/funciones.php");
-  require_once ("conexion_bd.php");
+  require_once ("../../js/funciones.php");
+  require_once ("../conexion_bd.php");
 ?>
 
 <!DOCTYPE html>
@@ -12,32 +12,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!--- Favicon --->
-  <link rel="shortcut icon" href="../imagen/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="../imagen/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="../../imagen/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="../../imagen/favicon.ico" type="image/x-icon">
   <!--- CSS --->
-  <link rel="stylesheet" type="text/css" href="../css/estilos.css">
-  <link rel="stylesheet" type="text/css" href="../css/estilos_admin.css">
+  <link rel="stylesheet" type="text/css" href="../../css/estilos.css">
+  <link rel="stylesheet" type="text/css" href="../../css/estilos_admin.css">
   <!--- jQuery --->
-  <script src="../libs/jquery/jquery-3.4.1.min.js" type="text/javascript"></script>
+  <script src="../../libs/jquery/jquery-3.4.1.min.js" type="text/javascript"></script>
   <!--- jQuery Validation --->
-  <script type="text/javascript" src="../libs/jquery-validation-1.19.0/lib/jquery-1.11.1.js"></script>
-  <script type="text/javascript" src="../libs/jquery-validation-1.19.0/dist/jquery.validate.js"></script>
+  <script type="text/javascript" src="../../libs/jquery-validation-1.19.0/lib/jquery-1.11.1.js"></script>
+  <script type="text/javascript" src="../../libs/jquery-validation-1.19.0/dist/jquery.validate.js"></script>
   <!--- JS --->
-  <script src="../js/validacion.js" type="text/javascript"></script>
+  <script src="../../js/validacion.js" type="text/javascript"></script>
   <!--- Bootstrap 4 --->
-  <link rel="stylesheet" href="../libs/bootstrap-4.1.3-dist/css/bootstrap.min.css"/>
-  <script src="../libs/bootstrap-4.1.3-dist/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="../../libs/bootstrap-4.1.3-dist/css/bootstrap.min.css"/>
+  <script src="../../libs/bootstrap-4.1.3-dist/js/bootstrap.min.js"></script>
   <!--- Bootstrap 4 UI E-Commerce --->
-  <script src="../libs/bootstrap-ecommerce-uikit/ui-ecommerce/js/bootstrap.bundle.min.js" type="text/javascript"></script>
-  <script src="../libs/bootstrap-ecommerce-uikit/ui-ecommerce/js/jquery-2.0.0.min.js" type="text/javascript"></script>
-  <link href="../libs/bootstrap-ecommerce-uikit/ui-ecommerce/css/bootstrap.css" rel="stylesheet" type="text/css"/>
-  <link href="../libs/bootstrap-ecommerce-uikit/ui-ecommerce/fonts/fontawesome/css/fontawesome-all.min.css" type="text/css" rel="stylesheet">
-  <link href="../libs/bootstrap-ecommerce-uikit/ui-ecommerce/plugins/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-  <link href="../libs/bootstrap-ecommerce-uikit/ui-ecommerce/plugins/owlcarousel/assets/owl.theme.default.css" rel="stylesheet">
-  <script src="../libs/bootstrap-ecommerce-uikit/ui-ecommerce/plugins/owlcarousel/owl.carousel.min.js"></script>
-  <link href="../libs/bootstrap-ecommerce-uikit/ui-ecommerce/css/ui.css" rel="stylesheet" type="text/css"/>
-  <link href="../libs/bootstrap-ecommerce-uikit/ui-ecommerce/css/responsive.css" rel="stylesheet" media="only screen and (max-width: 1200px)"/>
-  <script src="../libs/bootstrap-ecommerce-uikit/ui-ecommerce/js/script.js" type="text/javascript"></script>
+  <script src="../../libs/bootstrap-ecommerce-uikit/ui-ecommerce/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+  <script src="../../libs/bootstrap-ecommerce-uikit/ui-ecommerce/js/jquery-2.0.0.min.js" type="text/javascript"></script>
+  <link href="../../libs/bootstrap-ecommerce-uikit/ui-ecommerce/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+  <link href="../../libs/bootstrap-ecommerce-uikit/ui-ecommerce/fonts/fontawesome/css/fontawesome-all.min.css" type="text/css" rel="stylesheet">
+  <link href="../../libs/bootstrap-ecommerce-uikit/ui-ecommerce/plugins/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="../../libs/bootstrap-ecommerce-uikit/ui-ecommerce/plugins/owlcarousel/assets/owl.theme.default.css" rel="stylesheet">
+  <script src="../../libs/bootstrap-ecommerce-uikit/ui-ecommerce/plugins/owlcarousel/owl.carousel.min.js"></script>
+  <link href="../../libs/bootstrap-ecommerce-uikit/ui-ecommerce/css/ui.css" rel="stylesheet" type="text/css"/>
+  <link href="../../libs/bootstrap-ecommerce-uikit/ui-ecommerce/css/responsive.css" rel="stylesheet" media="only screen and (max-width: 1200px)"/>
+  <script src="../../libs/bootstrap-ecommerce-uikit/ui-ecommerce/js/script.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -54,18 +54,18 @@
       <div class="collapse navbar-collapse" id="navbarTop">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="../index.php"><i class="fa fa-phone"></i> <b>Llámanos: +58 0276 3532978 </b></a>
+            <a class="nav-link" href="../../index.php"><i class="fa fa-phone"></i> <b>Llámanos: +58 0276 3532978 </b></a>
           </li>
         </ul>
         <ul class="navbar-nav">
           <li class="nav-item active">
-            <a class="nav-link" href="../index.php"><i class="fa fa-home"></i> <b>Inicio </b></a>
+            <a class="nav-link" href="../../index.php"><i class="fa fa-home"></i> <b>Inicio </b></a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="../paginas/principal_nosotros.php"><i class="fa fa-info"></i> <b>Nosotros </b></a>
+            <a class="nav-link" href="../principal/principal_nosotros.php"><i class="fa fa-info"></i> <b>Nosotros </b></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../paginas/principal_contacto.php"><i class="fa fa-phone"></i> <b>Contacto </b></a>
+              <a class="nav-link" href="../principal/principal_contacto.php"><i class="fa fa-phone"></i> <b>Contacto </b></a>
           </li>
         </ul>
       </div>
@@ -78,8 +78,8 @@
       <div class="row align-items-center">
         <div class="col-lg-5-24 col-sm-5 col-4">
           <div class="brand-wrap">
-            <a href="../index.php" style="color: #000000; text-decoration: none;">
-              <img class="logo" src="../imagen/logo-sigmaemca.png">
+            <a href="../../index.php" style="color: #000000; text-decoration: none;">
+              <img class="logo" src="../../imagen/logo-sigmaemca.png">
               <h2 class="logo-text"><b>SIGMAEMCA</b></h2>
             </a>
           </div>
@@ -111,14 +111,13 @@
                 <div>
                   <?php
                     // Session is Set  
-                      if ($_SESSION['ident_tipu'] == 4) 
+                      if ($_SESSION['ident_tipo'] == 4) 
                     {
-                      echo "<a href='cliente_cuenta.php'>Mi Cuenta</a> <span class='dark-transp'>   | </span>";
+                      echo "<a href='../cliente/cliente_cuenta.php'>Mi Cuenta</a> <span class='dark-transp'>   | </span>";
                     }else{
-                      echo "<a href='admin_panel.php'>Ir al Panel</a> <span class='dark-transp'>   | </span>";
+                      echo "<a href='../administrador/admin_panel.php'>Ir al Panel</a> <span class='dark-transp'>   | </span>";
                       }
-                    
-                    echo "<a href='usuario_cerrar.php'>Cerrar Sesión</a>";
+                    echo "<a href='../usuario/usuario_cerrar.php'>Cerrar Sesión</a>";
                   ?>
                 </div>
               </div>
@@ -129,13 +128,13 @@
                 <div>
                   <?php
                     // Session is Not Set
-                    echo "<a href='usuario_inicio.php'>Iniciar Sesión</a> <span class='dark-transp'> | </span>";
-                    echo "<a href='cliente_registro.php'>Registrarse</a>"; 
+                    echo "<a href='../usuario/usuario_inicio.php'>Iniciar Sesión</a> <span class='dark-transp'> | </span>";
+                    echo "<a href='../cliente/cliente_registro.php'>Registrarse</a>"; 
                   ?>
                 </div>
               </div>
             <?php endif ?>
-            <a href="cliente_cart.php" class="widget-header border-left pl-3 ml-3">
+            <a href="../cliente/cliente_cart.php" class="widget-header border-left pl-3 ml-3">
               <div class="icontext">
                 <div class="icon-wrap icon-sm round border"><i class="fa fa-shopping-cart"></i></div>
               </div>

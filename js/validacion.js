@@ -28,7 +28,7 @@ $( document ).ready( function () {
         required: true,
         minlength: 2,
         remote: {
-          url: "../paginas/usuario_usuario_availability.php",
+          url: "../administrador/usuario_usuario_availability.php",
           type: "post",
           data:
             {
@@ -57,7 +57,7 @@ $( document ).ready( function () {
         required: true,
         email: true,
         remote: {
-          url: "../paginas/usuario_email_availability.php",
+          url: "../administrador/usuario_email_availability.php",
           type: "post",
           data:
             {
@@ -253,53 +253,6 @@ $( document ).ready( function () {
         minlength: "Ingrese un Número de Teléfono Valido"
       },
       email_usua: "Ingrese una Dirección de Correo Electrónico Válida"
-    },
-
-    errorElement: "em",
-    errorPlacement: function ( error, element ) {
-      // Add the `invalid-feedback` class to the error element
-      error.addClass( "invalid-feedback" );
-
-      if ( element.prop( "type" ) === "checkbox" ) {
-        error.insertAfter( element.next( "label" ) );
-      } else {
-        error.insertAfter( element );
-      }
-    },
-    highlight: function ( element, errorClass, validClass ) {
-      $( element ).addClass( "is-invalid" ).removeClass( "is-valid" );
-    },
-    unhighlight: function (element, errorClass, validClass) {
-      $( element ).addClass( "is-valid" ).removeClass( "is-invalid" );
-    }
-  } );
-
-} );
-
-/* admin_inicio */
-
-$( document ).ready( function () {
-  $( "#admin_inicio" ).validate( {
-    rules: {
-      usuar_admi: {
-        required: true,
-        minlength: 2
-      },
-      contr_admi: {
-        required: true,
-        minlength: 5
-      }
-    },
-
-    messages: {
-      usuar_admi: {
-        required: "Ingrese un Nombre de Usuario",
-        minlength: "Tu Nombre de Usuario debe contener al menos 2 caracteres"
-      },
-      contr_admi: {
-        required: "Ingrese una Contraseña",
-        minlength: "Tu Contraseña debe contener al menos 5 caracteres"
-      }
     },
 
     errorElement: "em",

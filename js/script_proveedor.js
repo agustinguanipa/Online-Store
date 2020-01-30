@@ -8,7 +8,7 @@ function load(page){
 	var parametros = {"action":"ajax","page":page,'query':query,'per_page':per_page};
 	$("#loader").fadeIn('slow');
 	$.ajax({
-		url:'../ajax/listar_proveedores.php',
+		url:'../../ajax/proveedor/listar_proveedores.php',
 		data: parametros,
 		 beforeSend: function(objeto){
 		$("#loader").html("Cargando...");
@@ -90,7 +90,7 @@ $( "#add_proveedor" ).validate( {
 
     $.ajax({
       type: "POST",
-      url: "../ajax/guardar_proveedor.php",
+      url: "../../ajax/proveedor/guardar_proveedor.php",
       data: formData,
       contentType: false,
       processData: false,
@@ -131,7 +131,7 @@ $( "#look_cliente" ).submit(function( event ) {
   var parametros = $(this).serialize();
   $.ajax({
       type: "POST",
-      url: "../ajax/ver_proveedor.php",
+      url: "../../ajax/proveedor/ver_proveedor.php",
       data: parametros,
        beforeSend: function(objeto){
         $("#resultados").html("Enviando...");
@@ -229,7 +229,7 @@ $( "#edit_proveedor" ).validate( {
 
     $.ajax({
       type: "POST",
-      url: "../ajax/editar_proveedor.php",
+      url: "../../ajax/proveedor/editar_proveedor.php",
       data: parametros,
        beforeSend: function(objeto){
         $("#resultados").html("Enviando...");
@@ -260,7 +260,7 @@ $( "#delete_proveedor" ).submit(function( event ) {
   var parametros = $(this).serialize();
 	$.ajax({
 			type: "POST",
-			url: "../ajax/eliminar_proveedor.php",
+			url: "../../ajax/proveedor/eliminar_proveedor.php",
 			data: parametros,
 			 beforeSend: function(objeto){
 				$("#resultados").html("Enviando...");

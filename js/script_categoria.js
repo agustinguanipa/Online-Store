@@ -8,7 +8,7 @@ function load(page){
 	var parametros = {"action":"ajax","page":page,'query':query,'per_page':per_page};
 	$("#loader").fadeIn('slow');
 	$.ajax({
-		url:'../ajax/listar_categorias.php',
+		url:'../../ajax/categoria/listar_categorias.php',
 		data: parametros,
 		 beforeSend: function(objeto){
 		$("#loader").html("Cargando...");
@@ -30,7 +30,7 @@ $( "#add_categoria" ).validate( {
         lettersonly: false,
         minlength: 2,
         remote: {
-          url: "../paginas/admin_categoria_availability.php",
+          url: "../../paginas/administrador/admin_categoria_availability.php",
           type: "post",
           data:
             {
@@ -77,7 +77,7 @@ $( "#add_categoria" ).validate( {
 
     $.ajax({
       type: "POST",
-      url: "../ajax/guardar_categoria.php",
+      url: "../../ajax/categoria/guardar_categoria.php",
       data: parametros,
        beforeSend: function(objeto){
         $("#resultados").html("Enviando...");
@@ -106,11 +106,11 @@ $('#lookCategoriaModal').on('show.bs.modal', function (event) {
   $('#look_id').val(ident_cate)
 })
 
-$( "#look_Categoria" ).submit(function( event ) {
+$( "#look_categoria" ).submit(function( event ) {
   var parametros = $(this).serialize();
   $.ajax({
       type: "POST",
-      url: "../ajax/ver_categoria.php",
+      url: "../../ajax/categoria/ver_categoria.php",
       data: parametros,
        beforeSend: function(objeto){
         $("#resultados").html("Enviando...");
@@ -142,7 +142,7 @@ $( "#edit_categoria" ).validate( {
         lettersonly: true,
         minlength: 2,
         remote: {
-          url: "../paginas/admin_categoria_availability.php",
+          url: "../../paginas/administrador/admin_categoria_availability.php",
           type: "post",
           data:
             {
@@ -189,7 +189,7 @@ $( "#edit_categoria" ).validate( {
 
     $.ajax({
       type: "POST",
-      url: "../ajax/editar_categoria.php",
+      url: "../../ajax/categoria/editar_categoria.php",
       data: parametros,
        beforeSend: function(objeto){
         $("#resultados").html("Enviando...");
@@ -220,7 +220,7 @@ $( "#delete_categoria" ).submit(function( event ) {
   var parametros = $(this).serialize();
 	$.ajax({
 			type: "POST",
-			url: "../ajax/eliminar_categoria.php",
+			url: "../../ajax/categoria/eliminar_categoria.php",
 			data: parametros,
 			 beforeSend: function(objeto){
 				$("#resultados").html("Enviando...");

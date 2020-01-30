@@ -8,7 +8,7 @@ function load(page){
 	var parametros = {"action":"ajax","page":page,'query':query,'per_page':per_page};
 	$("#loader").fadeIn('slow');
 	$.ajax({
-		url:'../ajax/listar_clientes.php',
+		url:'../../ajax/cliente/listar_clientes.php',
 		data: parametros,
 		 beforeSend: function(objeto){
 		$("#loader").html("Cargando...");
@@ -55,7 +55,7 @@ $( "#add_cliente" ).validate( {
         required: true,
         email: true,
         remote: {
-          url: "../paginas/usuario_email_availability.php",
+          url: "../../paginas/administrador/usuario_email_availability.php",
           type: "post",
           data:
             {
@@ -70,7 +70,7 @@ $( "#add_cliente" ).validate( {
         required: true,
         minlength: 2,
         remote: {
-          url: "../paginas/usuario_usuario_availability.php",
+          url: "../../paginas/administrador/usuario_usuario_availability.php",
           type: "post",
           data:
             {
@@ -168,7 +168,7 @@ $( "#add_cliente" ).validate( {
 
     $.ajax({
       type: "POST",
-      url: "../ajax/guardar_cliente.php",
+      url: "../../ajax/cliente/guardar_cliente.php",
       data: formData,
       contentType: false,
       processData: false,
@@ -219,7 +219,7 @@ $( "#look_cliente" ).submit(function( event ) {
   var parametros = $(this).serialize();
   $.ajax({
       type: "POST",
-      url: "../ajax/ver_cliente.php",
+      url: "../../ajax/cliente/ver_cliente.php",
       data: parametros,
        beforeSend: function(objeto){
         $("#resultados").html("Enviando...");
@@ -336,7 +336,7 @@ $( "#edit_cliente" ).validate( {
 
     $.ajax({
       type: "POST",
-      url: "../ajax/editar_cliente.php",
+      url: "../../ajax/cliente/editar_cliente.php",
       data: parametros,
        beforeSend: function(objeto){
         $("#resultados").html("Enviando...");
@@ -367,7 +367,7 @@ $( "#delete_cliente" ).submit(function( event ) {
   var parametros = $(this).serialize();
 	$.ajax({
 			type: "POST",
-			url: "../ajax/eliminar_cliente.php",
+			url: "../../ajax/cliente/eliminar_cliente.php",
 			data: parametros,
 			 beforeSend: function(objeto){
 				$("#resultados").html("Enviando...");

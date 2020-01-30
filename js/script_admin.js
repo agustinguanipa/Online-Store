@@ -8,7 +8,7 @@ function load(page){
 	var parametros = {"action":"ajax","page":page,'query':query,'per_page':per_page};
 	$("#loader").fadeIn('slow');
 	$.ajax({
-		url:'../ajax/listar_admins.php',
+		url:'../../ajax/administrador/listar_admins.php',
 		data: parametros,
 		 beforeSend: function(objeto){
 		$("#loader").html("Cargando...");
@@ -55,7 +55,7 @@ $( "#add_admin" ).validate( {
         required: true,
         email: true,
         remote: {
-          url: "../paginas/usuario_email_availability.php",
+          url: "../../paginas/administrador/usuario_email_availability.php",
           type: "post",
           data:
             {
@@ -73,7 +73,7 @@ $( "#add_admin" ).validate( {
         required: true,
         minlength: 2,
         remote: {
-          url: "../paginas/usuario_usuario_availability.php",
+          url: "../../paginas/administrador/usuario_usuario_availability.php",
           type: "post",
           data:
             {
@@ -174,7 +174,7 @@ $( "#add_admin" ).validate( {
 
     $.ajax({
       type: "POST",
-      url: "../ajax/guardar_admin.php",
+      url: "../../ajax/administrador/guardar_admin.php",
       data: formData,
       contentType: false,
       processData: false,
@@ -225,7 +225,7 @@ $( "#look_admin" ).submit(function( event ) {
   var parametros = $(this).serialize();
   $.ajax({
       type: "POST",
-      url: "../ajax/ver_admin.php",
+      url: "../../ajax/administrador/ver_admin.php",
       data: parametros,
        beforeSend: function(objeto){
         $("#resultados").html("Enviando...");
@@ -340,7 +340,7 @@ $( "#edit_admin" ).validate( {
 
     $.ajax({
       type: "POST",
-      url: "../ajax/editar_admin.php",
+      url: "../../ajax/administrador/editar_admin.php",
       data: parametros,
        beforeSend: function(objeto){
         $("#resultados").html("Enviando...");
@@ -371,7 +371,7 @@ $( "#delete_admin" ).submit(function( event ) {
   var parametros = $(this).serialize();
   $.ajax({
       type: "POST",
-      url: "../ajax/eliminar_admin.php",
+      url: "../../ajax/administrador/eliminar_admin.php",
       data: parametros,
        beforeSend: function(objeto){
         $("#resultados").html("Enviando...");
