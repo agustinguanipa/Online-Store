@@ -58,7 +58,19 @@
               </select>
             </div>
           </div>
-           					
+          <div class="form-row">
+            <div class="col form-group">
+              <label class="form-label" for="ident_prov"><b>Proveedor: </b></label>
+              <select class="form-control" name="ident_prov" id="ident_prov">
+                <option disabled selected value>Seleccionar una Opción...</option>
+                  <?php
+                    while($row2 = mysqli_fetch_array($result2)) {
+                      echo '<option value='.$row2['ident_prov'].'>'.$row2['nombr_prov'].'</option>';
+                    }
+                  ?> 
+              </select>
+            </div>
+          </div>		
 					<div class="form-row">
             <div class="col form-group">
               <label class="form-label" for="nombr_prod"><b>Nombre: </b></label>

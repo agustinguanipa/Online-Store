@@ -4,7 +4,7 @@
 
 	$ident_prod = mysqli_real_escape_string($con,(strip_tags($_POST["ident_prod"],ENT_QUOTES)));
 	$ident_cate = mysqli_real_escape_string($con,(strip_tags($_POST["ident_cate"],ENT_QUOTES)));
-	$ident_prov = 1;
+	$ident_prov = mysqli_real_escape_string($con,(strip_tags($_POST["ident_prov"],ENT_QUOTES)));
 	$nombr_prod = mysqli_real_escape_string($con,(strip_tags($_POST["nombr_prod"],ENT_QUOTES)));
 	$desco_prod = mysqli_real_escape_string($con,(strip_tags($_POST["desco_prod"],ENT_QUOTES)));
 	$desla_prod = mysqli_real_escape_string($con,(strip_tags($_POST["desla_prod"],ENT_QUOTES)));
