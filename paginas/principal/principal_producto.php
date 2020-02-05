@@ -51,7 +51,7 @@
             <?php
               while($row = mysqli_fetch_assoc($res)){
             ?>
-            <div class="col-md-3">
+            <div class="col-lg-3">
               <figure class="card card-product">
                 <div class="img-wrap"><?php echo '<img src="'.$row['imag1_prod'].'" width="100">' ?></div>
                   <figcaption class="info-wrap" scope="r">

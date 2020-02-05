@@ -174,7 +174,7 @@
         </li>
         <?php
             include("paginas/conexion_bd.php");
-            $sql = "SELECT * FROM tabma_cate WHERE statu_cate = 1 LIMIT 8";
+            $sql = "SELECT * FROM tabma_cate WHERE statu_cate = 1 LIMIT 7";
             $res = mysqli_query($con, $sql);
 
               while($row = mysqli_fetch_assoc($res)){
@@ -268,9 +268,9 @@
       ?>
       <div class="col-lg-3">
         <figure class="card card-product">
-          <div class="img-wrap"><?php echo '<img src="SIGMAEMCA Online Store/'.$row['imag1_prod'].'" width="100">' ?></div>
+          <div class="img-wrap"><?php echo '<img src="__DIR__ .'.$row['imag1_prod'].'" width="100">' ?></div>
             <figcaption class="info-wrap" scope="r">
-              <a href="paginas/principal/usuario_producto_detalle.php" title=""><h5 class="title"><?php echo $row['nombr_prod'] ?></h5></a>
+              <a href="paginas/principal/principal_producto_detalle.php?ident_prod=<?php echo $row['ident_prod']; ?>" title=""><h5 class="title"><?php echo $row['nombr_prod'] ?></h5></a>
               <p class="desc"><?php echo $row['desco_prod'] ?></p>
             </figcaption>
             <div class="bottom-wrap">
