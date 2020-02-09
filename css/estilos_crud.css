@@ -192,7 +192,7 @@ table.table .avatar {
 	background: #ddd;
 }
 /* Modal styles */
-.modal .modal-dialog {
+.modal-original {
 	max-width: 400px;
 }
 .modal .modal-header, .modal .modal-body, .modal .modal-footer {

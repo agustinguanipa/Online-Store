@@ -54,17 +54,33 @@ $id = $_GET['ident_prod'];
           ?>
           <div class="card">
             <div class="row no-gutters">
-              <aside class="col-sm-5 border-right">
-          <article class="gallery-wrap"> 
-          <div class="img-big-wrap">
-            <div> <a href="#" data-fancybox=""><?php echo '<img src="'.$row['imag1_prod'].'" width="100">' ?></a></div>
-          </div>
-          <div class="img-small-wrap">
-            <div class="item-gallery"><?php echo '<img src="'.$row['imag1_prod'].'" width="100">' ?></div>
-            <div class="item-gallery"><?php echo '<img src="'.$row['imag2_prod'].'" width="100">' ?></div>
-            <div class="item-gallery"><?php echo '<img src="'.$row['imag3_prod'].'" width="100">' ?></div>
-          </div>
-          </article>
+              <aside class="col-lg-5 border-right">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                  <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                  </ol>
+                  <div class="carousel-inner" style=" width:100%; height: 500px !important;">
+                    <div class="carousel-item active">
+                      <img class="d-block w-100" <?php echo '<img src="'.$row['imag1_prod'].'"' ?> alt="Primera Imagen">
+                    </div>
+                    <div class="carousel-item">
+                      <img class="d-block w-100" <?php echo '<img src="'.$row['imag2_prod'].'"' ?> alt="Segunda Imagen">
+                    </div>
+                    <div class="carousel-item">
+                      <img class="d-block w-100" <?php echo '<img src="'.$row['imag3_prod'].'"' ?> alt="Tercera Imagen">
+                    </div>
+                  </div>
+                  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                  </a>
+                </div>
               </aside>
               <aside class="col-sm-7">
           <article class="p-5">

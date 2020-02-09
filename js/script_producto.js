@@ -215,6 +215,8 @@ $('#editProductoModal').on('show.bs.modal', function (event) {
   var button = $(event.relatedTarget) // Button that triggered the modal
   var ident_cate = button.data('ident_cate') 
   $('#edit_ident_cate').val(ident_cate)
+  var ident_prov = button.data('ident_prov') 
+  $('#edit_ident_prov').val(ident_prov)
   var nombr_prod = button.data('nombr_prod') 
   $('#edit_nombr_prod').val(nombr_prod)
   var desco_prod = button.data('desco_prod') 

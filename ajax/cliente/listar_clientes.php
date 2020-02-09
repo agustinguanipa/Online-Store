@@ -73,8 +73,11 @@ if($action == 'ajax'){
 						<td class='text-center'><?php echo $telef_usua;?></td>
 						<td class='text-center'><?php echo $email_usua;?></td>
 						<td class='text-center'><?php echo $usuar_usua;?></td>
-						<td class='text-center'>
+						<!--- <td class='text-center'>
 							<a href="#"  data-target="#lookClienteModal" class="look" data-toggle="modal" data-nomb1_usua="<?php echo $nomb1_usua?>" data-nomb2_usua="<?php echo $nomb2_usua?>" data-apel1_usua="<?php echo $apel1_usua?>" data-apel2_usua="<?php echo $apel2_usua?>" data-gener_usua="<?php echo $gener_usua?>" data-telef_usua="<?php echo $telef_usua?>" data-email_usua="<?php echo $email_usua?>" data-usuar_usua="<?php echo $usuar_usua?>" data-fecre_usua="<?php echo $fecre_usua?>" data-ident_usua="<?php echo $ident_cliente; ?>"><i class="fa fa-eye" data-toggle="tooltip" title="Ver" ></i></a>
+	          </td> -->
+	          <td class='text-center'>
+							<a href="javascript:void(0)" onclick="lookCliente('<?php echo $row['ident_usua']; ?>')"  class="look" data-toggle="modal"><i class="fa fa-eye" data-toggle="tooltip" title="Ver"></i></a>
 	          </td>
 						<td class='text-center'>
 							<a href="#"  data-target="#editClienteModal" class="edit" data-toggle="modal" data-nomb1_usua="<?php echo $nomb1_usua?>" data-nomb2_usua="<?php echo $nomb2_usua?>" data-apel1_usua="<?php echo $apel1_usua?>" data-apel2_usua="<?php echo $apel2_usua?>" data-gener_usua="<?php echo $gener_usua?>" data-telef_usua="<?php echo $telef_usua?>" data-email_usua="<?php echo $email_usua?>" data-usuar_usua="<?php echo $usuar_usua?>" data-ident_usua="<?php echo $ident_cliente; ?>"><i class="fa fa-edit" data-toggle="tooltip" title="Editar" ></i></a>
@@ -97,6 +100,18 @@ if($action == 'ajax'){
 			</tbody>			
 		</table>
 	</div>
+
+	<div id="divModalLookCliente"></div>
+    <script>
+      function lookCliente(ident_usua) {
+          var ruta = '../../paginas/administrador/modal_cliente_ver.php?ident_usua=' + ident_usua;
+          $.get(ruta, function (data) {
+              $('#divModalLookCliente').html(data);
+              $('#lookClienteModal').modal('show');
+          });
+      }
+    </script>
+
 	<?php	
 	}	
 }

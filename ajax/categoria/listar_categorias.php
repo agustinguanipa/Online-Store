@@ -54,8 +54,11 @@ if($action == 'ajax'){
 					<tr class="">
 						<td class='text-center'><?php echo $ident_categoria;?></td>
 						<td class='text-center'><?php echo $nombr_cate;?></td>
-						<td class='text-center'>
+						<!---<td class='text-center'>
 							<a href="#"  data-target="#lookCategoriaModal" class="look" data-toggle="modal" data-nombr_cate="<?php echo $nombr_cate?>" data-ident_cate="<?php echo $ident_categoria; ?>"><i class="fa fa-eye" data-toggle="tooltip" title="Ver" ></i></a>
+	          </td>--->
+	          <td class='text-center'>
+							<a href="javascript:void(0)" onclick="lookCategoria('<?php echo $row['ident_cate']; ?>')"  class="look" data-toggle="modal"><i class="fa fa-eye" data-toggle="tooltip" title="Ver"></i></a>
 	          </td>
 						<td class='text-center'>
 							<a href="#"  data-target="#editCategoriaModal" class="edit" data-toggle="modal" data-nombr_cate="<?php echo $nombr_cate?>" data-ident_cate="<?php echo $ident_categoria; ?>"><i class="fa fa-edit" data-toggle="tooltip" title="Editar" ></i></a>
@@ -78,6 +81,18 @@ if($action == 'ajax'){
 			</tbody>			
 		</table>
 	</div>
+
+	<div id="divModalLookCategoria"></div>
+    <script>
+      function lookCategoria(ident_cate) {
+          var ruta = '../../paginas/administrador/modal_categoria_ver.php?ident_cate=' + ident_cate;
+          $.get(ruta, function (data) {
+              $('#divModalLookCategoria').html(data);
+              $('#lookCategoriaModal').modal('show');
+          });
+      }
+    </script>
+
 	<?php	
 	}	
 }

@@ -11,13 +11,9 @@
   $apel2_usua = mysqli_real_escape_string($con,(strip_tags($_POST["edit_apel2_usua"],ENT_QUOTES)));
   $gener_usua = mysqli_real_escape_string($con,(strip_tags($_POST["edit_gener_usua"],ENT_QUOTES)));
   $telef_usua = mysqli_real_escape_string($con,(strip_tags($_POST["edit_telef_usua"],ENT_QUOTES)));
-  $image_usua = $_FILES['edit_image_usua']['name'];
-	$ruta1 = $_FILES['edit_image_usua']['tmp_name'];
-	$destino1 = "../../imagen/productos/".$image_usua;
-	move_uploaded_file($ruta1,$destino1);
 	$ident_usua=intval($_POST['edit_id']);
 
-    $sql = "UPDATE tabma_usua SET nomb1_usua='".$nomb1_usua."', nomb2_usua='".$nomb2_usua."', apel1_usua='".$apel1_usua."', apel2_usua='".$apel2_usua."', gener_usua='".$gener_usua."', telef_usua='".$telef_usua."', image_usua='".$destino1."' WHERE ident_usua='".$ident_usua."' ";
+    $sql = "UPDATE tabma_usua SET nomb1_usua='".$nomb1_usua."', nomb2_usua='".$nomb2_usua."', apel1_usua='".$apel1_usua."', apel2_usua='".$apel2_usua."', gener_usua='".$gener_usua."', telef_usua='".$telef_usua."' WHERE ident_usua='".$ident_usua."' ";
     $query = mysqli_query($con,$sql);
     
     if ($query) {

@@ -47,34 +47,6 @@
 	</div>
 </div>
 
-<!-- Modal Look Categoria -->
-
-<div id="lookCategoriaModal" class="modal fade">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <form name="look_Categoria" id="look_Categoria" class="justify-content-center" align="center">
-        <div class="modal-header">            
-          <h4 class="modal-title">Ver Categoria</h4>
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        </div>
-        <div class="modal-body">
-          <div class="form-row">
-            <div class="col form-group">
-              <label class="form-label"><b>Nombre: </b></label>
-              <input type="text" name="look_nombr_cate"  id="look_nombr_cate" class="form-control" disabled>
-              <input type="hidden" name="look_id" id="look_id">
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <input type="button" class="btn btn-light float-left" data-dismiss="modal" value="Cancelar">
-          <input type="button" class="btn btn-primary float-right" data-dismiss="modal" value="OK">
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
-
 <!-- Modal Edit Categoria -->
 
 <div id="editCategoriaModal" class="modal fade">

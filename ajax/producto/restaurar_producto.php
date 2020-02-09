@@ -1,19 +1,19 @@
 <?php
-	if (empty($_POST['delete_id'])){
+	if (empty($_POST['restaurar_id'])){
 		$errors[] = "ID Vacio.";
-	} elseif (!empty($_POST['delete_id'])){
+	} elseif (!empty($_POST['restaurar_id'])){
 
 	require_once ("../../paginas/conexion_bd.php");
 
-  $id_producto=$_POST['delete_id'];
+  $id_producto=$_POST['restaurar_id'];
 	
-    $sql = "UPDATE tabma_prod SET statu_prod = 0 WHERE ident_prod='$id_producto'";
+    $sql = "UPDATE tabma_prod SET statu_prod = 1 WHERE ident_prod='$id_producto'";
     $query = mysqli_query($con,$sql);
     
     if ($query) {
-        $messages[] = "El producto ha sido desactivado con éxito.";
+        $messages[] = "El Producto ha sido restaurado con éxito.";
     } else {
-        $errors[] = "Lo sentimos, la desactivación falló. Por favor, regrese y vuelva a intentarlo.";
+        $errors[] = "Lo sentimos, la restauración falló. Por favor, regrese y vuelva a intentarlo.";
     }
 		
 	} else 

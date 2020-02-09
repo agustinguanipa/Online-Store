@@ -1,6 +1,6 @@
 <?php
 
-require_once ("../paginas/conexion_bd.php");
+require_once ("../../paginas/conexion_bd.php");
 
 $action = (isset($_REQUEST['action'])&& $_REQUEST['action'] !=NULL)?$_REQUEST['action']:'';
 if($action == 'ajax'){
@@ -13,7 +13,7 @@ if($action == 'ajax'){
 	
 	// Paginacion
 
-	include 'pagination.php';
+	include '../pagination.php';
 
 	// Variables de la Paginación
 

@@ -60,8 +60,11 @@ if($action == 'ajax'){
 						<td class='text-center'><?php echo $nombr_prov;?></td>
 						<td class='text-center'><?php echo $telef_prov;?></td>
 						<td class='text-center'><?php echo $email_prov;?></td>
-						<td class='text-center'>
+						<!--- <td class='text-center'>
 							<a href="#"  data-target="#lookProveedorModal" class="look" data-toggle="modal" data-nombr_prov="<?php echo $nombr_prov?>" data-telef_prov="<?php echo $telef_prov?>" data-email_prov="<?php echo $email_prov?>" data-direc_prov="<?php echo $direc_prov?>" data-ident_prov="<?php echo $ident_proveedor; ?>"><i class="fa fa-eye" data-toggle="tooltip" title="Ver" ></i></a>
+	          </td> -->
+	          <td class='text-center'>
+							<a href="javascript:void(0)" onclick="lookProveedor('<?php echo $row['ident_prov']; ?>')"  class="look" data-toggle="modal"><i class="fa fa-eye" data-toggle="tooltip" title="Ver"></i></a>
 	          </td>
 						<td class='text-center'>
 							<a href="#"  data-target="#editProveedorModal" class="edit" data-toggle="modal" data-nombr_prov="<?php echo $nombr_prov?>" data-telef_prov="<?php echo $telef_prov?>" data-email_prov="<?php echo $email_prov?>" data-direc_prov="<?php echo $direc_prov?>" data-ident_prov="<?php echo $ident_proveedor; ?>"><i class="fa fa-edit" data-toggle="tooltip" title="Editar" ></i></a>
@@ -84,6 +87,18 @@ if($action == 'ajax'){
 			</tbody>			
 		</table>
 	</div>
+
+	<div id="divModalLookProveedor"></div>
+    <script>
+      function lookProveedor(ident_prov) {
+          var ruta = '../../paginas/administrador/modal_proveedor_ver.php?ident_prov=' + ident_prov;
+          $.get(ruta, function (data) {
+              $('#divModalLookProveedor').html(data);
+              $('#lookProveedorModal').modal('show');
+          });
+      }
+    </script>
+
 	<?php	
 	}	
 }

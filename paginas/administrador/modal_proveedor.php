@@ -20,11 +20,6 @@
 <!--- JS --->
 <script src="../../js/validacion.js" type="text/javascript"></script>
 
-<?php
-    $sql = "SELECT * FROM tabma_cate";
-    $result = mysqli_query($con, $sql);
-?>
-
 <!-- Modal Add Proveedor -->
   
 <div id="addProveedorModal" class="modal fade">
@@ -110,51 +105,6 @@
         <div class="modal-footer">
           <input type="button" class="btn btn-light" data-dismiss="modal" value="Cancelar">
           <input type="submit" class="btn btn-primary" value="Actualizar">
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
-
-<!-- Modal Look Proveedor-->
-
-<div id="lookProveedorModal" class="modal fade">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <form name="look_proveedor" id="look_proveedor" class="justify-content-center" align="center">
-        <div class="modal-header">            
-          <h4 class="modal-title">Ver Proveedor</h4>
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        </div>
-        <div class="modal-body">
-          <div class="form-row">
-            <div class="col form-group">
-              <label class="form-label" for="look_nombr_prov"><b>Nombre: </b></label>
-              <input type="text" class="form-control" name="look_nombr_prov" id="look_nombr_prov" disabled>
-              <input type="hidden" name="look_id" id="look_id">
-            </div>
-          </div>
-          <div class="form-row">
-              <div class="col form-group">
-                <label class="form-label" for="look_telef_prov"><b>Telefono: </b></label>
-                <input type="text" class="form-control" name="look_telef_prov" id="look_telef_prov" disabled>
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="col form-group">
-                <label class="form-label" for="look_email_prov"><b>E-Mail: </b></label>
-                <input type="email" class="form-control" name="look_email_prov" id="look_email_prov" disabled>
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="col form-group">
-                <label class="form-label" for="look_direc_prov"><b>Dirección: </b></label>
-                <textarea type="text" class="form-control" name="look_direc_prov" id="look_direc_prov" disabled></textarea>
-              </div>
-            </div>
-          </div>
-        <div class="modal-footer">
-          <input type="button" class="btn btn-primary float-right" data-dismiss="modal" value="OK">
         </div>
       </form>
     </div>

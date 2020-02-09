@@ -31,7 +31,7 @@
 <!-- Modal Add Producto -->
 
 <div id="addProductoModal" class="modal fade">
-	<div class="modal-dialog">
+	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
 			<form name="add_producto" id="add_producto" class="justify-content-center" align="center" enctype="multipart/form-data" action="" method="POST">
 				<div class="modal-header">						
@@ -44,8 +44,6 @@
               <label class="form-label" for="ident_prod"><b>Código: </b></label>
               <input type="text" class="form-control" name="ident_prod" autocomplete="off" id="ident_prod" placeholder="" maxlength="10" onkeyup="this.value = this.value.toUpperCase();" required>
             </div>
-          </div>
-          <div class="form-row">
             <div class="col form-group">
               <label class="form-label" for="ident_cate"><b>Categoria: </b></label>
               <select class="form-control" name="ident_cate" id="ident_cate">
@@ -57,8 +55,6 @@
                   ?> 
               </select>
             </div>
-          </div>
-          <div class="form-row">
             <div class="col form-group">
               <label class="form-label" for="ident_prov"><b>Proveedor: </b></label>
               <select class="form-control" name="ident_prov" id="ident_prov">
@@ -94,8 +90,6 @@
               <label class="form-label" for="preci_prod"><b>Precio: </b></label>
               <input type="text" class="form-control preci-mask" name="preci_prod" autocomplete="off" id="preci_prod" placeholder="" maxlength="10" required>
             </div>
-          </div>
-          <div class="form-row">
             <div class="col form-group">
               <label class="form-label" for="pesoo_prod"><b>Peso: </b></label>
               <input type="text" class="form-control pesoo-mask" name="pesoo_prod" autocomplete="off" id="pesoo_prod" placeholder="" maxlength="10" required>
@@ -104,8 +98,6 @@
               <label class="form-label" for="taman_prod"><b>Tamaño: </b></label>
               <input type="text" class="form-control taman-mask" name="taman_prod" autocomplete="off" id="taman_prod" placeholder="" maxlength="10" required>
             </div>
-          </div>
-          <div class="form-row">
             <div class="col form-group">
               <label class="form-label" for="stock_prod"><b>Stock: </b></label>
               <input type="text" class="form-control" name="stock_prod" autocomplete="off" id="stock_prod" placeholder="" maxlength="10" required>
@@ -123,19 +115,15 @@
           <div class="form-row">
             <div class="col form-group">
               <label class="form-label" for="imag1_prod"><b>Imagen 1: </b></label>
-              <input type="file" class="filestyle" id="imag1_prod" name="imag1_prod" alt="Imagen del Producto 1" data-btnClass="btn-primary" accept="image/*">
+              <input type="file" class="filestyle" id="imag1_prod" name="imag1_prod" alt="Imagen del Producto 1" data-btnClass="btn-primary" data-text="Subir" data-placeholder="Seleccione..." accept="image/*">
             </div>
-          </div>
-          <div class="form-row">
             <div class="col form-group">
               <label class="form-label" for="imag2_prod"><b>Imagen 2: </b></label>
-              <input type="file" class="filestyle" id="imag2_prod" name="imag2_prod" alt="Imagen del Producto 2" data-btnClass="btn-primary" accept="image/*">
+              <input type="file" class="filestyle" id="imag2_prod" name="imag2_prod" alt="Imagen del Producto 2" data-btnClass="btn-primary" data-text="Subir" data-placeholder="Seleccione..." accept="image/*">
             </div>
-          </div>
-          <div class="form-row">
             <div class="col form-group">
               <label class="form-label" for="imag3_prod"><b>Imagen 3: </b></label>
-              <input type="file" class="filestyle" id="imag3_prod" name="imag3_prod" alt="Imagen del Producto 3" data-btnClass="btn-primary" accept="image/*">
+              <input type="file" class="filestyle" id="imag3_prod" name="imag3_prod" alt="Imagen del Producto 3" data-btnClass="btn-primary" data-text="Subir" data-placeholder="Seleccione..." accept="image/*">
             </div>
           </div>
 				</div>
@@ -235,8 +223,11 @@
 <!-- Modal Edit Producto -->
 
 <?php
-    $sql = "SELECT * FROM tabma_cate";
-    $result = mysqli_query($con, $sql);
+    $sql1 = "SELECT * FROM tabma_cate WHERE statu_cate = 1";
+    $result1 = mysqli_query($con, $sql1);
+
+    $sql2 = "SELECT * FROM tabma_prov WHERE statu_prov = 1";
+    $result2 = mysqli_query($con, $sql2);
 ?>
   
 <div id="editProductoModal" class="modal fade">
@@ -252,15 +243,26 @@
             <div class="col form-group">
               <label class="form-label" for="edit_ident_cate"><b>Categoria: </b></label>
               <select class="form-control" name="edit_ident_cate" id="edit_ident_cate">
-                <option value = "">Seleccione...</option>
                   <?php
-                    while($row = mysqli_fetch_array($result)) {
-                      echo '<option value='.$row['ident_cate'].'>'.$row['nombr_cate'].'</option>';
+                    while($row1 = mysqli_fetch_array($result1)) {
+                      echo '<option value='.$row1['ident_cate'].'>'.$row1['nombr_cate'].'</option>';
                     }
                   ?> 
               </select>
             </div>
-          </div>             
+          </div>
+          <div class="form-row">
+            <div class="col form-group">
+              <label class="form-label" for="edit_ident_prov"><b>Proveedor: </b></label>
+              <select class="form-control" name="edit_ident_prov" id="edit_ident_prov">
+                  <?php
+                    while($row2 = mysqli_fetch_array($result2)) {
+                      echo '<option value='.$row2['ident_prov'].'>'.$row2['nombr_prov'].'</option>';
+                    }
+                  ?> 
+              </select>
+            </div>
+          </div>              
           <div class="form-row">
             <div class="col form-group">
               <label class="form-label" for="edit_nombr_prod"><b>Nombre: </b></label>
@@ -306,13 +308,14 @@
               <select class="form-control" id="edit_estad_prod" name="edit_estad_prod">
                 <option value="NUEVO">NUEVO</option>
                 <option value="USADO">USADO</option>
+                <option value="REFACCIONADO">REFACCIONADO</option>
               </select>
             </div>
           </div>
         </div>
         <div class="modal-footer">
           <input type="button" class="btn btn-light" data-dismiss="modal" value="Cancelar">
-          <input type="submit" class="btn btn-primary" value="Registrar">
+          <input type="submit" class="btn btn-primary" value="Actualizar">
         </div>
       </form>
     </div>

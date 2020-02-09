@@ -39,8 +39,8 @@
 			<div class='outer_div'></div><!-- Carga de datos ajax aqui -->   
 	</div>
 </div>
-<!-- Restaurar Modal HTML -->
-<?php include("modal_restaurar_producto.php");?>
+<!-- Modal HTML -->
+<?php include("modal_producto.php");?>
 <script src="../../js/script_producto_inactivo.js"></script>
 </body>
   

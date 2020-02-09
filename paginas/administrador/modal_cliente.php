@@ -20,11 +20,6 @@
 <!--- JS --->
 <script src="../../js/validacion.js" type="text/javascript"></script>
 
-<?php
-    $sql = "SELECT * FROM tabma_cate";
-    $result = mysqli_query($con, $sql);
-?>
-
 <!-- Modal Add Cliente -->
   
 <div id="addClienteModal" class="modal fade">
@@ -81,7 +76,7 @@
         <div class="form-row">
           <div class="col form-group">
             <label class="form-label" for="image_usua"><b>Imagen de Perfil: </b></label>
-            <input type="file" class="filestyle" id="image_usua" name="image_usua" alt="Imagen de Perfil" data-btnClass="btn-primary" accept="image/*">
+            <input type="file" class="filestyle" id="image_usua" name="image_usua" alt="Imagen de Perfil" data-btnClass="btn-primary" data-text="Subir" data-placeholder="Seleccione una Imagen..." accept="image/*">
           </div>
         </div>
         <div class="form-row">
@@ -157,87 +152,10 @@
               <input type="text" name="edit_telef_usua"  id="edit_telef_usua" class="form-control telef-mask" maxlength="15">
             </div>
           </div>
-          <div class="form-row">
-            <div class="col form-group">
-              <label class="form-label" for="edit_image_usua"><b>Imagen de Perfil: </b></label>
-              <input type="file" class="filestyle" id="edit_image_usua" name="edit_image_usua" alt="Imagen de Perfil" data-btnClass="btn-primary" accept="image/*">
-            </div>
-          </div>
         </div>
         <div class="modal-footer">
           <input type="button" class="btn btn-light" data-dismiss="modal" value="Cancelar">
           <input type="submit" class="btn btn-primary" value="Actualizar">
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
-
-<!-- Modal Look Cliente-->
-
-<div id="lookClienteModal" class="modal fade">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <form name="look_cliente" id="look_cliente" class="justify-content-center" align="center">
-        <div class="modal-header">            
-          <h4 class="modal-title">Ver Cliente</h4>
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        </div>
-        <div class="modal-body">
-          <div class="form-row">
-            <div class="col form-group">
-              <label class="form-label"><b>Primer Nombre: </b></label>
-              <input type="text" name="look_nomb1_usua"  id="look_nomb1_usua" class="form-control" disabled>
-              <input type="hidden" name="look_id" id="look_id">
-            </div>
-            <div class="col form-group">
-              <label class="form-label"><b>Segundo Nombre: </b></label>
-              <input type="text" name="look_nomb2_usua" id="look_nomb2_usua" class="form-control" disabled>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="col form-group">
-              <label class="form-label"><b>Primer Apellido: </b></label>
-              <input type="text" name="look_apel1_usua" id="look_apel1_usua" class="form-control" disabled>
-            </div>
-            <div class="col form-group">
-              <label class="form-label"><b>Segundo Apellido: </b></label>
-              <input type="text" name="look_apel2_usua" id="look_apel2_usua" class="form-control" disabled>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="col form-group">
-              <label class="form-label"><b>Genero: </b></label>
-              <input type="text" name="look_gener_usua" id="look_gener_usua" class="form-control" disabled>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="col form-group">
-              <label class="form-label"><b>Telefono: </b></label>
-              <input type="text" name="look_telef_usua" id="look_telef_usua" class="form-control telef-mask" disabled>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="col form-group">
-              <label class="form-label"><b>E-Mail: </b></label>
-              <input type="text" name="look_email_usua" id="look_email_usua" class="form-control" disabled>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="col form-group">
-              <label class="form-label"><b>Usuario: </b></label>
-              <input type="text" name="look_usuar_usua" id="look_usuar_usua" class="form-control" disabled>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="col form-group">
-              <label class="form-label"><b>Fecha de Registro: </b></label>
-              <input type="text" name="look_fecre_usua" id="look_fecre_usua" class="form-control" disabled>
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <input type="button" class="btn btn-primary float-right" data-dismiss="modal" value="OK">
         </div>
       </form>
     </div>

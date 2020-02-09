@@ -77,7 +77,7 @@
           <div class="form-row">
             <div class="col form-group">
               <label class="form-label" for="image_usua"><b>Imagen de Perfil: </b></label>
-              <input type="file" class="filestyle" id="image_usua" name="image_usua" alt="Imagen de Perfil" data-btnClass="btn-primary" data-text="Subir" data-placeholder="Imagen..." accept="image/*">
+              <input type="file" class="filestyle" id="image_usua" name="image_usua" alt="Imagen de Perfil" data-btnClass="btn-primary" data-text="Subir" data-placeholder="Seleccione una Imagen..." accept="image/*">
             </div>
           </div>
           <div class="form-row">

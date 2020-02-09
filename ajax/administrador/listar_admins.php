@@ -67,8 +67,11 @@ if($action == 'ajax'){
 						<td class='text-center'><?php echo $row['apel1_usua'].' '.$row['apel2_usua']; ?></td>
 						<td class='text-center'><?php echo $nombr_tipo;?></td>
 						<td class='text-center'><?php echo $usuar_usua;?></td>
-						<td class='text-center'>
+						<!--- <td class='text-center'>
 							<a href="#"  data-target="#lookAdminModal" class="look" data-toggle="modal" data-nomb1_usua="<?php echo $nomb1_usua?>" data-nomb2_usua="<?php echo $nomb2_usua?>" data-apel1_usua="<?php echo $apel1_usua?>" data-apel2_usua="<?php echo $apel2_usua?>" data-usuar_usua="<?php echo $usuar_usua?>" data-ident_usua="<?php echo $ident_admin; ?>"><i class="fa fa-eye" data-toggle="tooltip" title="Ver" ></i></a>
+	          </td> -->
+	          <td class='text-center'>
+							<a href="javascript:void(0)" onclick="lookAdministrador('<?php echo $row['ident_usua']; ?>')"  class="look" data-toggle="modal"><i class="fa fa-eye" data-toggle="tooltip" title="Ver"></i></a>
 	          </td>
 						<td class='text-center'>
 							<?php  
@@ -103,6 +106,18 @@ if($action == 'ajax'){
 			</tbody>			
 		</table>
 	</div>
+
+	<div id="divModalLookAdministrador"></div>
+    <script>
+      function lookAdministrador(ident_usua) {
+          var ruta = '../../paginas/administrador/modal_admin_ver.php?ident_usua=' + ident_usua;
+          $.get(ruta, function (data) {
+              $('#divModalLookAdministrador').html(data);
+              $('#lookAdministradorModal').modal('show');
+          });
+      }
+    </script>
+
 	<?php	
 	}	
 }
