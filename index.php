@@ -109,7 +109,7 @@
           <div class="d-flex justify-content-end">
             <?php  if (isset($_SESSION['loggedInUsuario'])) :  ?>
               <div class="widget-header">
-                <small class="title text-muted">Bienvenido <?=$_SESSION['nombre']?> <?=$_SESSION['apellido']?></small>
+                <small class="title text-muted">Bienvenido <?=$_SESSION['nomb1']?> <?=$_SESSION['apel1']?></small>
                 <div>
                   <?php
                     // Session is Set  
@@ -157,8 +157,8 @@
     <div class="collapse navbar-collapse" id="main_nav">
       <ul class="navbar-nav">
         <li class="nav-item dropdown" style="color: #000000;">
-          <a class="nav-link pl-0" data-toggle="dropdown" href="#" style="color: #000000;"><strong> <i class="fa fa-bars"></i> &nbsp  Todas las Categorías</strong></a>
-          <div class="dropdown-menu">
+          <a class="nav-link pl-0" data-toggle="dropdown" data-target="#dropdownMenu" href="#" style="color: #000000;"><strong> <i class="fa fa-bars"></i> &nbsp  Todas las Categorías</strong></a>
+          <div class="dropdown-menu" id="dropdownMenu">
             <?php
               include("paginas/conexion_bd.php");
               $sql = "SELECT * FROM tabma_cate WHERE statu_cate = 1";

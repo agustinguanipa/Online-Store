@@ -32,9 +32,10 @@
 	    <img class="card-img-top" src="../../imagen/adminpanel2.jpg" alt="Admin Panel Productos">
 	    <div class="card-body">
 	      <h5 class="card-title text-center"><b>Productos</b></h5>
-	      <p class="card-text text-center">Administrar Categorías y Productos.</p>
+	      <p class="card-text text-center">Administrar Proveedores, Categorías y Productos.</p>
 	    </div>
 	    <div class="card-footer" align="center">
+	    	<a href="admin_proveedores.php" class="btn btn-sm btn-primary">Ir a Proveedores</a>
 	    	<a href="admin_categorias.php" class="btn btn-sm btn-primary">Ir a Categorías</a>
       	<a href="admin_productos.php" class="btn btn-sm btn-primary">Ir a Productos</a>
     	</div>

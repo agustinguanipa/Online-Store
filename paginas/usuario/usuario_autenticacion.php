@@ -21,7 +21,7 @@
 	}
 
 	// Prepare our SQL, preparing the SQL statement will prevent SQL injection.
-	if ($stmt = $con->prepare('SELECT u.ident_usua, u.contr_usua, u.nomb1_usua, u.apel1_usua, u.image_usua, u.ident_tipo, r.ident_tipo, r.nombr_tipo FROM tabma_usua u INNER JOIN tabma_tipo r ON u.ident_tipo = r.ident_tipo WHERE u.usuar_usua = ?')) {
+	if ($stmt = $con->prepare('SELECT u.ident_usua, u.contr_usua, u.nomb1_usua, u.nomb2_usua, u.apel1_usua, u.apel2_usua, u.gener_usua, u.telef_usua, u.email_usua, u.image_usua, u.ident_tipo, r.ident_tipo, r.nombr_tipo FROM tabma_usua u INNER JOIN tabma_tipo r ON u.ident_tipo = r.ident_tipo WHERE u.usuar_usua = ?')) {
 		// Bind parameters (s = string, i = int, b = blob, etc), in our case the username is a string so we use "s"
 		$stmt->bind_param('s', $_POST['usuar_usua']);
 		$stmt->execute();
@@ -30,7 +30,7 @@
 	}
 
 	if ($stmt->num_rows > 0) {
-		$stmt->bind_result($ident_usua, $contr_usua, $nomb1_usua, $apel1_usua, $image_usua, $ident_tipo, $ident_tipo, $nombr_tipo);
+		$stmt->bind_result($ident_usua, $contr_usua, $nomb1_usua, $nomb2_usua, $apel1_usua, $apel2_usua, $gener_usua, $telef_usua, $email_usua,  $image_usua, $ident_tipo, $ident_tipo, $nombr_tipo);
 		$stmt->fetch();
 		// Account exists, now we verify the password.
 		// Note: remember to use password_hash in your registration file to store the hashed passwords.
@@ -39,8 +39,13 @@
 			// Create sessions so we know the user is logged in, they basically act like cookies but remember the data on the server.
 			session_regenerate_id();
 			$_SESSION['loggedInUsuario'] = TRUE;
-			$_SESSION['nombre'] = $nomb1_usua;
-			$_SESSION['apellido'] = $apel1_usua;
+			$_SESSION['nomb1'] = $nomb1_usua;
+			$_SESSION['nomb2'] = $nomb2_usua;
+			$_SESSION['apel1'] = $apel1_usua;
+			$_SESSION['apel2'] = $apel2_usua;
+			$_SESSION['gener'] = $gener_usua;
+			$_SESSION['telef'] = $telef_usua;
+			$_SESSION['email'] = $email_usua;
 			$_SESSION['imagen'] = $image_usua;
 			$_SESSION['user'] = $_POST['usuar_usua'];
 			$_SESSION['ident_usua'] = $ident_usua;

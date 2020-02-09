@@ -25,20 +25,31 @@ $ident_prod = $_REQUEST['ident_prod'];
 
 include_once '../../paginas/conexion_bd.php';
 
-$query_user = mysqli_query($con,"SELECT * FROM tabma_prod WHERE ident_prod = $ident_prod");
+$query_user = mysqli_query($con,"SELECT * FROM tabma_prod p RIGHT JOIN tabma_cate r ON p.ident_cate = r.ident_cate RIGHT JOIN tabma_prov s ON p.ident_prov = s.ident_prov WHERE ident_prod = $ident_prod");
     
 $result_user = mysqli_num_rows($query_user);
 
 $data_user = mysqli_fetch_array($query_user);
 
 	$ident_prod = $data_user['ident_prod'];
+  $ident_cate = $data_user['ident_cate'];
+  $nombr_cate = $data_user['nombr_cate'];
+  $ident_prov = $data_user['ident_prov'];
+  $nombr_prov = $data_user['nombr_prov'];
 	$nombr_prod = $data_user['nombr_prod'];
   $desco_prod = $data_user['desco_prod'];
   $desla_prod = $data_user['desla_prod'];
+  $preci_prod = $data_user['preci_prod'];
+  $pesoo_prod = $data_user['pesoo_prod'];
+  $taman_prod = $data_user['taman_prod'];
+  $stock_prod = $data_user['stock_prod'];
+  $estad_prod = $data_user['estad_prod'];
   
   $imag1_prod = $data_user['imag1_prod'];
   $imag2_prod = $data_user['imag2_prod'];
   $imag3_prod = $data_user['imag3_prod'];
+
+
 ?>
 
 <!-- Modal Look Proveedor -->
@@ -70,40 +81,58 @@ $data_user = mysqli_fetch_array($query_user);
         <hr>
         <div class="form-row">
           <div class="col form-group">
-            <label class="form-label" for="ident_prod">Código: </label>
+            <label class="form-label" for="ident_prod">Código: </label><br>
             <label><?php echo $ident_prod; ?></label>
           </div>
           <div class="col form-group">
-            <label class="form-label" for="ident_prod">Categoría: </label>
-            <label><?php echo $ident_cate; ?></label>
+            <label class="form-label" for="ident_cate">Categoría: </label><br>
+            <label><?php echo $nombr_cate; ?></label>
           </div>
           <div class="col form-group">
-            <label class="form-label" for="ident_prod">Proveedor: </label>
-            <label><?php echo $ident_prov; ?></label>
+            <label class="form-label" for="ident_prov">Proveedor: </label><br>
+            <label><?php echo $nombr_prov; ?></label>
           </div>
         </div>
+        <hr>
         <div class="form-row">
           <div class="col form-group">
-            <label class="form-label">Nombre: </label>
+            <label class="form-label">Nombre: </label><br>
             <label><?php echo $nombr_prod; ?></label>
           </div>
         </div>
         <div class="form-row">
-          <div class="col form-group">
-            <label class="form-label">Descripción Corta: </label>
-            <label><?php echo $telef_prov; ?></label>
+          <div class="col form-group" for="desco_prod">
+            <label class="form-label">Descripción Corta: </label><br>
+            <label><?php echo $desco_prod; ?></label>
           </div>
         </div>
         <div class="form-row">
-          <div class="col form-group">
-            <label class="form-label">Descripción Larga: </label>
-            <label><?php echo $email_prov; ?></label>
+          <div class="col form-group" for="desla_prod">
+            <label class="form-label">Descripción Larga: </label><br>
+            <label><?php echo $desla_prod; ?></label>
           </div>
         </div>
+        <hr>
         <div class="form-row">
           <div class="col form-group">
-            <label class="form-label">Dirección: </label>
-            <label><?php echo $direc_prov; ?></label>
+            <label class="form-label" for="preci_prod">Precio: </label><br>
+            <label><?php echo $preci_prod; ?></label>
+          </div>
+          <div class="col form-group">
+            <label class="form-label" for="pesoo_prod">Peso: </label><br>
+            <label><?php echo $pesoo_prod; ?></label>
+          </div>
+          <div class="col form-group">
+            <label class="form-label" for="taman_prod">Tamaño: </label><br>
+            <label><?php echo $taman_prod; ?></label>
+          </div>
+          <div class="col form-group">
+            <label class="form-label" for="taman_prod">Stock: </label><br>
+            <label><?php echo $stock_prod; ?></label>
+          </div>
+          <div class="col form-group">
+            <label class="form-label" for="taman_prod">Estado: </label><br>
+            <label><?php echo $estad_prod; ?></label>
           </div>
         </div>
       </div>

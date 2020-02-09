@@ -1,6 +1,8 @@
 <?php
   session_start();
 
+  $imagen = $_SESSION['imagen'];
+
   require_once ("../../js/funciones.php");
   require_once ("../conexion_bd.php");
 ?>
@@ -17,6 +19,7 @@
   <!--- CSS --->
   <link rel="stylesheet" type="text/css" href="../../css/estilos.css">
   <link rel="stylesheet" type="text/css" href="../../css/estilos_admin.css">
+  <link rel="stylesheet" type="text/css" href="../../css/estilos_crud.css">
   <!--- jQuery --->
   <script src="../../libs/jquery/jquery-3.4.1.min.js" type="text/javascript"></script>
   <!--- jQuery Validation --->
@@ -38,6 +41,12 @@
   <link href="../../libs/bootstrap-ecommerce-uikit/ui-ecommerce/css/ui.css" rel="stylesheet" type="text/css"/>
   <link href="../../libs/bootstrap-ecommerce-uikit/ui-ecommerce/css/responsive.css" rel="stylesheet" media="only screen and (max-width: 1200px)"/>
   <script src="../../libs/bootstrap-ecommerce-uikit/ui-ecommerce/js/script.js" type="text/javascript"></script>
+
+  <script>
+  function goBack() {
+    window.history.back();
+  }
+  </script>
 </head>
 
 <body>
@@ -107,7 +116,7 @@
           <div class="d-flex justify-content-end">
             <?php  if (isset($_SESSION['loggedInUsuario'])) : ?>
               <div class="widget-header">
-                <small class="title text-muted">Bienvenido <?=$_SESSION['nombre']?> <?=$_SESSION['apellido']?></small>
+                <small class="title text-muted">Bienvenido <?=$_SESSION['nomb1']?> <?=$_SESSION['apel1']?></small>
                 <div>
                   <?php
                     // Session is Set  

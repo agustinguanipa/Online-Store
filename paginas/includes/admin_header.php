@@ -161,16 +161,20 @@
                 <a class="nav-link" style="color: #FFFFFF;"><b>San Cristóbal, <?php echo fechaToday(); ?></b></a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link" href="admin_panel.php" style="color: #FFFFFF;"><i class="fa fa-home"></i><b> Bienvenido <?=$_SESSION['nombre']?> <?=$_SESSION['apellido']?></b></a>
+                <a class="nav-link" href="admin_panel.php" style="color: #FFFFFF;"><i class="fa fa-home"></i><b> Bienvenido <?=$_SESSION['nomb1']?> <?=$_SESSION['apel1']?></b></a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link"><img class="photouser" src="<?php echo $imagen;?>" alt="Imagen de Perfil"></a> 
-              </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="../usuario/usuario_cerrar.php" style="color: #FFFFFF;"><i class="fa fa-sign-out-alt"></i> <b>Cerrar Sesión</b></a>
+                <a class="nav-link"><img class="img-xxs rounded-circle" src="<?php echo $imagen;?>" alt="Imagen de Perfil"></a> 
               </li>
             <?php endif ?>
           </ul>
+        </div>
+        <div class="dropdown show" style="padding-left: 10px;">
+          <a class="btn btn-light" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" data-target="#dropdownMenu" aria-haspopup="true" aria-expanded="false"><i class="fa fa-ellipsis-v"></i><b></b></a>
+          <div class="dropdown-menu dropdown-menu-right" id="dropdownMenu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="../administrador/admin_cuenta.php"><i class="fa fa-user-circle"></i> <b>Mi Cuenta</b></a>
+            <a class="dropdown-item" href="../usuario/usuario_cerrar.php"><i class="fa fa-sign-out-alt"></i> <b>Cerrar Sesión</b></a>
+          </div>
         </div>
       </nav>
 

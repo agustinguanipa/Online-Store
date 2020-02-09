@@ -62,9 +62,13 @@ a:hover {
   line-height: 80px;
   font-size: 42px; }
 
-.img-xs, .img-sm, .img-md, .img-lg {
+.img-xxs, .img-xs, .img-sm, .img-md, .img-lg {
   -o-object-fit: cover;
      object-fit: cover; }
+
+.img-xxs {
+  width: 25px;
+  height: 25px; }
 
 .img-xs {
   width: 40px;
