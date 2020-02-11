@@ -185,6 +185,10 @@
 background: linear-gradient(90deg, rgba(56,176,222,1) 0%, rgba(66,136,255,1) 50%, rgba(0,74,255,1) 100%);
 }
 
+.notItemOne option:first-child{
+  display: none;
+}
+
 
 
 

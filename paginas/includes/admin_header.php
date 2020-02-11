@@ -1,6 +1,7 @@
 <?php
   session_start();
 
+  $ident_usua = $_SESSION['ident_usua'];
   $imagen = $_SESSION['imagen'];
 
   if (!isset($_SESSION['loggedInUsuario']) || $_SESSION['ident_tipo'] == 4) {
@@ -11,6 +12,20 @@
   require_once ("../../js/funciones.php");
   require_once ("../includes/funcion_fecha.php");
   require_once ("../conexion_bd.php");
+
+  include_once '../../paginas/conexion_bd.php';
+
+  $query_user = mysqli_query($con,"SELECT * FROM tabma_usua WHERE ident_usua = $ident_usua");
+      
+  $result_user = mysqli_num_rows($query_user);
+
+  $data_user = mysqli_fetch_array($query_user);
+
+    $ident_usua = $data_user['ident_usua'];
+    $nomb1_usua = $data_user['nomb1_usua'];
+    $nomb2_usua = $data_user['nomb2_usua'];
+    $apel1_usua = $data_user['apel1_usua'];
+    $apel2_usua = $data_user['apel2_usua'];
 ?>
 
 <!DOCTYPE html>
@@ -161,7 +176,7 @@
                 <a class="nav-link" style="color: #FFFFFF;"><b>San Cristóbal, <?php echo fechaToday(); ?></b></a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link" href="admin_panel.php" style="color: #FFFFFF;"><i class="fa fa-home"></i><b> Bienvenido <?=$_SESSION['nomb1']?> <?=$_SESSION['apel1']?></b></a>
+                <a class="nav-link" href="admin_panel.php" style="color: #FFFFFF;"><i class="fa fa-home"></i><b> Bienvenido <?php echo $data_user['nomb1_usua'];?> <?php echo $data_user['apel1_usua'];?></b></a>
               </li>
               <li class="nav-item active">
                 <a class="nav-link"><img class="img-xxs rounded-circle" src="<?php echo $imagen;?>" alt="Imagen de Perfil"></a> 
