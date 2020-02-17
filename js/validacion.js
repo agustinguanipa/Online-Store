@@ -283,7 +283,7 @@ jQuery.validator.addMethod("lettersonly", function(value, element) {
 /* Masks */
 
 $('.telef-mask').mask('(0000) 000 0000');
-$('.pesoo-mask').mask('##.##0,00', {reverse: true});
-$('.preci-mask').mask('000.000.000.000.000,00', {reverse: true});
+$('.pesoo-mask').mask('000000000000000.00 KG', {reverse: true});
+$('.preci-mask').mask('000000000000000.00', {reverse: true});
 $('.taman-mask').mask('###.00 x ###.00 x ###.00', {reverse: false});
 

@@ -11,8 +11,6 @@
 
   require_once ("../../js/funciones.php");
   require_once ("../includes/funcion_fecha.php");
-  require_once ("../conexion_bd.php");
-
   include_once '../../paginas/conexion_bd.php';
 
   $query_user = mysqli_query($con,"SELECT * FROM tabma_usua WHERE ident_usua = $ident_usua");
@@ -46,6 +44,9 @@
   <link href="../../libs/startbootstrap-simple-sidebar-gh-pages/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!--- jQuery --->
   <script src="../../libs/jquery/jquery-3.4.1.min.js" type="text/javascript"></script>
+  <!--- jQuery Validation --->
+  <script type="text/javascript" src="../../libs/jquery-validation-1.19.0/lib/jquery-1.11.1.js"></script>
+  <script type="text/javascript" src="../../libs/jquery-validation-1.19.0/dist/jquery.validate.js"></script>
   <!--- jQuery Mask Plugin --->
   <script type="text/javascript" src="../../libs/jQuery-Mask-Plugin/dist/jquery.mask.js"></script>
   <!--- Bootstrap 4 --->
@@ -61,6 +62,9 @@
   <link href="../../libs/bootstrap-ecommerce-uikit/ui-ecommerce/css/ui.css" rel="stylesheet" type="text/css"/>
   <link href="../../libs/bootstrap-ecommerce-uikit/ui-ecommerce/css/responsive.css" rel="stylesheet" media="only screen and (max-width: 1200px)"/>
   <script src="../../libs/bootstrap-ecommerce-uikit/ui-ecommerce/js/script.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $('.telef-mask').mask('(0000) 000 0000');
+  </script>
   <!--- Bootstrap 4 File Style 2 --->
   <script type="text/javascript" src="../../libs/bootstrap-filestyle-2.1.0/src/bootstrap-filestyle.min.js"> </script>
 </head>
@@ -179,7 +183,7 @@
                 <a class="nav-link" href="admin_panel.php" style="color: #FFFFFF;"><i class="fa fa-home"></i><b> Bienvenido <?php echo $data_user['nomb1_usua'];?> <?php echo $data_user['apel1_usua'];?></b></a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link"><img class="img-xxs rounded-circle" src="<?php echo $imagen;?>" alt="Imagen de Perfil"></a> 
+                <a class="nav-link"><img class="img-xxs rounded-circle" src="<?php echo $data_user['image_usua']; ?>" alt="Imagen de Perfil"></a> 
               </li>
             <?php endif ?>
           </ul>

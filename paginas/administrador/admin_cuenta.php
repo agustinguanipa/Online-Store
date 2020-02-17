@@ -49,6 +49,14 @@ $data_user = mysqli_fetch_array($query_user);
 					<?php
 
 					unset($_SESSION['message']);
+				}else if(isset($_SESSION['error'])){
+					?>
+					<div class="alert alert-danger text-center" style="margin-top:20px;">
+						<?php echo $_SESSION['error']; ?>
+					</div>
+					<?php
+
+					unset($_SESSION['error']);
 				}
 			?>
 	    <div class="card-deck">
@@ -60,7 +68,7 @@ $data_user = mysqli_fetch_array($query_user);
 			    <h5>Información Personal</h5>
 					  <hr class="my-4">
 					  <div class="form-row justify-content-center">
-								<img class="img-md rounded-circle" src="<?php echo $imagen; ?>" alt="Imagen Perfil">
+							<img class="img-md rounded-circle" src="<?php echo $data_user['image_usua']; ?>" alt="Imagen Perfil">
 					  </div>
 					  <div class="form-row">
 					    <div class="col form-group">
@@ -96,13 +104,13 @@ $data_user = mysqli_fetch_array($query_user);
 					  </div>
 					  <div class="form-row">
 					    <div class="col form-group">
-					      <label class="form-label" for="ident_tipu"><b>Tipo de Usuario: </b></label>
+					      <label class="form-label" for="ident_tipo"><b>Tipo de Usuario: </b></label>
 					      <label><?php echo $data_user['nombr_tipo']; ?></label>
 					    </div>
 				  	</div>
 					</div>
 					<div class="card-footer">
-						<a href="#edit_<?php echo $ident_usua; ?>"  class="btn btn-block btn-success" data-toggle="modal"><i class="fa fa-edit" data-toggle="tooltip" title="Ver"></i> Editar Datos</a>
+						<a href="#edit_<?php echo $ident_usua; ?>" class="btn btn-block btn-success" data-toggle="modal"><i class="fa fa-edit" data-toggle="tooltip" title="Editar"></i> Editar Datos</a>
 						 <?php include('modal_cuenta_editar.php'); ?>
           </div>
 			  </div>
@@ -111,10 +119,10 @@ $data_user = mysqli_fetch_array($query_user);
 					<div class="card-header">
 				    <b>Cambiar Contraseña</b>
 				  </div>
-				  <div class="container">
+				  <div class="card-body justify-content-center">
 				    <div class="form-group text-center">
 				      <div class="justify-content-center mx-3 my-1">
-				        <form role="form" name="frmChangePass" id="frmChangePass" action="../ajax/actualizar_contrasena.php" class="justify-content-center" align="center" method="post">
+				        <form role="form" name="frmChangePass" id="frmChangePass" action="../../ajax/administrador/actualizar_contrasena.php?id=<?php echo $ident_usua; ?>" class="justify-content-center" align="center" method="post">
 				          <div class="form-row">
 				            <div class="col form-group">
 				              <label class="form-label" for="txtPassUser">Contraseña Actual: </label>
@@ -124,16 +132,15 @@ $data_user = mysqli_fetch_array($query_user);
 				          <div class="form-row">
 				            <div class="col form-group">
 				              <label class="form-label" for="txtNewPassUser">Nueva Contraseña: </label>
-				              <input class="form-control newPass" type="password" name="txtNewPassUser" id="txtNewPassUser" placeholder="*********" required>
+				              <input class="form-control" type="password" name="txtNewPassUser" id="txtNewPassUser" placeholder="*********" required>
 				            </div>
 				          </div>
 				          <div class="form-row">
 				            <div class="col form-group">
 				              <label class="form-label" for="txtPassConfirm">Confirmar Contraseña: </label>
-				              <input class="form-control newPass" type="password" name="txtPassConfirm" id="txtPassConfirm" placeholder="*********" required>
+				              <input class="form-control" type="password" name="txtPassConfirm" id="txtPassConfirm" placeholder="*********" required>
 				            </div>
 				          </div>
-				          <div class="alertChangePass" style="display: none;"></div>
 				          <div class="form-row">
 				            <div class="col form-group">
 				              <button type="submit" class="btn btn-primary btn-block"><i class="fa fa-key"></i> Cambiar Contraseña</button>

@@ -189,7 +189,37 @@ background: linear-gradient(90deg, rgba(56,176,222,1) 0%, rgba(66,136,255,1) 50%
   display: none;
 }
 
+.form-div{ 
+  margin-top: 100px; 
+  border: 1px solid #e0e0e0; 
+}
 
+#profileDisplay{ 
+  display: block; height: 210px; width: 50%; margin: 0px auto; border-radius: 50%; 
+}
+
+.img-placeholder {
+  width: 50%;
+  color: white;
+  height: 100%;
+  background: black;
+  opacity: .7;
+  height: 210px;
+  border-radius: 50%;
+  z-index: 2;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+}
+.img-placeholder h4 {
+  margin-top: 40%;
+  color: white;
+}
+.img-div:hover .img-placeholder {
+  display: block;
+  cursor: pointer;
+}
 
 
 

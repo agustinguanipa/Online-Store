@@ -83,6 +83,10 @@ if($action == 'ajax'){
 	          <td class='text-center'>
 							<a href="javascript:void(0)" onclick="lookProducto('<?php echo $row['ident_prod']; ?>')"  class="look" data-toggle="modal"><i class="fa fa-eye" data-toggle="tooltip" title="Ver"></i></a>
 	          </td>
+	          <!---<td>
+	          	<a href="#edit_<?php echo $ident_producto; ?>" class="btn btn-block btn-warning" data-toggle="modal"><i class="fa fa-edit" data-toggle="tooltip" title="Editar"></i> Editar Datos</a>
+	          	<?php include('../../paginas/administrador/modal_producto_editar.php'); ?>
+	          </td>--->
 						<td class='text-center'>
 							<a href="#"  data-target="#editProductoModal" class="edit" data-toggle="modal" data-ident_cate="<?php echo $ident_cate?>" data-ident_prov="<?php echo $ident_prov?>" data-nombr_prod="<?php echo $nombr_prod?>" data-desco_prod="<?php echo $desco_prod?>" data-desla_prod="<?php echo $desla_prod?>" data-preci_prod="<?php echo $preci_prod?>" data-pesoo_prod="<?php echo $pesoo_prod?>" data-taman_prod="<?php echo $taman_prod?>" data-stock_prod="<?php echo $stock_prod?>" data-estad_prod="<?php echo $estad_prod?>" data-ident_prod="<?php echo $ident_producto; ?>"><i class="fa fa-edit" data-toggle="tooltip" title="Editar" ></i></a>
 	          </td>

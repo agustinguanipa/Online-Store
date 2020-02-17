@@ -1,5 +1,21 @@
 <?php
   session_start();
+
+  $ident_usua = $_SESSION['ident_usua'];
+
+  include_once 'paginas/conexion_bd.php';
+
+  $query_user = mysqli_query($con,"SELECT * FROM tabma_usua WHERE ident_usua = $ident_usua");
+      
+  $result_user = mysqli_num_rows($query_user);
+
+  $data_user = mysqli_fetch_array($query_user);
+
+    $ident_usua = $data_user['ident_usua'];
+    $nomb1_usua = $data_user['nomb1_usua'];
+    $nomb2_usua = $data_user['nomb2_usua'];
+    $apel1_usua = $data_user['apel1_usua'];
+    $apel2_usua = $data_user['apel2_usua'];
 ?>
 
 <!DOCTYPE html>
@@ -109,7 +125,7 @@
           <div class="d-flex justify-content-end">
             <?php  if (isset($_SESSION['loggedInUsuario'])) :  ?>
               <div class="widget-header">
-                <small class="title text-muted">Bienvenido <?=$_SESSION['nomb1']?> <?=$_SESSION['apel1']?></small>
+                <small class="title text-muted">Bienvenido <?php echo $data_user['nomb1_usua'];?> <?php echo $data_user['apel1_usua'];?></small>
                 <div>
                   <?php
                     // Session is Set  

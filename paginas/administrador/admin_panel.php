@@ -7,7 +7,7 @@
 		<div class="card" align="center">
     <div class="card-body index-background">
       <h2 class="card-title text-white"><b>SIGMAEMCA Online Store</b></h2>
-      <p class="card-text text-white"><b>Bienvenido al Panel de Administración</b></p>
+      <p class="card-text text-white"><b>Bienvenido al Panel de Administración <br><?php echo $data_user['nomb1_usua'];?> <?php echo $data_user['nomb2_usua'];?> <?php echo $data_user['apel1_usua'];?> <?php echo $data_user['apel2_usua'];?></b></p>
       <a href="../../index.php" class="btn btn-light btn-lg"> <b>Ir al Inicio</b><i class="fa fa-home ml-2"></i></a>
     </div>
   </div>

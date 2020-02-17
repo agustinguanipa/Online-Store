@@ -30,98 +30,43 @@
 <?php
 include_once '../../paginas/conexion_bd.php';
 
-$query_user = mysqli_query($con,"SELECT * FROM tabma_usua WHERE ident_usua = $ident_usua");
+$query_user = mysqli_query($con,"SELECT * FROM tabma_prod WHERE ident_prod = $ident_producto");
     
 $result_user = mysqli_num_rows($query_user);
 
 $data_user = mysqli_fetch_array($query_user);
 
-	$ident_usua = $data_user['ident_usua'];
-	$nomb1_usua = $data_user['nomb1_usua'];
-  $nomb2_usua = $data_user['nomb2_usua'];
-  $apel1_usua = $data_user['apel1_usua'];
-  $apel2_usua = $data_user['apel2_usua'];
-  $gener_usua = $data_user['gener_usua'];
-  $telef_usua = $data_user['telef_usua'];
-  $email_usua = $data_user['email_usua'];
-  $image_usua = $data_user['image_usua'];
-  $fecre_usua = $data_user['fecre_usua'];
+  $ident_producto = $data_user['ident_prod'];
+  $nombr_prod = $data_user['nombr_prod'];
+  
 ?>
 
-<!-- Modal Edit Usuario -->
+<!-- Modal Edit Producto -->
 
-<div class="modal fade" id="edit_<?php echo $ident_usua; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+<div class="modal fade" id="edit_<?php echo $ident_producto; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
     <div class="modal-content">
-      <form id="edit" class="justify-content-center" align="center" method="post" action="../../ajax/administrador/editar_usuario.php?id=<?php echo $ident_usua; ?>" enctype="multipart/form-data">
-        <div class="modal-header">
-          <h4 class="modal-title">Editar Usuario</h4>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>     
-          </button>
+      <form id="edit" class="justify-content-center" align="center" method="post" action="../../ajax/producto/editar_producto_prueba.php?id=<?php echo $ident_producto; ?>" enctype="multipart/form-data">
+        <div class="modal-header">            
+          <h4 class="modal-title">Editar Producto</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         </div>
         <div class="modal-body">
-            <div class="form-row">
-              <div class="col form-group text-center" style="position: relative;" >
-                <label class="form-label" for="image_usua"><b>Imagen de Perfil: </b></label>
-                <span class="img-div">
-                  <div class="text-center img-placeholder"  onClick="triggerClick()">
-                    <h4>Actualizar Imagen</h4>
-                  </div>
-                  <img src="<?php echo $image_usua; ?>" onClick="triggerClick()" id="profileDisplay">
-                </span>
-                <input type="file" name="image_usua" onChange="displayImage(this)" id="image_usua" class="form-control" style="display: none;">
-              </div>
+               
+          <div class="form-row">
+            <div class="col form-group">
+              <input type="hidden" name="edit_id" id="edit_id">
+              <label class="form-label" for="nombr_prod"><b>Nombre: </b></label>
+              <input type="text" class="form-control" name="nombr_prod" autocomplete="off" id="nombr_prod" placeholder="" maxlength="50" onkeyup="this.value = this.value.toUpperCase();" value="<?php echo $nombr_prod; ?>" required>
             </div>
-            <div class="form-row">
-              <div class="col form-group">
-                <input type="hidden" name="ident_usua" id="ident_usua">
-                <label class="form-label"><b>Primer Nombre: </b></label>
-                <input type="text" name="nomb1_usua"  id="nomb1_usua" class="form-control" value="<?php echo $nomb1_usua; ?>" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
-              </div>
-              <div class="col form-group">
-                <label class="form-label"><b>Segundo Nombre: </b></label>
-                <input type="text" name="nomb2_usua"  id="nomb2_usua" class="form-control" value="<?php echo $nomb2_usua; ?>" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="col form-group">
-                <label class="form-label"><b>Primer Apellido</b></label>
-                <input type="text" name="apel1_usua"  id="apel1_usua" class="form-control" value="<?php echo $apel1_usua; ?>" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
-              </div>
-              <div class="col form-group">
-                <label class="form-label"><b>Segundo Apellido</b></label>
-                <input type="text" name="apel2_usua"  id="apel2_usua" class="form-control" value="<?php echo $apel2_usua; ?>" maxlength="20" onkeyup="this.value = this.value.toUpperCase();">
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="col form-group">
-                <label class="form-label" for="gener_usua"><b>Genero: </b></label>
-                <select class="form-control notItemOne" id="gener_usua" name="gener_usua">
-                  <option value="<?php echo $gener_usua; ?>"><?php echo $gener_usua; ?></option>
-                  <option value="MASCULINO">MASCULINO</option>
-                  <option value="FEMENINO">FEMENINO</option>
-                </select>
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="col form-group">
-                <label class="form-label" for="telef_usua"><b>Telefono: </b></label>
-                <input type="text" class="form-control telef-mask" name="telef_usua" autocomplete="off" id="telef_usua" placeholder="(0000) 000 0000" maxlength="15" value="<?php echo $telef_usua; ?>">
-              </div>
-            </div>
-            <div class="form-row">
-              <!---<div class="col form-group">
-                <label class="form-label" for="image_usua"><b>Imagen de Perfil: </b></label>
-                <input type="file" class="filestyle" id="image_usua" name="image_usua" alt="Imagen de Perfil" data-btnClass="btn-primary" data-text="Subir" data-placeholder="Seleccione una Imagen..." accept="image/*"  value="<?php echo $image_usua; ?>">
-              </div>-->
-            </div>
-          </div>
-          <div class="modal-footer">
-            <input type="button" class="btn btn-light" data-dismiss="modal" value="Cancelar">
-            <input type="submit" class="btn btn-primary" value="Actualizar">
-          </div>
-        </form>
+          </div> 
+         
+        </div>
+        <div class="modal-footer">
+          <input type="button" class="btn btn-light" data-dismiss="modal" value="Cancelar">
+          <input type="submit" class="btn btn-primary" value="Actualizar">
+        </div>
+      </form>
     </div>
   </div>
 </div>
@@ -130,7 +75,7 @@ $data_user = mysqli_fetch_array($query_user);
   $( "#edit" ).validate( {
 
     rules: {
-      nomb1_usua: {
+      nombr_prod: {
         required: true,
         lettersonly: true,
         minlength: 2
@@ -156,7 +101,7 @@ $data_user = mysqli_fetch_array($query_user);
     },
 
     messages: {
-      nomb1_usua: {
+      nombr_prod: {
         required: "Ingrese su Primer Nombre",
         lettersonly: "Tu Nombre solo debe contener letras sin espacios",
         minlength: "Tu Nombre debe contener al menos 2 caracteres"

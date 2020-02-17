@@ -46,11 +46,11 @@
               <div class="card-body">
                 <figure class="icontext">
                     <div class="icon" style="padding-right: 20px; ">
-                      <img class="rounded-circle img-sm border" src="<?php echo $imagen; ?>">
+                      <img class="rounded-circle img-sm border" src="<?php echo $data_user['image_usua']; ?>">
                     </div>
                     <div class="text">
-                      <strong> Bienvenido! <?= $_SESSION['nomb1']; ?> <?= $_SESSION['nomb2']; ?> <?= $_SESSION['apel1']; ?> <?= $_SESSION['apel2']; ?></strong> <br> 
-                      <?= $_SESSION['email']; ?> <br> 
+                      <strong> Bienvenido! <?php echo $data_user['nomb1_usua'];?> <?php echo $data_user['nomb2_usua'];?> <?php echo $data_user['apel1_usua'];?> <?php echo $data_user['apel2_usua'];?></strong> <br> 
+                      <?php echo $data_user['email_usua'];?> <br> 
                     </div>
                 </figure>
                 <hr>

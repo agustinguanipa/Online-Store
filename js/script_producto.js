@@ -43,6 +43,9 @@ $( "#add_producto" ).validate( {
       ident_cate: {
         required: true
       },
+      ident_prov: {
+        required: true
+      },
       nombr_prod: {
         required: true,
         minlength: 2
@@ -62,19 +65,22 @@ $( "#add_producto" ).validate( {
       },
       pesoo_prod: {
         required: true,
-        number: true,
+        number: false,
         minlength: 2
       },
       taman_prod: {
         required: true,
-        number: true,
+        number: false,
         minlength: 2
       },
       stock_prod: {
         required: true,
         number: true,
         minlength: 1
-      }
+      },
+      estad_prod: {
+        required: true
+      },
     },
 
     messages: {
@@ -85,6 +91,9 @@ $( "#add_producto" ).validate( {
       },
       ident_cate: {
         required: "Ingrese una Categoría para el Producto"
+      },
+      ident_prov: {
+        required: "Ingrese un Proveedor para el Producto"
       },
       nombr_prod: {
         required: "Ingrese el Nombre del Producto",
@@ -113,7 +122,10 @@ $( "#add_producto" ).validate( {
       stock_prod: {
         required: "Ingrese el Stock del Producto",
         number: "Solo Numeros"
-      }
+      },
+      estad_prod: {
+        required: "Ingrese un Estado para el Producto"
+      },
     },
 
     errorElement: "em",

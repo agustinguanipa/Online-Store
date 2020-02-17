@@ -96,7 +96,7 @@
             </div>
             <div class="col form-group">
               <label class="form-label" for="taman_prod"><b>Tamaño: </b></label>
-              <input type="text" class="form-control taman-mask" name="taman_prod" autocomplete="off" id="taman_prod" placeholder="" maxlength="10" required>
+              <input type="text" class="form-control taman-mask" name="taman_prod" autocomplete="off" id="taman_prod" placeholder="" maxlength="30" required>
             </div>
             <div class="col form-group">
               <label class="form-label" for="stock_prod"><b>Stock: </b></label>
@@ -136,90 +136,6 @@
 	</div>
 </div>
 
-<!-- Modal Look Producto -->
-
-<?php
-    $sql = "SELECT * FROM tabma_cate";
-    $result = mysqli_query($con, $sql);
-?>
-  
-<div id="lookProductoModal" class="modal fade">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <form name="look_producto" id="look_producto" class="justify-content-center" align="center" action="">
-        <div class="modal-header">            
-          <h4 class="modal-title">Ver Producto</h4>
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        </div>
-        <div class="modal-body"> 
-          <div class="form-row">
-            <div class="col form-group">
-              <label class="form-label" for="look_ident_cate"><b>Categoria: </b></label>
-              <select class="form-control" name="look_ident_cate" id="look_ident_cate" disabled>
-                <option value = "">Seleccione...</option>
-                  <?php
-                    while($row = mysqli_fetch_array($result)) {
-                      echo '<option value='.$row['ident_cate'].'>'.$row['nombr_cate'].'</option>';
-                    }
-                  ?> 
-              </select>
-            </div>
-          </div>             
-          <div class="form-row">
-            <div class="col form-group">
-              <label class="form-label" for="look_nombr_prod"><b>Nombre: </b></label>
-              <input type="text" class="form-control" name="look_nombr_prod" id="look_nombr_prod" disabled>
-              <input type="hidden" name="look_id" id="look_id">
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="col form-group">
-              <label class="form-label" for="look_desco_prod"><b>Descripcion Corta: </b></label>
-              <textarea class="form-control" name="look_desco_prod" id="look_desco_prod" disabled></textarea>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="col form-group">
-              <label class="form-label" for="look_desla_prod"><b>Descripcion Larga: </b></label>
-              <textarea class="form-control" name="look_desla_prod" id="look_desla_prod" disabled></textarea>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="col form-group">
-              <label class="form-label" for="look_preci_prod"><b>Precio: </b></label>
-              <input type="text" class="form-control preci-mask" name="look_preci_prod" id="look_preci_prod" disabled>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="col form-group">
-              <label class="form-label" for="look_pesoo_prod"><b>Peso: </b></label>
-              <input type="text" class="form-control pesoo-mask" name="look_pesoo_prod" id="look_pesoo_prod" disabled>
-            </div>
-            <div class="col form-group">
-              <label class="form-label" for="look_taman_prod"><b>Tamaño: </b></label>
-              <input type="text" class="form-control taman-mask" name="look_taman_prod" id="look_taman_prod"disabled>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="col form-group">
-              <label class="form-label" for="look_stock_prod"><b>Stock: </b></label>
-              <input type="text" class="form-control" name="look_stock_prod" id="look_stock_prod" disabled>
-            </div>
-            <div class="col form-group">
-              <label class="form-label" for="look_estad_prod"><b>Estado: </b></label>
-              <input type="text" class="form-control" name="look_estad_prod" id="look_estad_prod" disabled>
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <input type="button" class="btn btn-light float-left" data-dismiss="modal" value="Cancelar">
-          <input type="button" class="btn btn-primary float-right" data-dismiss="modal" value="OK">
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
-
 <!-- Modal Edit Producto -->
 
 <?php
@@ -231,14 +147,14 @@
 ?>
   
 <div id="editProductoModal" class="modal fade">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-lg">
     <div class="modal-content">
-      <form name="edit_producto" id="edit_producto" class="justify-content-center" align="center" action="">
+      <form name="edit_producto" id="edit_producto" class="justify-content-center" align="center" action="" enctype="multipart/form-data">
         <div class="modal-header">            
           <h4 class="modal-title">Editar Producto</h4>
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         </div>
-        <div class="modal-body"> 
+        <div class="modal-body">
           <div class="form-row">
             <div class="col form-group">
               <label class="form-label" for="edit_ident_cate"><b>Categoria: </b></label>
@@ -250,8 +166,6 @@
                   ?> 
               </select>
             </div>
-          </div>
-          <div class="form-row">
             <div class="col form-group">
               <label class="form-label" for="edit_ident_prov"><b>Proveedor: </b></label>
               <select class="form-control" name="edit_ident_prov" id="edit_ident_prov">
@@ -262,14 +176,14 @@
                   ?> 
               </select>
             </div>
-          </div>              
+          </div>         
           <div class="form-row">
             <div class="col form-group">
               <label class="form-label" for="edit_nombr_prod"><b>Nombre: </b></label>
-              <input type="text" class="form-control" name="edit_nombr_prod" autocomplete="off" id="edit_nombr_prod" placeholder="" maxlength="20" onkeyup="this.value = this.value.toUpperCase();" required>
+              <input type="text" class="form-control" name="edit_nombr_prod" autocomplete="off" id="edit_nombr_prod" placeholder="" maxlength="50" onkeyup="this.value = this.value.toUpperCase();" required>
               <input type="hidden" name="edit_id" id="edit_id">
             </div>
-          </div>
+          </div> 
           <div class="form-row">
             <div class="col form-group">
               <label class="form-label" for="edit_desco_prod"><b>Descripcion Corta: </b></label>
@@ -287,18 +201,14 @@
               <label class="form-label" for="edit_preci_prod"><b>Precio: </b></label>
               <input type="text" class="form-control preci-mask" name="edit_preci_prod" autocomplete="off" id="edit_preci_prod" placeholder="" maxlength="10" required>
             </div>
-          </div>
-          <div class="form-row">
             <div class="col form-group">
               <label class="form-label" for="edit_pesoo_prod"><b>Peso: </b></label>
               <input type="text" class="form-control pesoo-mask" name="edit_pesoo_prod" autocomplete="off" id="edit_pesoo_prod" placeholder="" maxlength="10" required>
             </div>
             <div class="col form-group">
               <label class="form-label" for="edit_taman_prod"><b>Tamaño: </b></label>
-              <input type="text" class="form-control taman-mask" name="edit_taman_prod" autocomplete="off" id="edit_taman_prod" placeholder="" maxlength="10" required>
+              <input type="text" class="form-control taman-mask" name="edit_taman_prod" autocomplete="off" id="edit_taman_prod" placeholder="" maxlength="50" required>
             </div>
-          </div>
-          <div class="form-row">
             <div class="col form-group">
               <label class="form-label" for="edit_stock_prod"><b>Stock: </b></label>
               <input type="text" class="form-control" name="edit_stock_prod" autocomplete="off" id="edit_stock_prod" placeholder="" maxlength="10" required>
