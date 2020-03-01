@@ -4,7 +4,7 @@
   <div class="container">
     <section class="footer-bottom row">
       <div class="col-sm-4" align="left"> 
-        <p><b>Diseñado y Desarrollado por: </b><br><a href="https://agustinguanipa.000webhostapp.com/" title="Carlos Agustin Guanipa Alvarez">Carlos Agustin Guanipa Alvarez</a></p>
+        <p><b>Diseñado y Desarrollado por: </b><br><a href="https://agustinguanipa.epizy.com/" title="Carlos Agustin Guanipa Alvarez">Carlos Agustin Guanipa Alvarez</a></p>
       </div>
       <div class="col-sm-4 form-group" align="center">
           <p class="pie"><b>Redes Sociales</b></p>
