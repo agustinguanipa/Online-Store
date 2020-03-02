@@ -4,7 +4,7 @@
         <div class="container my-auto">
           <section class="footer-bottom row">
             <div class="col-sm-6"> 
-              <p><b>Diseñado y Desarrollado por: </b><br><a href="https://agustinguanipa.epizy.com/" title="Carlos Agustin Guanipa Alvarez">Carlos Agustin Guanipa Alvarez</a></p>
+              <p><b>Diseñado y Desarrollado por: </b><br><a href="http://agustinguanipa.epizy.com/" title="Carlos Agustin Guanipa Alvarez">Carlos Agustin Guanipa Alvarez</a></p>
             </div>
             <div class="col-sm-6">
               <p class="text-sm-right"><b>SIGMAEMCA Servicio Integral General y Mantenimiento Equipos Medicos Compañía Anonima</b></p>
